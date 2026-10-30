@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Explainers · The Signal</title>
 <meta name="description" content="AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.">
+<meta property="og:image" content="https://thillairaj.github.io/signal-preview/assets/og/explainers/hub-ai.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI Explainers">
 <meta property="og:description" content="Interactive explainers on AI systems, part by part.">
@@ -430,6 +433,7 @@ tt.addEventListener('click', () => {
   btn.title = 'Share';
   btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
   btn.addEventListener('click', () => {
+    if (window.__expOpenMain) return window.__expOpenMain(btn);
     const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
     const caption = SignalShare.buildCaption(["The AI Explainers", "AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.", 'Explore it free, no sign-up:\n' + url, "#TheSignal #AI"]);
     SignalShare.openPanel({ title: "The AI Explainers", line: "AI Explainers on The Signal: tap through AI systems part by part, starting with how an LLM answers a prompt.", link: url, caption: caption, tags: "#TheSignal #AI", image: null }, btn);

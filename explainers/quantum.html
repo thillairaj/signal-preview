@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quantum Explainers · The Signal</title>
 <meta name="description" content="Quantum Explainers on The Signal: tap through real quantum machines part by part, starting with a superconducting quantum computer.">
+<meta property="og:image" content="https://thillairaj.github.io/signal-preview/assets/og/explainers/hub-quantum.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Quantum Explainers">
 <meta property="og:description" content="Interactive explainers on quantum machines, part by part.">
@@ -512,6 +515,7 @@ tt.addEventListener('click', () => {
   btn.title = 'Share';
   btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
   btn.addEventListener('click', () => {
+    if (window.__expOpenMain) return window.__expOpenMain(btn);
     const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
     const caption = SignalShare.buildCaption(["The Quantum Explainers", "Quantum Explainers on The Signal: tap through real quantum machines part by part, starting with a superconducting quantum computer.", 'Explore it free, no sign-up:\n' + url, "#TheSignal #QuantumComputing"]);
     SignalShare.openPanel({ title: "The Quantum Explainers", line: "Quantum Explainers on The Signal: tap through real quantum machines part by part, starting with a superconducting quantum computer.", link: url, caption: caption, tags: "#TheSignal #QuantumComputing", image: null }, btn);

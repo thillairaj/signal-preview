@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cloud & DevOps Explainers · The Signal</title>
 <meta name="description" content="Cloud & DevOps Explainers on The Signal: tap through cloud systems part by part, starting with the journey of a web request.">
+<meta property="og:image" content="https://thillairaj.github.io/signal-preview/assets/og/explainers/hub-cloud-devops.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cloud & DevOps Explainers">
 <meta property="og:description" content="Interactive explainers on cloud and DevOps systems, part by part.">
@@ -429,6 +432,7 @@ tt.addEventListener('click', () => {
   btn.title = 'Share';
   btn.innerHTML = SignalShare.ICONS.share + '<span>Share</span>';
   btn.addEventListener('click', () => {
+    if (window.__expOpenMain) return window.__expOpenMain(btn);
     const url = SignalShare.BASE + '/explainers/' + location.pathname.split('/').pop();
     const caption = SignalShare.buildCaption(["The Cloud & DevOps Explainers", "Cloud & DevOps Explainers on The Signal: tap through cloud systems part by part, starting with the journey of a web request.", 'Explore it free, no sign-up:\n' + url, "#TheSignal #CloudComputing"]);
     SignalShare.openPanel({ title: "The Cloud & DevOps Explainers", line: "Cloud & DevOps Explainers on The Signal: tap through cloud systems part by part, starting with the journey of a web request.", link: url, caption: caption, tags: "#TheSignal #CloudComputing", image: null }, btn);
