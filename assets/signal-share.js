@@ -58,18 +58,34 @@ window.SignalShare = (function () {
       "#TheSignal #Podcast"]);
   }
   /* The SHORT version for X: title, one line, link, hashtags; the link
-     counts as 23 characters against the 280 limit. */
+     counts as 23 characters against the 280 limit. The line used is the
+     first full sentence; anything that still does not fit is cut at the
+     last whole word before the limit, never mid word. */
+  function firstSentence(s) {
+    var m = String(s || "").match(/^[\s\S]*?[.!?](?=\s|$)/);
+    return (m ? m[0] : String(s || "")).trim();
+  }
+  function cutWords(text, room) {
+    if (text.length <= room) return text;
+    var cut = text.slice(0, Math.max(0, room - 1));
+    var sp = cut.lastIndexOf(" ");
+    if (sp > 0) cut = cut.slice(0, sp);
+    return cut.trimEnd() + "\u2026";
+  }
   function shortText(spec) {
     if (spec.xText) return spec.xText;
     var tags = spec.tags || "";
-    var head = spec.title + (spec.line ? "\n\n" + spec.line : "");
     var tail = "\n\n" + spec.link + (tags ? "\n\n" + tags : "");
-    var counted = head.length + 2 + 23 + (tags ? 2 + tags.length : 0);
-    if (counted > 280) {
-      var room = 280 - (2 + 23 + (tags ? 2 + tags.length : 0));
-      head = head.slice(0, Math.max(0, room - 1)).trimEnd() + "\u2026";
+    var budget = 280 - (2 + 23 + (tags ? 2 + tags.length : 0));
+    var line = firstSentence(spec.line || "");
+    var head = spec.title + (line ? "\n\n" + line : "");
+    if (head.length <= budget) return head + tail;
+    if (spec.title.length > budget) return cutWords(spec.title, budget) + tail;
+    var room = budget - spec.title.length - 2;
+    if (line && room > 10) {
+      return spec.title + "\n\n" + cutWords(line, room) + tail;
     }
-    return head + tail;
+    return spec.title + tail;
   }
   /* The WhatsApp version: bold title, one line, link. */
   function whatsText(spec) {
@@ -99,6 +115,8 @@ window.SignalShare = (function () {
     ".ss-icobtn{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0 8px;background:#1e212b;border:1px solid #2c303c;border-radius:12px;color:#ece7db;cursor:pointer;font:inherit}",
     ".ss-icobtn:hover,.ss-icobtn:focus-visible{border-color:#d4af6a;outline:none}",
     ".ss-icobtn svg{width:22px;height:22px}",
+    ".ss-icobtn[data-ss='linkedin'] svg{color:#0A66C2}",
+    ".ss-icobtn[data-ss='whatsapp'] svg{color:#25D366}",
     ".ss-icobtn span{font-size:11px}",
     ".ss-opts{display:flex;align-items:center;gap:12px;flex-wrap:wrap}",
     ".ss-optgroup{display:flex;align-items:center;gap:7px}",

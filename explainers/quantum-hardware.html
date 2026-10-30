@@ -260,6 +260,13 @@ a.ts-chip:hover { border-color: var(--gold); }
 @media (max-width: 640px) { .ts-label { display: none; } }
 /* tstrip:style:end */
 </style>
+<style>
+/* explainer-layout:start */
+.tstrip-row{background:var(--bar);border-top:none;border-bottom:1px solid var(--bar-border);padding:2px 18px 12px;backdrop-filter:blur(6px)}
+@media (max-width:640px){.tstrip-row{padding:0 12px 10px}}
+@media (min-width:960px){:root{--barh:76px}.panel{top:calc(var(--barh) + 10px)}.art svg{max-height:calc(100vh - var(--barh) - 64px)}}
+/* explainer-layout:end */
+</style>
 </head>
 <body>
 
@@ -276,6 +283,7 @@ a.ts-chip:hover { border-color: var(--gold); }
     <button class="tab" role="tab" id="tab-chip" aria-selected="false" aria-controls="view-chip" data-view="chip">The chip</button>
   </div>
   <button class="journey-btn" id="journeyBtn" type="button" aria-pressed="false">Follow a signal</button>
+</div>
   <!-- tstrip:start -->
   <div class="tstrip-row">
     <span class="ts-label">QUANTUM EXPLAINERS</span>
@@ -284,7 +292,6 @@ a.ts-chip:hover { border-color: var(--gold); }
     <button class="ts-btn" id="tsNext" type="button" aria-label="Scroll topics forward">›</button>
   </div>
 <!-- tstrip:end -->
-</div>
 
 <main>
 
