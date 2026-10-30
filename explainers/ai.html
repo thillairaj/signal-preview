@@ -244,10 +244,13 @@
 .pname-row h2{margin-right:auto}
 body.flow-on .pname-row .ss-share-btn{display:none}
 @media (max-width:640px){
-  .topicbar{position:relative}
-  .main-share-btn{position:absolute;top:10px;right:12px;width:38px;height:38px;padding:0;border-radius:50%;justify-content:center;z-index:5}
+  .main-share-slot{order:1;margin-left:auto;display:flex;align-items:center}
+  .topicbar .tabs{order:2}
+  .topicbar .journey-btn{order:3}
+  .main-share-btn{width:38px;height:38px;padding:0;border-radius:50%;justify-content:center}
   .main-share-btn span{display:none}
   .main-share-btn svg{width:17px;height:17px}
+  header .kicker{padding-left:52px;padding-right:52px}
 }
 /* mainshare:style:end */
 </style>
