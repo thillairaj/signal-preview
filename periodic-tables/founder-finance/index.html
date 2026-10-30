@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Founder Finance Periodic Table — Financial Terms Every Startup Founder Should Know</title>
+<meta name="description" content="154 financial terms every startup founder should know, arranged as an interactive periodic table. Hover to explore, click any element for its meaning, a formula where one exists, and a founder takeaway.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Founder Finance Periodic Table">
+<meta property="og:description" content="154 financial terms every startup founder should know — revenue, burn, runway, valuation, SAFEs, dilution, ESOPs and exits — as an interactive periodic table.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/periodic-tables/founder-finance/">
+<style>
+  :root{--bg:#071527;--panel:#0b213f;--panel2:#0e2a52;--ink:#eef4ff;--muted:#9db4d4;--line:rgba(255,255,255,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#12325e 0%,var(--bg) 55%);color:var(--ink);min-height:100vh}
+  header{padding:34px 22px 10px;text-align:center;max-width:1200px;margin:0 auto}
+  .kicker{letter-spacing:.35em;font-size:11px;color:#7dd3fc;text-transform:uppercase;font-weight:700}
+  h1{font-size:clamp(28px,5vw,48px);line-height:1.08;margin:10px 0 10px;font-weight:800}
+  h1 span{color:#fbbf24}
+  .sub{color:var(--muted);max-width:820px;margin:0 auto;font-size:15.5px;line-height:1.55}
+  .principle{margin:18px auto 4px;max-width:880px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.55;color:#fde68a}
+  .toolbar{position:sticky;top:0;z-index:40;background:rgba(7,21,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 16px}
+  .toolbar-in{max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+  #search{flex:1 1 260px;max-width:420px;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;outline:none}
+  #search:focus{border-color:#38bdf8}
+  .count{color:var(--muted);font-size:13.5px}
+  .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer;font-size:13.5px;font-weight:600}
+  .btn:hover{border-color:#38bdf8}
+  #legend{max-width:1280px;margin:14px auto 0;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:12.5px;cursor:pointer;font-weight:600;transition:all .15s}
+  .chip .dot{width:11px;height:11px;border-radius:3px}
+  .chip:hover{transform:translateY(-1px);border-color:#fff}
+  .chip.active{outline:2px solid #fff;outline-offset:1px}
+  main{max-width:1280px;margin:0 auto;padding:20px 16px 30px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+  .tile{border:none;border-radius:10px;padding:8px 6px 7px;min-height:96px;color:#fff;cursor:pointer;text-align:left;position:relative;transition:transform .16s ease,filter .16s ease,box-shadow .16s ease,opacity .16s;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .tile .no{font-size:10.5px;font-weight:700;opacity:.85}
+  .tile .sym{font-size:24px;font-weight:800;line-height:1.05;margin:auto 0 2px;letter-spacing:.01em;word-break:break-word}
+  .tile .nm{font-size:10px;line-height:1.25;font-weight:600;opacity:.95}
+  .tile:hover,.tile:focus-visible{transform:scale(1.09) translateY(-4px);filter:brightness(1.28) saturate(1.25);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 0 2px #fff;z-index:5;outline:none}
+  .tile.selected{box-shadow:0 0 0 3px #fff,0 12px 28px rgba(0,0,0,.5);filter:brightness(1.2)}
+  .tile.dim{opacity:.13;filter:grayscale(.6)}
+  .tile.hidden{display:none}
+  #detail{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;position:sticky;top:132px;min-height:300px}
+  #detail .d-no{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  #detail .d-sym{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:74px;padding:0 10px;border-radius:14px;font-size:30px;font-weight:800;color:#fff;margin:12px 0}
+  #detail h2{font-size:24px;line-height:1.2;margin-bottom:6px}
+  #detail .d-cat{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+  #detail p{font-size:15px;line-height:1.65;color:#dbe7fa}
+  #detail .box{margin-top:14px;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55}
+  #detail .formula{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.4);color:#bae6fd}
+  #detail .lens{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35);color:#fde68a}
+  #detail .box b{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:5px;opacity:.85}
+  .hint{color:var(--muted);font-size:14.5px;line-height:1.6}
+  section.below{max-width:1280px;margin:0 auto;padding:6px 16px 26px}
+  section.below h3{font-size:22px;margin:18px 0 12px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h4{font-size:15px;margin-bottom:7px;color:#7dd3fc}
+  .card p,.card li{font-size:14px;line-height:1.6;color:#dbe7fa}
+  .card ul{padding-left:18px}
+  .example{background:linear-gradient(135deg,#0e2a52,#12325e);border:1px solid rgba(251,191,36,.4)}
+  .example h4{color:#fbbf24}
+  .big{font-size:19px;font-weight:800;color:#fff;margin:6px 0}
+  footer{max-width:1280px;margin:0 auto;padding:10px 16px 38px;color:var(--muted);font-size:12.5px;line-height:1.6;text-align:center}
+  #overlay{display:none}
+  /* placeholder, zoom view styles are at the end of this stylesheet */
+  /* Theme toggle + sticky legend + back button (added Oct 21) */
+  header{position:relative}
+  .theme-toggle{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#fbbf24;font-size:19px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .theme-toggle:hover{transform:scale(1.08)}
+  #legend{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:10px 2px 3px;scrollbar-width:thin}
+  .chip{white-space:nowrap;flex:0 0 auto}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:13.5px;font-weight:700;cursor:pointer;margin-bottom:14px}
+  .backbtn:hover{border-color:#38bdf8}
+  #detail{top:224px}
+  /* Light theme */
+  html[data-theme="light"] body{background:radial-gradient(1200px 600px at 20% -10%,#e8eefc 0%,#FAF9F6 55%);color:#17293f}
+  html[data-theme="light"] h1{color:#0b213f}
+  html[data-theme="light"] .sub{color:#4d6482}
+  html[data-theme="light"] .principle{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .toolbar{background:rgba(250,249,246,.95);border-color:#ddd5c0}
+  html[data-theme="light"] #search{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .btn{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip{background:#fff;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .chip.active{outline-color:#0b213f}
+  html[data-theme="light"] .count{color:#5a6f88}
+  html[data-theme="light"] #detail{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] #detail p{color:#33475e}
+  html[data-theme="light"] #detail .d-no{color:#5a6f88}
+  html[data-theme="light"] #detail h2{color:#0b213f}
+  html[data-theme="light"] #detail .formula{background:#e8f4fd;border-color:#9fd0f5;color:#124d75}
+  html[data-theme="light"] #detail .lens{background:#fff8e1;border-color:#e5c15c;color:#6b5510}
+  html[data-theme="light"] .backbtn{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  html[data-theme="light"] .hint{color:#5a6f88}
+  html[data-theme="light"] .card{background:#fff;border-color:#e0d9c6}
+  html[data-theme="light"] .card p,html[data-theme="light"] .card li{color:#33475e}
+  html[data-theme="light"] section.below h3{color:#0b213f}
+  html[data-theme="light"] .example{background:linear-gradient(135deg,#fff8e1,#fdf3d0);border-color:#e5c15c}
+  html[data-theme="light"] .example .big{color:#17293f}
+  html[data-theme="light"] footer{color:#5a6f88}
+  html[data-theme="light"] .theme-toggle{background:#fff;color:#d97706;border-color:#cfd8e3}
+  @media(max-width:900px){
+    main{grid-template-columns:1fr}
+    #detail{position:fixed;inset:auto 0 0 0;z-index:60;border-radius:18px 18px 0 0;max-height:72vh;overflow:auto;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -12px 40px rgba(0,0,0,.6)}
+    #detail.open{transform:translateY(0)}
+    #overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .25s}
+    #overlay.open{opacity:1;pointer-events:auto}
+    #grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+    .tile{min-height:86px}.tile .sym{font-size:20px}
+  }
+  /* Zoom reading view — same pattern as the Quantum / AI Deck cards (Oct 21) */
+  main{grid-template-columns:1fr}
+  #overlay{display:block;position:fixed;inset:0;background:rgba(3,10,20,.62);z-index:55;opacity:0;pointer-events:none;transition:opacity .22s ease}
+  #overlay.open{opacity:1;pointer-events:auto}
+  #detail{position:fixed;top:50%;left:50%;right:auto;bottom:auto;width:min(560px,92vw);max-width:92vw;max-height:86vh;overflow:auto;z-index:60;border-radius:18px;padding:26px;opacity:0;pointer-events:none;transform:translate(-50%,-47%) scale(.88);transition:transform .24s ease,opacity .24s ease;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  #detail.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .zoom-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+  .zoom-close:hover{border-color:#38bdf8;transform:scale(1.08)}
+  html[data-theme="light"] .zoom-close{background:#eef3fa;color:#17293f;border-color:#cfd8e3}
+  @media(max-width:900px){#detail{padding:22px 18px}}
+
+/* Signal type alignment — Fraunces display, Inter body, IBM Plex Mono labels (QA fix Oct 21 2026) */
+body{font-family:"Inter",-apple-system,sans-serif}
+h1,h2,h3{font-family:"Fraunces",serif}
+.kicker{font-family:"IBM Plex Mono",monospace}
+.sym,.d-sym{font-family:"Fraunces",serif}
+
+  /* Rail arrows for the category legend (Thillai, Oct 21 2026) — same pattern as the decks and the main site: no native scrollbar, prev/next buttons, greyed at the ends, hidden when every chip fits. */
+  .legend-wrap{position:relative;max-width:1280px;margin:14px auto 0}
+  .legend-wrap #legend{max-width:none;margin:0;scrollbar-width:none;padding-left:6px;padding-right:6px}
+  .legend-wrap #legend::-webkit-scrollbar{display:none}
+  .legend-wrap .rail-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:36px;height:36px;border-radius:50%;border:1px solid rgba(128,128,128,.5);background:rgba(24,32,48,.72);color:#F5EFE0;font-size:21px;line-height:1;padding:0 0 2px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+  .legend-wrap .rail-btn:hover:not(:disabled){background:rgba(24,32,48,.92)}
+  .legend-wrap .rail-btn.prev{left:-6px}
+  .legend-wrap .rail-btn.next{right:-6px}
+  .legend-wrap .rail-btn:disabled{opacity:.25;cursor:default}
+  .legend-wrap.no-overflow .rail-btn{display:none}
+
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + Previous/Next live inside the sticky toolbar. */
+  .navrow{display:flex;gap:10px;align-items:stretch;max-width:1280px;margin:0 auto 8px;flex-wrap:wrap}
+  .navside{display:flex;gap:10px;margin-left:auto;flex-wrap:wrap}
+  .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:7px 13px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);color:inherit;text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .navcard:hover{border-color:#38bdf8;transform:translateY(-1px)}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
+  .navcard.next{text-align:right}
+  @media(max-width:640px){.toolbar{position:static}.nc-title{max-width:150px}.navside{margin-left:0}}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+/* themefix:start */
+input,button,select,textarea{font:inherit}
+html[data-theme="light"]{--panel:#ffffff;--panel2:#eef3fa;--ink:#17293f;--muted:#4d6482;--line:rgba(23,41,63,.16)}
+html[data-theme="light"] .navcard{background:#ffffff;color:#17293f;border-color:rgba(23,41,63,.16)}
+html[data-theme="light"] .kicker{color:#046fa2}
+html[data-theme="light"] h1 span{color:#886302}
+html[data-theme="light"] .card h4{color:#0479b1}
+html[data-theme="light"] .example h4{color:#906903}
+#detail .d-cat[data-cat="crowd"]{color:#ca8a04}
+html[data-theme="light"] #detail .d-cat[data-cat="crowd"]{color:#9a6903}
+#detail .d-cat[data-cat="debt"]{color:#f25b0c}
+html[data-theme="light"] #detail .d-cat[data-cat="debt"]{color:#c3490a}
+#detail .d-cat[data-cat="employee"]{color:#65a30d}
+html[data-theme="light"] #detail .d-cat[data-cat="employee"]{color:#4f800a}
+#detail .d-cat[data-cat="equity"]{color:#e45b98}
+html[data-theme="light"] #detail .d-cat[data-cat="equity"]{color:#d72473}
+#detail .d-cat[data-cat="exit"]{color:#af69f0}
+html[data-theme="light"] #detail .d-cat[data-cat="exit"]{color:#9333ea}
+#detail .d-cat[data-cat="found"]{color:#0e9e91}
+html[data-theme="light"] #detail .d-cat[data-cat="found"]{color:#0b7f75}
+#detail .d-cat[data-cat="fund"]{color:#d97706}
+html[data-theme="light"] #detail .d-cat[data-cat="fund"]{color:#af6005}
+#detail .d-cat[data-cat="instr"]{color:#a172f2}
+html[data-theme="light"] #detail .d-cat[data-cat="instr"]{color:#7c3aed}
+#detail .d-cat[data-cat="investor"]{color:#d752e3}
+html[data-theme="light"] #detail .d-cat[data-cat="investor"]{color:#a21caf}
+#detail .d-cat[data-cat="mech"]{color:#0899bb}
+html[data-theme="light"] #detail .d-cat[data-cat="mech"]{color:#077d99}
+#detail .d-cat[data-cat="recur"]{color:#0296e2}
+html[data-theme="light"] #detail .d-cat[data-cat="recur"]{color:#0278b6}
+#detail .d-cat[data-cat="rights"]{color:#e55f5f}
+html[data-theme="light"] #detail .d-cat[data-cat="rights"]{color:#dc2626}
+#detail .d-cat[data-cat="stmt"]{color:#7c8ba1}
+html[data-theme="light"] #detail .d-cat[data-cat="stmt"]{color:#64748b}
+#detail .d-cat[data-cat="unit"]{color:#1ba44e}
+html[data-theme="light"] #detail .d-cat[data-cat="unit"]{color:#15803d}
+#detail .d-cat[data-cat="valuation"]{color:#857fed}
+html[data-theme="light"] #detail .d-cat[data-cat="valuation"]{color:#4f46e5}
+/* themefix:end */
+</style>
+</head>
+<body>
+<header>
+  
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  <div class="kicker">The Founder Finance Periodic Table</div>
+  <h1>Financial Terms Every <span>Startup Founder</span> Should Know</h1>
+  <p class="sub">154 essential terms from the founder's guide, arranged like the periodic table. Each colour is a financial world. Hover to explore, click any element to learn what it means, why it matters, and how it is calculated, where a calculation exists.</p>
+  <div class="principle"><strong>Core principle:</strong> Profit is not cash. Ownership is not valuation. Fundraising is not free money. A founder does not need to become an accountant — but must understand how money enters the company, where it goes, what the company is worth, and how every financing decision affects ownership and risk.</div>
+</header>
+
+<div class="toolbar">
+  <div class="navrow"><a class="navcard back" href="../../#learn-tables-founders"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard next" href="../startup-growth/"><span class="nc-dir">Next →</span><span class="nc-title">Startup Growth for Founders</span></a></span></div>
+  <div class="toolbar-in">
+    <input id="search" type="search" placeholder="Search a term — try burn, SAFE, churn, valuation…" aria-label="Search terms">
+    <span class="count" id="count"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
+  </div>
+  <div class="legend-wrap"><button class="rail-btn prev" type="button" aria-label="Scroll categories back">‹</button><div id="legend" aria-label="Category filter"></div><button class="rail-btn next" type="button" aria-label="Scroll categories forward">›</button></div>
+</div>
+
+<main>
+  <div id="grid" role="list"></div>
+  <aside id="detail" aria-live="polite">
+    <div class="d-no">Element detail</div>
+    <p class="hint" style="margin-top:12px">Click any element in the table to see its full explanation here.<br><br>Start with the essentials most founders meet first: <strong>Rv</strong> Revenue, <strong>BR</strong> Burn Rate, <strong>Rw</strong> Runway, <strong>CAC</strong>, <strong>LTV</strong>, and <strong>SAFE</strong>.</p>
+  </aside>
+</main>
+<div id="overlay"></div>
+
+<section class="below">
+  <h3>Key founder formulas</h3>
+  <div class="cards">
+    <div class="card"><h4>Gross Profit</h4><p>Revenue − COGS</p></div>
+    <div class="card"><h4>Gross Margin</h4><p>(Gross Profit ÷ Revenue) × 100</p></div>
+    <div class="card"><h4>Runway</h4><p>Available Cash ÷ Monthly Net Cash Burn <em>(simplified estimate)</em></p></div>
+    <div class="card"><h4>LTV : CAC</h4><p>Customer Lifetime Value ÷ Customer Acquisition Cost</p></div>
+    <div class="card"><h4>Post-money Valuation</h4><p>Pre-money Valuation + New Investment</p></div>
+    <div class="card"><h4>Investor Ownership</h4><p>New Investment ÷ Post-money Valuation <em>(simplified primary-equity example)</em></p></div>
+  </div>
+
+  <h3>A simple fundraising example</h3>
+  <div class="cards">
+    <div class="card example"><h4>Worked example from the guide</h4>
+      <p class="big">₹20 crore pre-money + ₹5 crore raised = ₹25 crore post-money</p>
+      <p>The new investor receives <strong>20%</strong> of the post-money company. Existing shareholders collectively retain about <strong>80%</strong> — before option-pool changes, convertible instruments, or special terms.</p>
+      <p style="margin-top:8px">Real documents are more complex: liquidation preferences, anti-dilution provisions and multiple share classes can materially change the economics.</p>
+    </div>
+    <div class="card"><h4>The founder journey</h4>
+      <p>Start the company → Generate revenue → Understand unit economics → Manage cash → Raise capital → Understand valuation → Manage dilution and ownership → Scale → Exit or create liquidity.</p>
+    </div>
+    <div class="card"><h4>Crowdfunding reminder</h4>
+      <p>Reward, donation, equity and debt crowdfunding have different legal availability, investor protections, disclosure rules and tax treatment by jurisdiction. Verify local regulations before launching a campaign.</p>
+    </div>
+  </div>
+
+  <h3>Founder checklist — before accepting capital</h3>
+  <div class="cards">
+    <div class="card"><ul>
+      <li>Why do we need the money, and how much do we actually need?</li>
+      <li>What milestone will this capital help us reach?</li>
+      <li>How many months of runway will it provide?</li>
+      <li>What valuation is being proposed, and how much ownership will be diluted?</li>
+      <li>What happens to the ESOP pool?</li>
+      <li>Are there liquidation preferences, anti-dilution or pro-rata rights?</li>
+    </ul></div>
+    <div class="card"><ul>
+      <li>What board or information rights are being granted?</li>
+      <li>Is the capital debt, equity, SAFE, convertible note, grant, or another instrument?</li>
+      <li>What are the repayment obligations, if any?</li>
+      <li>What happens in a future funding round?</li>
+      <li>What happens if the company is sold?</li>
+    </ul></div>
+  </div>
+</section>
+
+
+<footer>
+  Built from “Financial Terms Every Startup Founder Should Know” — a practical founder's guide to startup money, financial health, valuation, fundraising, ownership, crowdfunding, and exits.<br>
+  Educational only — not legal, tax, accounting, valuation, or investment advice. Review specific financing structures with qualified professionals in your jurisdiction.
+<div style="margin-top:12px;font-size:13px">Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></div>
+</footer>
+
+<script>
+const CATS = {
+  found:{name:"Financial Foundations",color:"#0b7f75"},
+  unit:{name:"Startup Unit Economics", color:"#15803d"},
+  recur:{name:"Recurring Revenue",color:"#0278b6"},
+  stmt:{name:"Financial Statements", color:"#64748b"},
+  fund:{name:"Funding the Startup",color:"#af6005"},
+  debt:{name:"Debt Financing",color:"#c3490a"},
+  equity:{name:"Equity & Fundraising Stages",color:"#d72473"},
+  investor:{name:"Investors", color:"#a21caf"},
+  valuation:{name:"Valuation", color:"#4f46e5"},
+  mech:{name:"Fundraising Mechanics & Dilution",color:"#077d99"},
+  instr:{name:"Investment Instruments", color:"#7c3aed"},
+  rights:{name:"Investor Rights & Negotiation", color:"#dc2626"},
+  employee:{name:"Employee Ownership",color:"#4f800a"},
+  crowd:{name:"Crowdfunding",color:"#9a6903"},
+  exit:{name:"Exit & Founder Liquidity", color:"#9333ea"}
+};
+const TERMS = [
+/* Foundations */
+{s:"Rv",n:"Revenue",c:"found",d:"Money earned from selling products or services. The top line every other metric builds on.",l:"Track total and net revenue, and its growth rate, every month."},
+{s:"GRv",n:"Gross Revenue",c:"found",d:"Total sales before deductions such as returns, discounts, or allowances.",f:"Gross Revenue = Units Sold x Price (before deductions)",l:"Gross revenue flatters. Investors will always ask for the net figure after returns and discounts, so track both from day one."},
+{s:"NRv",n:"Net Revenue",c:"found",d:"Revenue after applicable deductions such as returns and discounts. The honest revenue figure.",f:"Net Revenue = Gross Revenue - Returns - Discounts - Allowances",l:"Net revenue is the number that belongs in your pitch deck and your P&L. Quoting gross revenue in a raise is an easy credibility loss in due diligence."},
+{s:"CG",n:"COGS — Cost of Goods Sold",c:"found",d:"Cost of Goods Sold. The direct cost of producing or delivering the product or service.",f:"Gross Profit = Revenue − COGS",l:"COGS decides your gross margin, and gross margin decides what kind of business you can afford to run. Misclassifying delivery costs into OpEx makes margins look better than they are."},
+{s:"GP",n:"Gross Profit",c:"found",d:"Revenue minus COGS. What is left after the direct cost of delivery.",f:"Gross Profit = Revenue − COGS",l:"Gross profit is the pool of money available to run the company. If gross profit does not cover OpEx, scaling makes the problem bigger, not smaller."},
+{s:"GM",n:"Gross Margin",c:"found",d:"Gross profit expressed as a percentage of revenue. Shows how efficiently you deliver.",f:"Gross Margin = (Gross Profit ÷ Revenue) × 100",l:"A falling margin while revenue grows usually means delivery costs are scaling faster than pricing."},
+{s:"Ox",n:"Operating Expenses (OpEx)",c:"found",d:"Costs of running the company, such as salaries, rent, software, sales, marketing, and administration.",l:"OpEx is where burn lives. Review it monthly line by line; small recurring tools and subscriptions quietly compound into real runway loss."},
+{s:"EB",n:"EBITDA — Earnings Before Interest, Taxes, Depreciation and Amortisation",t:"EBITDA",c:"found",d:"Earnings Before Interest, Taxes, Depreciation, and Amortisation. Commonly used to assess operating performance before those items.",l:"Investors use EBITDA to compare operating performance across companies with different debt and tax structures."},
+{s:"EI",n:"EBIT — Earnings Before Interest and Taxes",t:"EBIT",c:"found",d:"Earnings Before Interest and Taxes. Operating profit before financing and tax effects.",f:"EBIT = EBITDA - Depreciation - Amortisation",l:"EBIT strips out how you financed the company and where you are taxed, so it is the cleaner number for comparing operating performance."},
+{s:"NP",n:"Net Profit",c:"found",d:"Profit remaining after the company's applicable expenses, interest, taxes, and other costs.",f:"Net Profit = Revenue - All Expenses - Interest - Taxes",l:"Net profit is the accounting bottom line, but it is not cash. A profitable month can still leave the bank account empty."},
+{s:"NL",n:"Net Loss",c:"found",d:"The amount by which expenses exceed revenue during a period.",l:"A net loss is normal for early startups, but it must be a planned loss buying growth or product, not an unexplained leak."},
+{s:"PM",n:"Profit Margin",c:"found",d:"Profit expressed as a percentage of revenue.",f:"Profit Margin = (Profit ÷ Revenue) × 100",l:"Margin tells you the quality of revenue. Two companies with identical revenue and different margins are completely different businesses."},
+{s:"Ca",n:"Cash",c:"found",d:"Money currently available to the company. The resource that actually keeps the company alive.",l:"Profit is not cash. A profitable company can still run out of money on timing."},
+{s:"CF",n:"Cash Flow",c:"found",d:"Movement of cash into and out of the company over a period.",f:"Net Cash Flow = Total Cash In - Total Cash Out",l:"Cash flow is survival. When runway is under a year, watch it weekly, not monthly."},
+{s:"WC",n:"Working Capital",c:"found",d:"Short-term operating liquidity used to fund day-to-day business activities.",f:"Working Capital = Current Assets - Current Liabilities",l:"Working capital is the cash trapped between paying suppliers and getting paid. Growing fast can consume working capital even while the P&L looks healthy."},
+{s:"AR",n:"Accounts Receivable",c:"found",d:"Money customers owe the company. Revenue booked, but cash not yet received.",l:"Receivables are promises, not money. The older they get, the less likely they are to be collected in full. Chase them early."},
+{s:"AP",n:"Accounts Payable",c:"found",d:"Money the company owes suppliers or other parties.",l:"Payables are free short-term financing only if managed honestly. Stretching suppliers too far damages the relationships your delivery depends on."},
+{s:"BR",n:"Burn Rate",c:"found",d:"The rate at which a startup consumes cash, usually measured monthly.",l:"Burn is the denominator of runway. Know your gross burn and net burn separately."},
+{s:"Rw",n:"Runway",c:"found",d:"How long the company can continue operating before its available cash is exhausted, assuming the current cash-burn pattern.",f:"Runway = Available Cash ÷ Monthly Net Cash Burn",l:"Most founders start fundraising when runway drops to about 6 months, because raising takes time."},
+{s:"BE",n:"Break-even Point",c:"found",d:"The point at which the business generates enough contribution to cover its relevant costs.",f:"Break-even Units = Fixed Costs / Contribution per Unit",l:"Break-even is the point where growth stops needing outside cash to survive. Know your break-even revenue number and how far you are from it."},
+/* Unit economics */
+{s:"UE",n:"Unit Economics",c:"unit",d:"The economics of acquiring and serving one customer or one unit of a product. The test of whether the business model works at small scale before it scales.",l:"If unit economics do not work for one customer, they rarely work for a thousand. Fix the unit before buying scale."},
+{s:"CAC",n:"Customer Acquisition Cost",c:"unit",d:"The average cost required to acquire a new customer, including sales and marketing spend.",f:"CAC = Total Acquisition Spend ÷ New Customers Acquired",l:"CAC only means something next to LTV and payback period."},
+{s:"LTV",n:"Customer Lifetime Value",c:"unit",d:"The expected economic value generated by a customer over the whole relationship.",f:"LTV is approximately (Monthly ARPU x Gross Margin %) / Monthly Churn Rate, a common simplified SaaS form",l:"LTV is an estimate, not a fact. Base it on real retention and margin data, and revisit it as cohorts mature."},
+{s:"LC",n:"LTV : CAC Ratio",c:"unit",d:"The relationship between customer lifetime value and customer acquisition cost.",f:"LTV : CAC = Customer Lifetime Value ÷ Customer Acquisition Cost",l:"A ratio below 1 means you lose money on every customer. Around 3:1 is a common healthy benchmark in SaaS."},
+{s:"AU",n:"ARPU — Average Revenue Per User",t:"Average Revenue Per User",c:"unit",d:"Average Revenue Per User over a defined period.",f:"ARPU = Total Revenue ÷ Number of Users",l:"ARPU rising over time signals pricing power and expansion. ARPU falling while users grow can mean you are buying low-value customers."},
+{s:"AO",n:"AOV — Average Order Value",c:"unit",d:"Average Order Value. The average amount spent per order.",f:"AOV = Total Revenue ÷ Number of Orders",l:"For commerce businesses, raising AOV is often cheaper growth than buying more traffic. Bundles and free-shipping thresholds move it fastest."},
+{s:"CM",n:"Contribution Margin",c:"unit",d:"Revenue remaining after variable costs associated with delivering the product or service.",f:"Contribution Margin = Revenue - Variable Costs",l:"Contribution margin shows whether each additional sale actually helps cover fixed costs. Negative contribution means every sale deepens the loss."},
+{s:"PB",n:"Payback Period",c:"unit",d:"The time required to recover customer acquisition cost from the customer's contribution.",l:"Shorter payback means growth funds itself faster and burns less cash.",f:"Payback (months) = CAC / (Monthly Revenue per Customer x Gross Margin %)"},
+{s:"Ch",n:"Churn",c:"unit",d:"The rate at which customers or recurring revenue are lost in a period.",l:"Churn compounds against growth. A leaky bucket needs ever more new customers just to stand still.",f:"Churn Rate = Customers Lost in Period / Customers at Start of Period x 100"},
+{s:"Rt",n:"Retention Rate",c:"unit",d:"The percentage of customers or revenue retained over a defined period.",f:"Retention = 100% − Churn (for the same measure)",l:"Retention is the cheapest growth engine. A small improvement in retention compounds across every future cohort."},
+{s:"NRR",n:"Net Revenue Retention",c:"unit",d:"How recurring revenue from an existing customer cohort changes after expansion, contraction, and churn.",l:"NRR above 100% means existing customers alone grow revenue even with zero new sales.",f:"NRR = (Starting MRR + Expansion - Contraction - Churned MRR) / Starting MRR x 100"},
+{s:"GRR",n:"Gross Revenue Retention",c:"unit",d:"Recurring revenue retained from existing customers before expansion revenue is included. Capped at 100%.",f:"GRR = (Starting MRR - Contraction - Churned MRR) / Starting MRR x 100",l:"GRR shows the strength of the core product without expansion hiding problems. Investors watch GRR and NRR together."},
+{s:"ExR",n:"Expansion Revenue",c:"unit",d:"Additional revenue generated from existing customers, such as upgrades, additional seats, or increased usage.",l:"Expansion revenue means existing customers are your best sales channel. Land-and-expand models are built on this line."},
+/* Recurring revenue */
+{s:"MRR",n:"Monthly Recurring Revenue",c:"recur",d:"Recurring revenue expected in a normal month, excluding non-recurring items.",f:"MRR is approximately Active Paying Customers x Average Monthly Recurring Billing per Customer",l:"MRR is the heartbeat of a subscription business. Report it the same way every month; changing the definition breaks trust in the trend."},
+{s:"ARR",n:"Annual Recurring Revenue",c:"recur",d:"A common annualised view of recurring revenue.",f:"ARR = MRR × 12",l:"ARR is how recurring-revenue companies are usually valued and compared. Only include genuinely recurring revenue in it."},
+{s:"NM",n:"New MRR",c:"recur",d:"Recurring revenue added from newly acquired customers.",l:"New MRR shows sales engine output. Track it separately from expansion so you know whether growth comes from new logos or existing accounts."},
+{s:"EM",n:"Expansion MRR",c:"recur",d:"Additional recurring revenue generated from existing customers.",l:"Expansion MRR is high-quality growth: no acquisition cost, from customers who already trust the product."},
+{s:"CoM",n:"Contraction MRR",c:"recur",d:"Reduction in recurring revenue from existing customers that remain customers, such as downgrades or fewer seats.",l:"Contraction is an early warning. Customers downgrading usually signal budget pressure or weakening perceived value before they churn."},
+{s:"ChM",n:"Churned MRR",c:"recur",d:"Recurring revenue lost because customers cancel.",l:"Churned MRR is revenue you must replace just to stay flat. Watch which segment it comes from, not just the total."},
+{s:"MG",n:"MRR Growth Rate",c:"recur",d:"The rate at which MRR increases or decreases over a defined period.",f:"Net New MRR = New + Expansion − Contraction − Churned MRR",l:"Decompose MRR growth into new, expansion, contraction and churned. The mix tells you whether growth is healthy or bought."},
+{s:"AG",n:"ARR Growth Rate",c:"recur",d:"The rate at which ARR increases or decreases over a defined period.",l:"ARR growth rate is the headline growth metric for SaaS raises. Its quality depends on the retention underneath it."},
+{s:"Bk",n:"Bookings",c:"recur",d:"Contracted sales value, which may differ from accounting revenue recognised during the period.",l:"Bookings are promises. Revenue is what accounting recognises as it is delivered."},
+{s:"ACV",n:"Annual Contract Value",c:"recur",d:"The annualised value of a customer contract, according to the company's definition.",f:"ACV = TCV / Contract Term in Years",l:"ACV shapes your sales model. Low ACV needs self-serve or fast sales cycles; high ACV can support a field sales team."},
+{s:"TCV",n:"Total Contract Value",c:"recur",d:"The total value of a contract over its full contractual term.",f:"TCV = Recurring Fees over the Full Term + One-time Fees",l:"TCV looks impressive in announcements but cash arrives over the term. Never plan spending against TCV as if it were already collected."},
+{s:"DR",n:"Deferred Revenue",c:"recur",d:"Cash received before the related revenue is recognised under the applicable accounting rules, such as annual plans paid upfront.",l:"Deferred revenue is cash in hand that you still owe work for. It helps cash flow, but on the balance sheet it is a liability, not earned revenue."},
+/* Financial statements */
+{s:"IS",n:"Income Statement / P&L",c:"stmt",d:"Shows revenue, costs, expenses, and the resulting profit or loss over a period.",l:"The P&L answers: did the business model make money this period? Read it monthly with your accountant, not only at year end."},
+{s:"BS",n:"Balance Sheet",c:"stmt",d:"Shows the company's financial position at a single point in time: what it owns, what it owes, and the residual ownership.",f:"Assets = Liabilities + Equity",l:"The balance sheet answers: what do we own, what do we owe, and what is left? Investors look here for hidden debts and obligations."},
+{s:"As",n:"Assets",c:"stmt",d:"Resources owned or controlled by the company that have economic value.",l:"Assets are what the company can use or sell. For most startups the real asset, the product and the team, barely appears here."},
+{s:"Lb",n:"Liabilities",c:"stmt",d:"Amounts the company owes or obligations it must settle.",l:"Every liability is a future cash claim. Know your statutory dues, loans and payables before an investor's diligence finds them."},
+{s:"Eq",n:"Equity (on Balance Sheet)",c:"stmt",d:"The residual ownership interest in the company after liabilities are considered.",f:"Equity = Assets − Liabilities",l:"This equity figure is accounting book value, not what your company would sell for. Do not confuse the two in valuation talks."},
+{s:"SC",n:"Share Capital",c:"stmt",d:"Capital represented by shares issued by the company.",l:"Share capital is the formal, legal face of ownership. It changes only through proper filings, which is why cap table hygiene matters."},
+{s:"RE",n:"Retained Earnings",c:"stmt",d:"Accumulated profits or losses retained in the business, subject to the applicable accounting structure.",l:"Retained earnings accumulate your history. Persistently negative retained earnings tell the story of cumulative losses at a glance."},
+{s:"CFS",n:"Cash Flow Statement",c:"stmt",d:"Shows cash generated and used by operating, investing, and financing activities.",l:"Of the three statements, this one is hardest to dress up. It shows whether operations actually generate cash."},
+{s:"OCF",n:"Operating Cash Flow",c:"stmt",d:"Cash generated or consumed by the company's core operating activities.",l:"Positive operating cash flow means the core business funds itself. Until then, growth is financed by someone else's money."},
+{s:"ICF",n:"Investing Cash Flow",c:"stmt",d:"Cash related to investments such as equipment, acquisitions, or financial investments.",l:"Investing cash flow shows where you are placing long bets: equipment, product assets, or acquisitions."},
+{s:"FCF",n:"Financing Cash Flow",c:"stmt",d:"Cash related to equity, debt, dividends, and other financing activities.",l:"Financing cash flow shows how dependent the company was on outside money in the period: equity raised, debt taken, or repaid."},
+/* Funding the startup */
+{s:"Bt",n:"Bootstrapping",c:"fund",d:"Building and financing a startup primarily using founder funds and/or revenue generated by the business. No outside investors, no dilution.",l:"Bootstrapping keeps 100% ownership and forces discipline, but growth is limited to what revenue can fund."},
+{s:"FC",n:"Founder Capital",c:"fund",d:"Money personally invested into the company by its founders.",l:"Founder capital is emotionally the most expensive money and financially the cheapest. Put it in formally, as equity or a documented loan."},
+{s:"SE",n:"Sweat Equity",c:"fund",d:"Ownership granted in recognition of work, expertise, or contribution rather than a direct cash investment.",l:"Sweat equity must be on paper, with vesting. Handshake equity promises are the most common source of founder disputes later."},
+{s:"Gr",n:"Grant",c:"fund",d:"Funding provided by a government, institution, university, foundation, or other organisation for qualifying purposes. Usually non-dilutive.",l:"Grants are free money with conditions. Budget the compliance and reporting effort, and never spend before the sanction is formal."},
+{s:"SG",n:"Startup Grant",c:"fund",d:"A grant targeted at eligible startups, often supporting innovation, research, technology, social impact, or specific sectors.",l:"Startup grants, such as DPIIT-linked or state schemes in India, often need recognition and documentation in place before you apply."},
+{s:"CuF",n:"Customer Financing",c:"fund",d:"Using customer cash flows, such as pre-orders, deposits, advance payments, or annual prepayments, to help finance operations.",l:"Customer financing is the healthiest funding there is: customers funding their own delivery. Annual prepay discounts trade margin for cash; price that trade knowingly."},
+{s:"ND",n:"Non-dilutive Funding",c:"fund",d:"Funding that generally does not require the founder to give an investor ownership in the company. Grants and most debt fall here.",l:"Non-dilutive funding protects ownership but is not free: debt has repayments and grants have conditions. Compare total cost, not just dilution."},
+/* Debt */
+{s:"DF",n:"Debt Financing",c:"debt",d:"Raising capital by borrowing money that normally must be repaid. No ownership given, but repayment is owed regardless of how the business performs.",l:"Debt suits businesses with predictable cash flows to service it. Borrowing against uncertain future revenue is how founders end up signing personal guarantees."},
+{s:"Ln",n:"Loan",c:"debt",d:"Borrowed money that must be repaid according to agreed terms.",l:"Read a loan agreement for the total cost and the default clauses, not just the interest rate headline."},
+{s:"Pr",n:"Principal",c:"debt",d:"The original amount borrowed, before interest.",l:"Interest is charged on the outstanding principal. Early repayment only helps if the agreement allows it without heavy penalties."},
+{s:"In",n:"Interest",c:"debt",d:"The cost of borrowing money.",f:"Interest = Principal x Interest Rate x Time",l:"Interest is rent on money. Compare offers on total interest paid over the tenure, not only the monthly instalment."},
+{s:"IR",n:"Interest Rate",c:"debt",d:"The rate used to calculate interest on borrowed capital.",l:"A flat rate is not the same as a reducing-balance rate. Flat-rate loans cost far more than they appear."},
+{s:"Tn",n:"Tenure",c:"debt",d:"The duration of a loan or financing arrangement.",l:"Longer tenure lowers the instalment but raises total interest. Match tenure to the life of what the loan is buying."},
+{s:"RS",n:"Repayment Schedule",c:"debt",d:"The agreed schedule for repaying principal and interest.",l:"Map the repayment schedule against your cash calendar. Instalments landing before your receivables arrive create a cash crunch."},
+{s:"Cl",n:"Collateral",c:"debt",d:"An asset pledged to secure a loan. If the loan is not repaid, the lender can claim it.",l:"Pledging collateral puts a specific asset at risk, and a personal guarantee puts you at risk. Know exactly what you have signed before you sign."},
+{s:"VD",n:"Venture Debt",c:"debt",d:"Debt financing designed for venture-backed or high-growth companies, often with terms different from conventional business loans.",l:"Venture debt usually follows an equity round and extends runway to the next milestone. It still has covenants and repayment from day one."},
+{s:"WCL",n:"Working Capital Loan",c:"debt",d:"Debt used to fund short-term operational requirements, such as payroll or inventory while awaiting customer payments.",l:"A working capital loan bridges timing gaps; it does not fix a loss-making model. If the gap never closes, the loan becomes permanent debt."},
+{s:"CD",n:"Convertible Debt",c:"debt",d:"A debt instrument that can convert into equity under specified conditions. See also Convertible Note.",l:"Convertible debt delays the valuation conversation; it does not cancel it. The cap and discount decide who benefits from the delay."},
+/* Equity & stages */
+{s:"EF",n:"Equity Financing",c:"equity",d:"Raising capital by selling an ownership interest in the company. No repayment, but permanent dilution and investor rights.",l:"Equity is permanent capital with permanent partners. Choose investors as carefully as co-founders; you cannot easily undo a cap table."},
+{s:"Eo",n:"Equity (Ownership)",c:"equity",d:"Ownership in a company, represented by shares.",l:"Your equity percentage decides your share of every future outcome. Protect it with the same care as the product."},
+{s:"Sh",n:"Share",c:"equity",d:"A unit representing ownership in a company.",l:"Every share issued is a small piece of the company's future sold or promised. Issue deliberately, with board approvals and filings in order."},
+{s:"SH",n:"Shareholder",c:"equity",d:"A person or entity that owns shares in the company.",l:"Shareholders have legal rights, including information and voting on key matters. Treat even small shareholders with proper process."},
+{s:"CS",n:"Common Shares",c:"equity",d:"Ordinary ownership shares with standard shareholder rights. Typically what founders and employees hold.",l:"Common shareholders are paid last in an exit, after preferences. That is the trade for holding the ordinary upside."},
+{s:"PS",n:"Preferred Shares",c:"equity",d:"Shares carrying special rights or preferences, often issued to investors, such as liquidation preference.",l:"Preferred shares are why headline valuation is not the whole deal. The preferences attached can redirect exit proceeds significantly."},
+{s:"Pre",n:"Pre-seed",c:"equity",d:"Very early capital used for idea development, prototyping, initial product work, and early validation.",l:"Pre-seed money buys a first answer: can this be built, and does anyone care? Spend it on learning, not on looking established."},
+{s:"Sd",n:"Seed Round",c:"equity",d:"Early funding used to validate the business model, build the product, acquire early customers, and establish traction.",l:"Seed capital should end with a repeatable signal: customers, revenue, or retention that justifies a Series A story."},
+{s:"SA",n:"Series A",c:"equity",d:"A funding round typically associated with companies that have demonstrated meaningful traction and need capital to scale.",l:"Series A investors fund scaling what already works. The bar is evidence of traction and a model that repeats, not a bigger idea."},
+{s:"SB",n:"Series B",c:"equity",d:"A later funding round commonly used to accelerate growth, expansion, and organisational scale.",l:"Series B is about acceleration and market position. Expect deeper diligence on unit economics, cohorts and the leadership team."},
+{s:"SCp",n:"Series C and Later",c:"equity",d:"Later-stage financing generally used for larger expansion, acquisitions, new markets, or other growth initiatives.",l:"Later rounds bring larger cheques and larger expectations, including a credible path to liquidity for investors."},
+{s:"FS",n:"Funding Stage",c:"equity",d:"The financing stage a startup is in. Not a universal definition of maturity; startups raise rounds at different times.",l:"Round names are conventions, not grades. A profitable company may skip stages entirely; raise the stage your evidence supports."},
+/* Investors */
+{s:"An",n:"Angel Investor",c:"investor",d:"An individual who invests personal capital in startups, usually at pre-seed or seed stage.",l:"A good angel brings network, credibility and patience, not just a cheque. Many angels are former operators; use that experience."},
+{s:"ASy",n:"Angel Syndicate",c:"investor",d:"A group of investors who invest together in a startup, often led by a lead investor.",l:"In a syndicate, diligence and terms usually follow the lead. Know who the lead is and what the syndicate's follow-on capacity looks like."},
+{s:"FO",n:"Family Office",c:"investor",d:"An organisation that manages wealth and investments for a wealthy family or families. Increasingly active in startup funding.",l:"Family offices often have longer horizons and faster decisions than VC funds, but processes vary widely by family."},
+{s:"VC",n:"Venture Capital / VC",c:"investor",d:"Professional investment capital raised and managed by funds that invest in high-growth companies.",l:"VC money is built for outlier outcomes. A fund needs its winners to return many times over, which shapes the growth it will push for."},
+{s:"CVC",n:"Corporate Venture Capital",c:"investor",d:"A corporate investment arm that invests in startups, often for both financial and strategic reasons.",l:"A corporate investor can open distribution and partnerships, but ask what happens to the investment if the corporate's strategy changes."},
+{s:"SI",n:"Strategic Investor",c:"investor",d:"An investor who may provide strategic value such as distribution, technology, industry access, partnerships, or customers in addition to capital.",l:"Price strategic value concretely before accepting it in place of price: which customers, which channel, by when."},
+{s:"II",n:"Institutional Investor",c:"investor",d:"A professional investment organisation that invests capital on behalf of funds, institutions, or other investors.",l:"Institutional investors bring process and follow-on strength, and expect governance, reporting and clean documentation in return."},
+/* Valuation */
+{s:"Vl",n:"Valuation",c:"valuation",d:"An estimate of what a company is worth. For private companies it is negotiated and context-specific, not a market fact.",l:"Ownership is not valuation. 20% of a ₹100 crore company beats 80% of a ₹1 crore company."},
+{s:"PreV",n:"Pre-money Valuation",c:"valuation",d:"The agreed company valuation immediately before a new investment is made.",f:"Post-money = Pre-money + New Investment",l:"Pre-money is the number the negotiation is really about. Everything existing shareholders own is priced off it, before the new money arrives."},
+{s:"PostV",n:"Post-money Valuation",c:"valuation",d:"The company valuation immediately after the new investment.",f:"Post-money = Pre-money + New Investment",l:"Example: ₹20 crore pre-money + ₹5 crore raised = ₹25 crore post-money. The new investor holds 20%."},
+{s:"RM",n:"Revenue Multiple",c:"valuation",d:"A valuation approach that applies a multiple to revenue.",f:"Valuation = Revenue × Multiple",l:"Revenue multiples punish low-margin revenue. A services rupee and a SaaS rupee are valued very differently."},
+{s:"AM",n:"ARR Multiple",c:"valuation",d:"A valuation approach commonly used for recurring-revenue businesses, especially SaaS.",f:"Valuation = ARR × Multiple",l:"ARR multiples expand and contract with the market. The same company can be priced very differently in different funding climates."},
+{s:"EMx",n:"EBITDA Multiple",c:"valuation",d:"A valuation approach based on a multiple of EBITDA.",f:"Valuation = EBITDA × Multiple",l:"EBITDA multiples are common for profitable, mature businesses. Early startups are rarely valued this way because EBITDA is negative."},
+{s:"DCF",n:"DCF — Discounted Cash Flow",c:"valuation",d:"A valuation method based on the present value of expected future cash flows. Future money is worth less than money today.",f:"Present Value = Future Cash Flow / (1 + Discount Rate) ^ Years",l:"DCF is only as honest as its assumptions. Small changes in growth or discount rate swing the value widely, and investors know it."},
+{s:"CC",n:"Comparable Companies",c:"valuation",d:"Valuation reference based on similar publicly traded or private companies.",l:"Comparables anchor a negotiation in evidence. Choose genuinely similar companies; cherry-picked comps get challenged immediately."},
+{s:"CT",n:"Comparable Transactions",c:"valuation",d:"Valuation reference based on similar historical investments, acquisitions, or transactions. Also called precedent transactions.",l:"Precedent deals show what buyers actually paid, not what sellers asked. Recent, similar-sector deals carry the most weight."},
+{s:"VCM",n:"Venture Capital Method",c:"valuation",d:"A valuation approach that considers expected future exit value and the return required by an investor, working backwards to today's price.",f:"Implied Post-money is approximately Expected Exit Value / Investor Target Return Multiple",l:"The VC method explains investor pricing: they start from the exit they need and work backwards. Understanding it makes valuation talks far less mysterious."},
+{s:"MBV",n:"Market-Based Valuation",c:"valuation",d:"A valuation influenced by what investors are currently willing to pay for comparable companies or opportunities.",l:"Market-based value is real but temporary. Raise enough when the market is generous; do not build fixed costs on a peak valuation."},
+/* Mechanics & dilution */
+{s:"TS",n:"Term Sheet",c:"mech",d:"A document that outlines proposed investment terms before definitive legal agreements are completed. Mostly non-binding, but it sets the deal's economics and control terms.",l:"Founders often focus only on valuation in a term sheet. Liquidation preference, board rights and the ESOP pool matter just as much."},
+{s:"DD",n:"Due Diligence",c:"mech",d:"Investor examination of the company's financial, legal, commercial, technical, ownership, customer, intellectual property, compliance, and team information.",l:"Diligence is a test of organisation as much as of numbers. Companies that keep clean records from day one close rounds faster."},
+{s:"DRm",n:"Data Room",c:"mech",d:"A secure collection of documents made available to investors during due diligence.",l:"Build the data room before you start raising, not during. A complete, indexed data room signals a well-run company."},
+{s:"CTb",n:"Cap Table",c:"mech",d:"Capitalisation table showing the company's ownership structure: who owns what, and how much.",l:"Keep the cap table clean and current from day one. Messy cap tables slow or kill funding rounds."},
+{s:"FDC",n:"Fully Diluted Cap Table",c:"mech",d:"Ownership calculated after considering options, warrants, convertible securities, and other instruments as though they had converted or been exercised.",l:"Fully diluted is the only honest ownership view. Always negotiate and model on the fully diluted cap table."},
+{s:"Dl",n:"Dilution",c:"mech",d:"A reduction in an existing shareholder's ownership percentage when new shares are issued.",l:"Dilution is not automatically bad. Owning a smaller percentage of a much more valuable company can be worth far more."},
+{s:"PPD",n:"Percentage Point Dilution",c:"mech",d:"The direct change in ownership percentage. Moving from 100% to 80% is a 20 percentage-point reduction.",l:"Think in percentage points when a round is priced. Still owning the majority and having lost 20 points can both be true at once."},
+{s:"EcD",n:"Economic Dilution",c:"mech",d:"The reduction in an owner's proportional claim on future value or proceeds caused by new ownership being issued.",l:"Economic dilution is what you feel at exit: your slice of the proceeds. A round can dilute your percentage yet grow your outcome if it grows the company."},
+{s:"FOw",n:"Founder Ownership",c:"mech",d:"The founders' percentage ownership of the company after considering the relevant capital structure.",f:"Investor Ownership = New Investment ÷ Post-money Valuation",l:"Model founder ownership across the next two rounds, not just this one. The cumulative effect decides who controls the company at exit."},
+/* Instruments */
+{s:"SAFE",n:"SAFE — Simple Agreement for Future Equity",t:"Agreement for Future Equity",c:"instr",d:"Simple Agreement for Future Equity. An instrument under which an investor provides money in exchange for the right to receive equity later under specified conditions. Popularised by Y Combinator.",l:"A SAFE is not debt: no interest, no maturity, no repayment. It converts at the next priced round, usually with a cap or discount."},
+{s:"CN",n:"Convertible Note",c:"instr",d:"A debt instrument that can convert into equity under specified conditions. Unlike a SAFE, it is debt, with interest and a maturity date.",l:"A note is debt until it converts: it has interest and a maturity date. Know what happens at maturity if no priced round has happened."},
+{s:"VCp",n:"Valuation Cap",c:"instr",d:"A maximum valuation used to determine the conversion price of certain convertible instruments. Protects early investors if the next round is priced very high.",l:"The cap is the early investor's protection against a runaway next-round price. It also simplifies the seed negotiation by deferring valuation."},
+{s:"Ds",n:"Discount",c:"instr",d:"A provision allowing an investor in a convertible instrument to receive shares at a discount to the price paid by investors in a later financing round, commonly 10-20%.",f:"Conversion Price = Priced-round Price x (1 - Discount %)",l:"Cap and discount together decide the early investor's conversion price; typically the better of the two applies. Model both before signing."},
+{s:"AI",n:"Accrued Interest",c:"instr",d:"Interest accumulated on a debt instrument over time. On convertible notes it usually converts into equity along with the principal.",f:"Accrued Interest = Principal x Interest Rate x Time Accrued",l:"Accrued interest quietly increases what converts or must be repaid. It is small per month and material over two years."},
+{s:"MD",n:"Maturity Date",c:"instr",d:"The date by which a debt instrument reaches its contractual maturity and must be repaid, converted, or otherwise handled according to its terms.",l:"Maturity is a deadline with consequences: repayment, conversion, or renegotiation from weakness. Calendar it the day the note is signed."},
+/* Investor rights */
+{s:"LP",n:"Liquidation Preference",c:"rights",d:"Determines how investors are paid relative to other shareholders when a company is sold or liquidated.",l:"A 1x non-participating preference means investors first get their money back, then choose whichever is better: the preference or their ownership share of the proceeds."},
+{s:"PaR",n:"Participation Rights",c:"rights",d:"Rights that may allow an investor to receive a preference and then also participate in remaining proceeds, depending on the agreed terms. Often called double-dipping.",l:"Participating preference can take a large share of a modest exit. If it appears in a term sheet, model its effect on founder proceeds before signing."},
+{s:"AD",n:"Anti-Dilution Protection",c:"rights",d:"Contractual protection intended to adjust an investor's position in certain future financing events, particularly down rounds where shares are sold cheaper than they paid.",l:"Anti-dilution protects investors in a down round by repricing their shares, at the founders' expense. Full-ratchet is severe; weighted average is the market norm."},
+{s:"PRR",n:"Pro-Rata Rights",c:"rights",d:"Rights allowing an investor to participate in future financing rounds to maintain a specified ownership percentage.",l:"Pro-rata rights let good investors defend their stake and keep supporting you. They also create allocation work in every round."},
+{s:"PeR",n:"Pre-emptive Rights",c:"rights",d:"Rights allowing existing shareholders to participate in certain future share issuances before shares are offered more broadly.",l:"Pre-emptive rights keep ownership fair but can slow a round while shareholders are offered shares and respond. Notice periods matter."},
+{s:"DaR",n:"Drag-Along Rights",c:"rights",d:"Rights that can require certain shareholders to participate in a sale approved under specified conditions, so a minority cannot block an exit.",l:"Drag-along ensures a clean exit can actually happen. Without it, a small holder can hold a company sale hostage."},
+{s:"TaR",n:"Tag-Along Rights",c:"rights",d:"Rights allowing minority shareholders to participate when certain shareholders sell shares, subject to the agreement, so they are not left behind.",l:"Tag-along protects minorities from being left behind in a company after the founders sell out. It is the mirror image of drag-along."},
+{s:"BoR",n:"Board Rights",c:"rights",d:"Investor rights relating to board seats, board representation, or board approval matters.",l:"A board seat is influence that outlasts any single decision. Understand board composition and reserved matters before agreeing to them."},
+{s:"IfR",n:"Information Rights",c:"rights",d:"Contractual rights allowing investors to receive specified financial, operational, or company information.",l:"Information rights formalise reporting. Set a cadence you can actually keep; missed reports erode investor trust quietly."},
+/* Employee ownership */
+{s:"ESOP",n:"ESOP — Employee Stock Option Plan",t:"Employee Stock Option Plan",c:"employee",d:"Employee Stock Option Plan. A structure through which employees may receive options to acquire shares under defined conditions.",l:"The ESOP pool is usually created or expanded before an investment closes, which means its dilution often falls on founders, not the new investor. Check the term sheet wording."},
+{s:"SO",n:"Stock Option",c:"employee",d:"A right to purchase shares at a specified price subject to the plan's terms. It is a right, not yet a share.",l:"An option has value only if the strike price is below the future share value and it is exercised in time. It is a right with an expiry, not a gift of shares."},
+{s:"Vs",n:"Vesting",c:"employee",d:"The process through which an employee earns the right to the granted equity or options over time, commonly 4 years.",l:"Vesting aligns staying with earning. Founders should vest too; investors will usually require it at the first priced round."},
+{s:"Clf",n:"Cliff",c:"employee",d:"An initial period during which no portion of an equity grant vests, after which the first portion may vest. Commonly 1 year.",l:"The cliff protects the company if a hire leaves early. The standard is one year: nothing vests before it, then a chunk vests at once."},
+{s:"EP",n:"Exercise / Strike Price",c:"employee",d:"The price at which an employee can purchase shares under a stock option.",l:"The strike price is set from the company's valuation at grant. Early employees get low strikes, which is where the real upside sits."},
+{s:"ESP",n:"ESOP Pool",c:"employee",d:"Shares or options reserved for employees and other eligible participants. Increasing the pool dilutes existing shareholders.",l:"Every pool increase comes out of existing holders, usually founders when it is done pre-money. Negotiate the smallest pool that credibly covers hiring plans."},
+/* Crowdfunding */
+{s:"Crw",n:"Crowdfunding",c:"crowd",d:"Raising relatively small amounts of money from a large number of people, usually through an online platform.",l:"Crowdfunding is marketing plus financing. Campaigns succeed on an audience built before launch, rarely on the platform's traffic alone."},
+{s:"RwC",n:"Reward-Based Crowdfunding",c:"crowd",d:"Backers contribute money and receive a product, reward, or experience rather than company equity.",l:"Reward crowdfunding validates demand and funds production, but you owe delivery. Underpricing shipping or production turns success into losses."},
+{s:"DnC",n:"Donation-Based Crowdfunding",c:"crowd",d:"People contribute money without expecting a financial return.",l:"Donation crowdfunding suits causes and community projects, not companies seeking growth capital."},
+{s:"EqC",n:"Equity Crowdfunding",c:"crowd",d:"Investors contribute capital in exchange for an ownership interest, subject to the laws and regulations of the relevant jurisdiction.",l:"Equity crowdfunding brings many small shareholders. Check local law first: in several jurisdictions, including India, public equity crowdfunding is restricted."},
+{s:"DtC",n:"Debt Crowdfunding",c:"crowd",d:"Participants provide money with an expectation of repayment, generally with interest, subject to applicable rules.",l:"Debt crowdfunding is a loan from the crowd. Repayment and interest are owed regardless of how the campaign story ends."},
+{s:"CrP",n:"Crowdfunding Platform",c:"crowd",d:"A platform that facilitates a crowdfunding campaign, such as Kickstarter or Indiegogo for reward campaigns.",l:"Platforms charge success and payment fees, commonly a meaningful percentage of the raise. Net the fees before setting your target."},
+{s:"CmT",n:"Campaign Target",c:"crowd",d:"The amount the startup aims to raise through the campaign.",l:"Set the target from the actual budget the raise must fund, including platform fees and taxes, not from what sounds impressive."},
+{s:"MFT",n:"Minimum Funding Threshold",c:"crowd",d:"The minimum amount that may need to be raised for a campaign to proceed, where applicable. All-or-nothing campaigns return money if it is missed.",l:"All-or-nothing thresholds protect backers and create urgency, but missing by a little means starting over with nothing."},
+{s:"Bkr",n:"Backer",c:"crowd",d:"A person who contributes to a crowdfunding campaign.",l:"Backers are your earliest community. Their updates and word of mouth often outlast the money they put in."},
+{s:"CI",n:"Crowd Investor",c:"crowd",d:"An individual participating in an equity or debt crowdfunding opportunity.",l:"Crowd investors still need clear communication and honest updates. Small cheques do not mean small expectations."},
+{s:"LI",n:"Lead Investor",c:"crowd",d:"An investor who anchors or leads a financing round and may help establish its terms. In syndicates and crowdfunding, the lead's commitment signals credibility to others.",l:"A credible lead validates the round for everyone else. In syndicates and crowdfunding alike, securing the lead is most of the raise."},
+/* Exit */
+{s:"Ex",n:"Exit",c:"exit",d:"An event that allows investors and/or founders to realise value from their ownership, such as an acquisition or IPO.",l:"Exits are where paper value becomes money. Most startup value is realised in one such event, which is why its terms dominate the documents."},
+{s:"Acq",n:"Acquisition",c:"exit",d:"Another company purchases the startup. The most common exit route for startups.",l:"Being acquired is the most common successful exit. Acquirers buy teams, technology, customers or market position; know which one you are selling."},
+{s:"Mg",n:"Merger",c:"exit",d:"Two companies combine under an agreed transaction structure.",l:"Mergers combine equals more often on paper than in practice. Governance of the combined company is the hard part."},
+{s:"IPO",n:"IPO — Initial Public Offering",c:"exit",d:"Initial Public Offering. A company offers its shares to public-market investors for the first time.",l:"An IPO is a financing and credibility event, not an ending. It brings public-market reporting, scrutiny, and liquidity over time."},
+{s:"SS",n:"Secondary Sale",c:"exit",d:"An existing shareholder sells shares to another investor rather than the company issuing new shares. The money goes to the seller, not the company.",l:"Secondaries let early holders take some money off the table without the company exiting. They need board and document approvals."},
+{s:"FL",n:"Founder Liquidity",c:"exit",d:"A founder converts some of their ownership into cash, often through a secondary transaction, without exiting the company.",l:"Some founder liquidity at later stages is increasingly normal. In moderation it aligns a founder's personal risk with a long journey."},
+{s:"StA",n:"Strategic Acquisition",c:"exit",d:"An acquisition driven significantly by strategic value such as technology, customers, talent, distribution, or market access.",l:"Strategic buyers pay for what the asset is worth to them, which can exceed financial value. Their internal champion and timing decide the deal."},
+{s:"ExM",n:"Exit Multiple",c:"exit",d:"A multiple applied to a financial metric to estimate or describe an exit valuation.",f:"Exit Value = Financial Metric × Exit Multiple",l:"Exit multiples compress or expand with market mood. The metric underneath, revenue or EBITDA, is the part you control."},
+{s:"CCn",n:"Customer Concentration",c:"found",d:"How dependent the company is on a small number of customers. High concentration is a risk investors price into valuation.",l:"If one customer is 40% of revenue, losing them is an existential event. Track it on the founder dashboard."}
+];
+const grid=document.getElementById('grid');
+const detail=document.getElementById('detail');
+const overlay=document.getElementById('overlay');
+const countEl=document.getElementById('count');
+let activeCat=null, selected=null;
+function render(){
+  grid.innerHTML='';
+  TERMS.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='tile'; b.type='button'; b.setAttribute('role','listitem');
+    b.style.background=CATS[t.c].color; b.dataset.cat=t.c;
+    b.dataset.search=(t.n+' '+(t.t||'')+' '+t.s+' '+t.d+' '+CATS[t.c].name).toLowerCase();
+    b.innerHTML='<span class="no">'+(i+1)+'</span><span class="sym">'+t.s+'</span><span class="nm">'+(t.t||t.n)+'</span>';
+    b.addEventListener('click',()=>show(t,i,b));
+    grid.appendChild(b);
+  });
+  updateCount(TERMS.length);
+}
+function updateCount(n){countEl.textContent=n+' of '+TERMS.length+' terms shown';}
+function closeDetail(){
+  const el=selected;
+  if(selected)selected.classList.remove('selected');
+  selected=null; selectedIdx=-1;
+  detail.classList.remove('open'); overlay.classList.remove('open');
+  document.body.style.overflow='';
+  if(el && el.focus)el.focus({preventScroll:true});
+}
+let selectedIdx=-1;
+function show(t,i,el){
+  if(selectedIdx===i){closeDetail();selectedIdx=-1;return;}
+  if(selected)selected.classList.remove('selected');
+  selected=el; selectedIdx=i; if(el)el.classList.add('selected');
+  let html='<button class="zoom-close" type="button" onclick="closeDetail()" aria-label="Close">✕</button>';
+  html+='<div class="d-no">Element '+(i+1)+' of '+TERMS.length+'</div>';
+  html+='<span class="d-sym" style="background:'+CATS[t.c].color+'">'+t.s+'</span>';
+  html+='<h2>'+t.n+'</h2><div class="d-cat" data-cat="'+t.c+'"">'+CATS[t.c].name+'</div>';
+  html+='<p>'+t.d+'</p>';
+  if(t.f)html+='<div class="box formula"><b>Formula / Relationship</b>'+t.f+'</div>';
+  if(t.l)html+='<div class="box lens"><b>Founder lens</b>'+t.l+'</div>';
+  detail.innerHTML=html;
+  if(window.__tsEnhance)window.__tsEnhance(t,i,el);
+  detail.classList.add('open'); overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+overlay.addEventListener('click',closeDetail);
+const legend=document.getElementById('legend');
+Object.keys(CATS).forEach(k=>{
+  const c=document.createElement('button'); c.type='button'; c.className='chip'; c.dataset.cat=k;
+  c.innerHTML='<span class="dot" style="background:'+CATS[k].color+'"></span>'+CATS[k].name;
+  c.addEventListener('click',()=>{
+    activeCat = activeCat===k ? null : k;
+    document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===activeCat));
+    applyFilter();
+  });
+  legend.appendChild(c);
+});
+function applyFilter(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  let n=0;
+  document.querySelectorAll('.tile').forEach(tile=>{
+    const matchQ=!q || tile.dataset.search.includes(q);
+    const matchC=!activeCat || tile.dataset.cat===activeCat;
+    tile.classList.toggle('hidden',!matchQ);
+    tile.classList.toggle('dim',!!activeCat && !matchC && matchQ);
+    if(matchQ)n++;
+  });
+  updateCount(n);
+}
+document.getElementById('search').addEventListener('input',applyFilter);
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  document.getElementById('search').value=''; activeCat=null;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); applyFilter();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail();});
+/* Theme toggle: saved choice wins, otherwise dark (the original look) */
+const themeBtn=document.getElementById('themeToggle');
+function applyTheme(th){
+  document.documentElement.setAttribute('data-theme',th);
+  themeBtn.textContent = th==='light' ? '☾' : '☀';
+  try{localStorage.setItem('founder_table_theme',th);}catch(e){}
+}
+let savedTheme='dark';
+try{savedTheme=localStorage.getItem('founder_table_theme')||'dark';}catch(e){}
+applyTheme(savedTheme==='light'?'light':'dark');
+themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  applyTheme(cur==='light'?'dark':'light');
+});
+render();
+</script>
+<script>
+/* Category legend rail arrows */
+(function(){
+  var wrap=document.querySelector('.legend-wrap');
+  if(!wrap) return;
+  var rail=document.getElementById('legend');
+  var prev=wrap.querySelector('.rail-btn.prev');
+  var next=wrap.querySelector('.rail-btn.next');
+  if(!rail||!prev||!next) return;
+  function refresh(){
+    var max=rail.scrollWidth-rail.clientWidth;
+    wrap.classList.toggle('no-overflow', max<=2);
+    prev.disabled = rail.scrollLeft<=2;
+    next.disabled = rail.scrollLeft>=max-2;
+  }
+  function step(){
+    var chip=rail.querySelector('.chip');
+    return chip ? (chip.offsetWidth+8)*2 : 240;
+  }
+  prev.addEventListener('click',function(){ rail.scrollBy({left:-step(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ rail.scrollBy({left:step(),behavior:'smooth'}); });
+  rail.addEventListener('scroll',refresh,{passive:true});
+  rail.addEventListener('click',function(){ setTimeout(refresh,60); });
+  window.addEventListener('resize',refresh);
+  refresh();
+})();
+</script>
+<!-- termshare:start -->
+<style>
+.ts-share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line,rgba(127,140,160,.35))}
+.ts-share button{border:1px solid var(--line,rgba(127,140,160,.45));background:rgba(127,140,160,.14);color:inherit;border-radius:999px;padding:8px 15px;font:600 13px system-ui,sans-serif;cursor:pointer}
+.ts-share button:hover{filter:brightness(1.25)}
+.ts-share select{font:inherit;background:rgba(127,140,160,.14);color:inherit;border:1px solid var(--line,rgba(127,140,160,.45));border-radius:8px;padding:7px 8px}
+.ts-status{font-size:12.5px;color:#c9a227}
+.tile.hl{animation:tsHl 2s ease}
+@keyframes tsHl{0%,55%{box-shadow:0 0 0 4px #fff,0 0 34px 8px rgba(255,255,255,.55)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion: reduce){.tile.hl{animation:none;box-shadow:0 0 0 3px #fff}}
+</style>
+<script src="../../assets/signal-share.js"></script>
+<script>
+(function(){
+"use strict";
+var CFG = {"base": "https://thillairaj.github.io/signal-preview", "table": "founder-finance", "display": "Founder Finance", "brandTag": "#TheSignal", "familyTag": "#Startups", "footer1": "THE FOUNDER FINANCE PERIODIC TABLE", "footer2": "Financial Terms Every Startup Founder Should Know", "badge": "TRT", "aliases": {}};
+function slugifyName(n){
+  var part = n.indexOf(" \u2014 ") >= 0 ? n.split(" \u2014 ")[1] : n;
+  return part.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+}
+function folderFor(t){ return t.s.toLowerCase() + "-" + slugifyName(t.n); }
+function termUrl(t){ return CFG.base + "/t/" + CFG.table + "/" + folderFor(t) + "/"; }
+function oneLine(d){
+  if(!d) return "";
+  var parts = d.match(/[^.!?]+[.!?]+["']?\s*/g) || [d];
+  var out = "";
+  for(var i=0;i<parts.length;i++){ out += parts[i]; if(out.trim().length >= 50) break; }
+  return out.trim();
+}
+function gc(p){ try{ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:p, event:true}); } }catch(e){} }
+function copyText(s){
+  if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(s); }
+  return new Promise(function(res){ var ta=document.createElement("textarea"); ta.value=s; ta.style.position="fixed"; ta.style.opacity="0"; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); }catch(e){} document.body.removeChild(ta); res(); });
+}
+function wrap(x,t,mw){ var w=t.split(" "),L=[],l=""; w.forEach(function(s){ var t2=l?l+" "+s:s; if(x.measureText(t2).width>mw&&l){ L.push(l); l=s; } else { l=t2; } }); if(l) L.push(l); return L; }
+function roundRect(x,px,py,w,h,r){ x.beginPath(); x.moveTo(px+r,py); x.arcTo(px+w,py,px+w,py+h,r); x.arcTo(px+w,py+h,px,py+h,r); x.arcTo(px,py+h,px,py,r); x.arcTo(px,py,px+w,py,r); x.closePath(); }
+var FALLBACK_PALETTE={obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
+function hexRgb(h){ h=h.replace("#",""); return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]; }
+function relLum(rgb){ function f(c){ c/=255; return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4); } return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]); }
+function contrastRgb(a,b){ var la=relLum(a),lb=relLum(b); return (Math.max(la,lb)+0.05)/(Math.min(la,lb)+0.05); }
+function kickerColor(hex,bgs,lighten){ var c=hexRgb(hex); var targets=bgs.map(hexRgb);
+  function ok(col){ return targets.every(function(bg){ return contrastRgb(col,bg)>=4.55; }); }
+  if(ok(c)) return hex;
+  for(var s=0.05;s<=1.001;s+=0.05){ var m=c.map(function(v){ return Math.round(lighten?v+(255-v)*s:v*(1-s)); }); if(ok(m)){ return "#"+m.map(function(v){ return ("0"+v.toString(16)).slice(-2); }).join(""); } }
+  return lighten?"#ffffff":"#000000"; }
+function renderCard(t,size,theme){
+  var dims=(size||"1080x1350").split("x"), W=+dims[0], H=+dims[1]; if(!W||!H){ W=1080; H=1350; }
+  var k=W/1080;
+  var PAL=(window.SignalShare&&SignalShare.PALETTES)||FALLBACK_PALETTE;
+  var T=PAL[theme]||PAL.obsidian;
+  var cv=document.createElement("canvas"); cv.width=W; cv.height=H;
+  var x=cv.getContext("2d");
+  var catCol=(typeof CATS!=="undefined"&&CATS[t.c])?CATS[t.c].color:"#c9a227";
+  var catName=(typeof CATS!=="undefined"&&CATS[t.c])?CATS[t.c].name:t.c;
+  var grd=x.createLinearGradient(0,0,0,H); grd.addColorStop(0,T.bg0); grd.addColorStop(1,T.bg1);
+  x.fillStyle=grd; x.fillRect(0,0,W,H);
+  x.fillStyle=catCol; x.fillRect(0,0,W,Math.round(8*k));
+  var pad=Math.round(84*k), mw=W-2*pad, cx=W/2;
+  var topSafe=Math.round(48*k), footTop=H-Math.round(150*k);
+  x.textAlign="left"; x.textBaseline="alphabetic";
+  var y=topSafe+Math.round(34*k);
+  x.fillStyle=kickerColor(catCol,[T.bg0,T.bg1],theme!=="ivory"); x.font="600 "+Math.round(27*k)+"px system-ui,sans-serif";
+  try{ x.letterSpacing="3px"; }catch(e){}
+  x.fillText((CFG.display+" \u00b7 "+catName).toUpperCase(),pad,y);
+  try{ x.letterSpacing="0px"; }catch(e){}
+  y+=Math.round(46*k);
+  var ts=Math.round(150*k);
+  x.fillStyle=catCol; roundRect(x,pad,y,ts,ts,Math.round(22*k)); x.fill();
+  var ss=Math.round(62*k); x.fillStyle="#ffffff"; x.textAlign="center"; x.textBaseline="middle";
+  do{ x.font="700 "+ss+"px Georgia,serif"; ss-=2; }while(x.measureText(t.s).width>ts-Math.round(24*k)&&ss>Math.round(28*k));
+  x.fillText(t.s,pad+ts/2,y+ts/2+Math.round(2*k));
+  x.textAlign="left"; x.textBaseline="alphabetic";
+  y+=ts+Math.round(64*k);
+  var nf=Math.round(56*k), nameLines;
+  do{ x.font="700 "+nf+"px Georgia,serif"; nameLines=wrap(x,t.n,mw); nf-=2; }while(nameLines.length>2&&nf>Math.round(36*k));
+  x.fillStyle=T.head;
+  nameLines.forEach(function(l){ x.fillText(l,pad,y); y+=Math.round(nf*1.24); });
+  y+=Math.round(10*k);
+  x.strokeStyle=T.dim; x.lineWidth=Math.max(1,Math.round(2*k));
+  x.beginPath(); x.moveTo(pad,y); x.lineTo(pad+Math.round(130*k),y); x.stroke();
+  y+=Math.round(52*k);
+  var bf=Math.round(34*k), lines=[];
+  function buildLines(withLens){ var L=[]; x.font=bf+"px system-ui,sans-serif";
+    wrap(x,oneLine(t.d),mw).forEach(function(l){ L.push({s:l,label:false}); });
+    if(t.f){ L.push({s:"",label:false}); L.push({s:"KEY FACT",label:true});
+      wrap(x,t.f,mw).forEach(function(l){ L.push({s:l,label:false}); }); }
+    if(withLens&&t.l){ L.push({s:"",label:false}); L.push({s:"LEADER'S LENS",label:true});
+      wrap(x,t.l,mw).forEach(function(l){ L.push({s:l,label:false}); }); }
+    return L; }
+  var withLens=(H>W)&&!!t.l;
+  lines=buildLines(withLens);
+  var lh=bf+Math.round(12*k);
+  while(y+lines.length*lh>footTop&&bf>Math.round(24*k)){ bf-=2; lh=bf+Math.round(12*k); lines=buildLines(withLens); }
+  if(H<=W&&t.l){ var extra=buildLines(true); if(y+extra.length*lh<=footTop){ lines=extra; } }
+  lines.forEach(function(o){
+    if(y<footTop){ if(o.label){ x.fillStyle=T.accent; x.font="700 "+Math.round(24*k)+"px system-ui,sans-serif"; try{ x.letterSpacing="3px"; }catch(e){} x.fillText(o.s,pad,y); try{ x.letterSpacing="0px"; }catch(e){} }
+      else if(o.s){ x.fillStyle=T.body; x.font=bf+"px system-ui,sans-serif"; x.fillText(o.s,pad,y); } }
+    y+=lh; });
+  x.strokeStyle=T.dim; x.lineWidth=Math.max(1,Math.round(2*k));
+  x.beginPath(); x.moveTo(pad,H-Math.round(116*k)); x.lineTo(W-pad,H-Math.round(116*k)); x.stroke();
+  x.textAlign="center"; x.fillStyle=T.foot; x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
+  x.fillText(CFG.footer1,cx,H-Math.round(68*k));
+  x.fillStyle=T.accent; x.fillText(CFG.footer2,cx,H-Math.round(30*k));
+  var bx=W-pad-Math.round(38*k), by=H-Math.round(62*k), br=Math.round(34*k);
+  x.strokeStyle=T.accent; x.lineWidth=Math.round(3*k);
+  x.beginPath(); x.arc(bx,by,br,0,Math.PI*2); x.stroke();
+  x.fillStyle=T.accent; x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif"; x.textBaseline="middle";
+  try{ x.letterSpacing="3px"; }catch(e){}
+  x.fillText(CFG.badge,bx,by+Math.round(2*k));
+  try{ x.letterSpacing="0px"; }catch(e){}
+  x.textAlign="left"; x.textBaseline="alphabetic";
+  return cv;
+}
+function drawCard(t,size,theme){
+  var cv=renderCard(t,size,theme);
+  return new Promise(function(resolve){ if(cv.toBlob){ cv.toBlob(function(b){ resolve(b); },"image/png"); } else { resolve(null); } });
+}
+function download(blob,name){ var a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },400); }
+var isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent||"");
+function shareText(t){
+  var parts=[t.n, oneLine(t.d)];
+  if(t.l) parts.push("Leader's lens: "+t.l);
+  parts.push("Explore all "+TERMS.length+" "+CFG.display+" terms, free, no sign-up:\n"+termUrl(t));
+  parts.push(CFG.brandTag+" "+CFG.familyTag);
+  return parts.join("\n\n");
+}
+var curIdx=-1;
+window.__tsEnhance=function(t,i,el){
+  curIdx=i;
+  try{ history.replaceState(null,"","#"+t.s); }catch(e){}
+  var detail=document.getElementById("detail"); if(!detail) return;
+  var SS=window.SignalShare||null; if(!SS) return;
+  var row=document.createElement("div"); row.className="ts-share";
+  var spec={ title:t.n, line:oneLine(t.d), link:termUrl(t), caption:shareText(t),
+    tags:CFG.brandTag+" "+CFG.familyTag,
+    image:{ kind:"render", filename:folderFor(t)+".png",
+            render:function(size,theme){ return drawCard(t,size,theme); } },
+    onShare:function(kind){ gc("share/"+kind+"/"+CFG.table); } };
+  row.appendChild(SS.shareButton(spec));
+  detail.appendChild(row);
+};
+function openFromHash(){
+  var raw=(location.hash||"").replace(/^#/,""); if(!raw) return;
+  var sym; try{ sym=decodeURIComponent(raw); }catch(e){ sym=raw; }
+  if(CFG.aliases && CFG.aliases[sym]) sym=CFG.aliases[sym];
+  var idx=-1;
+  for(var i=0;i<TERMS.length;i++){ if(TERMS[i].s===sym){ idx=i; break; } }
+  if(idx<0){ var low=sym.toLowerCase(); for(var j=0;j<TERMS.length;j++){ if(TERMS[j].s.toLowerCase()===low){ idx=j; break; } } }
+  if(idx<0) return;
+  var rb=document.getElementById("resetBtn"); if(rb) rb.click();
+  var grid=document.getElementById("grid"); if(!grid) return;
+  var tile=grid.children[idx]; if(!tile) return;
+  var detail=document.getElementById("detail");
+  var isOpen=detail&&detail.classList.contains("open");
+  if(!(isOpen&&curIdx===idx) && typeof show==="function"){ show(TERMS[idx],idx,tile); }
+  if(tile.scrollIntoView){ try{ tile.scrollIntoView({block:"center",inline:"nearest"}); }catch(e){} }
+  tile.classList.add("hl"); setTimeout(function(){ tile.classList.remove("hl"); },2100);
+}
+window.addEventListener("hashchange",openFromHash);
+openFromHash();
+window.__tsFolder=folderFor; window.__tsShareText=shareText; window.__tsTermUrl=termUrl; window.__tsDrawCard=function(t,size,theme){ return renderCard(t,size,theme); };
+})();
+</script>
+<!-- termshare:end -->
+</body>
+</html>

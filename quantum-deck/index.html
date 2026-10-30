@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Quantum Deck</title>
+<meta name="description" content="The Quantum Deck on The Signal: eight topics from quantum fundamentals to sensing, each with Learn cards, flashcards and a ten question quiz.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Quantum Deck — learn quantum computing, one card at a time">
+<meta property="og:description" content="15-card visual lessons on quantum computing: fundamentals, networks, cryptography, machine learning, error correction, algorithms and more. Read a card, flip it, prove you know it.">
+<meta property="og:url" content="https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-deck/">
+<style>
+  :root{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#b08d3e; --gold-dim:rgba(176,141,62,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#faf9f6; --page-ink:#2b3542;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#f1eee4 0%,#faf9f6 65%);
+    --header-ink:#171b24; --header-sub:#5b6470;
+    --bar:rgba(250,249,246,.97); --bar-border:#e0dccf;
+    --chip-bg:#ffffff; --chip-ink:#2b3542; --chip-small:#6b7280;
+    --nav-bg:#ffffff;
+    --title-ink:#171b24; --row-sub:#5b6470;
+    --foot-ink:#6b7280; --foot-border:#e0dccf;
+  }
+  :root[data-theme="dark"]{
+    --obsidian:#0d0f14; --obsidian2:#151923; --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+    --ivory:#faf7f0; --card:#ffffff; --ink:#171b24; --muted:#6b7280; --line:#e8e2d4;
+    --green:#1e7e46; --red:#b3261e;
+    --page:#2f353e; --page-ink:#e9e4d6;
+    --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+    --header-ink:#ffffff; --header-sub:#aeb8c8;
+    --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+    --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+    --nav-bg:rgba(70,78,90,.45);
+    --title-ink:#f2ede0; --row-sub:#a8adb5;
+    --foot-ink:#9aa0aa; --foot-border:#4a5260;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --gold:#d4af6a; --gold-dim:rgba(212,175,106,.4);
+      --page:#2f353e; --page-ink:#e9e4d6;
+      --header-bg:radial-gradient(1200px 400px at 50% -80px,#454e5b 0%,#2b3038 65%);
+      --header-ink:#ffffff; --header-sub:#aeb8c8;
+      --bar:rgba(47,53,62,.97); --bar-border:#4a5260;
+      --chip-bg:#22272f; --chip-ink:#cfd6e2; --chip-small:#8a919c;
+      --nav-bg:rgba(70,78,90,.45);
+      --title-ink:#f2ede0; --row-sub:#a8adb5;
+      --foot-ink:#9aa0aa; --foot-border:#4a5260;
+    }
+  }
+  .theme-toggle{position:absolute;top:14px;right:14px;background:var(--chip-bg);
+    border:1px solid var(--bar-border);border-radius:50%;width:32px;height:32px;
+    font-size:.95rem;cursor:pointer;color:var(--chip-ink);z-index:60;line-height:1}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--page-ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  header{position:relative;background:var(--header-bg);
+    color:var(--header-ink);padding:44px 20px 34px;text-align:center;border-bottom:3px solid var(--gold)}
+  header .kicker{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  header h1{margin:12px 0 8px;font-size:34px;letter-spacing:.5px;font-weight:800}
+  header h1 .thin{font-weight:300;color:var(--gold)}
+  header p{margin:0 auto;color:var(--header-sub);font-size:15px;max-width:620px}
+  /* topic navigator: horizontal scroll strip + search */
+  .topicbar{position:sticky;top:0;z-index:20;background:var(--bar);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--bar-border);padding:12px 18px;display:flex;gap:10px;align-items:center}
+  .tsearch{flex:0 0 220px;display:flex;align-items:center;background:var(--chip-bg);border:1px solid var(--bar-border);
+    border-radius:9px;padding:7px 10px}
+  .tsearch input{flex:1;background:none;border:none;outline:none;color:var(--chip-ink);font-size:13.5px;min-width:0}
+  .tsearch input::placeholder{color:var(--chip-small)}
+  .tstrip-wrap{flex:1;min-width:0;overflow:hidden}
+  .tstrip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px;scroll-snap-type:x proximity}
+  .tstrip::-webkit-scrollbar{display:none}
+  .tlabel{flex:0 0 auto;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px;white-space:nowrap}
+  .tchip{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--bar-border);background:var(--chip-bg);color:var(--chip-ink);
+    font-size:15px;font-weight:700;padding:11px 20px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .tchip small{color:var(--chip-small);font-weight:700;margin-right:8px;letter-spacing:1px;font-size:12px}
+  .tchip:hover{border-color:var(--gold-dim)}
+  .tchip.active{background:var(--gold);border-color:var(--gold);color:#171b24}
+  .tchip.active small{color:#5c4a1f}
+  .tchip.soon{opacity:.55;border-style:dashed;cursor:default}
+  .tchip.soon:hover{border-color:var(--bar-border)}
+  .tnav{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-dim);
+    background:var(--nav-bg);color:var(--gold);font-size:18px;cursor:pointer;line-height:1}
+  .tnav:hover{background:rgba(70,78,90,.72)}
+  main{max-width:1140px;margin:0 auto;padding:30px 18px 60px}
+  .topic-head{text-align:center;margin:6px 0 4px}
+  .topic-head .tnum{color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:700}
+  .topic-head h2{margin:8px 0 0;font-size:30px;font-weight:800;color:var(--title-ink);font-family:Georgia,serif;letter-spacing:.3px}
+  .topic-head .tsub{margin:10px auto 0;max-width:640px;font-size:15px;color:var(--muted);line-height:1.55}
+  .topic-head .tdraft{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:3px;font-weight:700;
+    color:var(--gold);border:1px dashed var(--gold-dim);border-radius:999px;padding:4px 14px}
+  .rowhead{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 6px}
+  .rowhead h2{margin:0;font-size:21px;letter-spacing:.3px;color:var(--title-ink)}
+  .rowhead h2 .n{color:var(--gold);font-size:13px;letter-spacing:2px;vertical-align:middle;margin-right:8px}
+  .rowhead p{margin:4px 0 0;color:var(--row-sub);font-size:13.5px}
+  .rail-wrap{position:relative;display:flex;align-items:center;gap:8px}.rail{flex:1;min-width:0}
+  .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:14px 4px 18px;align-items:stretch}
+  .rail::-webkit-scrollbar{display:none}
+  .rail-btn{position:static;transform:none;flex:0 0 auto;z-index:5;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold-dim);background:rgba(70,78,90,.45);color:var(--gold);font-size:22px;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .rail-btn:hover{background:rgba(70,78,90,.72)}
+  
+  @keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg)}}
+  @media(hover:hover) and (prefers-reduced-motion:no-preference){
+    .pcard:hover{animation:wiggle .45s ease-in-out}
+    .fcard:hover{animation:wiggle .45s ease-in-out}
+  }
+  .pcard{flex:0 0 320px;height:480px;scroll-snap-align:start;border-radius:16px;background:var(--card);
+    border:1px solid var(--line);box-shadow:0 6px 22px rgba(13,15,20,.08);
+    display:flex;flex-direction:column;padding:20px;position:relative;overflow:hidden}
+  .pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold))}
+  .pnum{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px}
+  .ptag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);margin:2px 0 8px}
+  .pq{font-size:17.5px;font-weight:750;line-height:1.35;margin:0 0 10px;font-family:Georgia,serif;color:var(--ink)}
+  .pbody{flex:1;overflow-y:auto;font-size:13.5px;color:#2b3542;scrollbar-width:thin}
+  .pbody p{margin:0 0 9px}
+  .toolbar{border-top:1px dashed var(--line);padding-top:10px;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .toolbar select{font-size:11.5px;padding:6px 6px;border-radius:7px;border:1px solid var(--line);background:#f4f1e8;max-width:128px}
+  .toolbar button{font-size:11.5px;font-weight:700;padding:6px 10px;border-radius:7px;cursor:pointer;
+    border:1px solid var(--line);background:#f4f1e8;color:var(--ink)}
+  .toolbar button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  .copied{font-size:11px;color:var(--green);font-weight:700;display:none}
+  /* click-to-zoom reading view */
+  .pcard[data-i]{cursor:pointer}
+  #zoom-ov{position:fixed;inset:0;background:rgba(10,12,16,.68);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+  #zoom-ov.open{display:flex}
+  #zoom-card{position:relative;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:38px 42px 32px;box-shadow:0 24px 70px rgba(0,0,0,.35);box-sizing:border-box}
+  #zoom-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold),#f0d9a0,var(--gold));border-radius:18px 18px 0 0}
+  #zoom-num{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+  #zoom-tag{font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--muted);margin-bottom:10px}
+  #zoom-q{font-size:26px;font-weight:750;line-height:1.35;margin:0 0 16px;font-family:Georgia,serif;color:var(--ink)}
+  #zoom-body{font-size:17px;line-height:1.7;color:var(--ink)}
+  #zoom-body p{margin:0 0 14px}
+  #zoom-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer;line-height:1;padding:0}
+  #zoom-close:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  @media(max-width:700px){#zoom-card{padding:30px 24px 24px}#zoom-q{font-size:22px}#zoom-body{font-size:16px}}
+  /* compact flashcards */
+  .fcard{flex:0 0 260px;height:215px;scroll-snap-align:start;perspective:1000px;cursor:pointer}
+  .finner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s}
+  .fcard.flipped .finner{transform:rotateY(180deg)}
+  .fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;
+    padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-start;overflow:auto}
+  .ffront{background:linear-gradient(160deg,#3d444f 0%,#2c313a 72%);color:#fff;border:1px solid #545d6b}
+  .ffront .fnum{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:6px}
+  .ffront .fq{font-size:13.5px;font-weight:700;line-height:1.45;font-family:Georgia,serif}
+  .ffront .fhint{margin-top:8px;font-size:9.5px;letter-spacing:2px;color:var(--gold);font-weight:700}
+  .fback{background:var(--card);transform:rotateY(180deg);border:1px solid var(--line);color:var(--ink);font-size:12px}
+  .fback .fnum{font-size:10.5px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+  /* quiz */
+  #quiz-box{max-width:700px;margin:6px auto 0;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:28px;box-shadow:0 6px 22px rgba(13,15,20,.08)}
+  #quiz-progress{font-size:11.5px;color:var(--muted);font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+  #quiz-q{font-size:18px;font-weight:700;margin:0 0 18px;font-family:Georgia,serif;
+    background:#2b3038;color:#fff;padding:18px 20px;border-radius:12px;border-left:5px solid var(--gold)}
+  .opt{display:block;width:100%;text-align:left;margin:0 0 10px;padding:13px 15px;font-size:14.5px;
+    border:1px solid var(--line);border-radius:10px;background:#fbfaf6;cursor:pointer;color:var(--ink)}
+  .opt:hover:not(:disabled){border-color:var(--gold)}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:#e6f4ea;border-color:var(--green);font-weight:700}
+  .opt.wrong{background:#fbeae9;border-color:var(--red)}
+  #quiz-feedback{font-size:14px;font-weight:700;margin:6px 0 12px;min-height:22px}
+  #quiz-next{display:none;padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  #quiz-result{text-align:center}
+  #quiz-score{font-size:46px;font-weight:800;color:#2b3038}
+  #quiz-band{font-size:18px;font-weight:750;margin:8px 0 4px}
+  #quiz-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+  #quiz-restart{padding:10px 28px;font-size:14px;font-weight:700;border-radius:10px;border:none;
+    background:#2b3038;color:var(--gold);cursor:pointer}
+  .upgrid{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;padding:14px 4px 18px;
+    scroll-snap-type:x proximity;margin-top:10px}
+  .upgrid::-webkit-scrollbar{display:none}
+  .upcard{flex:0 0 230px;scroll-snap-align:start;border:1px dashed var(--gold-dim);border-radius:12px;padding:22px;background:#fff;text-align:center;color:var(--muted)}
+  .upcard b{display:block;color:#2b3038;font-size:16px;margin-bottom:6px}
+  .upcard span{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold)}
+  .upcard.live{border-style:solid;cursor:pointer}
+  .upcard.live:hover{border-color:var(--gold)}
+  .upcard.live span{color:var(--green)}
+  footer{text-align:center;padding:28px 16px;color:var(--foot-ink);font-size:13px;border-top:1px solid var(--foot-border);margin-top:20px}
+  footer .rule{width:60px;height:2px;background:var(--gold);margin:0 auto 12px}
+  footer a{color:var(--gold);font-weight:700;text-decoration:none}
+  @media(max-width:700px){.pcard{flex-basis:80%}.fcard{flex-basis:62%}.rail-btn{display:none}
+    .topicbar{flex-wrap:wrap;row-gap:10px}
+    .tstrip-wrap{flex:1 1 auto}
+    .tnav{display:none}
+    .tsearch{flex:1 1 100%;order:5}}
+
+  /* Back link lives in the sticky topic bar (Thillai, Oct 21 2026) so it stays visible while scrolling. */
+  .topicbar .backlink{color:inherit;opacity:.78;text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;align-self:center}
+  .topicbar .backlink:hover{opacity:1;text-decoration:underline}
+
+  /* Frozen navigation cards (Thillai, Oct 21 2026): Back + sibling deck live inside the sticky topic bar. */
+  .topicbar .navcard{display:flex;flex-direction:column;gap:1px;justify-content:center;padding:6px 12px;border:1px solid var(--gold-dim);border-radius:12px;background:var(--card);color:var(--ink);text-decoration:none;min-width:0;transition:border-color .15s ease,transform .15s ease}
+  .topicbar .navcard:hover{border-color:var(--gold);transform:translateY(-1px)}
+  .topicbar .navcard.sib{margin-left:auto}
+  .nc-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.62;font-weight:700;white-space:nowrap}
+  .nc-title{font-size:14px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .topicbar .navcard.next{text-align:right}
+  /* LinkedIn follow button (Thillai, Oct 21 2026): coloured card-button, LinkedIn blue gradient. */
+  .li-btn{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 9px;border-radius:14px;background:linear-gradient(135deg,#0A66C2,#004182);color:#fff !important;text-decoration:none !important;box-shadow:0 4px 14px rgba(10,102,194,.35);vertical-align:middle;transition:transform .15s ease,box-shadow .15s ease}
+  .li-btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(10,102,194,.45)}
+  .li-btn .li-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;flex:0 0 auto}
+  .li-btn .li-badge svg{width:16px;height:16px;display:block}
+  .li-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .li-dir{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;font-weight:700}
+  .li-name{font-size:15.5px;font-weight:800;letter-spacing:.01em}
+
+:root[data-theme="dark"] .tsub { color: #a8b0ba; }
+:root[data-theme="dark"] .ptag { color: #5b6470; }
+:root[data-theme="dark"] .pnum, :root[data-theme="dark"] #zoom-num, :root[data-theme="dark"] .fback .fnum { color: #8a6d2f; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tsub { color: #a8b0ba; } :root:not([data-theme="light"]) .ptag { color: #5b6470; } :root:not([data-theme="light"]) .pnum, :root:not([data-theme="light"]) #zoom-num, :root:not([data-theme="light"]) .fback .fnum { color: #8a6d2f; } }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
+  <div class="kicker" id="deck-kicker">QUANTUM COMPUTING, MADE VISUAL</div>
+  <h1>The <span class="thin">Quantum</span> Deck</h1>
+</header>
+<div class="topicbar">
+  <a class="navcard back" href="../#learn-decks"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a>
+  <span class="tlabel">SELECT TOPIC</span>
+  <button class="tnav" id="tstrip-prev" aria-label="Scroll topics left">‹</button>
+  <div class="tstrip-wrap"><div class="tstrip" id="topic-strip"></div></div>
+  <button class="tnav" id="tstrip-next" aria-label="Scroll topics right">›</button>
+  <label class="tsearch"><input id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics"></label>
+  <a class="navcard sib next" href="../ai-deck/"><span class="nc-dir">Next →</span><span class="nc-title">The AI Deck</span></a>
+</div>
+<main>
+  <div class="topic-head">
+    <div class="tnum" id="topic-num">DECK 01</div>
+    <h2 id="topic-title">Quantum Computing Fundamentals</h2>
+    <p class="tsub" id="topic-tagline"></p>
+    <div><span class="tdraft" id="topic-draft" style="display:none">DRAFT · UNDER REVIEW</span></div>
+  </div>
+  <div class="rowhead"><div><h2><span class="n">01</span>Learn</h2><p>Scroll the rail — arrows move one card at a time. Share any card as an image, post, or text.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="learn-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="learn-rail"></div>
+    <button class="rail-btn next" data-rail="learn-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">02</span>Flashcards</h2><p>Read the question, think, tap to flip. Honest self-check — no scoring, no sharing.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="flash-rail" aria-label="Previous">‹</button>
+    <div class="rail" id="flash-rail"></div>
+    <button class="rail-btn next" data-rail="flash-rail" aria-label="Next">›</button>
+  </div>
+
+  <div class="rowhead"><div><h2><span class="n">03</span>Quiz</h2><p>Ten questions, one at a time. Options shuffle every attempt.</p></div></div>
+  <div id="quiz-box"></div>
+
+  <div class="rowhead"><div><h2><span class="n">+</span>What's next</h2><p>One new topic goes live every Wednesday — scroll sideways.</p></div></div>
+  <div class="rail-wrap">
+    <button class="rail-btn prev" data-rail="upgrid" aria-label="Previous">‹</button>
+    <div class="upgrid" id="upgrid"></div>
+    <button class="rail-btn next" data-rail="upgrid" aria-label="Next">›</button>
+  </div>
+</main>
+
+<footer><div class="rule"></div>Curated by Thillai Raj Thanam Jeya Veera Raj · <a class="li-btn" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="li-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span><span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></footer>
+<script src="../assets/signal-share.js"></script>
+<script>
+const FOOTER="Curated by Thillai Raj Thanam Jeya Veera Raj";
+const BRAND="The Quantum Deck";
+const PUBLIC_URL=(window.SignalShare&&window.SignalShare.BASE?window.SignalShare.BASE:"https://thillairaj.github.io/The-Signal-AI-Quantum")+"/quantum-deck/";
+const THEMES={
+obsidian:{bg0:"#151923",bg1:"#0d0f14",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"},
+ivory:{bg0:"#fffdf9",bg1:"#f0ebdf",accent:"#a8842f",dim:"rgba(168,132,47,.45)",head:"#171b24",body:"#334052",foot:"#6b7280"},
+midnight:{bg0:"#122c55",bg1:"#0b1f3b",accent:"#d4af6a",dim:"rgba(212,175,106,.5)",head:"#ffffff",body:"#c3ccd9",foot:"#8fa0b5"}};
+/* ---------- topics: one data block per deck; shared render below ---------- */
+/* ---------- Theme (same pattern as The Signal) ---------- */
+const THEME_KEY="deck_theme";
+const themeToggleBtn=document.getElementById("themeToggle");
+function applyTheme(theme){
+  if(theme==="dark"||theme==="light"){document.documentElement.setAttribute("data-theme",theme);}
+  else{document.documentElement.removeAttribute("data-theme");}
+  themeToggleBtn.textContent=(theme==="dark")?"\u2600":"\u263e";
+  if(!theme&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){
+    themeToggleBtn.textContent="\u2600";
+  }
+}
+(function initTheme(){
+  let saved=null;try{saved=localStorage.getItem(THEME_KEY);}catch(e){}
+  applyTheme(saved);
+})();
+themeToggleBtn.addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme")||
+    (window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark";
+  try{localStorage.setItem(THEME_KEY,next);}catch(e){}
+  applyTheme(next);
+});
+
+const TOPICS=[
+{id:"fundamentals",num:"01",short:"Fundamentals",title:"Quantum Computing Fundamentals",
+ tagline:"The 15 essential ideas behind quantum computing — no physics background needed.",
+ xTags:"#QuantumComputing #LearnQuantum",liTags:"#QuantumComputing #QuantumDeck #LearnInPublic",
+ status:"live",
+ learn:[
+{n:"1",tag:"QUANTUM COMPUTING",q:"What is quantum computing?",body:["Quantum computing processes information using quantum physics. Classical computers use bits with definite values, 0 or 1. Quantum computers use qubits, quantum systems whose states follow different rules.","The aim is not to make every calculation faster. Quantum algorithms exploit effects such as superposition, interference, and entanglement for particular problems where those effects beat classical methods."]},
+{n:"2",tag:"THE QUBIT",q:"Classical bit vs qubit — what's the difference?",body:["A classical bit has one definite value, 0 or 1. A qubit is a quantum system with two reference states, |0⟩ and |1⟩, and can also occupy other valid states formed from them.","A qubit does not store two classical bits. Its state is described by amplitudes, and measurement produces one classical result — the quantum richness collapses to a single ordinary bit. It is not a smaller classical bit."]},
+{n:"3",tag:"QUANTUM STATE",q:"What is a quantum state?",body:["A quantum state is the mathematical description of what can be predicted about a quantum system before a particular measurement. For one qubit, the state can be written as |ψ⟩ = α|0⟩ + β|1⟩.","Here α and β are complex amplitudes describing the two basis-state components — more precise than saying a qubit is simply 0 and 1 at once. The state carries information about probabilities and phase."]},
+{n:"4",tag:"SUPERPOSITION",q:"What is superposition?",body:["Superposition means a quantum system can occupy a state that combines its basis states. For one qubit, |ψ⟩ = α|0⟩ + β|1⟩, where α and β are amplitudes.","Superposition does not mean measurement displays both values. A measurement in the 0/1 basis gives one result. The amplitudes determine the probabilities, while their relative phase can affect later interference. It is a property of the quantum state."]},
+{n:"5",tag:"SUPERPOSITION",q:"What does superposition look like mathematically?",body:["A simple superposition can give equal probabilities for 0 and 1. The state |+⟩ = (|0⟩ + |1⟩)/√2 has equal amplitudes, 1/√2, for both basis states.","Squaring each amplitude's magnitude gives 1/2, so P(0) = P(1) = 1/2. Prepare this state many times and the results approach a 50/50 split. The qubit is not secretly holding one classical value. This is the simplest useful example of a qubit in superposition."]},
+{n:"6",tag:"QUANTUM AMPLITUDES",q:"What are amplitudes?",body:["An amplitude is a number that describes a component of a quantum state, not a probability. For a qubit, α and β may be real or complex, and their magnitude and phase affect later behavior.","Measurement probabilities come from squared magnitudes: P(0) = |α|² and P(1) = |β|². Because amplitudes carry phase, they can reinforce or cancel when combined. That interference is central to quantum algorithms."]},
+{n:"7",tag:"THE NORMALIZATION RULE",q:"Why must probabilities add to one?",body:["Quantum-state probabilities must add to 1 because a complete measurement must produce one of the allowed outcomes. For a qubit, this is |α|² + |β|² = 1.","Here |α|² and |β|² are the probabilities of measuring 0 and 1. This normalization condition is part of what makes a state physically valid. It is not a rule added by the hardware or software. This is why the state can describe valid probabilities."]},
+{n:"8",tag:"QUANTUM PHASE",q:"What is phase?",body:["Phase changes how a quantum state behaves even when measurement probabilities are identical. Two qubits can both measure 50/50 as 0-or-1 yet be different states — |+⟩ and |−⟩ differ only in the sign of one amplitude.","That sign — the relative phase — lets later operations reinforce or cancel amplitudes. Picture two same-sized waves with different timing: phase is invisible to one measurement, but it decides interference."]},
+{n:"9",tag:"QUANTUM MEASUREMENT",q:"What happens when we measure?",body:["Quantum measurement converts information in a quantum state into a classical outcome. For |ψ⟩ = α|0⟩ + β|1⟩, a measurement in the 0/1 basis gives 0 with probability |α|² or 1 with probability |β|².","After an ideal measurement, the state is projected onto the observed result. The original superposition cannot be recovered from that outcome. It is not simply reading a stored classical value."]},
+{n:"10",tag:"QUANTUM MEASUREMENT",q:"Why is one measurement not enough?",body:["One measurement gives one classical outcome, so it cannot reveal an entire unknown quantum state. To estimate outcome probabilities, we prepare the same state repeatedly and collect many measurements.","Each execution is often called a shot. For example, 1,000 shots from a state with a 70% probability of 0 should give roughly 700 zeros, with normal statistical variation. More shots improve the estimate."]},
+{n:"11",tag:"QUANTUM GATES",q:"What is a quantum gate?",body:["A quantum gate is an operation that changes a quantum state in a controlled way. Ideal gates are reversible and represented by unitary operations preserving total probability.","For example, the Hadamard gate maps |0⟩ to (|0⟩ + |1⟩)/√2, creating equal measurement probabilities — but it treats |1⟩ differently, and that sign difference is exactly what interference exploits. Other gates change phase or act on several qubits."]},
+{n:"12",tag:"QUANTUM CIRCUITS",q:"What is a quantum circuit?",body:["A quantum circuit is an ordered sequence of operations applied to qubits. It can include state preparation, quantum gates, and measurements that convert the final quantum state into classical data.","For example, applying a Hadamard gate to |0⟩ and then measuring gives 0 or 1 with equal probability. Larger circuits combine operations to shape amplitudes and correlations for a specific algorithm."]},
+{n:"13",tag:"QUANTUM INTERFERENCE",q:"What is interference?",body:["Quantum interference occurs when probability amplitudes combine and their phases determine whether they reinforce or cancel. Algorithms control this effect so useful outcomes become more likely and unwanted outcomes less likely.","Waves in phase reinforce; opposite phases cancel. Superposition alone creates no speedup — it only creates the amplitudes. Interference makes them useful: it reshapes which outcomes survive."]},
+{n:"14",tag:"ENTANGLEMENT",q:"What is entanglement — and what are the hard limits?",body:["Entanglement is a relationship between quantum systems whose joint state cannot be described as separate independent states — for example (|00⟩ + |11⟩)/√2.","Measuring both in the 0/1 basis gives correlated results — both 0 or both 1 — yet nothing outruns light. Two hard limits: an unknown state cannot be copied (no-cloning follows from linearity), and stray interactions decohere fragile states, so error correction exists."]},
+{n:"15",tag:"BRINGING IT TOGETHER",q:"How do all these ideas connect?",body:["The full chain: qubits hold states; superposition combines basis states; amplitudes set probabilities; phase enables interference; gates transform; circuits organize; entanglement correlates; measurement reads out.","Advantage is narrow: seek quantum structure, where interference and algebraic structure dissolve classical bottlenecks. Factoring threatens RSA and ECC encryption only once fault-tolerant machines exist."]}
+], flash:[{q:"Why won't a quantum computer just make every calculation faster?",a:"Speedup isn't the aim — quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods. Everything else stays classical."},{q:"If a qubit can be 0 and 1 at once, doesn't it store two bits?",a:"No. A qubit's state is described by amplitudes, and measurement produces one classical result — the quantum richness collapses to a single ordinary bit. It is not a smaller classical bit."},{q:"What does the state |ψ⟩ = α|0⟩ + β|1⟩ actually tell you — the answer you'll get, or something else?",a:"Something else: it describes what can be predicted about probabilities and phase before a measurement. More precise than saying the qubit is simply 0 and 1 at once."},{q:"Does superposition mean a measurement will display both values?",a:"No. One measurement in the 0/1 basis gives one result. Superposition is a property of the quantum state — the amplitudes determine probabilities, and their relative phase can affect later interference."},{q:"You prepare |+⟩ = (|0⟩ + |1⟩)/√2 and measure 1,000 times. What do you see — and what conclusion must you avoid?",a:"Roughly a 500/500 split. Don't conclude the qubit was secretly holding one classical value all along — the state genuinely had equal amplitudes for both basis states."},{q:"Are amplitudes just probabilities with a fancy name?",a:"No. Amplitudes aren't probabilities — they can be complex and carry phase, so when combined they can reinforce or cancel. That interference is central to quantum algorithms."},{q:"Why must |α|² + |β|² = 1 — is it a hardware setting someone chose?",a:"No. A complete measurement must produce one of the allowed outcomes, so the probabilities must add to 1. Normalization is what makes a state physically valid, not a rule added by hardware or software."},{q:"Two qubits both measure 50/50 as 0-or-1. Can they still be different states?",a:"Yes. |+⟩ and |−⟩ differ only in the sign of one amplitude — the relative phase. Phase is invisible to one measurement, but it decides whether later amplitudes reinforce or cancel."},{q:"A qubit in superposition is measured as 0. What was its state just before — and can you recover it?",a:"It was in a superposition (e.g. α|0⟩ + β|1⟩). After the measurement the state is projected onto the observed result, and the original superposition cannot be recovered. Measurement isn't reading a stored value."},{q:"Why can't a single measurement reveal a qubit's full state?",a:"One measurement yields one classical outcome. To estimate probabilities you prepare the same state repeatedly — each run a shot. From a 70%-of-0 state, 1,000 shots give roughly 700 zeros; more shots, better estimate."},{q:"The Hadamard gate turns |0⟩ into an equal superposition. Why does it matter that it treats |1⟩ differently?",a:"That sign difference is exactly what interference exploits. Gates are reversible operations, and the Hadamard's phase behavior isn't trivia — it's a tool for controlling which amplitudes reinforce or cancel."},{q:"A quantum circuit ends with a measurement anyway — so why not measure first and skip the gates?",a:"Because the gates do the work: they shape amplitudes and correlations so the right answers become more likely. Measurement only converts the final quantum state into classical data."},{q:"If superposition alone created all the amplitudes, what actually creates the speedup?",a:"Interference. Superposition alone creates no speedup — it only creates amplitudes. Interference reshapes which outcomes survive: useful ones reinforced, unwanted ones cancelled."},{q:"Measuring entangled qubits gives perfectly correlated results. Can you use that to signal faster than light?",a:"No — nothing outruns light. The correlation is real but carries no signal. Entanglement also has hard limits: an unknown state cannot be copied (no-cloning), and stray interactions decohere fragile states — which is why error correction exists."},{q:"Where is quantum computing's advantage — everywhere, or somewhere specific?",a:"Somewhere specific: seek quantum structure, where interference and algebraic structure dissolve classical bottlenecks. Factoring threatens RSA and ECC encryption only once fault-tolerant machines exist — today's machines aren't there yet."}],
+ quiz:[{q:"A qubit differs from a classical bit because…",opts:["It stores two classical bits at once","It is simply a smaller, faster bit","It has two reference states and can occupy other valid states built from them","It always measures as both 0 and 1"],c:2},{q:"For |ψ⟩ = α|0⟩ + β|1⟩, the probability of measuring 1 is…",opts:["|β|²","|β|","β²","β"],c:0},{q:"What does |+⟩ = (|0⟩ + |1⟩)/√2 tell you?",opts:["Amplitudes are the same as probabilities","P(0) = P(1) = 1/2","The qubit secretly holds 0 or 1","Measurement always gives 0"],c:1},{q:"Phase matters because…",opts:["It changes measurement probabilities directly","It is visible in a single measurement","It lets you copy the quantum state","It decides how amplitudes reinforce or cancel in later operations"],c:3},{q:"After an ideal measurement of a superposition…",opts:["The qubit can be measured again for the other value","The state is projected onto the observed result and can’t be recovered","Nothing about the state changes","The superposition is preserved for later"],c:1},{q:"1,000 shots of a state with 70% probability of 0 should give…",opts:["The full quantum state","Exactly 700 zeros","Roughly 700 zeros, with normal statistical variation","700 ones"],c:2},{q:"Ideal quantum gates are…",opts:["Reversible operations preserving total probability","Irreversible, like classical logic gates","Measurements in disguise","Usable only once each"],c:0},{q:"Why is interference the key to quantum speedup?",opts:["Superposition alone is already enough","It reshapes which outcomes survive — reinforcing useful ones, canceling others","It removes the need for measurement","It copies amplitudes"],c:1},{q:"Entanglement means…",opts:["Measurement results are always identical","Qubits can signal faster than light","Qubits must be physically touching","The joint state can’t be described as separate independent states"],c:3},{q:"Which statement about quantum advantage is correct?",opts:["Factoring threatens RSA/ECC only once fault-tolerant machines exist","It makes every calculation faster","It works without any measurement","Entanglement alone guarantees speedup"],c:0}]},
+{id:"networks",num:"02",short:"Networks",title:"Quantum Networks",status:"live",
+ tagline:"15 cards on entanglement at a distance — teleportation, repeaters, and the quantum internet.",
+ xTags:"#QuantumNetworks #LearnQuantum",liTags:"#QuantumNetworks #QuantumDeck #LearnInPublic",
+ learn:[
+{n:"1",tag:"QUANTUM INTERNET",q:"What is the quantum internet?",body:["A quantum internet connects distant quantum devices by distributing entanglement, not ordinary traffic. Entanglement is a shared quantum resource for teleportation and distributed tasks.","Unknown quantum states cannot be perfectly copied, so classical amplifiers cannot simply extend quantum links. Networks therefore need specialized components such as quantum memories and repeaters to extend entanglement."]},
+{n:"2",tag:"QUANTUM TELEPORTATION",q:"What does quantum teleportation actually do?",body:["Quantum teleportation transfers an unknown quantum state to a distant quantum system without physically sending the original particle there. It uses pre-shared entanglement and a classical channel.","A Bell-state measurement and two classical bits tell the receiver which correction to apply. The original state is consumed. Because classical information must travel, it cannot send usable information faster than light."]},
+{n:"3",tag:"ENTANGLEMENT SWAPPING",q:"How do you entangle qubits that never met?",body:["Entanglement swapping can entangle two qubits that never directly interacted. Start with two entangled pairs and perform a joint Bell-state measurement on one qubit from each pair.","The two remaining qubits then become entangled, with the resulting state determined by the measurement outcome and any needed correction. Repeating this process across short links is a basic technique proposed for quantum repeaters."]},
+{n:"4",tag:"QUANTUM REPEATERS",q:"Why can't we just amplify the signal?",body:["Classical networks extend range by amplifying signals, but an unknown quantum state cannot be perfectly copied. A repeater cannot simply copy and retransmit an arbitrary qubit.","Repeater schemes instead use entanglement generation and swapping, with purification or error correction in some designs. The aim is to extend useful entanglement without copying it. This is why repeaters are not ordinary amplifiers."]},
+{n:"5",tag:"QKD NETWORKS",q:"What runs on early quantum networks?",body:["Early quantum networks mainly use quantum key distribution (QKD), which creates shared cryptographic keys using quantum states. Protocols such as BB84 can reveal excess errors that may indicate eavesdropping.","Many long-distance QKD networks use trusted nodes because direct links lose photons. Key material is handled at each trusted site. This can work, but the security model requires trusting those intermediate nodes."]},
+{n:"6",tag:"ENTANGLEMENT PURIFICATION",q:"How do you clean noisy entanglement?",body:["Entanglement purification, or distillation, improves shared entanglement by processing several noisy entangled pairs and keeping fewer, higher-fidelity pairs.","The operations are local at each endpoint and coordinated with classical communication. Several imperfect pairs may produce one more reliable pair. Purification trades quantity and time for quality, helping some long-distance quantum protocols."]},
+{n:"7",tag:"QUANTUM MEMORIES",q:"Why do networks need quantum memories?",body:["A quantum memory stores quantum information long enough for another network operation to succeed. This matters because different links may succeed at different times while stored quantum states can lose coherence.","Longer useful memory gives a repeater more time to coordinate successful links, but it does not automatically extend a network proportionally. Efficiency, fidelity, synchronization, loss, and rate also matter."]},
+{n:"8",tag:"BELL-STATE MEASUREMENT",q:"What is a Bell-state measurement?",body:["A Bell-state measurement is a joint measurement used to identify an entangled state of two qubits. The four Bell states are standard maximally entangled two-qubit states.","Bell-state measurements are central to teleportation and entanglement swapping. In swapping, the measurement is local but helps establish distant entanglement. Classical communication may then be needed to track or correct the resulting state."]},
+{n:"9",tag:"SATELLITE QKD",q:"Why go to space?",body:["Optical fiber loses photons with distance; about 0.2 decibels per kilometer is a common low-loss figure near telecom wavelengths. Lost photons cannot simply be amplified.","Satellite links avoid most fiber attenuation through space, but still face geometric loss, pointing errors, atmospheric effects, and detector limits. Satellites demonstrate long links, but do not remove every networking challenge."]},
+{n:"10",tag:"QUANTUM NETWORK TOPOLOGY",q:"How will quantum networks be organized?",body:["Quantum networks will likely have local, metropolitan, and long-distance links, although the final architecture is still developing. Their key resource is entanglement rather than ordinary data packets.","A classical control system remains essential for scheduling, measurement results, link status, and coordination. The two channels therefore work together: one carries quantum information; the other coordinates it."]},
+{n:"11",tag:"QUANTUM NETWORK STANDARDS",q:"Who decides how quantum networks interoperate?",body:["Several standards groups are studying how quantum networks should interoperate, but a universal quantum-internet stack has not been finalized. Work covers architecture, devices, and protocols.","The International Telecommunication Union (ITU), European Telecommunications Standards Institute (ETSI), and Internet Engineering Task Force Quantum Internet Research Group (IETF QIRG) contribute. Standards are still developing."]},
+{n:"12",tag:"QUANTUM NETWORK USE CASES",q:"What is a quantum network actually for?",body:["Quantum networks could do more than distribute cryptographic keys. They may connect quantum processors, support delegated computing, and link quantum sensors.","The common resource is shared entanglement between distant systems. These applications are at different research stages; no single killer application is established. The network is infrastructure for capabilities individual quantum computers cannot provide."]},
+{n:"13",tag:"BLIND QUANTUM COMPUTING",q:"Can you compute on someone else's quantum computer privately?",body:["Blind quantum computing lets a client delegate a quantum computation to a remote server using a protocol designed to protect sensitive client information. Privacy guarantees depend on the protocol and its assumptions.","Some protocols can hide the client's input, computation, and output while the server performs the operations. The key idea is private delegation. Security comes from the protocol and its assumptions."]},
+{n:"14",tag:"QUANTUM NETWORK SECURITY",q:"Does a quantum network solve all security?",body:["A quantum network does not solve every security problem. Quantum key distribution can protect key establishment, but endpoints, implementation flaws, side channels, authentication failures can still cause harm.","An attacker can still steal data from a compromised endpoint after decryption. Quantum networking removes some attack paths; it does not replace cybersecurity controls such as authentication and monitoring."]},
+{n:"15",tag:"THE ROAD AHEAD",q:"When does this arrive?",body:["Quantum networking is developing in stages rather than arriving as one finished 'quantum internet.' Trusted-node QKD networks exist, while repeater-based entanglement networking remains active research.","A full network with reliable entanglement between distant endpoints needs advances in repeaters, memories, interfaces, error control, and operations. The timeline is uncertain, so a staged path is more defensible."]}
+], flash:[{q:"Your friend says the quantum internet will make downloads a million times faster. What's wrong with that picture?",a:"The quantum internet distributes entanglement — a shared resource for teleportation and distributed quantum tasks — not data. It won't speed up your downloads; its value is enabling things no single quantum computer can do, like linked quantum processors."},{q:"In teleportation, what physically travels to the receiver — the particle, the state, or nothing at all?",a:"Nothing carrying the state physically travels. The receiver's qubit is rebuilt from pre-shared entanglement plus two classical bits, and the original state is consumed. Because classical bits must travel, it can never beat light speed."},{q:"Two qubits sit in labs 500 km apart and have never interacted. How could they end up entangled?",a:"Entanglement swapping: start with two entangled pairs (A–B and C–D), do a joint Bell-state measurement on B and C, and A and D become entangled. Chaining this across short links is the core trick quantum repeaters use."},{q:"Why can't a quantum repeater be a louder amplifier, like on a classical network?",a:"Classical amplifiers copy the signal — and an unknown quantum state cannot be perfectly copied (no-cloning). So repeaters don't amplify; they extend useful entanglement via generation, swapping, and purification. A repeater is not an amplifier."},{q:"A QKD network claims “unbreakable encryption” but runs through trusted nodes. What's the catch?",a:"Key material exists at each trusted site, so the security model literally requires trusting every intermediate node. The quantum link can be unhackable in principle while the network is only as trustworthy as its nodes."},{q:"You have ten noisy entangled pairs and need one excellent one. What do you do — and what does it cost?",a:"Purification (distillation): process the noisy pairs with local operations plus classical coordination and keep one higher-fidelity pair. It trades quantity and time for quality — you spend many pairs to win one."},{q:"Why does a repeater need to remember anything? Why not just forward instantly?",a:"Links succeed at random times — link A might entangle now while link B takes a minute. A quantum memory holds A's success while waiting for B, so swapping can proceed. But longer memory alone doesn't extend range proportionally — loss, fidelity, and rate matter too."},{q:"What single operation powers both teleportation and entanglement swapping?",a:"The Bell-state measurement — a joint measurement that identifies which of the four standard maximally entangled states two qubits are in. It's the engine of the quantum network: measure jointly here, entangle things over there."},{q:"Fiber loses about 0.2 dB/km. Why does that number push people toward satellites?",a:"At 0.2 dB/km, most photons die over long fiber — and unlike classical signals, lost photons can't be amplified back (no-cloning). Satellite links travel mostly through vacuum, dodging fiber loss, though they face their own losses: beam spread, pointing errors, and the atmosphere."},{q:"A quantum network has two channels, not one. What does the second one carry, and why is it indispensable?",a:"The classical channel carries measurement results, scheduling, and link status. Teleportation needs two classical bits to tell the receiver which correction to apply; without classical coordination, the quantum channel alone can't deliver anything usable."},{q:"Who decides how quantum networks will plug into each other — is there a standard stack like TCP/IP yet?",a:"Not yet. Groups like the ITU (International Telecommunication Union), ETSI (European Telecommunications Standards Institute), and the IETF's QIRG are studying architecture, devices, and protocols, but no universal quantum-internet stack exists — interoperability is still an open question."},{q:"If QKD (quantum key distribution) is the early use case, what's the bigger prize for quantum networks?",a:"Shared entanglement between distant systems — enabling linked quantum processors, delegated private computing, and networks of quantum sensors. Keys are the first app; the network is infrastructure for things no single quantum computer can do."},{q:"You want to run a secret calculation on someone else's quantum computer. How can it compute without seeing what it's computing?",a:"Blind quantum computing: a protocol lets the server perform the operations while hiding your input, the computation itself, and the output. But the privacy is only as strong as the protocol and its assumptions — “blind” is a property of the protocol, not magic."},{q:"A company buys QKD and declares itself “unhackable.” What are they forgetting?",a:"QKD only protects key establishment. Endpoints, buggy implementations, side channels, and broken authentication can all still leak data — an attacker can steal it after decryption at a compromised endpoint. Quantum networking removes some attack paths; it doesn't replace authentication and monitoring."},{q:"When does the quantum internet “arrive” — next year, 2030, never?",a:"It arrives in stages, not one big launch. Trusted-node QKD networks already exist; repeater-based entanglement networks are still research. A full network needs better repeaters, memories, interfaces, and error control — so the honest timeline is “uncertain, in stages.”"}],
+ quiz:[{q:"The key resource of a quantum internet is…",opts:["Faster classical packets","Quantum amplifiers","Shared entanglement between distant systems","Thicker fiber cables"],c:2},{q:"Quantum teleportation requires…",opts:["Pre-shared entanglement and a classical channel","Physically sending the original particle","Faster-than-light signaling","Only a classical channel"],c:0},{q:"After teleportation, the original state is…",opts:["Stored in a quantum memory","Consumed","Copied to both ends","Returned to the sender"],c:1},{q:"Entanglement swapping entangles two qubits that never met by…",opts:["Amplifying their signals","Copying one pair’s state","Measuring both qubits directly","A joint Bell-state measurement on one qubit from each of two entangled pairs"],c:3},{q:"Why are quantum repeaters not ordinary amplifiers?",opts:["They only work in space","An unknown quantum state cannot be perfectly copied","They need no power","They are too expensive"],c:1},{q:"Purification improves entanglement by…",opts:["Adding more qubits","Amplifying weak pairs","Turning several noisy pairs into fewer high-fidelity ones","Cooling the fiber"],c:2},{q:"A quantum memory’s main job is to…",opts:["Hold quantum information until other network operations succeed","Store classical keys forever","Replace repeaters entirely","Encrypt the channel"],c:0},{q:"Satellite QKD helps because…",opts:["Photons travel faster in space","It avoids most fiber attenuation, though pointing and atmospheric limits remain","Satellites amplify quantum signals","Space links have no challenges at all"],c:1},{q:"Blind quantum computing lets a client…",opts:["Break the server’s encryption","Read the server’s private data","Compute with no quantum hardware at all","Delegate a computation while hiding input, computation, and output"],c:3},{q:"Which risk remains even with QKD in place?",opts:["Endpoint compromise after decryption","Key establishment itself","Photon loss in fiber","The Bell-state measurement"],c:0}]},
+{id:"cryptography",num:"03",short:"Cryptography",title:"Quantum Cryptography",status:"live",
+ tagline:"15 cards on security from physics — QKD, post-quantum crypto, and what’s actually at risk.",
+ xTags:"#QuantumCryptography #LearnQuantum",liTags:"#QuantumCryptography #QuantumDeck #LearnInPublic",
+ learn:[
+{n:"1",tag:"QKD",q:"What is quantum key distribution?",body:["Quantum key distribution (QKD) lets two parties create a shared secret key using quantum states. It does not itself send the protected message.","The key can then protect ordinary data using classical cryptography. QKD security depends on the protocol, devices, authentication, and implementation. Quantum physics provides a security resource, not a complete cybersecurity system."]},
+{n:"2",tag:"BB84",q:"How does BB84 work?",body:["BB84 creates a key by sending quantum states in randomly chosen bases. The parties compare bases over an authenticated classical channel and keep compatible rounds.","They estimate the quantum bit error rate (QBER). Excess errors may indicate eavesdropping or ordinary noise, so the protocol can abort. Error correction and privacy amplification then produce a shorter shared secret key."]},
+{n:"3",tag:"E91",q:"What's entanglement-based QKD?",body:["Entanglement-based quantum key distribution uses shared entangled pairs and their measurement correlations. Ekert's 1991 protocol, E91, is a foundational example.","Bell-inequality tests can support strong security arguments, but E91 is not automatically device-independent. Modern device-independent QKD requires additional assumptions, careful security proofs, and demanding experimental conditions."]},
+{n:"4",tag:"NO-CLONING DEFENSE",q:"Why is QKD secure?",body:["QKD can detect some eavesdropping because an unknown quantum state cannot be perfectly copied and measurements of nonorthogonal states can disturb them.","These principles do not mean security is simply 'copy, measure, or guess.' Security proofs consider general attacks, noise, finite data, authentication, and device behavior. Quantum mechanics provides the foundation; the protocol determines how it is used."]},
+{n:"5",tag:"POST-QUANTUM CRYPTO",q:"What is post-quantum cryptography?",body:["Post-quantum cryptography (PQC) uses classical algorithms designed to resist attacks from future quantum computers. It needs no quantum communication hardware.","The National Institute of Standards and Technology (NIST) has standardized ML-KEM, ML-DSA, and SLH-DSA — ‘ML’ means module-lattice, not machine learning. Migration is an engineering program spanning discovery, replacement, testing, and operations."]},
+{n:"6",tag:"QKD VS PQC",q:"Which should we use — QKD or PQC?",body:["PQC and QKD address quantum-era security differently. PQC uses mathematical problems believed to resist quantum attacks; QKD uses quantum communication to establish keys under defined assumptions.","PQC can use existing networks, while QKD needs specialized hardware and links. They can also be combined. The choice depends on the threat model, infrastructure, assurance needs, cost, and operational constraints."]},
+{n:"7",tag:"HARVEST NOW, DECRYPT LATER",q:"Why migrate before quantum computers exist?",body:["'Harvest now, decrypt later' means an attacker can capture encrypted data today and try to decrypt it in the future if stronger cryptanalysis becomes available.","The risk is greatest for information that must stay secret for years. Quantum computers could threaten some public-key encryption, but captured data is not automatically exposed. Risk depends on data lifetime, current cryptography, and capabilities."]},
+{n:"8",tag:"SHOR IMPACT",q:"What exactly does Shor break?",body:["Shor's algorithm gives efficient quantum methods for integer factoring and discrete logarithms. Large fault-tolerant machines could therefore threaten RSA, Diffie-Hellman, and elliptic-curve cryptography.","Under ideal Grover search, AES-128 drops to roughly 64-bit effective strength while AES-256 retains a large margin. Practical attacks need major resources — but the public-key threat still drives migration."]},
+{n:"9",tag:"QRNG",q:"What is quantum randomness?",body:["A quantum random number generator (QRNG) uses quantum measurements to produce physical randomness: in standard quantum mechanics, some measurement outcomes are fundamentally probabilistic.","Classical pseudorandom generators are deterministic algorithms designed to look random. A QRNG provides physical entropy, but quality still depends on device and validation — testing matters even when the source is quantum."]},
+{n:"10",tag:"DEVICE-INDEPENDENT QKD",q:"Can we trust the QKD devices themselves?",body:["QKD devices can have security weaknesses even when the protocol is mathematically sound. Examples include detector-control attacks and unintended optical leakage.","Device-independent QKD aims to reduce trust in device internals using observed Bell-inequality violations. It requires demanding conditions and assumptions, so it remains a research direction. It still needs secure design and testing."]},
+{n:"11",tag:"TRUSTED NODES",q:"What's the catch in today's QKD networks?",body:["Long-distance QKD without quantum repeaters may use trusted intermediate nodes. Each node participates in key handling, so the route depends on those sites.","A trusted-node network can protect links, but a compromised intermediate site can threaten key material. This differs from end-to-end security, where intermediate equipment need not know the secret. The trust model must therefore be explicit in the design."]},
+{n:"12",tag:"POST-QUANTUM MIGRATION",q:"How does an organization go post-quantum?",body:["A post-quantum migration begins by finding where cryptography is used: websites, VPNs, certificates, applications, firmware, backups, and stored data.","Crypto-agility means replacing algorithms without rebuilding the whole system. Hybrid approaches can combine classical and post-quantum methods during transition. Migration is an ongoing engineering program, not a single software upgrade."]},
+{n:"13",tag:"GROVER'S ALGORITHM",q:"Does quantum break all encryption?",body:["Quantum computing does not break every encryption system. Shor threatens public-key systems based on factoring and discrete logarithms; Grover gives a smaller advantage against some brute-force searches.","With ideal Grover search, AES-128 is often described as roughly 64-bit effective strength, while AES-256 retains a larger margin. Practical attacks still require major resources; migration is needed."]},
+{n:"14",tag:"DIGITAL SIGNATURES",q:"What about digital signatures?",body:["Digital signatures such as RSA and ECDSA are vulnerable to sufficiently capable quantum attacks because Shor's algorithm can solve their underlying mathematical problems.","Post-quantum signatures such as ML-DSA and SLH-DSA are designed to resist known quantum attacks, but their sizes and performance differ. Migration therefore affects certificates, software signing, protocols, and infrastructure—not just one algorithm."]},
+{n:"15",tag:"UNHACKABLE MYTH",q:"Does quantum cryptography mean unhackable?",body:["Quantum cryptography does not make a system unhackable. It can reduce particular attack paths, but endpoints, software, authentication, devices, and operations can still be compromised.","A protected key exchange cannot stop malware from stealing data after decryption. Secure systems therefore combine quantum or post-quantum cryptography with ordinary security controls. Physics is one security layer, not the whole system."]}
+], flash:[{q:"If QKD uses quantum physics to protect your messages, why can't it replace your VPN entirely?",a:"QKD only creates a shared secret key — it never sends the protected message itself. Quantum physics provides a security resource for key exchange, not a complete cybersecurity system."},{q:"During a BB84 run, the error rate suddenly spikes. What should the parties do — and why is that the safe response?",a:"Abort the run. Excess errors may mean an eavesdropper — or just ordinary noise — and the protocol can't tell which. Aborting means no possibly-compromised key ever gets used."},{q:"E91 uses Bell-inequality tests on entangled pairs. Does that mean it automatically trusts nothing about the devices?",a:"No. Bell tests support strong security arguments, but E91 is not automatically device-independent — that needs additional assumptions, careful proofs, and demanding experimental conditions."},{q:"Why is detecting eavesdropping more valuable than trying to make interception physically impossible?",a:"You can't stop someone from intercepting quantum signals — but no-cloning and measurement disturbance let you detect it. Detection turns eavesdropping from a silent win into a failed attempt, because tainted keys are discarded."},{q:"A colleague hears “ML-KEM” and assumes it involves machine learning. What should you tell them — and what is ML-KEM actually for?",a:"ML means module-lattice, a math problem believed hard even for quantum computers — not machine learning. ML-KEM is a NIST-standardized classical algorithm; it needs no quantum hardware at all."},{q:"Your bank must secure branch links this year. QKD needs new hardware and links; PQC runs on existing networks. Which do you pick, and why?",a:"PQC — it deploys on today's infrastructure while QKD needs specialized hardware. The choice follows the threat model, cost, and constraints; the two can also be combined."},{q:"A hospital encrypts patient records today that must stay secret for 30 years. Why is “harvest now, decrypt later” their problem now — not just a future one?",a:"Attackers can capture the encrypted data today and decrypt it later when stronger cryptanalysis arrives. Secrets with long lifetimes need migration before the threat does."},{q:"Shor's algorithm and Grover's algorithm both threaten cryptography — but in completely different ways. What's the difference?",a:"Shor efficiently breaks public-key math (factoring, discrete logarithms), threatening RSA and elliptic curves. Grover only speeds up brute force — AES-256 keeps a large margin against it."},{q:"If a random number generator uses quantum measurements, is its output automatically trustworthy?",a:"No. Quantum measurements are fundamentally probabilistic, but a real device's quality still depends on its design and validation — testing matters even when the source is quantum."},{q:"The QKD protocol is mathematically proven secure. Why might the link still be vulnerable?",a:"Proofs assume devices behave — real ones can leak, as in detector-control attacks. Device-independent QKD tries to remove that trust via Bell violations, but it needs demanding conditions and remains a research direction."},{q:"A QKD network spans 1,000 km using trusted intermediate nodes, and one site is compromised. What's lost — and why isn't this end-to-end security?",a:"The key material handled at that site can be exposed, since every trusted node participates in key handling. True end-to-end security wouldn't require any intermediate equipment to know the secret."},{q:"Your company starts its post-quantum migration tomorrow. What's the first step — and why isn't it just “install the new algorithm”?",a:"Discovery: find every place cryptography is used — websites, VPNs, certificates, firmware, backups. Migration is an ongoing engineering program, not one upgrade; crypto-agility lets you swap algorithms without rebuilding everything."},{q:"A headline says “quantum computers will break all encryption.” What's wrong with that claim?",a:"Quantum computing doesn't break everything. Shor threatens public-key systems based on factoring and discrete logs; Grover only shrinks brute-force margins. The threat is specific, not universal."},{q:"Everyone talks about encrypting data against quantum attacks — but why do digital signatures quietly make the migration harder?",a:"RSA and ECDSA signatures also fall to Shor, and replacing them touches certificates, software signing, and protocols everywhere. Post-quantum signatures like ML-DSA differ in size and performance too — it's an infrastructure project, not one swap."},{q:"A vendor sells you “unhackable quantum encryption.” You deploy it — and malware still steals your files. What went wrong?",a:"Nothing about the cryptography. A protected key exchange can't stop malware from stealing data after decryption. Quantum cryptography is one security layer — endpoints, software, and operations still matter."}],
+ quiz:[{q:"QKD is used to…",opts:["Send encrypted messages directly","Replace all classical cryptography","Create a shared secret key using quantum states","Authenticate users"],c:2},{q:"In BB84, an unusually high error rate (QBER) means…",opts:["Possible eavesdropping or noise — the protocol may abort","All bases were compatible","Privacy amplification is unnecessary","The key is extra secure"],c:0},{q:"Post-quantum cryptography differs from QKD in that it…",opts:["Is already proven unbreakable","Uses classical algorithms on existing networks","Requires quantum hardware","Sends keys as photons"],c:1},{q:"‘Harvest now, decrypt later’ is most dangerous for…",opts:["Passwords changed weekly","Public press releases","One-time video calls","Data that must stay secret for years"],c:3},{q:"Shor’s algorithm efficiently solves…",opts:["Hash collisions","Integer factoring and discrete logarithms","Random number generation","Brute-force key search"],c:1},{q:"Grover’s algorithm…",opts:["Needs no quantum hardware at all","Breaks RSA","Gives a smaller advantage against some brute-force searches","Makes AES-256 practically broken"],c:2},{q:"A QRNG’s randomness comes from…",opts:["Quantum measurement outcomes, which are fundamentally probabilistic","A clever deterministic formula","The device’s serial number","Amplified classical noise"],c:0},{q:"Trusted-node QKD networks require…",opts:["Quantum repeaters on every link","Trust in each intermediate node handling key material","Device-independent security proofs","Trust in no one"],c:1},{q:"Why do digital signatures need post-quantum migration?",opts:["Certificates expire faster now","Signatures are already quantum-safe","Grover breaks all hash functions completely","Shor’s algorithm can solve the math behind RSA/ECDSA"],c:3},{q:"The best summary of quantum cryptography’s role is…",opts:["Physics is one security layer among many — endpoints and operations still matter","It makes systems unhackable","It replaces firewalls and monitoring","It only helps governments"],c:0}]},
+{id:"qml",num:"04",short:"QML",title:"Quantum Machine Learning",status:"live",
+ tagline:"15 cards on where quantum meets learning — with honest hype filters.",
+ xTags:"#QuantumML #LearnQuantum",liTags:"#QuantumML #QuantumDeck #LearnInPublic",
+ learn:[
+{n:"1",tag:"QML",q:"What is quantum machine learning?",body:["Quantum machine learning (QML) combines quantum computing with machine learning. Common approaches include parameterized quantum circuits, quantum kernels, and learning from quantum data.","Most QML is still research-stage, and broad practical advantages are not established. The useful question is whether a learning problem contains quantum structure that a quantum method can exploit."]},
+{n:"2",tag:"VARIATIONAL CIRCUITS",q:"What is a variational quantum circuit?",body:["A variational quantum circuit is a quantum circuit with adjustable parameters that are trained to improve an objective. A classical computer usually updates those parameters.","The circuit produces measurement results, the classical optimizer uses them to choose new parameters, and the circuit runs again. This hybrid quantum-classical loop is a common near-term QML training pattern."]},
+{n:"3",tag:"QUANTUM KERNELS",q:"What are quantum kernels?",body:["A quantum kernel measures similarity between data points after they are encoded into quantum states. The kernel values can be used by a classical method such as a support vector machine (SVM).","A large Hilbert space does not prove an advantage. The quantum kernel must offer something difficult for classical methods to reproduce. Data encoding, noise, training cost, and strong classical baselines also matter."]},
+{n:"4",tag:"BARREN PLATEAUS",q:"Why is training quantum models hard?",body:["A barren plateau is a training problem in which gradients become extremely small, making useful parameter updates difficult. It can occur in certain deep or random quantum circuits.","Imagine a nearly flat landscape where the optimizer receives little direction. Shallow circuits, suitable costs, initialization, and circuit structure can help. Barren plateaus are a trainability problem, not a universal law of QML."]},
+{n:"5",tag:"QUANTUM DATA LOADING",q:"What's the input problem?",body:["Loading classical data into a quantum state can be a major cost in QML. Amplitude encoding can represent many values compactly, but preparing that state may itself require substantial work.","A fast quantum subroutine does not create an end-to-end speedup if data preparation dominates. Quantum-native data can reduce this mismatch, but state preparation, measurement, and access costs still need to be counted."]},
+{n:"6",tag:"QUANTUM DATA",q:"When does QML actually make sense?",body:["QML can be interesting when data comes from a quantum system, such as molecular states, quantum experiments, or quantum sensors. The input already has a quantum description.","This can reduce some classical-to-quantum encoding overhead, but it does not guarantee an advantage. Preparation, measurement, training, noise, and classical comparison still matter. Quantum-native data is a promising setting, not an automatic win."]},
+{n:"7",tag:"DEQUANTIZATION",q:"Has quantum ML advantage been debunked?",body:["Ewin Tang's dequantization work showed that some proposed QML speedups had efficient classical counterparts. This challenged claims that quantum methods were automatically faster.","The broader lesson is to compare against strong classical algorithms, not weak baselines. Dequantization did not disprove QML; it showed that some claimed advantages depended on assumptions that classical methods could also exploit."]},
+{n:"8",tag:"BORN MACHINES",q:"What are quantum generative models?",body:["A quantum generative model produces samples from a probability distribution represented by a quantum system. A Born machine is an example: measurement samples outcomes according to the state's probabilities.","Some models target distributions that may be difficult to sample classically. That possibility is not proof of practical advantage. Quality, training cost, noise, and classical comparison still matter."]},
+{n:"9",tag:"QNLP",q:"What is quantum natural language processing?",body:["Quantum natural language processing (QNLP) explores whether quantum circuits and related mathematics can represent aspects of language, especially compositional structure.","Some approaches map words and grammatical combinations into mathematical spaces where composition resembles quantum operations. This is active research, not evidence that language is literally quantum. Practical advantage remains an open question."]},
+{n:"10",tag:"HYBRID PIPELINES",q:"What's the realistic near-term picture?",body:["Near-term QML is more realistically a hybrid approach than a replacement for classical machine learning. A quantum circuit may perform one specialized computation inside a larger classical workflow.","A quantum kernel might be tested for a chemistry subproblem while classical software handles data and training. The test is end-to-end performance, not whether a quantum processor is used."]},
+{n:"11",tag:"FAULT TOLERANCE",q:"Does QML need error correction?",body:["Quantum error correction may become important for QML algorithms that require long, accurate computations. Fault-tolerant quantum computing protects logical information using multiple physical qubits.","Not every QML experiment requires full error correction today. Many demonstrations use noisy hardware and are evaluated empirically. Claims should state whether they depend on present or fault-tolerant machines."]},
+{n:"12",tag:"QML BENCHMARKS",q:"How do we know if QML works?",body:["A QML result is meaningful only when compared with strong classical alternatives on the same task, data, and evaluation criteria. Beating a weak baseline does not establish quantum advantage.","Good benchmarking includes task quality, runtime, data preparation, training cost, hardware noise, and classical compute. The real question is end-to-end: does the quantum approach solve the problem better or more efficiently?"]},
+{n:"13",tag:"QUANTUM FEATURE MAPS",q:"What do feature maps do?",body:["A quantum feature map converts classical input data into a quantum state. Its design determines how information is represented before later quantum processing.","A simple map may be easy for a classical computer to reproduce, limiting possible advantage. A highly complex map may be difficult to train. QML therefore balances representation quality, classical simulability, circuit cost, and trainability."]},
+{n:"14",tag:"QUANTUM NOISE",q:"Can quantum noise help learning?",body:["Quantum noise is usually harmful because it corrupts states, measurements, and parameter estimates. Some variational studies also find that controlled noise can sometimes act like regularization.","The effect is not universal and should not be treated as a strategy by itself. Noise may help one model while damaging another. The default engineering goal remains to understand, reduce, and manage unwanted noise."]},
+{n:"15",tag:"QML RULE OF THUMB",q:"When should you reach for QML?",body:["QML is worth considering when there is a credible reason for quantum processing, such as quantum-native data or a well-supported quantum complexity advantage.","Then compare it with the strongest classical method and include data loading, training, hardware, and measurement costs. If no clear mechanism for improvement exists, classical machine learning is usually the better starting point. Evidence should decide, not hype."]}
+], flash:[{q:"A vendor claims their QML product speeds up learning on ANY dataset. What's the flaw in that claim?",a:"QML only has a case when the learning problem contains quantum structure a quantum method can exploit — parameterized circuits, quantum kernels, or quantum data. Most QML is still research-stage; broad practical advantage is not established."},{q:"Why does training a variational quantum circuit need a classical computer in the loop?",a:"The quantum circuit just produces measurement results; a classical optimizer uses them to choose better parameters and runs the circuit again. That hybrid quantum-classical loop is the standard near-term training pattern."},{q:"A team argues their quantum kernel must be powerful because it uses a huge Hilbert space. What's wrong with that argument?",a:"A large Hilbert space doesn't prove advantage — the kernel must do something genuinely hard for classical methods to reproduce. Data encoding, noise, training cost, and strong classical baselines all matter too."},{q:"Why might adding MORE layers to a quantum model make it train worse instead of better?",a:"Deep or random circuits can hit barren plateaus, where gradients shrink to near zero and the optimizer gets no direction. Shallow circuits, suitable costs, and good initialization help — it's a trainability problem, not a universal law."},{q:"Your quantum subroutine is 100× faster than the classical one, yet the whole pipeline runs slower. What probably ate the advantage?",a:"Data loading. Encoding classical data into a quantum state — even compact amplitude encoding — can cost more work than the subroutine saves. Speedups only count end-to-end, including state preparation and measurement."},{q:"When does QML make the most sense — and why isn't it an automatic win even then?",a:"When the input already comes from a quantum system — molecules, experiments, sensors — since that reduces the classical-to-quantum encoding mismatch. But preparation, measurement, training, noise, and classical comparison still decide."},{q:"Ewin Tang found classical algorithms matching some claimed QML speedups. What should that teach you about evaluating QML claims?",a:"Compare against STRONG classical algorithms, not weak baselines — some claimed advantages depended on assumptions classical methods could also exploit. Dequantization didn't disprove QML; it raised the bar for proof."},{q:"A quantum generative model can sample a distribution that's hard to sample classically. Why isn't that automatically a breakthrough?",a:"Possibility isn't practical advantage. Sample quality, training cost, noise, and an honest classical comparison still have to be checked before anyone claims a win."},{q:"What idea drives quantum natural language processing — and what should you NOT conclude from it?",a:"QNLP maps words and grammatical composition into mathematical spaces where composition resembles quantum operations. But language isn't literally quantum — it's active research, and practical advantage remains an open question."},{q:"With only today's noisy hardware available, what's the realistic way to actually use QML?",a:"As one specialized step inside a larger classical workflow — say, a quantum kernel tested on a chemistry subproblem while classical software handles data and training. The test is end-to-end performance, not whether a quantum processor is used."},{q:"A startup's QML demo uses no error correction. Is that automatically a red flag?",a:"Not necessarily — many demos run on noisy hardware and are judged empirically. The real question is what the claim depends on: long, accurate computations need fault tolerance, but short experiments may not."},{q:"A QML paper reports beating a classical baseline. What's the first question to ask?",a:"Was it a STRONG classical baseline, on the same task, data, and evaluation criteria? Beating a weak baseline proves nothing — good benchmarking also counts data preparation, training cost, runtime, and hardware noise."},{q:"You're designing a quantum feature map. What trade-off are you balancing?",a:"Too simple a map and a classical computer can reproduce it, killing any possible advantage; too complex and it becomes hard to train. You balance representation quality, classical simulability, circuit cost, and trainability."},{q:"Can quantum noise ever HELP a model learn?",a:"Sometimes, in controlled cases — some variational studies find noise acting like regularization. But it's not universal and never a strategy by itself; the default engineering goal is still to understand, reduce, and manage noise."},{q:"You already have a classical ML pipeline that works. When is it worth trying QML instead?",a:"Only with a credible reason — quantum-native data or a well-supported quantum complexity advantage — then compare against the strongest classical method with ALL costs counted: loading, training, hardware, measurement. Evidence decides, not hype."}],
+ quiz:[{q:"A variational quantum circuit is trained by…",opts:["A quantum optimizer inside the circuit","Random guessing","A classical optimizer updating parameters in a hybrid loop","Backpropagation through the qubits only"],c:2},{q:"A quantum kernel…",opts:["Measures similarity between data encoded as quantum states","Replaces the classical computer","Needs no data encoding","Proves advantage via a large Hilbert space"],c:0},{q:"Barren plateaus are…",opts:["Proof that QML can never work","A trainability problem where gradients vanish in some deep or random circuits","A universal law of QML","A type of quantum gate"],c:1},{q:"The ‘input problem’ means…",opts:["QML has too much data","Quantum data doesn’t exist","Inputs must be binary","Loading classical data into quantum states can cost more than the speedup is worth"],c:3},{q:"Dequantization taught the field to…",opts:["Avoid mathematics","Compare against strong classical algorithms, not weak baselines","Use only deep circuits","Abandon QML entirely"],c:1},{q:"Quantum-native data is promising because…",opts:["Classical computers can’t store it","It guarantees quantum advantage","It reduces classical-to-quantum encoding overhead","It’s free to generate"],c:2},{q:"A Born machine…",opts:["Generates samples by measuring a quantum state’s probability distribution","Is a classical neural network","Proves quantum advantage","Requires full error correction"],c:0},{q:"Good QML benchmarking requires…",opts:["Quantum hardware only","Comparison with strong classical methods on the same task, data, and criteria","Ignoring training cost","Beating any classical baseline"],c:1},{q:"Near-term QML is best described as…",opts:["Completely free of noise","A full replacement for classical ML","Purely theoretical","Hybrid — quantum handles one specialized step in a classical workflow"],c:3},{q:"The sensible default when no clear quantum mechanism exists is…",opts:["Start with classical machine learning","Build the quantum version anyway","Add more qubits","Use a deeper circuit"],c:0}]},
+{id:"error-correction",num:"05",short:"Error Correction",title:"Quantum Error Correction",status:"live",
+ tagline:"The 15 essential ideas behind protecting fragile qubits — no physics background needed.",
+ xTags:"#QuantumErrorCorrection #LearnQuantum",liTags:"#QuantumErrorCorrection #QuantumDeck #LearnInPublic",
+ learn:[
+{n:"1",tag:"WHY ERROR CORRECTION MATTERS",q:"Why do quantum computers need error correction?",body:["Qubits go wrong easily: every gate misfires with roughly 0.1 to 1 percent probability, and stray heat or vibration corrupts fragile quantum states within microseconds.","Small errors snowball: 1,000 gates at 99.9 percent fidelity each succeed only about 37 percent of the time. Error correction weaves many noisy physical qubits into a few reliable logical ones; without it, building bigger only builds noisier."]},
+{n:"2",tag:"THE NO-CLONING BARRIER",q:"Why can't we copy qubits the way classical error correction does?",body:["Classical error correction copies: store a bit as 000 or 111 and let majority vote fix flips. Quantum physics forbids this shortcut for unknown quantum states.","The no-cloning theorem says no operation can copy an arbitrary quantum state — copying would require reading it, and measurement destroys superposition. So quantum codes spread one qubit's information across several entangled qubits: redundancy without duplication."]},
+{n:"3",tag:"THE MEASUREMENT DILEMMA",q:"Why can't we just measure the errors?",body:["To fix an error you must find it — but looking at a qubit measures it, collapsing its superposition into a plain 0 or 1 and destroying the computation you wanted to protect.","The workaround measures a joint property instead: check whether two qubits agree, without learning their values. A mismatch reveals a flip, while the data stays untouched — like confirming two sealed envelopes match without opening them."]},
+{n:"4",tag:"SHOR 9-QUBIT CODE",q:"What was the first quantum error-correcting code?",body:["In 1995 Peter Shor proved the impossible possible: his code packs one logical qubit into nine physical ones and fixes any single error — a bit flip, a phase flip, or both.","It nests two protections: three groups of three qubits, one layer catching bit flips and the other catching phase flips. Nine-to-one overhead was steep, but the value was existential — it proved quantum error correction could exist at all."]},
+{n:"5",tag:"STEANE 7-QUBIT CODE",q:"What is the Steane code?",body:["In 1996 Andrew Steane fit the same protection into seven qubits: one logical qubit stored in seven physical ones, correcting any single bit flip or phase flip.","The trick is borrowed from classical coding: the Hamming code — which guards 4 classical bits using 7 — is applied twice, once per error type. Its logical gates also touch each physical qubit only once, so a single fault can't spread mid-operation."]},
+{n:"6",tag:"THE STABILIZER METHOD",q:"What is the stabilizer approach to quantum codes?",body:["Writing out a quantum code's states directly is hopeless: n qubits need 2^n amplitudes. The stabilizer method sidesteps this by describing the code as a short list of check operators instead.","Each check is a yes-or-no measurement, like a checklist item. Valid code states pass every check; any error flips at least one to 'fail', revealing its fingerprint. Code design becomes writing checklists, not wavefunctions."]},
+{n:"7",tag:"SYNDROME MEASUREMENT",q:"How do you read errors without collapsing data?",body:["The trick uses a helper qubit, an ancilla: a short sequence of two-qubit gates copies only the parity of the data qubits — whether they agree — never their actual values.","Measuring the ancilla yields a bit string called the syndrome, which names the error the way a fever names an infection. Only a collective property was extracted, so the data survives — and ancillas reset every cycle, like a heartbeat monitor."]},
+{n:"8",tag:"CSS CODES",q:"What are CSS codes?",body:["CSS codes — named for Calderbank, Shor, and Steane — build quantum protection from two ordinary classical codes: one hunts bit flips, the other hunts phase flips.","The simplest example: |0⟩ becomes |000⟩ and |1⟩ becomes |111⟩, so a single flipped bit is outvoted 2-to-1. A second classical code, run in a rotated basis, catches phase flips the same way — every good pair of classical codes becomes a quantum code."]},
+{n:"9",tag:"SURFACE CODES",q:"Why do surface codes lead the field?",body:["Surface codes lay qubits on a flat grid where each qubit only talks to its neighbors — matching real hardware, where distant qubits can't interact. All error checks stay small and local.","That buys the highest known error threshold, around 1 percent. The price is headcount: a code of distance d — its protection strength — needs roughly d-squared physical qubits, so one useful logical qubit can demand a thousand or more."]},
+{n:"10",tag:"THRESHOLD THEOREM",q:"What does the threshold theorem guarantee?",body:["The threshold theorem draws a line: if each operation errs less often than a threshold — roughly 0.01 to 1 percent depending on the code — layering codes shrinks logical error exponentially.","Below the line, extra layers multiply protection while qubit cost grows only modestly — arbitrarily long computations become possible. Above it, more qubits just mean more noise. It is the mathematical license for the whole program."]},
+{n:"11",tag:"FAULT-TOLERANT GATES",q:"What makes a gate fault-tolerant?",body:["Protecting stored qubits is half the job — the computation must survive too. A fault-tolerant gate guarantees one physical fault can't snowball into an uncorrectable error.","The safest gates are transversal — applied qubit-by-qubit, so one fault can't spread, like firebreaks in a forest. But no code supports every gate this way (Eastin—Knill), and the missing gates need magic states — factories that dominate the budget."]},
+{n:"12",tag:"LOGICAL VS PHYSICAL QUBITS",q:"What is a logical qubit, really?",body:["A logical qubit is the reliable qubit you program; a physical qubit is the noisy device underneath — many physical ones woven together, with error checks running constantly.","Protection is measured by code distance d: it fixes about (d−1)/2 errors, so bigger d means exponentially safer. One useful logical qubit can need hundreds or thousands of physical ones — always ask: how many are logical?"]},
+{n:"13",tag:"THE COST OF CORRECTION",q:"What does fault tolerance actually cost?",body:["Fault tolerance has a staggering price tag: The latest estimate (Gidney, Google Quantum AI, May 2025) is under one million noisy physical qubits running for under a week, down from 20 million qubits in 2019.","Nearly all of that is error correction, not the algorithm: endless syndrome cycles and magic-state factories. Correction isn't a tax on the quantum computer — it is most of it. Hardware roadmaps are, honestly, roadmaps to affordable logical qubits."]},
+{n:"14",tag:"NISQ VS FAULT TOLERANCE",q:"Where does NISQ end and fault tolerance begin?",body:["NISQ — noisy intermediate-scale quantum — is the present: hundreds to a few thousand physical qubits, no error correction, running short algorithms whose answers are estimates, never exact.","Fault tolerance begins at breakeven, when a logical qubit first outperforms its physical parts. We're at the doorway — early demos exist — not inside the building. Never confuse a 1,000-physical-qubit chip with 1,000 reliable qubits."]},
+{n:"15",tag:"ERROR MITIGATION",q:"What is error mitigation, and is it enough?",body:["Error mitigation is correction's thrifty cousin: no encoding — instead, clean up answers by running at several noise levels and extrapolating to zero, or statistically canceling noise.","It runs on today's hardware, far cheaper than correction — but sampling costs grow exponentially with circuit depth. Painkiller versus cure: mitigation eases today's pain, only correction removes the disease. A bridge, not the destination."]}
+ ],
+ flash:[
+{q:"A colleague says error correction is just about building more reliable qubits — better hardware. What is missing from that view?",a:"Gate errors compound exponentially: at 99.9% fidelity per gate, 1,000 gates succeed only about 37% of the time. So what: no hardware roadmap reaches deep, useful circuits without error correction — it is not an accessory, it is the machine."},
+{q:"Why doesn't the no-cloning theorem kill the whole idea of quantum error correction?",a:"Cloning — copying an unknown quantum state — is forbidden, but error correction never copies. It spreads one qubit's information across several entangled qubits: redundancy without duplication. So what: quantum codes need entanglement, not replicas."},
+{q:"You cannot measure a qubit to find its error without collapsing it. What do you measure instead, and why does it work?",a:"A joint property like parity — whether two qubits agree — without learning their values. A mismatch reveals the flip while the data stays untouched, like confirming two sealed envelopes match without opening them. So what: you diagnose while remaining blind to the data, exactly what quantum mechanics demands."},
+{q:"What did Shor's 9-qubit code prove, beyond the code itself?",a:"That quantum error correction can exist at all — one logical qubit packed into nine physical ones, fixing any single bit flip, phase flip, or both. The nine-to-one overhead was steep. So what: the value was existential, not practical; the field launched from that proof."},
+{q:"Steane's code applies the classical Hamming code twice. What does each application protect against?",a:"One application hunts bit flips; the other — run in a rotated basis — hunts phase flips. Its logical gates also touch each physical qubit only once, so a single fault cannot spread mid-operation. So what: a good pair of classical codes becomes a quantum code."},
+{q:"A stabilizer code is described as a short list of check operators instead of 2^n amplitudes. What is the practical payoff?",a:"Code design becomes writing checklists, not wavefunctions: each check is a yes-or-no measurement, valid states pass every check, and any error flips at least one to 'fail', revealing its fingerprint. So what: codes can be designed and analyzed on classical computers."},
+{q:"What is a syndrome, and why does the 'fever' analogy work?",a:"The syndrome is the bit string from measuring helper (ancilla) qubits, which copy only the parity of the data qubits — never their values. It names the error the way a fever names an infection. So what: only a collective property is extracted, the data survives, and ancillas reset every cycle like a heartbeat monitor."},
+{q:"Why do surface codes lead the field despite needing roughly d-squared physical qubits?",a:"Their checks are local — each qubit only talks to its neighbors — matching real hardware where distant qubits cannot interact, which buys the highest known error threshold, around 1 percent. So what: buildability beats efficiency; the leader is the code that fits the hardware."},
+{q:"The threshold theorem says that below roughly 0.01 to 1 percent error per operation, layering codes shrinks logical error exponentially. What happens above the threshold?",a:"More qubits just mean more noise — extra layers multiply errors instead of suppressing them. So what: the theorem is a license with a condition; hardware must first get under the line before scale helps."},
+{q:"A fault-tolerant gate should be 'transversal' — applied qubit-by-qubit. What breaks if it is not?",a:"A single physical fault could snowball mid-operation into a multi-qubit error the code cannot fix. Transversal gates are like firebreaks in a forest. So what: protection must survive the computation itself, not just storage."},
+{q:"Why do fault-tolerant machines need 'magic state factories', and why does that matter for cost?",a:"No code supports every gate transversally (the Eastin–Knill theorem), so the missing gates are performed using special magic states distilled in dedicated factories. So what: these factories often dominate the qubit budget — most of a fault-tolerant quantum computer is error correction."},
+{q:"A vendor advertises a '1,000-qubit' chip. What single question cuts through the marketing?",a:"'How many are logical?' One useful logical qubit can need hundreds or thousands of physical ones woven together with constant error checks. So what: a raw physical-qubit count says almost nothing about computational power."},
+{q:"The latest estimate (Gidney, Google Quantum AI, May 2025) is under one million noisy physical qubits running for under a week, down from 20 million qubits in 2019. Where does that number come from?",a:"Almost entirely error-correction overhead — endless syndrome cycles and magic-state factories — not the algorithm itself. So what: hardware roadmaps are, honestly, roadmaps to affordable logical qubits."},
+{q:"Define NISQ in one line, then say what replaces it and when that replacement begins.",a:"NISQ — noisy intermediate-scale quantum — is the present: hundreds to a few thousand physical qubits, no error correction, short algorithms whose answers are estimates, never exact. It is replaced by fault tolerance, which begins at breakeven: when a logical qubit first outperforms its physical parts. So what: we are at the doorway, not inside the building."},
+{q:"Your team only has today's hardware. Should you use error mitigation, and with what expectation?",a:"Yes — mitigation, like running at several noise levels and extrapolating to zero, is far cheaper than correction and runs on today's machines. But sampling costs grow exponentially with circuit depth. So what: painkiller versus cure — a bridge to fault tolerance, not the destination."}
+ ],
+ quiz:[
+{q:"Why does a 1,000-gate circuit at 99.9% fidelity per gate succeed only about 37% of the time?",opts:["Errors snowball multiplicatively — each gate's error compounds","Qubits lose all information after exactly 1,000 gates","Only the final 37 gates carry the answer","Fidelity resets after every 100 gates"],c:0},
+{q:"What does the no-cloning theorem forbid?",opts:["Copying an arbitrary unknown quantum state","Entangling two qubits together","Measuring a joint property of two qubits","Resetting a helper qubit for reuse"],c:0},
+{q:"Why can a parity check reveal an error without collapsing the data?",opts:["It copies the data to a safe location first","It pauses the computation during measurement","It only learns whether the qubits agree, never their values","It converts quantum errors into classical ones"],c:2},
+{q:"What was the key achievement of Shor's 9-qubit code?",opts:["Proving quantum error correction is possible at all","The lowest overhead of any known code","Correcting errors without any entanglement","Running successfully on 1995-era hardware"],c:0},
+{q:"In Steane's code, why is the classical Hamming code applied twice?",opts:["To double the number of logical qubits stored","Once for bit flips, once for phase flips","To halve the number of physical qubits needed","To make syndrome readout twice as fast"],c:1},
+{q:"What is the practical advantage of the stabilizer approach?",opts:["It automatically doubles the code's error threshold","It describes the code as a short checklist of yes-or-no measurements, analyzable classically","It eliminates the need for helper (ancilla) qubits","It lifts the no-cloning restriction for encoded data"],c:1},
+{q:"A surface code of distance d needs roughly d-squared physical qubits — one useful logical qubit can demand a thousand or more. Why is this price worth paying?",opts:["It eliminates the need for magic-state factories","Local checks match real hardware and buy the highest known error threshold, around 1 percent","It works at room temperature without any cooling","It removes the need for syndrome measurement"],c:1},
+{q:"What does the threshold theorem guarantee when errors sit below the threshold?",opts:["One layer of encoding is enough forever","Qubits stop decohering entirely","Layering codes shrinks logical error exponentially, enabling arbitrarily long computations","Physical qubits become as reliable as classical bits"],c:2},
+{q:"A vendor advertises a '1,000-qubit' chip. What is the sharpest follow-up question?",opts:["What is the chip's clock speed?","How many gates fit on the chip?","What is the qubit density per chip?","How many of them are logical qubits?"],c:3},
+{q:"Error mitigation versus error correction — which statement is true?",opts:["Correction is cheaper than mitigation for shallow circuits","Mitigation encodes data across many physical qubits","Mitigation fully replaces correction on future hardware","Mitigation is cheaper and runs on today's hardware, but sampling costs grow exponentially with depth"],c:3}
+ ]},
+{id:"algorithms",num:"06",short:"Algorithms",title:"Quantum Algorithms",status:"live",
+ tagline:"15 cards on the algorithm zoo — Grover, Shor, and where the speedup comes from.",
+ xTags:"#QuantumAlgorithms #LearnQuantum",liTags:"#QuantumAlgorithms #QuantumDeck #LearnInPublic",
+ learn:[
+{n:"1",tag:"ALGORITHM BASICS",q:"What exactly is a quantum algorithm?",body:["A quantum algorithm is a step-by-step recipe for a quantum computer, like an ordinary algorithm is for a classical one. It strings together quantum operations, called gates, acting on qubits.","It is not ordinary software made to run faster. Its steps exploit quantum effects such as superposition and interference. Think of a dance written for dancers who can be in two places at once."]},
+{n:"2",tag:"QUANTUM SPEEDUP",q:"What does \"quantum speedup\" really mean?",body:["Quantum speedup is about how the step count grows as the problem grows, not about a faster clock. A classical method may take 100 steps for size 10 and 10,000 for size 100: its effort squares.","Picture two runners on ever-longer tracks: one slows with the square of the distance, the other barely fades. Speedup compares those growth curves. The algorithm whose effort grows gently wins."]},
+{n:"3",tag:"WHY NOT FASTER",q:"Why can't a quantum computer just run ordinary programs faster?",body:["A quantum computer is not a faster classical computer. It cannot speed up your spreadsheet or database, because those tasks lack the mathematical structure that quantum effects can exploit.","Quantum hardware computes with waves and probabilities, not switches flipped on and off. An algorithm must be built around that physics, arranging states so wrong answers cancel and right ones reinforce."]},
+{n:"4",tag:"SUPERPOSITION",q:"How does superposition help an algorithm?",body:["Superposition lets a quantum computer hold many computational paths at once. Two qubits represent all four combinations (00, 01, 10, 11) simultaneously, and each added qubit doubles the paths.","But reading the result collapses everything to one path, chosen by chance. So superposition alone buys nothing. The algorithm's real job is to steer the odds first, so the useful path survives measurement."]},
+{n:"5",tag:"INTERFERENCE",q:"What is interference, and why is it the real trick?",body:["Interference is what happens when quantum waves overlap. Waves in step reinforce and grow; waves out of step cancel out. Algorithms arrange calculations so wrong answers arrive out of step and vanish.","Think of noise-cancelling headphones, which add a mirror-image wave to erase noise. A quantum algorithm plays the same game with math: it engineers the odds so the right answer emerges loud and the wrong ones go silent."]},
+{n:"6",tag:"THE ORACLE",q:"What is an \"oracle\" in quantum algorithms?",body:["An oracle is a black box that computes some function for any input, without revealing its inner workings. To measure efficiency fairly, researchers count how many questions an algorithm must ask the box.","Both the quantum and classical algorithms use the same box, so the comparison is honest. Faster means needing fewer queries. Many landmark results, from Deutsch-Jozsa to Grover's search, were proved in this contest."]},
+{n:"7",tag:"QUANTUM FOURIER",q:"What does the quantum Fourier transform do?",body:["The quantum Fourier transform (QFT) finds hidden rhythms, called periodicity, in data. Given a repeating function with unknown spacing, it rearranges its quantum waves so the repetition stands out at measurement.","This rhythm-finding powers Shor's famous factoring algorithm. Factoring a large number reduces to finding the period of a function, and the QFT extracts it exponentially faster than any known classical method."]},
+{n:"8",tag:"DEUTSCH-JOZSA",q:"What was the first proven quantum speedup?",body:["Deutsch's 1985 algorithm gave the first proven quantum speedup; Deutsch and Jozsa generalised it in 1992. The task: decide whether a function is constant or balanced, half 0s and half 1s.","Their quantum algorithm answers with a single query. It evaluates the function on all inputs at once, then uses interference so the measurement reveals only one thing: constant or balanced. Quantum advantage was proven real."]},
+{n:"9",tag:"GROVER SEARCH",q:"How does Grover's algorithm speed up searching?",body:["Grover's algorithm (Lov Grover, 1996) searches unsorted data quadratically faster than any classical method. A million entries may take a million checks classically; Grover's needs roughly a thousand.","It starts all candidates in equal superposition, then amplifies: each round boosts the target's probability and damps the rest, like stirring a crowd toward one person. Proven optimal, so nothing will ever beat it."]},
+{n:"10",tag:"SHOR FACTORING",q:"Why does Shor's algorithm threaten encryption?",body:["Shor's algorithm (Peter Shor, 1994) factors large numbers exponentially faster than classical methods. RSA assumes factoring a 2,048-bit key would take classical computers longer than the age of the universe.","It turns factoring into period-finding, solved efficiently by the quantum Fourier transform. The threat is future-dated: realistic keys need under one million noisy physical qubits running for under a week (Gidney, Google Quantum AI, May 2025; down from 20 million in 2019) — qubits we do not yet have. Banks migrate to quantum-safe standards."]},
+{n:"11",tag:"QUANTUM SIMULATION",q:"What was Feynman's original dream for quantum computers?",body:["In 1982, physicist Richard Feynman proposed the founding idea of quantum computing: nature is quantum, so simulating molecules on classical computers means fighting physics with the wrong tool.","A quantum computer, built from quantum parts, could model atoms as nature itself does. Better batteries, catalysts, and drugs hinge on predicting molecular behaviour, where classical computers choke on the exponential complexity."]},
+{n:"12",tag:"HHL ALGORITHM",q:"Can quantum computers solve huge equations faster?",body:["HHL (Harrow, Hassidim, Lloyd, 2009) solves linear equation systems, the A-times-x-equals-b problems of science and finance, exponentially faster in suitable cases. It encodes the solution as a quantum state.","The fine print: data must load quickly, the matrix must be sparse and well-behaved, and measurement reveals only a statistical summary, never the full list of answers. Reading out every entry would erase the speedup."]},
+{n:"13",tag:"VQE AND QAOA",q:"What are VQE and QAOA, and why do they matter now?",body:["VQE and QAOA (variational quantum eigensolver and quantum approximate optimization algorithm) are hybrid recipes: the quantum chip runs an adjustable circuit; a classical computer tweaks it; the loop repeats.","VQE targets chemistry, estimating molecular energies; QAOA tackles optimization puzzles like scheduling. They are heuristics with no proven speedup, unlike Shor's. But they run on real hardware today."]},
+{n:"14",tag:"THE LIMITS",q:"What can quantum algorithms NOT do?",body:["Quantum algorithms only win on problems with exploitable structure; they are not universal turbo buttons. It is unproven whether they can solve NP-complete problems like the travelling salesperson puzzle.","Measurement is a second hard boundary: it returns one sample, never the whole answer at once. Loading huge datasets into a quantum state can cost more than the speedup saves. Quantum extends computing, not replaces it."]},
+{n:"15",tag:"ALGORITHM ZOO",q:"How do all these quantum algorithms fit together?",body:["The algorithm zoo has five families. Search methods like Grover's find needles in haystacks. Periodicity methods like Shor's detect hidden rhythms. Simulation models molecules. QAOA tunes puzzles. HHL solves giant equations.","The lesson: each family fits problems with a matching shape. Quantum computing is a toolkit, not one trick: match the problem's structure to the right family, and hardware becomes a working instrument."]}
+ ],
+ flash:[
+{q:"A colleague says quantum computers will simply make Excel run faster. What is wrong with that view?",a:"Quantum computers are not faster classical computers. They compute with waves and probabilities, and most everyday tasks like spreadsheets lack the mathematical structure that quantum effects can exploit. So what: an algorithm must be built around the physics, arranging states so wrong answers cancel and right ones reinforce."},
+{q:"Two runners race on ever-longer tracks: one slows with the square of the distance, the other barely fades. What does this teach about quantum speedup?",a:"Quantum speedup is about how the step count grows as the problem grows, not about a faster clock. The algorithm whose effort grows gently wins. So what: compare growth curves, not gigahertz, when judging a speedup claim."},
+{q:"If superposition holds all computational paths at once, why can we not just read them all out?",a:"Reading the result collapses everything to one path, chosen by chance, so superposition alone buys nothing. So what: the algorithm's real job is to steer the odds first, using interference, so the useful path survives measurement."},
+{q:"Explain interference to a non-technical friend using an everyday device.",a:"Noise-cancelling headphones add a mirror-image wave to erase noise. A quantum algorithm plays the same game with math: it engineers the odds so the right answer emerges loud and the wrong ones go silent. So what: interference, not superposition, is the real trick."},
+{q:"Both the quantum and the classical algorithm get the same oracle black box. Why does that matter?",a:"Counting queries against the same box makes the comparison honest: faster means needing fewer questions, not a better machine. So what: landmark results from Deutsch-Jozsa to Grover's search were proved in this fair contest."},
+{q:"What does the quantum Fourier transform (QFT) do?",a:"It finds hidden rhythms, called periodicity, in data. Given a repeating function with unknown spacing, it rearranges quantum waves so the repetition stands out at measurement. So what: this rhythm-finding powers Shor's famous factoring algorithm."},
+{q:"Deutsch-Jozsa answers with a single query. Why did that 1992 result matter?",a:"Deutsch's 1985 algorithm gave the first proven quantum speedup; Deutsch and Jozsa generalised it in 1992. The generalised algorithm evaluates the function on all inputs at once, then uses interference so measurement reveals only one thing, constant or balanced. So what: it proved quantum advantage was real, opening the road to Shor's."},
+{q:"A million unsorted entries take a million classical checks. What does Grover's algorithm need, and what is the catch?",a:"Roughly a thousand checks: a quadratic speedup that is proven optimal, so nothing will ever beat it. The catch is that it is only quadratic, and only for unstructured search. So what: powerful, but not the exponential leap Shor delivers."},
+{q:"A headline says Shor's algorithm means all encryption is broken today. Correct it.",a:"The threat is future-dated. Shor's turns factoring into period-finding, solved efficiently by the QFT, but realistic 2,048-bit RSA keys need under one million noisy physical qubits running for under a week (Gidney, Google Quantum AI, May 2025; down from 20 million in 2019), which we do not yet have. So what: the risk is real enough that banks are migrating to quantum-safe standards now."},
+{q:"Why did Richard Feynman propose quantum computers back in 1982?",a:"Nature is quantum, so simulating molecules on classical computers means fighting physics with the wrong tool. A quantum computer, built from quantum parts, could model atoms as nature itself does. So what: better batteries, catalysts, and drugs hinge on this; simulation was the founding dream."},
+{q:"A vendor pitches HHL for your finance team's giant equation systems. What three questions do you ask first?",a:"Can our data load quickly? Is the matrix sparse and well-behaved? And do we need the full answer list, since measurement reveals only a statistical summary and reading out every entry would erase the speedup? So what: HHL is real speedup, narrowly scoped."},
+{q:"VQE and QAOA run on real hardware today, while Shor's does not. What is the fundamental difference in their speedup claims?",a:"VQE (chemistry) and QAOA (optimization) are hybrid quantum-classical heuristics with no proven speedup; Shor's carries a proven exponential one. So what: treat near-term performance claims as benchmarks to verify, not theorems to trust."},
+{q:"A startup promises its quantum chip will crack NP-complete problems like the travelling salesperson puzzle. What is the honest answer?",a:"It is unproven whether quantum algorithms can solve NP-complete problems at all. They only win on problems with exploitable structure; they are not universal turbo buttons. So what: do not buy roadmaps that promise quantum solutions to every hard problem."},
+{q:"Measurement returns one sample, never the whole answer at once. Why does that limit algorithm design?",a:"The algorithm must arrange for that single sample to be the useful one, so all the work happens in steering the odds before measurement. Loading huge datasets into a quantum state can cost more than the speedup saves. So what: the input and output boundaries are where speedups go to die."},
+{q:"You have a logistics scheduling puzzle, a molecule to model, and an unsorted database to search. Which algorithm family fits each?",a:"Scheduling goes to QAOA (optimization tuning), the molecule to quantum simulation, the database to Grover's search. Periodicity problems like factoring go to Shor-style methods; giant equations to HHL. So what: match the problem's structure to the family; the zoo is a toolkit, not one trick."}
+ ],
+ quiz:[
+{q:"What is a quantum algorithm, at its core?",opts:["A step-by-step recipe whose steps exploit quantum effects like superposition and interference","Ordinary software recompiled to run on quantum hardware","A classical program that uses much more memory than usual","Any program running on a computer kept near absolute zero"],c:0},
+{q:"Two algorithms solve the same problem. What decides which one enjoys a speedup?",opts:["The quantum chip runs at a higher clock speed than classical processors","How the step count grows as the problem grows: the gentler growth curve wins","Quantum computers use less electricity per calculation","Every program runs in constant time on a quantum computer"],c:1},
+{q:"Why will a quantum computer not speed up your spreadsheet or database?",opts:["Spreadsheets are too small for quantum hardware to load","Spreadsheets cannot do arithmetic on qubits","Those tasks lack the mathematical structure that quantum effects can exploit","No quantum version of spreadsheet software has been released"],c:2},
+{q:"Why does superposition alone give an algorithm no speedup?",opts:["Qubits can only hold two paths, never more","Superposition decays before any gate operation can run","Classical computers can also hold many paths at once","Reading the result collapses everything to one path, chosen by chance"],c:3},
+{q:"The noise-cancelling-headphones analogy is really about which quantum idea?",opts:["Engineering the odds so the right answer emerges loud and the wrong ones go silent","Cooling qubits down to near absolute zero","Copying the best classical error-correction codes","Storing many paths at once inside the qubits"],c:0},
+{q:"In oracle-based comparisons between quantum and classical methods, what does \"faster\" mean?",opts:["The algorithm with the higher clock speed","Needing fewer queries to the same black box","Using fewer qubits than the competitor","Finishing before the qubits lose coherence"],c:1},
+{q:"Why does Shor's algorithm threaten RSA encryption?",opts:["It tries every possible key in parallel until one works","It uses Grover's search to guess private keys directly","It turns factoring into period-finding, which the quantum Fourier transform solves efficiently","It breaks encryption with a single lucky measurement"],c:2},
+{q:"Searching a million unsorted entries takes a million classical checks. What does Grover's algorithm need?",opts:["About a thousand checks, and no algorithm can ever beat that scaling","A million checks, the same as the classical method","Exactly one check, regardless of size","A billion checks, because of quantum overhead"],c:0},
+{q:"Before trusting an HHL speedup claim for your giant equation systems, what must you check?",opts:["That the vendor's machine has at least a thousand qubits","That the equations were written after 2009","Whether a classical supercomputer already solved them","That data loads quickly, the matrix is sparse and well-behaved, and only a statistical summary is needed"],c:3},
+{q:"Which statement about quantum algorithms is honest?",opts:["They will eventually solve NP-complete problems like the travelling salesperson","They deliver exponential speedups on every hard problem","Each family fits problems with a matching structure; without exploitable structure there is no speedup","Measurement returns the full answer, so outputs are always complete"],c:2}
+ ]},
+{id:"hardware",num:"07",short:"Hardware",title:"Quantum Hardware",status:"live",
+ tagline:"15 cards on the physical race: superconducting qubits, trapped ions, atoms and photonics.",
+ xTags:"#QuantumHardware #LearnQuantum",liTags:"#QuantumHardware #QuantumDeck #LearnInPublic",
+ learn:[
+{"n":"1","tag":"PHYSICAL QUBITS","q":"What is a physical qubit, in plain terms?","body":["A physical qubit is a real object used to store quantum information, such as the spin direction of a single electron or a tiny loop of current in a superconducting circuit.","Compare that with a classical bit, a switch set to off or on inside a transistor. A physical qubit is fragile: stray heat, vibration, or electromagnetic noise can disturb its state, so protecting it is the central engineering challenge."]},
+{"n":"2","tag":"WHY BUILDING QUBITS IS HARD","q":"Why is building a useful qubit so hard?","body":["Building a useful qubit is hard because quantum states are extremely fragile. A stray photon of heat or a tiny vibration can collapse a prepared state into an ordinary classical outcome before the calculation finishes.","Think of balancing a pencil on its tip while someone bumps the table. That is why quantum machines live in shielded rooms, vacuum chambers, or deep cold: each layer of protection buys a little more time."]},
+{"n":"3","tag":"THE PLATFORM LANDSCAPE","q":"Why are there several kinds of quantum computer?","body":["No single system has won the race to build a quantum computer. The leading contenders use superconducting circuits, trapped ions, neutral atoms, and photons, which are particles of light.","Picture a car race: one car is fastest on a straight road, another handles corners best, a third is cheapest to fuel. Each platform trades speed, error rate, size, and cost differently, so the best choice may depend on the job."]},
+{"n":"4","tag":"SUPERCONDUCTING TRANSMONS","q":"What is a superconducting transmon qubit?","body":["A superconducting transmon is the most widely deployed qubit type. It is a small circuit, cooled until it conducts with zero resistance, in which a Josephson junction creates two energy levels that serve as 0 and 1.","Engineers like transmons because chip fabrication methods make them, and they run fast, with gates in tens of nanoseconds. Their weakness is short lived states, so they need deep cold and error management."]},
+{"n":"5","tag":"TRAPPED IONS","q":"What is a trapped ion qubit?","body":["A trapped ion qubit is a charged atom held by electric fields in a vacuum. Its two qubit states are two energy levels of that ion, chosen because the ion can sit in either one for long.","Lasers push the ion between levels and read it from its glow or darkness. Trapped ions hold their states for seconds rather than microseconds and their gates are accurate, but they run slower and scaling to thousands of ions is hard."]},
+{"n":"6","tag":"NEUTRAL ATOMS","q":"What is a neutral atom qubit?","body":["A neutral atom qubit is an uncharged atom held by laser beams arranged like an egg carton, a pattern called an optical tweezer array. Each atom sits in a light trap, with qubit states as two energy levels of the atom.","Lasers can lift an atom to a Rydberg state, where it interacts with its neighbours, so engineers switch interactions on and off by moving atoms. Hundreds to thousands of atoms can be arranged like pieces on a board."]},
+{"n":"7","tag":"PHOTONICS","q":"What is a photonic qubit?","body":["A photonic qubit stores quantum information in a photon, a particle of light, using its polarisation, its electric field direction, or the path it takes through a chip.","Photons barely interact with their surroundings, so they keep their states at room temperature and travel through optical fibre. The catch: photons barely interact with each other either, so a two qubit gate needs optical tricks and extra photons."]},
+{"n":"8","tag":"DILUTION REFRIGERATION","q":"Why do superconducting quantum computers need extreme cold?","body":["A dilution refrigerator is a cooling machine that chills superconducting processors to 15 millikelvin, colder than outer space and just above absolute zero, the lowest temperature physics allows.","Such cold is needed because a little heat can swamp the energy gap between a transmon's 0 and 1 states and scramble the calculation. Picture hearing a whisper in a noisy hall: cooling the hall to silence lets the whisper survive."]},
+{"n":"9","tag":"CONTROL AND READOUT STACK","q":"What is the control and readout stack?","body":["The control and readout stack is the chain of electronics that talks to the qubits. A classical computer sends a pulse recipe, microwave electronics shape timed bursts, cables carry them into the cold chamber, and amplifiers boost the reply.","Think of a conductor cueing musicians in a freezer, where every cue must arrive on time. As qubit counts grow, the stack becomes a bottleneck, because each qubit needs its signals."]},
+{"n":"10","tag":"COHERENCE AND FIDELITY","q":"What do coherence time and gate fidelity tell you?","body":["Coherence time is how long a qubit keeps its state before noise scrambles it. Physicists quote T1, the time for a qubit to relax to its ground state, and T2, the time its phase, its wave timing, stays reliable.","Gate fidelity is the share of gates that work as intended. Leading machines report above 99 percent for single qubit gates. At 99 percent, a 100 gate circuit has a sizeable chance of at least one faulty gate."]},
+{"n":"11","tag":"CONNECTIVITY AND ROUTING","q":"Why does qubit connectivity matter?","body":["Connectivity describes which qubits can interact directly. In many superconducting chips each qubit links only to its neighbours, so two distant qubits must swap their states step by step across the chip.","Those swaps are routing overhead: they add gates, add errors, and eat the coherence budget before the calculation. Compare a city where every street links only to the street beside it, so cross town trips need many turns."]},
+{"n":"12","tag":"ROOM TEMPERATURE AND ANNEALERS","q":"Do all quantum machines need deep cold?","body":["Not every quantum machine needs deep cold. Photonic qubits travel at room temperature, but most photonic computers still need cryogenic single-photon detectors. Some diamond systems, which use defects called nitrogen vacancy centres, do run at room temperature, removing the cooling cost.","Quantum annealers are a different kind of machine: instead of running gates, they slowly settle a system into its lowest energy state, which can encode an optimisation problem such as a delivery route. An annealer is a specialist, not a general purpose computer."]},
+{"n":"13","tag":"THE NMR HISTORY LESSON","q":"What does the NMR era teach hardware builders?","body":["Nuclear magnetic resonance, shortened to NMR, gave the field its first quantum computers in the late 1990s. Researchers used nuclei inside liquid molecules as qubits, steered by radio pulses, and factored the number 15.","NMR never scaled, because the signal from a molecule weakens as more qubits are added, and the molecules cannot be reset between runs. The lesson: an early lead does not guarantee a scalable machine."]},
+{"n":"14","tag":"READING VENDOR ROADMAPS","q":"How should you read a vendor qubit count?","body":["Vendor roadmaps headline qubit count, but a count alone says almost nothing. A thousand noisy qubits may do less work than a hundred stable, well connected qubits.","A common misconception: doubling the qubit count doubles the power. In the noisy intermediate scale quantum era, usually shortened to NISQ, errors compound with every gate, so an honest report card gives count, coherence, fidelity, and connectivity."]},
+{"n":"15","tag":"HARDWARE SOFTWARE CODESIGN","q":"What is hardware software codesign?","body":["Codesign means designing algorithm and machine together, not treating the processor as a black box. The textbook picture of qubits plus gates leaks: real gates have error rates, speeds, and neighbours.","No deployed fault tolerant machine exists yet, so successful teams shape circuits to the machine they have, using its native gates and layout, and feed lessons into a later chip design. Progress comes from partnership."]}
+],
+flash:[{"q":"A colleague says a qubit is just a smaller, faster bit. What is wrong with that view?","a":"A physical qubit is a real object, such as an electron spin or a loop of current, not a shrunken switch. So what: because stray heat, vibration, or noise can disturb its state, protecting the qubit is the central engineering challenge, not miniaturising the switch."},{"q":"Why do quantum machines live in shielded rooms, vacuum chambers, or deep cold?","a":"Quantum states are extremely fragile, and a stray photon of heat or a tiny vibration can collapse a prepared state before the calculation finishes. So what: each layer of protection buys a little more time for the calculation to run, which is why the environment is part of the machine."},{"q":"A startup claims its platform has already won the quantum hardware race. Why should you doubt that claim?","a":"No single system has won, and leading platforms use superconducting circuits, trapped ions, neutral atoms, and photons. So what: each platform trades speed, error rate, size, and cost differently, so the best choice may depend on the job, not on one headline."},{"q":"Your team picks transmon qubits for their speed. What weakness must the plan cover?","a":"Transmons run fast, with gates in tens of nanoseconds, but their quantum states are short lived. So what: the plan must budget for deep cold and constant error management, or the speed advantage will be eaten by errors."},{"q":"Trapped ion gates run slower than transmon gates. Why might a team accept that trade?","a":"Trapped ions hold their states for seconds rather than microseconds, and their gates are accurate. So what: when accuracy and long lived states matter more than raw gate speed, slower but steadier gates can complete more reliable circuits."},{"q":"Why does it help that neutral atoms can be arranged like pieces on a board?","a":"Each atom sits in its own light trap, and lasers can lift an atom to a Rydberg state where it interacts with its neighbours, so engineers switch interactions on and off by moving atoms. So what: a reconfigurable layout lets the hardware shape itself to the problem instead of forcing the problem onto a fixed layout."},{"q":"Photonic qubits work at room temperature and travel through optical fibre. Why does that matter, and what is the catch?","a":"Photons barely interact with their surroundings, so they keep their states at room temperature and suit communication through fibre. So what: the same weak interaction makes two qubit gates hard, needing optical tricks and extra photons, so photonics shines for links more than for gates."},{"q":"A manager calls the dilution refrigerator an optional luxury freezer. What is wrong with that view?","a":"A dilution refrigerator chills superconducting processors to 15 millikelvin, just above absolute zero. So what: without that cold, even a little heat swamps the energy gap between a transmon's 0 and 1 states and scrambles the calculation, so cooling is a functional requirement, not comfort."},{"q":"A vendor doubles its qubit count but keeps the same control electronics. Why might performance barely improve?","a":"Each qubit needs its own timed signals and readout line, so the control and readout stack becomes a bottleneck as counts grow. So what: scaling qubits means scaling the whole electronics chain, and a bigger chip on the same stack will stall on control, not on physics."},{"q":"What is the difference between T1 and T2?","a":"T1 is the time for a qubit to relax to its ground state, while T2 is the time its phase, its wave timing, stays reliable. So what: both numbers limit how long a calculation can run before noise scrambles it, so a machine needs good values for both, not just one."},{"q":"Two distant qubits on a superconducting chip need to interact. What does that cost?","a":"Each qubit links only to its neighbours, so the distant pair must swap states step by step across the chip. So what: those swaps are routing overhead that adds gates and errors and eats the coherence budget before the real calculation, so chip layout shapes algorithm cost."},{"q":"An annealer advertises more qubits than a gate based machine. Why is that comparison misleading?","a":"An annealer slowly settles a system into its lowest energy state to encode an optimisation problem, while a gate based machine runs gate operations in sequence. So what: the two machines do different jobs, so comparing their qubit counts compares unlike with like."},{"q":"NMR computers factored 15 in the late 1990s. Why did that early lead not produce a scalable machine?","a":"NMR used nuclei inside liquid molecules as qubits, but the signal weakens as more qubits are added, and the molecules cannot be reset between runs. So what: judge a platform by its scaling path, not by its first headline, because a clever demo can hide a dead end."},{"q":"A vendor doubles its qubit count and claims double the power. What is wrong with that claim?","a":"In the noisy intermediate scale quantum era, errors compound with every gate, so doubling the count does not double the power. So what: an honest report card gives count together with coherence, fidelity, and connectivity, and any claim missing those three deserves scepticism."},{"q":"Why should an algorithm team shape its circuits to one specific machine instead of writing portable code?","a":"No deployed fault tolerant machine exists yet, and real gates have specific error rates, speeds, and neighbours. So what: in this era, codesign, shaping circuits to native gates and layout and feeding lessons into a later chip design, is how teams get useful work from noisy hardware."}],
+quiz:[{"q":"What is a physical qubit?","opts":["A real object, such as an electron spin or a loop of current, used to store quantum information","A smaller and faster version of a classical transistor switch","A classical bit stored at very low temperature","A software simulation of a quantum state"],"c":0},{"q":"Why are quantum states hard to keep alive long enough to compute?","opts":["Because qubits are too small to measure","Because stray heat or vibration can collapse the state before the calculation finishes","Because quantum computers run out of memory","Because lasers cannot reach the qubits"],"c":1},{"q":"Why has no single quantum hardware platform won the race yet?","opts":["Superconducting circuits have already won the race","All platforms have identical speed and error rates","Each platform trades speed, error rate, size, and cost differently","Photons are the only platform still in development"],"c":2},{"q":"What is the main weakness of superconducting transmon qubits?","opts":["They cannot be made with chip fabrication methods","They run too slowly for useful gates","They work only at room temperature","Their quantum states are short lived, so they need deep cold and error management"],"c":3},{"q":"What is a key strength of trapped ion qubits?","opts":["They hold states for seconds and their gates are accurate","They run at room temperature with no vacuum needed","They are made with ordinary chip fabrication","They need no lasers for control or readout"],"c":0},{"q":"What makes neutral atom layouts attractive?","opts":["Atoms are frozen permanently in one fixed pattern","Atoms can be arranged and rearranged, with interactions switched by moving them","Neutral atoms need no lasers at all","Each atom holds thousands of qubits"],"c":1},{"q":"What is the catch with photonic qubits?","opts":["Photons lose their states quickly at room temperature","Photons cannot travel through optical fibre","Photons barely interact with each other, so two qubit gates need optical tricks and extra photons","Photons can only store one fixed value"],"c":2},{"q":"Why do superconducting processors need a dilution refrigerator?","opts":["To keep the classical computer cool","To make the qubits run faster by heating them","To stop the chip from melting under laser power","To stop heat swamping the tiny energy gap between 0 and 1 states"],"c":3},{"q":"At 99 percent gate fidelity, what happens in a 100 gate circuit?","opts":["The circuit has a sizeable chance of at least one faulty gate","99 of 100 circuits are guaranteed perfect","Gate fidelity measures how fast gates run","Fidelity above 99 percent guarantees a fault tolerant machine"],"c":0},{"q":"How should you judge a vendor qubit count?","opts":["Qubit count alone tells you how powerful a machine is","Judge count together with coherence, fidelity, and connectivity","A higher count always means lower errors","Vendor roadmaps never mention qubit counts"],"c":1}]},
+{id:"sensing",num:"08",short:"Sensing",title:"Quantum Sensing",status:"soon",draft:true,
+ tagline:"15 cards on the quiet quantum revolution — clocks, magnetometers, gravimeters.",
+ xTags:"#QuantumSensing #LearnQuantum",liTags:"#QuantumSensing #QuantumDeck #LearnInPublic",
+ learn:[
+{n:"1",tag:"STANDARD QUANTUM LIMIT",q:"What is the standard quantum limit?",body:["Measure with N independent particles and averaging gives precision scaling as 1/√N — the shot-noise baseline for classical sensing built from quantum particles.","Beating it needs quantum correlations — entanglement or squeezing — so N particles act as more than N independent trials. The SQL is the line every quantum sensor tries to cross."]},
+{n:"2",tag:"HEISENBERG LIMIT",q:"What is the Heisenberg limit?",body:["Quantum mechanics' ultimate scaling: with maximally entangled N00N ('noon') states, precision improves as 1/N — quadratically better than the 1/√N standard quantum limit.","In practice decoherence shreds the fragile entanglement, so real devices land between the limits. A scaling law and a target — not a device specification."]},
+{n:"3",tag:"NV CENTERS",q:"What are NV centers in diamond?",body:["A nitrogen atom beside a lattice vacancy traps an electron spin that is optically readable: laser initializes it, microwaves drive it, fluorescence reads it — all at room temperature.","It senses magnetic and electric fields, temperature, and pressure at nanometer scale: single proteins, memory bits, living cells. The leader in nanoscale quantum magnetometry."]},
+{n:"4",tag:"ATOMIC CLOCKS",q:"Why are atomic clocks quantum sensors?",body:["They lock an oscillator to an atomic transition — 9,192,631,770 cesium oscillations define the second. Optical lattice clocks reach 10^-18 uncertainty: a second lost over billions of years.","GPS needs them (relativistic corrections are mandatory); geodesy uses clocks as altimeters via gravitational redshift; physicists hunt drifting constants with them."]},
+{n:"5",tag:"MAGNETOMETRY",q:"What can quantum magnetometers detect?",body:["SQUIDs (superconducting quantum interference devices) sense femtotesla fields, letting magnetoencephalography map brain activity noninvasively. Optically pumped magnetometers now do MEG without any cryogenics.","NV (nitrogen-vacancy) diamond sensors image fields at nanometer resolution. Customers span medicine, materials, mineral exploration — and submarine detection, the military use nobody advertises loudly."]},
+{n:"6",tag:"ATOM INTERFEROMETRY",q:"How does atom interferometry measure gravity?",body:["Laser pulses split, redirect, and recombine matter waves of falling atoms; the interference phase records gravity along each path. Cold-atom gravimeters reach microgal precision.","They find voids, track aquifers, watch magma — and the same principle builds gyroscopes and tests general relativity. After clocks, the most commercially mature quantum sensing."]},
+{n:"7",tag:"SQUEEZED LIGHT",q:"How did squeezed light upgrade LIGO?",body:["LIGO — the laser-interferometer gravitational-wave observatory — was capped by photon shot noise; more laser power would add radiation-pressure noise instead. The fix: inject squeezed vacuum — phase noise below the vacuum limit, paid for with noisier amplitude.","Sensitivity improved without touching the lasers. Squeezing now runs routinely in gravitational-wave detectors: a quantum upgrade to a kilometer-scale machine."]},
+{n:"8",tag:"QUANTUM RADAR",q:"Is quantum radar real?",body:["Quantum illumination keeps one entangled microwave photon (idler) while sending its twin; joint measurement gives up to 6 dB edge in the dim, noisy regime. The physics is genuine.","But the edge evaporates at practical power, idlers must be stored losslessly, and 'stealth-aircraft detector' headlines are hype. Lab physics — not a deployed capability."]},
+{n:"9",tag:"SENSING VS COMPUTING",q:"How is quantum advantage different in sensing?",body:["In computing, advantage means solving problems faster — a high, fiercely contested bar. In sensing it means measuring more precisely, and 1/√N → 1/N scaling is provable mathematics.","That scaling is already deployed — squeezed LIGO, atomic clocks. Sensing is the quiet quantum revolution: fewer headlines, but the only domain with deployed quantum advantage today."]},
+{n:"10",tag:"GHOST IMAGING",q:"What is quantum ghost imaging?",body:["Image an object with photons that never touched it: one photon probes the object into a bucket detector while its entangled twin is imaged — correlations reconstruct the picture.","It works where cameras barely exist (infrared, terahertz) and at ultra-low light. Classical correlated light mimics parts of it, so the strictly quantum edge is honestly debated."]},
+{n:"11",tag:"RYDBERG SENSORS",q:"What are Rydberg-atom sensors?",body:["Atoms excited to Rydberg states — electron orbits swollen near-macroscopic — gain huge dipole moments, becoming exquisite electrometers: radio reception with atoms instead of antennas.","It is broadband, SI-traceable, wavelength-agnostic — one vapor cell replacing racks of RF gear. An emerging platform for communications and field metrology."]},
+{n:"12",tag:"COLD ATOMS",q:"Why cool atoms to near absolute zero?",body:["Laser and evaporative cooling slow atoms to microkelvin: thermal motion stops blurring measurements, the de Broglie wavelength grows, and atoms can be interrogated far longer.","Long interrogation time is precision. Fountain clocks, interferometers, and quantum simulators all live on cold atoms — the colder the atoms, the quieter the sensor."]},
+{n:"13",tag:"NOISE FLOORS",q:"What actually limits quantum sensors?",body:["Not the Heisenberg limit — technical noise: laser instability, vibration, stray magnetic fields, temperature drift. Most 'quantum advantage' demos quietly compare against unoptimized classical sensors.","The honest metric is absolute performance per size, weight, power, and cost. Quantum sensors must win on deployed merits, not on scaling laws quoted in papers."]},
+{n:"14",tag:"GRAVIMETRY MARKET",q:"Who buys quantum gravimeters?",body:["Civil engineers hunting sinkholes and tunnels; oil, gas, and mineral prospectors; hydrologists tracking aquifers; defense navigators where GPS is denied; volcanologists watching magma.","Muquans, iXblue, and others sell field-deployable cold-atom gravimeters today. Sensing is where quantum physics meets paying customers first."]},
+{n:"15",tag:"QUANTUM SI",q:"How did quantum redefine measurement itself?",body:["The 2019 SI redefinition fixed the Planck constant, elementary charge, Boltzmann constant, and Avogadro constant — the kilogram is now realized by the Kibble balance, against quantum electrical standards.","No more platinum-iridium cylinder in Paris. Quantum metrology did not just improve instruments; it rebuilt the units themselves on constants of nature."]},
+ ]}
+];
+let activeTopic=TOPICS[0];
+</script>
+<script>
+/* ---------- robust copy + download ---------- */
+function showCopied(i,msg){const s=document.getElementById("copied-"+i);
+  if(s){s.textContent=msg||"Copied ✓";s.style.display="inline";
+    setTimeout(()=>{s.style.display="none";s.textContent="Copied ✓";},2400);}}
+function copyText(t,i,msg){
+  const done=()=>showCopied(i,msg);
+  const legacy=()=>{const ta=document.createElement("textarea");
+    ta.value=t;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{if(document.execCommand("copy")){done();}else{window.prompt("Copy this text:",t);}}
+    catch(e){window.prompt("Copy this text:",t);}
+    document.body.removeChild(ta);};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done).catch(()=>legacy());}
+  else{legacy();}
+}
+function triggerDownload(url,filename){
+  const a=document.createElement("a");a.download=filename;a.href=url;
+  document.body.appendChild(a);a.click();
+  setTimeout(()=>document.body.removeChild(a),400);
+}
+/* ---------- topic navigator ---------- */
+function renderStrip(filter){
+  const s=document.getElementById("topic-strip");s.innerHTML="";
+  const f=(filter||"").toLowerCase();
+  TOPICS.filter(t=>(t.title+" "+t.short+" "+t.num).toLowerCase().includes(f)).forEach(t=>{
+    const b=document.createElement("button");
+    b.className="tchip"+(t.id===activeTopic.id?" active":"")+(t.status!=="live"?" soon":"");
+    b.dataset.id=t.id;
+    b.innerHTML="<small>"+t.num+"</small>"+t.short+(t.status!=="live"?" · soon":"");
+    if(t.status==="live"){b.addEventListener("click",()=>selectTopic(t.id));}
+    else{b.disabled=true;b.title="Coming soon";}
+    s.appendChild(b);
+  });
+}
+function renderUpcoming(){
+  const g=document.getElementById("upgrid");g.innerHTML="";
+  TOPICS.filter(t=>t.status!=="live").forEach(t=>{
+    const d=document.createElement("div");
+    if(t.status==="live"){
+      d.className="upcard live";d.title="Open this deck";
+      d.innerHTML="<b>"+t.title+"</b><span>LIVE</span>";
+      d.addEventListener("click",()=>{selectTopic(t.id);window.scrollTo({top:0,behavior:"smooth"});});
+    }else{
+      d.className="upcard";
+      d.innerHTML="<b>"+t.title+"</b><span>COMING SOON</span>";
+    }
+    g.appendChild(d);
+  });
+}
+function selectTopic(id,skipHash){
+  const t=TOPICS.find(x=>x.id===id&&x.status==="live");if(!t)return;
+  activeTopic=t;
+  document.getElementById("topic-num").textContent="DECK "+t.num;
+  document.getElementById("topic-title").textContent=t.title;
+  document.getElementById("topic-tagline").textContent=t.tagline||"";
+  document.getElementById("topic-draft").style.display=t.draft?"inline-block":"none";
+  document.title="The Quantum Deck — "+t.title;
+  document.querySelectorAll(".tchip").forEach(ch=>ch.classList.toggle("active",ch.dataset.id===id));
+  renderLearn();renderFlash();startQuiz();
+  document.getElementById("learn-rail").scrollLeft=0;
+  document.getElementById("flash-rail").scrollLeft=0;
+  if(!skipHash){try{history.replaceState(null,"","#"+t.id);}catch(e){}}
+}
+/* ---------- learn rail ---------- */
+function cardLink(i){const c=activeTopic.learn[i];
+  return PUBLIC_URL+"#card-"+activeTopic.id+"-"+c.n;}
+function cardText(i){const c=activeTopic.learn[i];
+  const parts=[c.q].concat(c.body);
+  parts.push("Explore all "+activeTopic.learn.length+" cards in "+activeTopic.title+", free, no sign-up:\n"+cardLink(i));
+  parts.push(activeTopic.liTags);
+  return SignalShare.buildCaption(parts);}
+/* social-media rewrites: intent links only, no credentials needed */
+function xText(i){const c=activeTopic.learn[i];
+  const first=c.body[0].split(/(?<=[.!?])\s+/)[0];
+  const tailCounted=2+23+2+activeTopic.xTags.length;
+  let t=c.q+"\n\n"+first;
+  const max=280-tailCounted;
+  if(t.length>max){t=t.slice(0,Math.max(0,max-1)).trimEnd()+"\u2026";}
+  return t+"\n\n"+cardLink(i)+"\n\n"+activeTopic.xTags;}
+function liText(i){return cardText(i);}
+let learnBound=false;
+function renderLearn(){
+  const rail=document.getElementById("learn-rail");rail.innerHTML="";
+  const L=activeTopic.learn;
+  L.forEach((c,i)=>{
+    const d=document.createElement("article");d.className="pcard";d.id="card-"+activeTopic.id+"-"+c.n;d.dataset.i=i;d.title="Click to read larger";
+    d.innerHTML='<div class="pnum">'+c.n+' / '+L.length+'</div><div class="ptag">'+c.tag+'</div>'
+      +'<h3 class="pq">'+c.q+'</h3>'
+      +'<div class="pbody">'+c.body.map(p=>"<p>"+p+"</p>").join("")+'</div>'
+      +'<div class="toolbar"><button data-act="share" data-i="'+i+'" class="ss-share-btn">'+SignalShare.ICONS.share+'<span>Share</span></button>'
+      +'<span class="copied" id="copied-'+i+'">Copied ✓</span></div>';
+    rail.appendChild(d);
+  });
+  if(!learnBound){learnBound=true;
+    rail.addEventListener("click",e=>{
+      const b=e.target.closest("button[data-act]");if(!b)return;
+      const i=+b.dataset.i,act=b.dataset.act;
+      if(act==="share"){openCardPanel(i,b);}
+    });
+    rail.addEventListener("click",e=>{
+      if(e.target.closest("button[data-act]"))return;
+      if(e.target.closest(".toolbar"))return;
+      if(window.getSelection&&window.getSelection().toString())return;
+      const card=e.target.closest(".pcard");if(!card)return;
+      if(card.dataset.i===undefined||card.dataset.i==="")return;
+      openZoom(+card.dataset.i);
+    });
+  }
+}
+/* ---------- card zoom: click a card to read it larger ---------- */
+let zoomReturnTo=null;
+function openZoom(i){
+  const c=activeTopic.learn[i];if(!c)return;
+  zoomReturnTo=document.querySelector('.pcard[data-i="'+i+'"]');
+  document.getElementById("zoom-num").textContent=c.n+" / "+activeTopic.learn.length;
+  document.getElementById("zoom-tag").textContent=c.tag;
+  document.getElementById("zoom-q").textContent=c.q;
+  document.getElementById("zoom-body").innerHTML=c.body.map(p=>"<p>"+p+"</p>").join("");
+  document.getElementById("zoom-ov").classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("zoom-close").focus();
+}
+function closeZoom(){
+  document.getElementById("zoom-ov").classList.remove("open");
+  document.body.style.overflow="";
+  if(zoomReturnTo){zoomReturnTo.setAttribute("tabindex","-1");zoomReturnTo.focus({preventScroll:true});}
+}
+document.addEventListener("click",e=>{
+  if(e.target.id==="zoom-close"||e.target.id==="zoom-ov")closeZoom();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){const ov=document.getElementById("zoom-ov");if(ov&&ov.classList.contains("open"))closeZoom();}
+});
+/* ---------- card -> PNG (premium obsidian/gold) ---------- */
+function wrap(x,t,mw){const w=t.split(" "),L=[];let l="";w.forEach(s=>{const t2=l?l+" "+s:s;
+  if(x.measureText(t2).width>mw&&l){L.push(l);l=s;}else l=t2;});if(l)L.push(l);return L;}
+
+function openCardPanel(i,invoker){
+  const c=activeTopic.learn[i];if(!c||!window.SignalShare)return;
+  const first=(c.body[0]||"").split(/(?<=[.!?])\s+/)[0];
+  SignalShare.openPanel({
+    title:c.q, line:first, link:cardLink(i), caption:cardText(i),
+    tags:activeTopic.xTags||"", xText:xText(i),
+    image:{ kind:"render",
+      filename:"quantum-deck-"+activeTopic.id+"-"+c.n+".png",
+      render:function(size,theme){
+        return new Promise(function(res){
+          renderCardBlob(i,size,theme,function(blob){ res(blob); });
+        });
+      } }
+  }, invoker);
+}
+
+function renderCardBlob(i,size,theme,cb){
+  const [W,H]=size.split("x").map(Number),c=activeTopic.learn[i],k=W/1080;
+  const T=THEMES[theme]||THEMES.obsidian;
+  const cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");
+  const grd=x.createLinearGradient(0,0,0,H);grd.addColorStop(0,T.bg0);grd.addColorStop(1,T.bg1);
+  x.fillStyle=grd;x.fillRect(0,0,W,H);
+  x.fillStyle=T.accent;x.fillRect(0,0,W,8*k);
+  const pad=84*k,mw=W-2*pad,cx=W/2;
+  const topSafe=48*k,footTop=H-150*k;
+  x.textAlign="left";
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  const headLines=wrap(x,c.tag,mw);
+  const headH=headLines.length*Math.round(86*k);
+  let bf=44;
+  const fit=()=>{x.font=Math.round(bf*k)+"px system-ui,sans-serif";const L=[];
+    c.body.forEach(p=>{wrap(x,p,mw).forEach(l=>L.push(l));L.push("");});return L;};
+  const measure=()=>{const L=fit();return{L,h:L.length*Math.round((bf+14)*k)};};
+  let m=measure();
+  const gapH=Math.round(34*k),divGap=Math.round(56*k);
+  while((headH+gapH+divGap+m.h)>(footTop-topSafe)&&bf>24){bf-=2;m=measure();}
+  const lines=m.L,lh=Math.round((bf+14)*k);
+  let y=topSafe+Math.round(66*k);
+  x.fillStyle=T.head;x.font="700 "+Math.round(72*k)+"px Georgia,serif";
+  headLines.forEach(l=>{x.fillText(l,pad,y);y+=Math.round(86*k);});
+  y+=gapH;
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,y);x.lineTo(pad+130*k,y);x.stroke();
+  const divY=y;
+  y=divY+divGap+Math.max(0,(footTop-(divY+divGap)-m.h)/2);
+  x.fillStyle=T.body;x.font=Math.round(bf*k)+"px system-ui,sans-serif";
+  lines.forEach(l=>{if(l&&y<footTop){x.fillText(l,pad,y);}y+=lh;});
+  x.textAlign="center";
+  x.strokeStyle=T.dim;x.lineWidth=2*k;
+  x.beginPath();x.moveTo(pad,H-116*k);x.lineTo(W-pad,H-116*k);x.stroke();
+  x.fillStyle=T.foot;x.font="600 "+Math.round(28*k)+"px system-ui,sans-serif";
+  x.fillText("THE QUANTUM DECK",cx,H-68*k);
+  x.fillStyle=T.accent;x.fillText(activeTopic.title,cx,H-30*k);
+  x.textAlign="left";
+  const bx=W-pad-Math.round(38*k),by=H-Math.round(62*k),br=Math.round(34*k);
+  x.strokeStyle=T.accent;x.lineWidth=Math.round(3*k);
+  x.beginPath();x.arc(bx,by,br,0,Math.PI*2);x.stroke();
+  x.fillStyle=T.accent;x.font="700 "+Math.round(26*k)+"px Georgia,'Times New Roman',serif";
+  x.textAlign="center";x.textBaseline="middle";
+  try{x.letterSpacing="3px";}catch(e){}
+  x.fillText("TRT",bx,by+Math.round(2*k));
+  try{x.letterSpacing="0px";}catch(e){}
+  x.textAlign="left";x.textBaseline="alphabetic";
+  const filename="quantum-deck-"+activeTopic.id+"-"+c.n+".png";
+  cv.toBlob(function(blob){ cb(blob,filename); },"image/png");
+}
+function downloadCard(i,size,theme){
+  renderCardBlob(i,size,theme,function(blob,filename){
+    if(!blob){return;}
+    SignalShare.shareImage({blob:blob,filename:filename,caption:cardText(i),notify:function(m){showCopied(i,m);}});
+  });
+}
+/* ---------- compact flashcard rail ---------- */
+function renderFlash(){
+  const rail=document.getElementById("flash-rail");rail.innerHTML="";
+  const F=activeTopic.flash;
+  if(!F||!F.length){
+    rail.innerHTML='<div class="fcard" style="cursor:default"><div class="finner"><div class="fface ffront" style="justify-content:center;align-items:center;text-align:center"><div class="fq">Flashcards unlock after the Learn cards pass review.</div></div></div></div>';
+    return;
+  }
+  F.forEach((f,i)=>{
+    const d=document.createElement("div");d.className="fcard";
+    d.innerHTML='<div class="finner"><div class="fface ffront"><div class="fnum">'+(i+1)+' / '+F.length+'</div>'
+      +'<div class="fq">'+f.q+'</div><div class="fhint">TAP TO FLIP</div></div>'
+      +'<div class="fface fback"><div class="fnum">'+(i+1)+' / '+F.length+' · ANSWER</div><div>'+f.a+'</div></div></div>';
+    d.addEventListener("click",()=>d.classList.toggle("flipped"));
+    rail.appendChild(d);
+  });
+}
+/* ---------- rail arrows: one card at a time ---------- */
+document.querySelectorAll(".rail-btn").forEach(b=>b.addEventListener("click",()=>{
+  const rail=document.getElementById(b.dataset.rail);
+  const card=rail.querySelector(".pcard,.fcard,.upcard");
+  const step=card?card.getBoundingClientRect().width+16:320;
+  rail.scrollBy({left:(b.classList.contains("next")?1:-1)*step,behavior:"smooth"});
+}));
+/* ---------- quiz ---------- */
+let qi=0,qscore=0,qorder=[];
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function startQuiz(){
+  const box=document.getElementById("quiz-box");
+  if(!activeTopic.quiz||!activeTopic.quiz.length){
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · QUIZ</div><div id="quiz-band">Coming soon</div><div id="quiz-sub">The quiz unlocks after the Learn cards pass review.</div></div>';
+    return;
+  }
+  qi=0;qscore=0;qorder=activeTopic.quiz.map((_,i)=>i);renderQ();}
+function renderQ(){
+  const box=document.getElementById("quiz-box"),QZ=activeTopic.quiz;
+  if(qi>=QZ.length){
+    const band=qscore>=9?["Excellent","You have the fundamentals down cold."]:qscore>=7?["Solid","A strong foundation — skim the cards you missed."]:qscore>=5?["Keep going","Revisit the Learn cards, then retake."]:["Re-read the deck","Go through the 15 Learn cards once more, then try again."];
+    box.innerHTML='<div id="quiz-result"><div id="quiz-progress">DECK '+activeTopic.num+' · COMPLETE</div><div id="quiz-score">'
+      +qscore+' / '+QZ.length+'</div><div id="quiz-band">'+band[0]+'</div><div id="quiz-sub">'+band[1]
+      +'</div><button id="quiz-restart">Retake quiz</button></div>';
+    document.getElementById("quiz-restart").addEventListener("click",startQuiz);return;
+  }
+  const Q=QZ[qorder[qi]],order=shuffle(Q.opts.map((t,idx)=>({t,ok:idx===Q.c})));
+  box.innerHTML='<div id="quiz-progress">QUESTION '+(qi+1)+' OF '+QZ.length+' · SCORE '+qscore+'</div>'
+    +'<div id="quiz-q">'+Q.q+'</div>'
+    +order.map(o=>'<button class="opt" data-ok="'+(o.ok?1:0)+'">'+o.t+'</button>').join("")
+    +'<div id="quiz-feedback"></div><button id="quiz-next">Next →</button>';
+  const opts=[...box.querySelectorAll(".opt")],fb=box.querySelector("#quiz-feedback"),nx=box.querySelector("#quiz-next");
+  opts.forEach(b=>b.addEventListener("click",()=>{
+    const good=b.dataset.ok==="1";
+    opts.forEach(o=>{o.disabled=true;if(o.dataset.ok==="1")o.classList.add("correct");});
+    if(good){qscore++;fb.textContent="Correct ✓";fb.style.color="var(--green)";}
+    else{b.classList.add("wrong");fb.textContent="Not quite — the highlighted answer is correct.";fb.style.color="var(--red)";}
+    nx.style.display="inline-block";
+  }));
+  nx.addEventListener("click",()=>{qi++;renderQ();});
+}
+/* ---------- init ---------- */
+renderStrip();renderUpcoming();
+document.getElementById("topic-search").addEventListener("input",e=>renderStrip(e.target.value));
+document.getElementById("tstrip-prev").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:-240,behavior:"smooth"}));
+document.getElementById("tstrip-next").addEventListener("click",()=>document.getElementById("topic-strip").scrollBy({left:240,behavior:"smooth"}));
+(function(){
+  const h=(location.hash||"").replace("#","");
+  const m=h.match(/^card-([a-z-]+)-(\d+)$/);
+  if(m&&TOPICS.some(t=>t.id===m[1]&&t.status==="live")){
+    selectTopic(m[1],true);
+    requestAnimationFrame(()=>{const el=document.getElementById(h);if(el)el.scrollIntoView({behavior:"smooth",block:"center"});});
+  }else if(h&&TOPICS.some(t=>t.id===h&&t.status==="live")){
+    selectTopic(h,true);
+  }else{
+    selectTopic("fundamentals",true);
+  }
+})();
+</script>
+<div id="zoom-ov" role="dialog" aria-modal="true" aria-label="Card reading view">
+  <div id="zoom-card">
+    <button id="zoom-close" aria-label="Close">×</button>
+    <div id="zoom-num"></div>
+    <div id="zoom-tag"></div>
+    <h3 id="zoom-q"></h3>
+    <div id="zoom-body"></div>
+  </div>
+</div>
+</body>
+</html>
