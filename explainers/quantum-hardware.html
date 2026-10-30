@@ -276,10 +276,18 @@ a.ts-chip:hover { border-color: var(--gold); }
 body.flow-on .panel-nav { display: none; }
 body.flow-on .parts-rail-wrap { display: none; }
 body.flow-on #hint { display: none; }
+.journey-step { white-space: nowrap; }
+.journey-top { flex-wrap: wrap; }
+.journey-nav { flex-wrap: nowrap; gap: .35rem; }
+.journey-nav .btn { white-space: nowrap; padding: .45rem .6rem; }
 .flow-toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 90; background: var(--navy); color: #f5f1e6; padding: .55rem 1rem; border-radius: 999px; font-size: .9rem; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 @media (max-width: 640px) {
   .journey.is-on { position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); z-index: 80; margin: 0; padding: .5rem .6rem; }
-  .journey.is-on .journey-bar, .journey.is-on .journey-title, .journey.is-on .journey-text { display: none; }
+  .journey.is-on .journey-bar, .journey.is-on .journey-text { display: none; }
+  .journey.is-on .journey-title { display: block; order: 2; font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+  .journey.is-on .journey-text { order: 1; }
+  .journey.is-on.expanded .journey-text { display: block; }
+  .journey.is-on .journey-top { order: 3; }
 }
 @media (prefers-reduced-motion: reduce) { .journey-bar span { transition: none; } }
 /* flowmode:end */
@@ -1156,12 +1164,13 @@ body.flow-on #hint { display: none; }
   function showStep(i) {
     jIndex = Math.max(0, Math.min(JOURNEY.length - 1, i));
     const s = JOURNEY[jIndex];
-    $('jStep').textContent = `SIGNAL FLOW · Step ${jIndex + 1} of ${JOURNEY.length}`;
+    relabel();
+    $('journey').classList.remove('expanded');
+    fitFlowPad();
     $('jTitle').textContent = s.title;
     $('jText').textContent = s.text;
     $('jBar').style.width = ((jIndex + 1) / JOURNEY.length * 100) + '%';
     $('jPrev').disabled = jIndex === 0;
-    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again' : 'Next step';
     $('jExplore').hidden = jIndex !== JOURNEY.length - 1;
     select(s.part, { noHash: true });
     moveDot(lenAt[jIndex]);
@@ -1173,6 +1182,7 @@ body.flow-on #hint { display: none; }
     $('journey').classList.add('is-on');
     $('view-fridge').classList.add('journey-on');
     document.body.classList.add('flow-on');
+    fitFlowPad();
     dotLen = 0; showStep(0);
   }
   function stopJourney() {
@@ -1184,11 +1194,13 @@ body.flow-on #hint { display: none; }
     $('journey').classList.remove('is-on');
     $('view-fridge').classList.remove('journey-on');
     document.body.classList.remove('flow-on');
+    document.body.style.paddingBottom = '';
     dot.setAttribute('cx', -20); dot.setAttribute('cy', -20);
   }
   $('journeyBtn').addEventListener('click', () => (journeyOn ? stopJourney() : startJourney()));
   $('jPrev').addEventListener('click', () => showStep(jIndex - 1));
   $('jNext').addEventListener('click', () => (jIndex === JOURNEY.length - 1 ? (dotLen = 0, showStep(0)) : showStep(jIndex + 1)));
+  const FLOW_LABEL = 'SIGNAL FLOW';
   $('jExit').addEventListener('click', stopJourney);
   $('jExplore').addEventListener('click', stopJourney);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && journeyOn) stopJourney(); });
@@ -1200,6 +1212,32 @@ body.flow-on #hint { display: none; }
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { t.hidden = true; }, 2600);
   }
+  const compactFlow = () => window.innerWidth < 640;
+  function relabel() {
+    $('jStep').textContent = compactFlow()
+      ? `${FLOW_LABEL} · Step ${jIndex + 1}/${JOURNEY.length}`
+      : `${FLOW_LABEL} · Step ${jIndex + 1} of ${JOURNEY.length}`;
+    $('jNext').textContent = jIndex === JOURNEY.length - 1 ? 'Start again'
+      : (compactFlow() ? 'Next' : 'Next step');
+  }
+  function fitFlowPad() {
+    if (!journeyOn) return;
+    if (compactFlow()) {
+      requestAnimationFrame(() => {
+        document.body.style.paddingBottom = ($('journey').offsetHeight + 8) + 'px';
+      });
+    } else {
+      document.body.style.paddingBottom = '';
+    }
+  }
+  window.addEventListener('resize', () => { if (journeyOn) { relabel(); fitFlowPad(); } });
+  $('jTitle').addEventListener('click', () => {
+    if (!compactFlow() || !journeyOn) return;
+    const box = $('journey');
+    box.classList.toggle('expanded');
+    $('jTitle').setAttribute('aria-expanded', String(box.classList.contains('expanded')));
+    fitFlowPad();
+  });
 
   /* ---------- Quiz ---------- */
   const quizBox = $('quizBox');
