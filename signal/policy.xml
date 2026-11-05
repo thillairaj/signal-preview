@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Signal Brief · Policy</title>
+    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
+    <lastBuildDate>Thu, 05 Nov 2026 04:41:35 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/policy.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>US midterm results point to tighter rules for data centre expansion</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/#brief-2026-11-05-12</link>
+      <guid isPermaLink="false">brief-2026-11-05-12</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>The Verge reports that US midterm voters across the country backed candidates who favour moratoriums and ballot measures that add obstacles to data centre expansion. Developers are expected to face a more restrictive building environment as a result. Why it matters for tech: Local politics is now a material constraint on AI infrastructure buildout in the United States.</description>
+      <content:encoded><![CDATA[<p>The Verge reports that US midterm voters across the country backed candidates who favour moratoriums and ballot measures that add obstacles to data centre expansion. Developers are expected to face a more restrictive building environment as a result.</p><p><strong>Why it matters for tech:</strong> Local politics is now a material constraint on AI infrastructure buildout in the United States.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/policy/1026365/data-centers-midterms-results">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>IQM calls for an EU Quantum Act with dedicated qubit foundries</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/#brief-2026-11-04-10</link>
+      <guid isPermaLink="false">brief-2026-11-04-10</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>In a report titled Quantum Is Europe's Second Chance, IQM Quantum Computers calls on the EU to pass a Quantum Act. It proposes dedicated qubit foundries, more late stage growth capital and DARPA style procurement, arguing that Europe is strong in public investment and deployments but weaker in venture capital, chip manufacturing and regulatory speed. Why it matters for tech: The proposal shows industry shaping the EU quantum policy agenda before legislation is drafted.</description>
+      <content:encoded><![CDATA[<p>In a report titled Quantum Is Europe's Second Chance, IQM Quantum Computers calls on the EU to pass a Quantum Act. It proposes dedicated qubit foundries, more late stage growth capital and DARPA style procurement, arguing that Europe is strong in public investment and deployments but weaker in venture capital, chip manufacturing and regulatory speed.</p><p><strong>Why it matters for tech:</strong> The proposal shows industry shaping the EU quantum policy agenda before legislation is drafted.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/ahead-of-eu-quantum-act-iqm-calls-for-dedicated-qubit-foundries-and-darpa-style-procurement/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Russia plans underground data centres after Ukrainian drone strikes</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/#brief-2026-11-03-08</link>
+      <guid isPermaLink="false">brief-2026-11-03-08</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>Ars Technica reports that Ukrainian drone strikes on exposed Russian infrastructure have prompted hasty Russian plans to move data centres underground. The reporting describes the effort as a response to damage inflicted on digital infrastructure during the conflict. Why it matters for tech: The conflict is directly reshaping where and how a major state builds its data centre capacity.</description>
+      <content:encoded><![CDATA[<p>Ars Technica reports that Ukrainian drone strikes on exposed Russian infrastructure have prompted hasty Russian plans to move data centres underground. The reporting describes the effort as a response to damage inflicted on digital infrastructure during the conflict.</p><p><strong>Why it matters for tech:</strong> The conflict is directly reshaping where and how a major state builds its data centre capacity.</p><p>Source: </p><ul><li><a href="https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/">Ars Technica</a></li></ul>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
