@@ -30,6 +30,19 @@ below, and ping IndexNow for the brief page and feeds.
   refuses any item with no source link, no summary or no why line, and any
   non breaking edition outside 8 to 12 items. Any unsourced item is
   dropped before publication.
+- Company cap (Thillai, Nov 5, 2026): at most 2 items about the same
+  company per edition, counting items about the company (the item's
+  "company" field), not the source that reported it. The builder enforces
+  the cap.
+- Primary sources (Thillai, Nov 5, 2026): Industry and Policy items must
+  link the primary source (company press release, regulator or government
+  page) alongside any news report, when a primary source exists.
+- Predictive language (Thillai, Nov 5, 2026): Policy items may not
+  contain predictive phrasing ("expected to", "will likely", "set to")
+  unless it is a direct, attributed quote. The builder rejects a Policy
+  item that breaks this rule. Policy items state specific, verifiable
+  facts; broad generalisations and predictions are removed or the item is
+  replaced.
 
 ## Files
 - data/brief.json: editorial source of truth (editions and items).
@@ -63,6 +76,9 @@ Signal Brief: sample 10 items from the week's editions. For each, open
 every source link and confirm the item's claims and numbers match the
 source, the wording is the Brief's own (no copied source text), and
 Policy items are neutral, factual and limited to technology impact.
+Also check: no edition carried more than 2 items about one company;
+Industry and Policy items link a primary source where one exists; no
+Policy item uses predictive language outside a direct, attributed quote.
 Report mismatches as Fix now items. Also confirm each edition that week
 carried 8 to 12 items, every item had at least one working source link,
 and the daily job ran each day.

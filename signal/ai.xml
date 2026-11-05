@@ -4,7 +4,7 @@
     <title>Signal Brief · AI</title>
     <link>https://thillairaj.github.io/signal-preview/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Thu, 05 Nov 2026 04:41:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 04:58:23 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/ai.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>OpenAI launches Images 2.6 with faster generation and GIF creation</title>
@@ -25,13 +25,13 @@
       <content:encoded><![CDATA[<p>OpenAI built an autonomous pipeline that found, validated and generated patches for 948 local privilege escalation vulnerabilities in the Linux kernel. The work is presented as defensive security research carried out at machine scale.</p><p><strong>Why it matters for tech:</strong> It is a measurable example of AI systems doing vulnerability research end to end.</p><p>Source: </p><ul><li><a href="https://openai.com/index/a-thousand-fewer-paths-to-root">OpenAI Blog</a></li></ul>]]></content:encoded>
     </item>
     <item>
-      <title>OpenAI's Daybreak Red security service reaches AWS GovCloud</title>
+      <title>AWS shows decision models plugged into Bedrock AgentCore agent evaluations</title>
       <link>https://thillairaj.github.io/signal-preview/brief/#brief-2026-11-05-03</link>
       <guid isPermaLink="false">brief-2026-11-05-03</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
-      <description>Daybreak Red, which brings GPT-5.6 Cyber to approved customers, is now available in AWS GovCloud (US-East) through Amazon Bedrock. Access is limited to authorised cybersecurity work. Why it matters for tech: Frontier cyber models are entering regulated government cloud environments under access controls.</description>
-      <content:encoded><![CDATA[<p>Daybreak Red, which brings GPT-5.6 Cyber to approved customers, is now available in AWS GovCloud (US-East) through Amazon Bedrock. Access is limited to authorised cybersecurity work.</p><p><strong>Why it matters for tech:</strong> Frontier cyber models are entering regulated government cloud environments under access controls.</p><p>Source: </p><ul><li><a href="https://openai.com/index/daybreak-red-aws-govcloud">OpenAI Blog</a></li></ul>]]></content:encoded>
+      <description>An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents. Why it matters for tech: Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack.</description>
+      <content:encoded><![CDATA[<p>An AWS Machine Learning Blog post shows how two decision models, Jev and Strands Decider, connect to Amazon Bedrock AgentCore Evaluations through code based evaluators. Decision models answer the narrow, repeatable evaluation questions that come up when testing AI agents.</p><p><strong>Why it matters for tech:</strong> Agent evaluation tooling is being built into the major cloud AI platforms as a standard part of the stack.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
     </item>
     <item>
       <title>DeepMind applies AI agents to chemistry and drug discovery workflows</title>

@@ -23,7 +23,9 @@ The base URL defaults to the live site; the preview build passes the
 preview base explicitly.
 """
 import json
+import re
 import sys
+from collections import Counter
 from datetime import datetime, timezone, timedelta
 from email.utils import format_datetime
 from pathlib import Path
@@ -239,16 +241,35 @@ def main():
     data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
 
     # Fact check gate: no item ships without at least one source link, a
-    # summary and a why line.
+    # summary and a why line. Company cap (Thillai, Nov 5, 2026): at most 2
+    # items about the same company per edition, counted by the item's
+    # "company" field. Policy gate (Thillai, Nov 5, 2026): a Policy item
+    # may not contain predictive language unless it sits inside a direct,
+    # attributed quote.
+    PREDICTIVE = ["expected to", "will likely", "set to"]
     problems = []
     for ed in data["editions"]:
         if not (8 <= len(ed["items"]) <= 12) and not ed.get("breaking"):
             problems.append(f"edition {ed['date']} has {len(ed['items'])} items (needs 8 to 12)")
+        counts = Counter(i.get("company") for i in ed["items"] if i.get("company"))
+        for company, n in counts.items():
+            if n > 2:
+                problems.append(f"edition {ed['date']}: {n} items about {company} (cap is 2)")
         for item in ed["items"]:
             if not item.get("sources"):
                 problems.append(f"{item['id']}: no sources, dropped by the gate")
             if not item.get("summary") or not item.get("why"):
                 problems.append(f"{item['id']}: missing summary or why line")
+            if item["category"] == "Policy":
+                text = " ".join([item.get("headline", ""), item.get("summary", ""),
+                                 item.get("why", "")])
+                unquoted = re.sub(r"[\"“”][^\"“”]*[\"“”]", " ", text)
+                unquoted = re.sub(r"'[^']*'", " ", unquoted)
+                for phrase in PREDICTIVE:
+                    if phrase in unquoted.lower():
+                        problems.append(
+                            f"{item['id']}: predictive language '{phrase}' in a Policy item "
+                            "outside a direct quote, rejected by the gate")
     if problems:
         for p in problems:
             print(f"GATE: {p}")
