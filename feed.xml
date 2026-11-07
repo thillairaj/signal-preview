@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The Signal</title>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
+    <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
+    <lastBuildDate>Sat, 07 Nov 2026 02:00:17 +0000</lastBuildDate>
+    <item>
+      <title>Scale AV Perception Across Vehicle Platforms with NVIDIA Omniverse NuRec</title>
+      <link>https://developer.nvidia.com/blog/scale-av-perception-across-vehicle-platforms-with-nvidia-omniverse-nurec/</link>
+      <guid isPermaLink="false">11b3c8b71073a678</guid>
+      <description>A perception stack is shaped by the vehicle that carries it. Move the same software to a new carline—for example, from an SUV to a sedan or another vehicle...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Run NVIDIA BioNeMo NIM Microservices for Protein Structure Prediction in Claude Science</title>
+      <link>https://developer.nvidia.com/blog/run-nvidia-bionemo-nim-microservices-for-protein-structure-prediction-in-claude-science/</link>
+      <guid isPermaLink="false">00db43f67924926f</guid>
+      <description>Agentic AI is changing how research is done. AI scientists can read papers, propose hypotheses, call models, and determine which experiments to prioritize next....</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Size GPUs for AI Inference and TCO Without Overspending</title>
+      <link>https://developer.nvidia.com/blog/how-to-size-gpus-for-ai-inference-and-tco-without-overspending/</link>
+      <guid isPermaLink="false">20d2343d93ebf318</guid>
+      <description>The surge in AI adoption is transforming everything from chatbots to content generation. Still, a common pain point remains: How can organizations confidently...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building an Adaptive Agentic Cybersecurity System with NVIDIA Nemotron</title>
+      <link>https://developer.nvidia.com/blog/building-an-adaptive-agentic-cybersecurity-system-with-nvidia-nemotron/</link>
+      <guid isPermaLink="false">d090814422bb1d48</guid>
+      <description>AI is changing the pace of cybersecurity. Agentic systems can coordinate work and pursue complex objectives over long horizons. Security teams are beginning to...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Co-Designing AI Models Using Speculative Decoding for Faster LLM Inference</title>
+      <link>https://developer.nvidia.com/blog/co-designing-ai-models-using-speculative-decoding-for-faster-llm-inference/</link>
+      <guid isPermaLink="false">616379459821cc21</guid>
+      <description>This post is the third in a series on AI model co-design. It explores how to accelerate LLM inference while maintaining accuracy using speculative decoding and...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Modern CUDA Toolbox in Practice: A Step-by-Step Optimization Walkthrough</title>
+      <link>https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/</link>
+      <guid isPermaLink="false">bdadb7b6c741274c</guid>
+      <description>NVIDIA CUDA remains the foundation of GPU-accelerated computing, powering everything from scientific simulations to large-scale AI training. But writing...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Accelerating Dropless MoE Training in JAX with NVIDIA Transformer Engine</title>
+      <link>https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/</link>
+      <guid isPermaLink="false">833c207badafe5a0</guid>
+      <description>Mixture of experts (MoE) has become one of the defining architectural trends in large-scale AI model training. DeepSeek, Qwen, and Mixtral are examples of MoE...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scaling Federated Learning Across Docker, Kubernetes, and Slurm with NVIDIA FLARE</title>
+      <link>https://developer.nvidia.com/blog/scaling-federated-learning-across-docker-kubernetes-and-slurm-with-nvidia-flare/</link>
+      <guid isPermaLink="false">c2ceacd67091fd6a</guid>
+      <description>Federated learning (FL) projects often begin with a straightforward setup: one server, a few clients, and one dataset at each site. As those projects grow, the...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>How NVIDIA NVLink 6 Delivers Multi-Layer Resiliency for AI Factories</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-nvlink-6-delivers-multi-layer-resiliency-for-ai-factories/</link>
+      <guid isPermaLink="false">6510d81523c67e16</guid>
+      <description>For operators of large-scale AI factories, maximizing continuous output is essential for productivity. In massive-scale AI training, every GPU in the cluster...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>How NVIDIA Groq 3 LPX Deterministic Execution Drives Power-Efficient High-Interactivity Inference on NVIDIA Vera Rubin</title>
+      <link>https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/</link>
+      <guid isPermaLink="false">ce9893f8b1d37b1f</guid>
+      <description>Power is a defining constraint for AI factories. As AI workloads demand a full compute platform to serve them, each component of that platform must maximize...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>The October inflection point for vibe game development</title>
+      <link>https://simonwillison.net/2026/Oct/28/vibe-game-development/</link>
+      <guid isPermaLink="false">93b9dc1d31289278</guid>
+      <description>I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we've reached a new inflect</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Octoverse 2026</title>
+      <link>https://simonwillison.net/2026/Oct/28/github-octoverse-2026/</link>
+      <guid isPermaLink="false">d8f853e661d65a1d</guid>
+      <description>GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their "GitHub Stars" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of </description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Ted Sanders</title>
+      <link>https://simonwillison.net/2026/Oct/28/ted-sanders/</link>
+      <guid isPermaLink="false">b0fbfced4c005ad4</guid>
+      <description>In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: </description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Ben Hylak</title>
+      <link>https://simonwillison.net/2026/Oct/29/ben-hylak/</link>
+      <guid isPermaLink="false">18c36f7241d29e16</guid>
+      <description>every product i use should just be a headless mcp, that feeds into an agent, where i never have to think about anything underneath. except for our product, of course. in our product, customers love the ui and love us very much. we're special that way. &amp;mdash; Ben Hylak Tags: mode</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building a multiplayer game world with autonomous Fable-class models</title>
+      <link>https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/</link>
+      <guid isPermaLink="false">672400a4a73efc0d</guid>
+      <description>How I Built the Most AI-Pilled Company in the World Don't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building Spawn is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier model</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>API credits benefit for eligible ChatGPT subscriptions</title>
+      <link>https://simonwillison.net/2026/Oct/29/api-credits/</link>
+      <guid isPermaLink="false">07b8277675a3d49f</guid>
+      <description>API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announced a generous new benefit for their Max and Team subscriptions: $100, $200, and $500 per month subscribers would get the equivalent quantity of (expiring) credits to use with the Anthropic </description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>dbreunig/nesformer</title>
+      <link>https://simonwillison.net/2026/Oct/30/nesformer/</link>
+      <guid isPermaLink="false">1649c5dd07045357</guid>
+      <description>dbreunig/nesformer Inspired by qwenputer by Divyansh Agrawal, Drew Breunig baked a working emulator for a Nintendo Entertainment System 6502 CPU into the weights of Qwen3.5-4B. You can now play NES ROMs such as Super Mario Bros (very slowly) running inside Qwen! In a comment on H</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>datasette-llm 0.1a9</title>
+      <link>https://simonwillison.net/2026/Oct/31/datasette-llm/</link>
+      <guid isPermaLink="false">bc9463905bbd6e7a</guid>
+      <description>Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin. It now picks up the default model used by LLM , which means you can start using Datasett</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>How We Took Over ChatGPT Accounts</title>
+      <link>https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/</link>
+      <guid isPermaLink="false">0def4a2fca6b3a20</guid>
+      <description>How We Took Over ChatGPT Accounts Parameter Labs describe an exploit they found against ChatGPT's implementation of the artifacts pattern (OpenAI used to call this "Canvas" but it looks like the latest revision is called HTML previews ), where interactive custom HTML apps are dis</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Kyle Kingsbury</title>
+      <link>https://simonwillison.net/2026/Nov/1/kyle-kingsbury/</link>
+      <guid isPermaLink="false">835fd1406315e6b3</guid>
+      <description>More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion—the signals we used to rely on as markers of a mature system are now easier to coun</description>
+      <category>Simon Willison</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>China reportedly recruited AI exec to spy on Jensen Huang</title>
+      <link>https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy</link>
+      <guid isPermaLink="false">1bc7ba2a28c4372d</guid>
+      <description>China's intelligence agency recruited Megaspeed executive Alice Huang to spy on Nvidia CEO Jensen Huang, according to The New York Times. The Ministry of State Security (MSS) enlisted her to glean information about American AI chips and "potentially influence the company to push </description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation</link>
+      <guid isPermaLink="false">6813d62fd92533cd</guid>
+      <description>OpenAI is now valued at $1.25 trillion in a new round of funding that has raised another $11 billion, according to Bloomberg. That would make it one of the world's most valuable companies, not long after raising $122 billion from investors in March at a valuation of $852 billion.</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sat, 07 Nov 2026 01:59:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks</title>
+      <link>https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/</link>
+      <guid isPermaLink="false">ca1a9396bb6596ea</guid>
+      <description>SonicWall has released security updates to fix seven vulnerabilities in SonicOS firewalls, including an SSL-VPN authentication bypass flaw exploited in attacks. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Sat, 07 Nov 2026 00:00:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>NQCC Signs Enterprise Agreement with Phasecraft to Provide Quantum Software via SparQ Access</title>
+      <link>https://quantumcomputingreport.com/nqcc-signs-enterprise-agreement-with-phasecraft-to-provide-quantum-software-via-sparq-access/</link>
+      <guid isPermaLink="false">5eaae61e4d6a7399</guid>
+      <description>In November 2026, the NQCC and Phasecraft signed an agreement to provide UK organizations with access to Phasecraft's quantum software via SparQ Access. This partnership aims to lower the technical barrier for evaluating quantum advantage in various fields. An open call for propo</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Fri, 06 Nov 2026 22:34:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Runaway AI hacking agent behind WorkOS breach after escaping sandbox</title>
+      <link>https://www.bleepingcomputer.com/news/security/runaway-ai-hacking-agent-behind-workos-breach-after-escaping-sandbox/</link>
+      <guid isPermaLink="false">b99b441690fc8bf8</guid>
+      <description>WorkOS says an AI-powered hacking agent that breached its internal sales application and accessed customer information was operated by a security researcher who claims the tool escaped its testing environment and unintentionally attacked the company. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 22:27:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Perplexity launches its own take on AI agents for work</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work</link>
+      <guid isPermaLink="false">8e75ec02fc50e91f</guid>
+      <description>Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup's new always-on "Teammates" can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use. Teammates integr</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 21:59:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meta&amp;#8217;s Muse AI can create custom &amp;#8216;spaces&amp;#8217; for the version of the app you need right now</title>
+      <link>https://www.theverge.com/tech/1028871/meta-muse-ai-spaces</link>
+      <guid isPermaLink="false">52e0623fab799a21</guid>
+      <description>Meta will now allow you to build customized, app-like experiences within Muse. The new feature, called "spaces," allows its AI assistant to build things like a shopping hub, school dashboard, music tracker, trivia game, and more, which you can interact with directly in the Muse a</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 21:59:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>All the latest updates on AI data centers</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy</link>
+      <guid isPermaLink="false">c0641eb0de56205a</guid>
+      <description>Massive new data centers are the physical foundation for tech companies’ hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the world over their impact on power grids, utility bills, nearby communities, and th</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 21:59:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI-Assisted Proof Settles Longstanding Question About Quantum Speedups</title>
+      <link>https://thequantuminsider.com/2026/11/06/ai-assisted-proof-settles-longstanding-question-about-quantum-speedups/</link>
+      <guid isPermaLink="false">151eb7c0a5745adf</guid>
+      <description>Insider Brief A mathematical proof has resolved a conjecture open since 2008 about when quantum computers can achieve enormous advantages over conventional machines, establishing a limit on their ability to outperform classical algorithms on unstructured inputs. The result proves</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 21:28:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs</title>
+      <link>https://www.bleepingcomputer.com/news/security/openais-new-gpt-6-cyber-ai-finds-81-firefox-flaws-948-linux-bugs/</link>
+      <guid isPermaLink="false">ba147c5fc5c98202</guid>
+      <description>OpenAI has revealed GPT-6 Cyber, a new artificial intelligence model that has discovered 81 previously unknown high-severity Firefox vulnerabilities and developed working exploits for 948 distinct Linux kernel flaws. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 20:24:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quantum gas microscope reveals individual atoms in first tunable three-component Hubbard system</title>
+      <link>https://phys.org/news/2026-11-quantum-gas-microscope-reveals-individual.html</link>
+      <guid isPermaLink="false">95868f56fbc9824e</guid>
+      <description>For the first time, an international team of researchers from Germany, Thailand, India, China and the United States has created a three-component Hubbard system with tunable interactions in the laboratory. In doing so, the team used a quantum gas microscope to make the individual</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Fri, 06 Nov 2026 20:20:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI agents are getting more complex. Developers shouldn’t have to babysit them.</title>
+      <link>https://thenewstack.io/harness-engineering-coding-agents/</link>
+      <guid isPermaLink="false">d2b5505ededbef8b</guid>
+      <description>What if your coding agent could catch its own mistakes before you ever reviewed its work?&amp;#160; A few years ago, The post AI agents are getting more complex. Developers shouldn&amp;#8217;t have to babysit them. appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Fri, 06 Nov 2026 19:35:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>University of Cambridge Joins UK Quantum Commercialisation Initiative</title>
+      <link>https://thequantuminsider.com/2026/11/06/cambridge-uk-quantum-superconnector-commercialisation/</link>
+      <guid isPermaLink="false">3c4ea6613db3686f</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; A consortium of five of the UK’s top universities, including the University of Cambridge, has announced the launch of the UK Quantum SuperConnector, an initiative designed to bridge the gap between quantum research and commercial success. The i</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 18:53:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Fake security tools on GitHub push backdoors and infostealers</title>
+      <link>https://www.bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers/</link>
+      <guid isPermaLink="false">a97be9095b72e1db</guid>
+      <description>Cybersecurity professionals are being targeted with infected security projects on GitHub that deploy a backdoor and information stealer malware. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 18:46:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pasqal Reports Third-Quarter Revenue Decline as QPU Services Revenue Grows</title>
+      <link>https://thequantuminsider.com/2026/11/06/pasqal-q3-revenue-decline-services-growth/</link>
+      <guid isPermaLink="false">8e3a8de72e223677</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; Pasqal Holding SA (Nasdaq: PSQL), a global leader in neutral-atom based quantum computing, today provided a third quarter 2026 business update, including key financial and operational metrics. Third Quarter 2026 Metrics “In the third quarter, w</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 18:36:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>ITIC Develops Taiwan-UK Partnership to Support Deep Tech Businesses</title>
+      <link>https://thequantuminsider.com/2026/11/06/itic-taiwan-uk-deep-tech-investment-commercialisation/</link>
+      <guid isPermaLink="false">993408c3f2f1d47d</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; According to a report published by The Icons, Industrial Technology Investment Corporation (ITIC), led by President Karen Yu, is advancing a Taiwan–UK deep tech innovation corridor to connect British research with Taiwan’s engineering, manufact</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 18:26:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cognition turned an open model into a coding beast. But it won’t release the weights.</title>
+      <link>https://thenewstack.io/cognition-flash-private-weights/</link>
+      <guid isPermaLink="false">506f5e4832a9124a</guid>
+      <description>Cognition built its newest coding model on a foundation that anyone can download, yet the company is keeping its own The post Cognition turned an open model into a coding beast. But it won&amp;#8217;t release the weights. appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Fri, 06 Nov 2026 18:16:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meta’s best AI model now trains the one most of its users get</title>
+      <link>https://thenewstack.io/meta-muse-specialized-models/</link>
+      <guid isPermaLink="false">323c20ac06d4ea4e</guid>
+      <description>Starting on Friday, everyone using Meta&amp;#8217;s Muse agent and Meta AI gets new models the company trained using Muse Wonder, The post Meta’s best AI model now trains the one most of its users get appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Fri, 06 Nov 2026 18:05:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/</link>
+      <guid isPermaLink="false">b620342f92c4ea8d</guid>
+      <description>Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU (MIG), which divides one GPU into hardware-isolated partitions so you can run a different model in each or take a right-sized fraction of a newer accelerator. This post shows how two optional </description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 18:01:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Airbnb is working on an AI travel agent</title>
+      <link>https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings</link>
+      <guid isPermaLink="false">cc48f8093c5bb103</guid>
+      <description>Airbnb plans to roll out an AI agent in the first half of 2027 that will help users plan and book travel, the company said in its Q3 2026 earnings shareholder letter released today. "Today's AI agents are good at simple, routine tasks, like making a restaurant reservation or sche</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 18:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI is stepping back from NDAs for data center projects</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda</link>
+      <guid isPermaLink="false">85f398082dadd860</guid>
+      <description>Following this week's midterms where voters resoundingly voiced their opposition to data center expansion, OpenAI today announced new commitments to communities where it is working on data center projects, including that it won't use non-disclosure agreements (NDAs) with public o</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 18:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Akai and Moog are embracing vibe-coded mods</title>
+      <link>https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai</link>
+      <guid isPermaLink="false">c821c11af1c22210</guid>
+      <description>inMusic, the parent company of Akai, Moog, Native Instruments, and more, has decided to embrace the modding community. In an interview with The Verge, inMusic CEO Jack O'Donnell said, "We're going to provide a toolbox to the community, we're going to provide the inner workings of</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 18:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>Big Tech lost big in the 2026 election</title>
+      <link>https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast</link>
+      <guid isPermaLink="false">22815b4f725ebdf4</guid>
+      <description>On Tuesday, millions of American voters went to the polls and voted overwhelmingly for Democrats and against AI. The fight against Big Tech is about to come roaring back, and the fight over data centers is looking even harder for the folks trying to build them. On this episode of</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 18:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI is the new dating dealbreaker</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity</link>
+      <guid isPermaLink="false">91f8d419f4fcff35</guid>
+      <description>When Irene moved to San Francisco last year, she started using dating apps as a way to meet new people, get to know her new city, and connect with others who care about the things she does. After the 25-year-old analyst downloaded Hinge and started swiping, she noticed a trend. "</description>
+      <category>The Verge — AI</category>
+      <pubDate>Fri, 06 Nov 2026 18:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update.</title>
+      <link>https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/</link>
+      <guid isPermaLink="false">95ff043a27dc1284</guid>
+      <description>Meta won't force Facebook page owners to allow AI training on linked content.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 06 Nov 2026 17:43:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Taxonomy of agentic primitives in Amazon Quick</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/</link>
+      <guid isPermaLink="false">afd6335fa1881028</guid>
+      <description>As we built Amazon Quick, its agents grew from answering questions to taking actions, and the same primitives kept getting rebuilt under different names. This post shares the taxonomy we converged on — triggers, agents, capabilities, and learned context — found by decomposing age</description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:34:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Serverless MCP server for AI agent data lake access on Amazon ECS Fargate</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate/</link>
+      <guid isPermaLink="false">7ffe65e37ef1b843</guid>
+      <description>Learn how to build a serverless Model Context Protocol (MCP) server on Amazon ECS with AWS Fargate that gives AI agents secure, metadata-driven access to an enterprise data lake. Exposing a new dataset requires only a JSON file, with no per-dataset integration code.</description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:13:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/</link>
+      <guid isPermaLink="false">b8bac355d624d4a1</guid>
+      <description>In Part 1 you built one governed agent. Part 2 scales the pattern to an enterprise: Amazon Bedrock AgentCore Gateway becomes the single front door and redeems Okta's grant, Cedar policies bind each tool to the agent, a second agent runs on Amazon EKS, and AgentCore Observability </description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:09:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 1</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-1/</link>
+      <guid isPermaLink="false">b7a89fa9b2a0ebac</guid>
+      <description>An AI agent that acts for a user raises an identity question that per-app OAuth and service accounts leave open: which agent may act for which user, and how you stop it. In this first post of two, you build a task agent on Amazon Bedrock AgentCore that governs access through Okta</description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:09:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>QNAP says hackers breaching NAS devices in Plex2Shell attacks</title>
+      <link>https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/</link>
+      <guid isPermaLink="false">c4daeac5c98ce27b</guid>
+      <description>QNAP urges users to update Plex Media Server to the latest version available in the QNAP App Center, as hackers are exploiting the Plex2Shell vulnerability chain. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 17:04:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scientists achieve record-breaking low temperature on China's space station, paving the way for new physics experiments</title>
+      <link>https://phys.org/news/2026-11-scientists-temperature-china-space-station.html</link>
+      <guid isPermaLink="false">05e22a46de435b6b</guid>
+      <description>Matter starts to behave differently at extremely low temperatures, creating conditions ideal for studying quantum physics and new states of matter. Now, researchers from China have achieved a new low-temperature record aboard their Tiangong space station. Their research, recently</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Fri, 06 Nov 2026 17:00:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Blueprint: Orchestrating 5,000+ AI assets for a World Cup TV spot</title>
+      <link>https://cloud.google.com/blog/products/media-entertainment/how-mito-orchestrated-5000-plus-ai-assets-for-a-world-cup-tv-spot/</link>
+      <guid isPermaLink="false">a2ca1ee483594523</guid>
+      <description>Welcome back to The Blueprint, a regular feature where we highlight how Google Cloud customers are tackling unique and common challenges across industries using the latest AI and cloud technologies. We hope to inspire others looking to innovate in their work. AI is rapidly transf</description>
+      <category>Google Cloud Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Z4M: storage-optimized compute for AI/ML and parallel file systems</title>
+      <link>https://cloud.google.com/blog/products/compute/storage-optimized-z4m-machine-series-are-ga/</link>
+      <guid isPermaLink="false">970b359d0246800b</guid>
+      <description>Today, we’re excited to announce the general availability of our next-generation Storage-optimized Z4M machine series in Google Compute Engine, available as both Virtual Machine (VM) and bare-metal instances. We built Z4M to provide storage for AI/ML training and inference worklo</description>
+      <category>Google Cloud Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>What’s new with Google Cloud</title>
+      <link>https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud/</link>
+      <guid isPermaLink="false">9eee711eb97bcac7</guid>
+      <description>Want to know the latest from Google Cloud? Find it here in one handy location. Check back regularly for our newest updates, announcements, resources, events, learning opportunities, and more. Tip : Not sure where to find what you’re looking for on the Google Cloud blog? Start her</description>
+      <category>Google Cloud Blog</category>
+      <pubDate>Fri, 06 Nov 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Greenlight Financial built an autonomous SOC solution on Amazon Bedrock AgentCore</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/how-greenlight-financial-built-an-autonomous-soc-solution-on-amazon-bedrock-agentcore/</link>
+      <guid isPermaLink="false">38bdfb2f8c28df6a</guid>
+      <description>Greenlight Financial resolves more than 90% of up to 4,000 monthly security and risk cases without human intervention using Luna, a tiered multi-agent system on Amazon Bedrock AgentCore. This post covers the architecture, episodic memory for continuous learning, and the expansion</description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 16:55:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quantum SuperConnector to Accelerate Commercial Success of UK quantum Research</title>
+      <link>https://thequantuminsider.com/2026/11/06/uk-universities-quantum-commercialisation-programme/</link>
+      <guid isPermaLink="false">b5e7e21619ec0aa8</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; The UK-wide programme will equip quantum innovators with the entrepreneurial skills, networks and support needed to turn world-leading quantum research into high-growth businesses. &amp;#160; A consortium of five of the UK’s top universities has an</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 16:52:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/</link>
+      <guid isPermaLink="false">55950fa4ce7af14b</guid>
+      <description>Taxbit built Taxbit Assist, a cited, permission-aware AI assistant embedded in its enterprise dashboard, on Amazon Bedrock AgentCore. This post shows how they grounded answers in a curated knowledge base, enforced role-aware and region-compliant safety, and continuously measured </description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 16:49:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/</link>
+      <guid isPermaLink="false">5beddb2a546b7a17</guid>
+      <description>Run Claude Code as a remote agent on Amazon Bedrock AgentCore. Each coding task runs in its own isolated session in your AWS account, every model call goes through Amazon Bedrock, and the result comes back as a GitHub pull request you review and merge.</description>
+      <category>AWS Machine Learning Blog</category>
+      <pubDate>Fri, 06 Nov 2026 16:45:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>Could potential AI clones of GTA VI force a quicker official port?</title>
+      <link>https://arstechnica.com/gaming/2026/11/could-potential-ai-clones-of-gta-vi-force-a-quicker-official-port/</link>
+      <guid isPermaLink="false">01aef0d2f976d959</guid>
+      <description>A former Rockstar tech director thinks the developer is facing new time pressures.</description>
+      <category>Ars Technica AI</category>
+      <pubDate>Fri, 06 Nov 2026 16:19:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Installing the Fix for an Exploited WordPress Flaw Can Expose Some Sites One Last Time</title>
+      <link>https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html</link>
+      <guid isPermaLink="false">9fe769e3c933c11e</guid>
+      <description>Some WordPress sites can still be attacked while they install the fix for an actively exploited flaw, according to Umut Bayram, the Picus Security researcher who found it. The update that installs the fix still unpacks its files using the site's old, unpatched code, so an attacke</description>
+      <category>The Hacker News</category>
+      <pubDate>Fri, 06 Nov 2026 16:08:38 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

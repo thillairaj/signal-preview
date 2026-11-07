@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Bot Learning Space · The Signal</title>
+<meta name="robots" content="noindex" />
+<meta http-equiv="refresh" content="0; url=../ai-learning-space/" />
+<style>
+  body { font-family: Georgia, serif; background: #FAF7F0; color: #1a2030; display: flex; min-height: 100vh; align-items: center; justify-content: center; margin: 0; }
+  .box { text-align: center; padding: 24px; max-width: 34rem; }
+  a { color: #8a5f16; font-weight: 700; }
+</style>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var track = (params.get("track") || "").toLowerCase();
+    var level = (params.get("level") || "").toLowerCase();
+    var map = { grok: "../ai-learning-space/?track=bot-grok", muse: "../ai-learning-space/?track=bot-muse", openai: "../ai-learning-space/?track=bot-openai", claude: "../ai-learning-space/?track=bot-claude", copilot: "../ai-learning-space/?track=bot-copilot", spark: "../ai-learning-space/?track=bot-spark" };
+    var dest = map[track] || "../ai-learning-space/";
+    if (level === "beginner" || level === "intermediate") {
+      dest += (dest.indexOf("?") >= 0 ? "&" : "?") + "level=" + level;
+    }
+    window.location.replace(dest);
+  })();
+</script>
+</head>
+<body>
+  <div class="box">
+    <p>This learning space has moved into the family aligned rooms.</p>
+    <p><a href="../ai-learning-space/">Continue to the new space</a></p>
+  </div>
+</body>
+</html>
