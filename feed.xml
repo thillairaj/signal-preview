@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The Signal</title>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/</link>
+    <description>A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.</description>
+    <lastBuildDate>Mon, 09 Nov 2026 02:00:31 +0000</lastBuildDate>
+    <item>
+      <title>NVIDIA PAIR Virtual Inference Router Expands Available Compute on Your Local Network</title>
+      <link>https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/</link>
+      <guid isPermaLink="false">291ea19a15e9fa9d</guid>
+      <description>AI agents are learning to do more by working together. A lead agent can break a complex task into smaller jobs and assign those jobs to specialized subagents....</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Carry User Identity Across Federated Kubernetes and AI Platforms</title>
+      <link>https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/</link>
+      <guid isPermaLink="false">96735b4a162296d9</guid>
+      <description>Modern AI platforms are no longer a single application behind one login screen. A user may start in a central portal, open a governed dataset, launch a notebook...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson</title>
+      <link>https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/</link>
+      <guid isPermaLink="false">bb4eff084ce0c3ca</guid>
+      <description>Running reasoning and agentic AI at the edge has been harder than it needs to be. Until recently, models capable of multi-step reasoning were too large to run...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building a Memory-Driven Agent with NVIDIA NemoClaw</title>
+      <link>https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/</link>
+      <guid isPermaLink="false">aa717a2074d6c4eb</guid>
+      <description>Enterprise work spans messages, decisions, projects, and obligations that change over time. An AI agent that starts without this context must reconstruct it...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing CUDA Rust: Two Tracks for Writing GPU Kernels</title>
+      <link>https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/</link>
+      <guid isPermaLink="false">dbb60a81aa824bf3</guid>
+      <description>In September 2026, NVIDIA announced it is leaning into native GPU programming in Rust. CUDA C++ and CUDA Python are mature, enterprise-grade toolchains, and...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs</title>
+      <link>https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/</link>
+      <guid isPermaLink="false">7816c3b36083bf87</guid>
+      <description>Every NVIDIA CUDA Toolkit release adds functionality and performance improvements that help developers get more from NVIDIA GPUs and the broader NVIDIA software...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>When to Use Encode-Prefill-Decode Disaggregation to Accelerate Multimodal Model Serving</title>
+      <link>https://developer.nvidia.com/blog/when-to-use-encode-prefill-decode-disaggregation-to-accelerate-multimodal-model-serving/</link>
+      <guid isPermaLink="false">51e6e5a8d9bdaf12</guid>
+      <description>Encode-prefill-decode (EPD) disaggregation is an inference optimization technique for multimodal models that separates the vision encoder stage from the prefill...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>From Wafer-Out to First Token: Codifying Supply Chain Expertise with Nemotron and Palantir Foundry</title>
+      <link>https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/</link>
+      <guid isPermaLink="false">d23b90bcfb6224ff</guid>
+      <description>NVIDIA has one of the largest and most complex supply chains in the world, and its performance is measured from wafer-out to first token. The interval is in two...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>High-Throughput Structure Prediction with BioNeMo Inference Runtime</title>
+      <link>https://developer.nvidia.com/blog/high-throughput-structure-prediction-with-bionemo-inference-runtime/</link>
+      <guid isPermaLink="false">bf13fbf2f14a0fa2</guid>
+      <description>Biomolecular structure prediction is now often run at proteome scale, where the goal is to move an entire worklist through the pipeline efficiently. NVIDIA...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Full-Stack NIM Optimizations Deliver 2.5x More Users on Nemotron 3 Ultra</title>
+      <link>https://developer.nvidia.com/blog/how-full-stack-nim-optimizations-deliver-2-5x-more-users-on-nemotron-3-ultra/</link>
+      <guid isPermaLink="false">2abc4ceb82a011e6</guid>
+      <description>Deploying a large language model is only the first step toward production-ready serving. Production teams also need to serve as many concurrent users as...</description>
+      <category>NVIDIA Technical Blog</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Seam Cutter</title>
+      <link>https://simonwillison.net/2026/Oct/25/seam-cutter/</link>
+      <guid isPermaLink="false">0c0ce1d91251a58f</guid>
+      <description>Tool: Seam Cutter I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image. I wanted this because I o</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>webframe: evaluated as a scraper and a sandbox</title>
+      <link>https://simonwillison.net/2026/Oct/26/webframe-evaluation/</link>
+      <guid isPermaLink="false">d4fc15392e5cfcdd</guid>
+      <description>Research: webframe: evaluated as a scraper and a sandbox webframe is a neat little project from Jeff Lindsay which lets you "run a web page like a program" - you point it at a URL or file and it executes it in a hidden headless web view and outputs console.log() to standard outpu</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Jason Koebler</title>
+      <link>https://simonwillison.net/2026/Oct/26/jason-koebler/</link>
+      <guid isPermaLink="false">34adadfb171aaca1</guid>
+      <description>Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-6.1 Terra</title>
+      <link>https://simonwillison.net/2026/Oct/26/gpt-61-terra/</link>
+      <guid isPermaLink="false">51b6dc021077f16c</guid>
+      <description>GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing GPT-6.1 Terra , a fast, efficient model that combines detaile</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Game Boy Color on My Conference Badge</title>
+      <link>https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/</link>
+      <guid isPermaLink="false">a9c65cb8282253c6</guid>
+      <description>Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... who worked with Gemini to get a full NE</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quoting Terk Terkowitz</title>
+      <link>https://simonwillison.net/2026/Oct/28/terk-terkowitz/</link>
+      <guid isPermaLink="false">5d9615019ec259be</guid>
+      <description>If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating t</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>If in doubt, delete the uv.lock file</title>
+      <link>https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/</link>
+      <guid isPermaLink="false">ffb30fef9594cc91</guid>
+      <description>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is: If in doubt, delete the uv.lock file Most of my projects are libraries which don't include a uv.lock file, since it's rude for a library </description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>The U.S. Census Bureau and “Super Intelligence”</title>
+      <link>https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/</link>
+      <guid isPermaLink="false">6bf0704cb5e2b6fd</guid>
+      <description>I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used th</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>llm 0.37</title>
+      <link>https://simonwillison.net/2026/Nov/2/llm/</link>
+      <guid isPermaLink="false">10dab842bc689c46</guid>
+      <description>Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure </description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>October sponsors-only newsletter</title>
+      <link>https://simonwillison.net/2026/Nov/3/october-newsletter/</link>
+      <guid isPermaLink="false">c006e897d48e9930</guid>
+      <description>I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for</description>
+      <category>Simon Willison</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI broke the cybersecurity world. What’s next?</title>
+      <link>https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos</link>
+      <guid isPermaLink="false">055e03fe8fc4b1cc</guid>
+      <description>Today, I’m talking with Alex Stamos, chief security officer at Cognition and longtime cybersecurity expert, about what a mess cybersecurity is right now. This episode is part one of a special series looking at AI in real life. I’ve always enjoyed talking to Alex because he’s so d</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>The US let Nvidia sell chips to an empty office in China</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government</link>
+      <guid isPermaLink="false">73be1ddc7ff24f89</guid>
+      <description>Concerns are being raised that neither the Commerce Department nor Nvidia are doing their due diligence when it comes to vetting Chinese firms cleared to handle the company's H200 AI chips. According to The New York Times, New Matrix is on the list of approved firms, yet its offi</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>Here’s the full text of Jensen Huang’s memo to Nvidia</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia</link>
+      <guid isPermaLink="false">67abd93f196f854c</guid>
+      <description>On Sunday, Nvidia announced it was launching an investigation into CEO Jensen Huang's relationship with Alice Huang, an AI executive and agent of the Chinese government. In addition to the Board of Directors announcing the investigation, Huang sent a memo to Nvidia employees ackn</description>
+      <category>The Verge — AI</category>
+      <pubDate>Mon, 09 Nov 2026 02:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake</title>
+      <link>https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review</link>
+      <guid isPermaLink="false">fa06ff8fdc83e259</guid>
+      <description>Around 7PM each weeknight, I find myself standing in front of the fridge, trying to decide on something for dinner that won't make my husband complain, "Chicken again?" Yes, I should meal plan more, but I don't, so this is where I'm at. A nightly battle in which the chicken usual</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 21:59:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple is racing to make Siri more agentic</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic</link>
+      <guid isPermaLink="false">53044e44b3aab431</guid>
+      <description>Bloomberg's Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI's Dots or Meta's Muse. While Federighi has delivered a functional version of Siri AI on an incredibly sho</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 21:59:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Nvidia is investigating Jensen Huang’s relationship with a Chinese spy</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy</link>
+      <guid isPermaLink="false">ecd65815b585666d</guid>
+      <description>Nvidia has announced that it is opening an investigation into CEO Jensen Huang and his relationship with Megaspeed executive Alice Huang, who was reportedly recruited by China's Ministry of State Security to spy on the company. A statement posted by the board of directors reads: </description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 21:59:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Elvis and Eminem rights holders are suing Suno</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit</link>
+      <guid isPermaLink="false">ae06ecf7187204d4</guid>
+      <description>Suno is facing yet another pair of lawsuits. A group of rights holders of Elvis Presley's music and the publisher of some of Eminem's biggest records are suing the AI music company, claiming it illegally generates music and lyrics that mimic those artists. The lawyers in the Pres</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 17:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout</title>
+      <link>https://thenewstack.io/docusign-ai-engineering-adoption/</link>
+      <guid isPermaLink="false">ae0b5e95cdfeed45</guid>
+      <description>Docusign rolled out AI coding tools across its engineering teams, expecting them to help developers write code faster and do The post Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Sun, 08 Nov 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework</title>
+      <link>https://thenewstack.io/scaling-autonomous-agents-framework/</link>
+      <guid isPermaLink="false">0aa214f5f5e1caed</guid>
+      <description>QA teams shipping complex products generate test failures around the clock. Every failure needs a bug ticket with steps, screenshots, The post Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Sun, 08 Nov 2026 16:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Iris Ohyama data cloud breach exposes info of 7.7 million customers</title>
+      <link>https://www.bleepingcomputer.com/news/security/iris-ohyama-data-cloud-breach-exposes-info-of-77-million-customers/</link>
+      <guid isPermaLink="false">840fc9184c683327</guid>
+      <description>Japanese manufacturer Iris Ohyama, the operator of the Iris Plaza shopping platform, disclosed that personal information belonging to about 7.7 million people may have been exposed after unauthorized access to a third-party cloud service the company used. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Sun, 08 Nov 2026 15:43:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>Perplexity’s AI agents keep working after you close the tab</title>
+      <link>https://thenewstack.io/perplexity-teammates-agent-orchestration/</link>
+      <guid isPermaLink="false">81c28ede29aae0e0</guid>
+      <description>Perplexity&amp;#8217;s new Teammates can coordinate multiple agents, remember where previous sessions left off, and keep working without another prompt. The The post Perplexity’s AI agents keep working after you close the tab appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Sun, 08 Nov 2026 15:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why a new report on Anthropic automating AI development is alarming researchers</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development</link>
+      <guid isPermaLink="false">8879475e62b3793a</guid>
+      <description>Anthropic is using AI to build more powerful AI. And it appears to be working remarkably well, with the company's models improving roughly twice as quickly as a year ago, with little indication of slowing down. That's according to a new report published Thursday by the AI safety </description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 05:59:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Riverlane Demonstrates Data-Driven DEM Augmentation to Reduce Surface-Code Logical Errors</title>
+      <link>https://quantumcomputingreport.com/riverlane-demonstrates-data-driven-dem-augmentation-to-reduce-surface-code-logical-errors/</link>
+      <guid isPermaLink="false">ad819d2fcd36e09d</guid>
+      <description>Riverlane has developed a data-driven method to improve quantum error correction in surface-code architectures. By identifying unmodeled correlated error mechanisms from syndrome measurement data, their technique augments standard Detector Error Models (DEMs). This approach has s</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sun, 08 Nov 2026 03:48:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>Who’s News: Strategic Appointments at Quantum eMotion, Qtonic Quantum, Chicago Quantum Exchange, and Equal1</title>
+      <link>https://quantumcomputingreport.com/whos-news-strategic-appointments-at-quantum-emotion-qtonic-quantum-chicago-quantum-exchange-and-equal1/</link>
+      <guid isPermaLink="false">5fb321bc12de5a21</guid>
+      <description>Quantum eMotion, Qtonic Quantum, Chicago Quantum Exchange, and Equal1 have announced strategic appointments to key leadership positions, bringing in experienced professionals to drive their respective technology, operations, and quantum computing initiatives. These appointments a</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sun, 08 Nov 2026 03:31:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Big Tech lost big in the 2026 election</title>
+      <link>https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast</link>
+      <guid isPermaLink="false">22815b4f725ebdf4</guid>
+      <description>On Tuesday, millions of American voters went to the polls and voted overwhelmingly for Democrats and against AI. The fight against Big Tech is about to come roaring back, and the fight over data centers is looking even harder for the folks trying to build them. On this episode of</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 01:59:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI is the new dating dealbreaker</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity</link>
+      <guid isPermaLink="false">91f8d419f4fcff35</guid>
+      <description>When Irene moved to San Francisco last year, she started using dating apps as a way to meet new people, get to know her new city, and connect with others who care about the things she does. After the 25-year-old analyst downloaded Hinge and started swiping, she noticed a trend. "</description>
+      <category>The Verge — AI</category>
+      <pubDate>Sun, 08 Nov 2026 01:27:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>CO.LAB Selects Four Startups for Inaugural CO.LAB Q Commercialization Studio in Chattanooga</title>
+      <link>https://quantumcomputingreport.com/co-lab-selects-four-startups-for-inaugural-co-lab-q-commercialization-studio-in-chattanooga/</link>
+      <guid isPermaLink="false">85e707f48a0cea08</guid>
+      <description>CO.LAB has launched its first CO.LAB Q commercialization studio in Chattanooga, featuring four startups: RidgeQuantum, Superquantum, esoteriq, and Kottackal Business Solutions. This 12-month program, starting November 2026, aims to commercialize quantum technologies by connecting</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 21:11:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scottish Widows and Aberdeen Allocate UK Workplace Pension Capital to Oxford Quantum Circuits and Quantum Motion via LTAF</title>
+      <link>https://quantumcomputingreport.com/scottish-widows-and-aberdeen-allocate-uk-workplace-pension-capital-to-oxford-quantum-circuits-and-quantum-motion-via-ltaf/</link>
+      <guid isPermaLink="false">ada937d3aa6f1eef</guid>
+      <description>Scottish Widows and Aberdeen Investments have allocated UK workplace pension capital to Oxford Quantum Circuits and Quantum Motion through the CG Scottish Widows Growth LTAF. This initiative aims to connect defined-contribution retirement assets with venture-stage technology firm</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 20:39:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>UK Financial Conduct Authority Launches Quantum Experimentation Group to Evaluate Financial Crime Detection</title>
+      <link>https://quantumcomputingreport.com/uk-financial-conduct-authority-launches-quantum-experimentation-group-to-evaluate-financial-crime-detection/</link>
+      <guid isPermaLink="false">fe833bcf19c85d28</guid>
+      <description>The UK's Financial Conduct Authority (FCA) is launching the Quantum Experimentation Group (QEG) in Q1 2027 to assess if quantum machine learning (QML) can improve financial crime detection. This initiative will bring together financial institutions, quantum tech providers, and re</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 20:19:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Adelaide University Engineers Synthetic Area Spread to Unlock High-Sensitivity Absolute Quantum Magnetometers</title>
+      <link>https://quantumcomputingreport.com/adelaide-university-engineers-synthetic-area-spread-to-unlock-high-sensitivity-absolute-quantum-magnetometers/</link>
+      <guid isPermaLink="false">1642c9571823e370</guid>
+      <description>Engineers at Adelaide University have developed a new technique called "synthetic area spread" for superconducting quantum magnetometers. This method allows for absolute magnetic field sensing without sacrificing detector sensitivity, by using uniform loop geometries in two-dimen</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 20:11:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>South Korea Launches 614 PFLOPS Hangang Supercomputer Ahead of May 2027 IonQ Quantum Link</title>
+      <link>https://quantumcomputingreport.com/south-korea-launches-614-pflops-hangang-supercomputer-ahead-of-may-2027-ionq-quantum-link/</link>
+      <guid isPermaLink="false">3abce6dc55c7a141</guid>
+      <description>South Korea has launched its sixth national supercomputer, Hangang, with a peak performance of 614 petaflops. It is designed to be the high-performance computing backbone for the country's first hybrid quantum-classical computing platform, integrating with IonQ's Tempo quantum pr</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 19:43:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>HKMA and HKUST Launch PQC Toolkit to Accelerate Banking Sector Transition by 2030</title>
+      <link>https://quantumcomputingreport.com/hkma-and-hkust-launch-pqc-toolkit-to-accelerate-banking-sector-transition-by-2030/</link>
+      <guid isPermaLink="false">fc2735f7e86c4eb6</guid>
+      <description>The Hong Kong Monetary Authority (HKMA) and The Hong Kong University of Science and Technology (HKUST) have jointly launched a Post-Quantum Cryptography (PQC) Toolkit. This toolkit provides a framework for Hong Kong's banking sector to transition to quantum-safe infrastructure by</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 19:28:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>QNu Labs Introduces Corporate Quantum-Safe Training Supported by National Quantum Mission</title>
+      <link>https://quantumcomputingreport.com/qnu-labs-introduces-corporate-quantum-safe-training-supported-by-national-quantum-mission/</link>
+      <guid isPermaLink="false">180c04f2c4772642</guid>
+      <description>QNu Labs has launched a corporate quantum-safe training program, supported by India's National Quantum Mission, to prepare security professionals for quantum threats. The program covers quantum communication, post-quantum cryptography, and includes case studies from QNu Labs' dep</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 19:08:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>IBM Deploys Quantum System Two at Hyde Park Labs to Anchor Illinois Quantum Ecosystem</title>
+      <link>https://quantumcomputingreport.com/ibm-deploys-quantum-system-two-at-hyde-park-labs-to-anchor-illinois-quantum-ecosystem/</link>
+      <guid isPermaLink="false">ef586503c4e54879</guid>
+      <description>IBM, the University of Chicago, and the State of Illinois have deployed an on-premises IBM Quantum System Two in Chicago, powered by the 120-qubit Nighthawk processor. This system, initially at Hyde Park Labs, will anchor the National Quantum Algorithm Center (NQAC) and support r</description>
+      <category>Quantum Computing Report</category>
+      <pubDate>Sat, 07 Nov 2026 18:45:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Two paths, one flux: Trapped ions simulate Aharonov–Bohm interference in a lattice gauge theory</title>
+      <link>https://phys.org/news/2026-11-paths-flux-ions-simulate-aharonovbohm.html</link>
+      <guid isPermaLink="false">03bd83a3aef12133</guid>
+      <description>In a new Nature Physics study, researchers demonstrated the Aharonov-Bohm effect in a quantum simulation of a lattice gauge theory using a hybrid trapped-ion quantum computer.</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Sat, 07 Nov 2026 18:00:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>How we review 4x more AI code without reading every line</title>
+      <link>https://thenewstack.io/scale-ai-code-reviews/</link>
+      <guid isPermaLink="false">feaa1053b777aa82</guid>
+      <description>Do you need to read every line of AI-generated code to trust it?&amp;#160; Not necessarily. Instead, check five things: the The post How we review 4x more AI code without reading every line appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Sat, 07 Nov 2026 17:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>In the software factory, engineers become process engineers</title>
+      <link>https://thenewstack.io/engineers-become-process-engineers/</link>
+      <guid isPermaLink="false">7dfd87c5e2a3e21f</guid>
+      <description>For most of software&amp;#8217;s history, the scarce resource was people who could write code. Every process the industry built assumed The post In the software factory, engineers become process engineers appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Sat, 07 Nov 2026 16:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why AWS wants developers to stop babysitting their AI agents</title>
+      <link>https://thenewstack.io/kiro-bots-agent-memory/</link>
+      <guid isPermaLink="false">de8ccb16fc671acd</guid>
+      <description>AWS first introduced Kiro, its agentic, spec-driven development environment, in July 2025. It also introduced Kiro Crew in August of The post Why AWS wants developers to stop babysitting their AI agents appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Sat, 07 Nov 2026 15:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hackers pull off $133 million French bank heist via service provider</title>
+      <link>https://www.bleepingcomputer.com/news/security/hackers-pull-off-133-million-french-bank-heist-via-service-provider/</link>
+      <guid isPermaLink="false">ded94754be202b29</guid>
+      <description>French cooperative bank Crédit Mutuel Arkéa was targeted in a cyberattack that enabled fraudulent transactions of up to $133 million, forcing it to respond by suspending certain systems.v [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Sat, 07 Nov 2026 15:25:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>CTM360 Exposes Fake Gift Card Scams Exploiting Trusted Brands</title>
+      <link>https://www.bleepingcomputer.com/news/security/ctm360-exposes-fake-gift-card-scams-exploiting-trusted-brands/</link>
+      <guid isPermaLink="false">5a765cf499c2e694</guid>
+      <description>Scammers are impersonating major brands and celebrities to lure consumers into fake gift card giveaways that collect personal information and trigger unwanted subscriptions. CTM360 reveals how these campaigns use deceptive verification steps and affiliate networks to generate rev</description>
+      <category>BleepingComputer</category>
+      <pubDate>Sat, 07 Nov 2026 14:10:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude Code's “Don't Ask Again” File Exposes Passwords and Keys in 1,122 Public Copies on GitHub</title>
+      <link>https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html</link>
+      <guid isPermaLink="false">804a43c3361e7807</guid>
+      <description>Passwords and API keys that developers typed into commands they approved in Claude Code are sitting in public GitHub repositories, where anyone can read them. When a user selects "Yes, and don't ask again," Anthropic's AI coding assistant can save the command, word-for-word, incl</description>
+      <category>The Hacker News</category>
+      <pubDate>Sat, 07 Nov 2026 06:44:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>ARTEX abuse expands as cybercriminals target financial sector</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/</link>
+      <guid isPermaLink="false">e115b44724e254be</guid>
+      <description>In October 2026, the financially motivated threat actor Storm-3358 began targeting organizations in the financial sector using the agentic AI offensive framework ARTEX. The post ARTEX abuse expands as cybercriminals target financial sector appeared first on Microsoft Security Blo</description>
+      <category>Microsoft Security Blog</category>
+      <pubDate>Sat, 07 Nov 2026 02:44:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>SonicWall warns of new SSL-VPN MFA bypass flaw exploited in attacks</title>
+      <link>https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-new-ssl-vpn-mfa-bypass-flaw-exploited-in-attacks/</link>
+      <guid isPermaLink="false">ca1a9396bb6596ea</guid>
+      <description>SonicWall has released security updates to fix seven vulnerabilities in SonicOS firewalls, including an SSL-VPN authentication bypass flaw exploited in attacks. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Sat, 07 Nov 2026 00:00:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Runaway AI hacking agent behind WorkOS breach after escaping sandbox</title>
+      <link>https://www.bleepingcomputer.com/news/security/runaway-ai-hacking-agent-behind-workos-breach-after-escaping-sandbox/</link>
+      <guid isPermaLink="false">b99b441690fc8bf8</guid>
+      <description>WorkOS says an AI-powered hacking agent that breached its internal sales application and accessed customer information was operated by a security researcher who claims the tool escaped its testing environment and unintentionally attacked the company. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 22:27:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI-Assisted Proof Settles Longstanding Question About Quantum Speedups</title>
+      <link>https://thequantuminsider.com/2026/11/06/ai-assisted-proof-settles-longstanding-question-about-quantum-speedups/</link>
+      <guid isPermaLink="false">151eb7c0a5745adf</guid>
+      <description>Insider Brief A mathematical proof has resolved a conjecture open since 2008 about when quantum computers can achieve enormous advantages over conventional machines, establishing a limit on their ability to outperform classical algorithms on unstructured inputs. The result proves</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 21:28:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI's new GPT-6 Cyber AI finds 81 Firefox flaws, 948 Linux bugs</title>
+      <link>https://www.bleepingcomputer.com/news/security/openais-new-gpt-6-cyber-ai-finds-81-firefox-flaws-948-linux-bugs/</link>
+      <guid isPermaLink="false">ba147c5fc5c98202</guid>
+      <description>OpenAI has revealed GPT-6 Cyber, a new artificial intelligence model that has discovered 81 previously unknown high-severity Firefox vulnerabilities and developed working exploits for 948 distinct Linux kernel flaws. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 20:24:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Quantum gas microscope reveals individual atoms in first tunable three-component Hubbard system</title>
+      <link>https://phys.org/news/2026-11-quantum-gas-microscope-reveals-individual.html</link>
+      <guid isPermaLink="false">95868f56fbc9824e</guid>
+      <description>For the first time, an international team of researchers from Germany, Thailand, India, China and the United States has created a three-component Hubbard system with tunable interactions in the laboratory. In doing so, the team used a quantum gas microscope to make the individual</description>
+      <category>Phys.org Quantum Physics</category>
+      <pubDate>Fri, 06 Nov 2026 20:20:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI agents are getting more complex. Developers shouldn’t have to babysit them.</title>
+      <link>https://thenewstack.io/harness-engineering-coding-agents/</link>
+      <guid isPermaLink="false">d2b5505ededbef8b</guid>
+      <description>What if your coding agent could catch its own mistakes before you ever reviewed its work?&amp;#160; A few years ago, The post AI agents are getting more complex. Developers shouldn&amp;#8217;t have to babysit them. appeared first on The New Stack .</description>
+      <category>The New Stack</category>
+      <pubDate>Fri, 06 Nov 2026 19:35:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>University of Cambridge Joins UK Quantum Commercialisation Initiative</title>
+      <link>https://thequantuminsider.com/2026/11/06/cambridge-uk-quantum-superconnector-commercialisation/</link>
+      <guid isPermaLink="false">3c4ea6613db3686f</guid>
+      <description>Insider Brief PRESS RELEASE &amp;#8212; A consortium of five of the UK’s top universities, including the University of Cambridge, has announced the launch of the UK Quantum SuperConnector, an initiative designed to bridge the gap between quantum research and commercial success. The i</description>
+      <category>The Quantum Insider</category>
+      <pubDate>Fri, 06 Nov 2026 18:53:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Fake security tools on GitHub push backdoors and infostealers</title>
+      <link>https://www.bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers/</link>
+      <guid isPermaLink="false">a97be9095b72e1db</guid>
+      <description>Cybersecurity professionals are being targeted with infected security projects on GitHub that deploy a backdoor and information stealer malware. [...]</description>
+      <category>BleepingComputer</category>
+      <pubDate>Fri, 06 Nov 2026 18:46:52 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

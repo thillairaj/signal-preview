@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Signal Brief · Cloud &amp; DevOps</title>
+    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
+    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Perplexity's Teammates keep AI agents working between sessions</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/04/</link>
+      <guid isPermaLink="false">brief-2026-11-09-04</guid>
+      <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Perplexity has launched Teammates, a system that coordinates several AI agents which remember where past sessions left off and keep working without a new prompt. Shared project state lives in Git, with each project in its own repository and each agent working in a separate sandbox. Perplexity says fewer than 2% of agent submissions are rejected for being based on outdated state, with median submission latency under 1.7 seconds. Teammates is available first on the web for Perplexity Max subscribers, with iOS support planned. Why it matters for tech: Agents that keep working after a tab closes move AI tools from answering questions toward carrying out multi-step work on their own.</description>
+      <content:encoded><![CDATA[<p>Perplexity has launched Teammates, a system that coordinates several AI agents which remember where past sessions left off and keep working without a new prompt. Shared project state lives in Git, with each project in its own repository and each agent working in a separate sandbox. Perplexity says fewer than 2% of agent submissions are rejected for being based on outdated state, with median submission latency under 1.7 seconds. Teammates is available first on the web for Perplexity Max subscribers, with iOS support planned.</p><p><strong>Why it matters for tech:</strong> Agents that keep working after a tab closes move AI tools from answering questions toward carrying out multi-step work on their own.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/perplexity-teammates-agent-orchestration/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>A decision framework for moving autonomous agents from Lambda to EKS</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/07/</link>
+      <guid isPermaLink="false">brief-2026-11-09-07</guid>
+      <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>A senior QA engineer at Amazon describes an autonomous agent that reads test failures, files structured bug reports and catches regressions, running on AWS Lambda for one team at under $5 a month and about 200 invocations a month, saving 8 to 10 hours a week. Scaling the same agent to 50 teams changes the workload from stateless events to long-running, multi-tenant work with shared state and API contention, and the piece sets out when to move to EKS Auto Mode: when a workload needs persistent state, cross-tenant analysis, GPU bursts, namespace isolation and central rate limiting together. At 50 teams the EKS setup is put at roughly $200 to $250 a month in total. Why it matters for tech: The piece gives teams a concrete test for moving agents off serverless, which matters as agent workloads grow from one team to many.</description>
+      <content:encoded><![CDATA[<p>A senior QA engineer at Amazon describes an autonomous agent that reads test failures, files structured bug reports and catches regressions, running on AWS Lambda for one team at under $5 a month and about 200 invocations a month, saving 8 to 10 hours a week. Scaling the same agent to 50 teams changes the workload from stateless events to long-running, multi-tenant work with shared state and API contention, and the piece sets out when to move to EKS Auto Mode: when a workload needs persistent state, cross-tenant analysis, GPU bursts, namespace isolation and central rate limiting together. At 50 teams the EKS setup is put at roughly $200 to $250 a month in total.</p><p><strong>Why it matters for tech:</strong> The piece gives teams a concrete test for moving agents off serverless, which matters as agent workloads grow from one team to many.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/scaling-autonomous-agents-framework/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Docusign turns AI coding tools into an engineering operating model</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/08/</link>
+      <guid isPermaLink="false">brief-2026-11-09-08</guid>
+      <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Docusign says all of its more than 1,100 engineers are now onboarded to and actively using AI coding tools, after early adoption stalled at 49% of engineers and an 18% productivity gain levelled off. The company credits a six-person Eng AI Champions team and about 75 AI Multipliers embedded in teams, with active usage reaching 93% within two months of the Multipliers starting, and lines of code updated per developer up about 52% from the starting point, though the article notes that volume alone does not prove faster delivery. Internal tools include Kody for coding, Chronicle for observability and DocuWiki for documentation, brought together in Krew, where teams build agents for recurring work under human review; no code enters the system unreviewed. Why it matters for tech: Docusign's numbers show the hard part of AI coding tools is not the rollout but the operating model around them, a lesson other engineering teams are now working through.</description>
+      <content:encoded><![CDATA[<p>Docusign says all of its more than 1,100 engineers are now onboarded to and actively using AI coding tools, after early adoption stalled at 49% of engineers and an 18% productivity gain levelled off. The company credits a six-person Eng AI Champions team and about 75 AI Multipliers embedded in teams, with active usage reaching 93% within two months of the Multipliers starting, and lines of code updated per developer up about 52% from the starting point, though the article notes that volume alone does not prove faster delivery. Internal tools include Kody for coding, Chronicle for observability and DocuWiki for documentation, brought together in Krew, where teams build agents for recurring work under human review; no code enters the system unreviewed.</p><p><strong>Why it matters for tech:</strong> Docusign's numbers show the hard part of AI coding tools is not the rollout but the operating model around them, a lesson other engineering teams are now working through.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/docusign-ai-engineering-adoption/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS makes Kiro bots generally available in Kiro Crew</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/05/</link>
+      <guid isPermaLink="false">brief-2026-11-08-05</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon Web Services has made Kiro bots generally available in Kiro Crew, its open-source multi-agent development environment. Each bot is a named, long-running agent with its own durable memory, kept in a notes file the developer can edit, and its own tools and permissions for one standing job such as triaging tickets or watching builds. A bot runs parallel worker sessions and can ask for more tools, but cannot take them without developer approval, and bots cannot delegate work to each other. Why it matters for tech: Giving each agent its own memory and a standing job shifts developers from carrying context between sessions to handing off whole processes.</description>
+      <content:encoded><![CDATA[<p>Amazon Web Services has made Kiro bots generally available in Kiro Crew, its open-source multi-agent development environment. Each bot is a named, long-running agent with its own durable memory, kept in a notes file the developer can edit, and its own tools and permissions for one standing job such as triaging tickets or watching builds. A bot runs parallel worker sessions and can ask for more tools, but cannot take them without developer approval, and bots cannot delegate work to each other.</p><p><strong>Why it matters for tech:</strong> Giving each agent its own memory and a standing job shifts developers from carrying context between sessions to handing off whole processes.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/kiro-bots-agent-memory/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>SageMaker Inference now supports NVIDIA multi-instance GPU partitioning</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/06/</link>
+      <guid isPermaLink="false">brief-2026-11-08-06</guid>
+      <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU, which splits one GPU into hardware-isolated partitions. Each partition can run a different model, or take a right-sized fraction of a newer accelerator, so teams can pack more models onto one card. The feature is aimed at raising GPU utilisation for model endpoints. Why it matters for tech: Splitting one GPU into isolated partitions lets teams run more models per accelerator and cut inference cost.</description>
+      <content:encoded><![CDATA[<p>Amazon SageMaker Inference now supports GPU partitioning with NVIDIA Multi-Instance GPU, which splits one GPU into hardware-isolated partitions. Each partition can run a different model, or take a right-sized fraction of a newer accelerator, so teams can pack more models onto one card. The feature is aimed at raising GPU utilisation for model endpoints.</p><p><strong>Why it matters for tech:</strong> Splitting one GPU into isolated partitions lets teams run more models per accelerator and cut inference cost.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google hands gVisor and its agent stack to the CNCF</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/06/</link>
+      <guid isPermaLink="false">brief-2026-11-07-06</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google is donating gVisor, Agent Substrate and OpenRL to the Cloud Native Computing Foundation, putting its AI agent infrastructure under neutral governance. gVisor, open sourced by Google in 2018, runs a lightweight kernel in user space to intercept system calls, adding isolation between containers and the host system, and is used by Anthropic and OpenAI to run untrusted code. Agent Substrate 1.0, now generally available on Google Kubernetes Engine, lets agents pause when idle and resume without rebuilding their runtime, while OpenRL coordinates reinforcement learning training on a user’s own Kubernetes setup. Why it matters for tech: Sandboxing is becoming core infrastructure for agents that run untrusted code, and neutral ownership is Google’s bid to make its stack the default.</description>
+      <content:encoded><![CDATA[<p>Google is donating gVisor, Agent Substrate and OpenRL to the Cloud Native Computing Foundation, putting its AI agent infrastructure under neutral governance. gVisor, open sourced by Google in 2018, runs a lightweight kernel in user space to intercept system calls, adding isolation between containers and the host system, and is used by Anthropic and OpenAI to run untrusted code. Agent Substrate 1.0, now generally available on Google Kubernetes Engine, lets agents pause when idle and resume without rebuilding their runtime, while OpenRL coordinates reinforcement learning training on a user’s own Kubernetes setup.</p><p><strong>Why it matters for tech:</strong> Sandboxing is becoming core infrastructure for agents that run untrusted code, and neutral ownership is Google’s bid to make its stack the default.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/gvisor-cncf-kubernetes-open-source/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cursor will now publish AI built apps to a live URL</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/07/</link>
+      <guid isPermaLink="false">brief-2026-11-07-07</guid>
+      <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Cursor has added fully managed deployment, letting its cloud agents take an AI generated app from a description to a live, shareable web address without the user setting up infrastructure. Cursor handles hosting, database provisioning and sign in, runs security checks for exposed credentials and secrets before publishing, and builds on Vercel for Platforms. The feature is available on all paid Cursor plans with cloud agents enabled, and targets internal business apps as well as personal projects. Why it matters for tech: Coding tools are closing the gap between generating an app and shipping it, which makes deployment skill less of a gate for new builders.</description>
+      <content:encoded><![CDATA[<p>Cursor has added fully managed deployment, letting its cloud agents take an AI generated app from a description to a live, shareable web address without the user setting up infrastructure. Cursor handles hosting, database provisioning and sign in, runs security checks for exposed credentials and secrets before publishing, and builds on Vercel for Platforms. The feature is available on all paid Cursor plans with cloud agents enabled, and targets internal business apps as well as personal projects.</p><p><strong>Why it matters for tech:</strong> Coding tools are closing the gap between generating an app and shipping it, which makes deployment skill less of a gate for new builders.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/cursor-ai-app-deployment/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Azure Front Door gains generally available post quantum TLS key exchange</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/06/</link>
+      <guid isPermaLink="false">brief-2026-11-06-06</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft made configurable TLS key exchange policies generally available in Azure Front Door, including hybrid post quantum key exchange. The option is aimed at teams preparing for future cryptographic threats while keeping client compatibility. Why it matters for tech: Post quantum readiness is reaching production edge services, so teams can start the migration before quantum computers threaten current cryptography.</description>
+      <content:encoded><![CDATA[<p>Microsoft made configurable TLS key exchange policies generally available in Azure Front Door, including hybrid post quantum key exchange. The option is aimed at teams preparing for future cryptographic threats while keeping client compatibility.</p><p><strong>Why it matters for tech:</strong> Post quantum readiness is reaching production edge services, so teams can start the migration before quantum computers threaten current cryptography.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=577668">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google donates its agent runtime stack to the CNCF as Agent Substrate hits 1.0</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/07/</link>
+      <guid isPermaLink="false">brief-2026-11-06-07</guid>
+      <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google donated three open source projects that started at Google, Agent Substrate, gVisor and OpenRL, to the Cloud Native Computing Foundation after their acceptance into the CNCF Sandbox. Agent Substrate, which runs isolated agent environments, reached version 1.0 and is generally available on Google Kubernetes Engine, restoring idle agents in under 500 milliseconds at 10 times container density. Why it matters for tech: Agent infrastructure is getting the same neutral, open governance treatment Kubernetes got, so no single vendor controls how agents run at scale.</description>
+      <content:encoded><![CDATA[<p>Google donated three open source projects that started at Google, Agent Substrate, gVisor and OpenRL, to the Cloud Native Computing Foundation after their acceptance into the CNCF Sandbox. Agent Substrate, which runs isolated agent environments, reached version 1.0 and is generally available on Google Kubernetes Engine, restoring idle agents in under 500 milliseconds at 10 times container density.</p><p><strong>Why it matters for tech:</strong> Agent infrastructure is getting the same neutral, open governance treatment Kubernetes got, so no single vendor controls how agents run at scale.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/products/containers-kubernetes/open-infrastructure-for-autonomous-agents-comes-to-cncf/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/10/</link>
+      <guid isPermaLink="false">brief-2026-11-05-10</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases. Why it matters for tech: Databases are being reshaped around agent driven development, where environments spin up and down in minutes.</description>
+      <content:encoded><![CDATA[<p>Google has announced a preview of AlloyDB Express, a version of AlloyDB for PostgreSQL designed for rapid testing and prototyping. It offers instant provisioning and scale to zero, aimed at development pipelines and coding agents that need short lived databases.</p><p><strong>Why it matters for tech:</strong> Databases are being reshaped around agent driven development, where environments spin up and down in minutes.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/products/databases/introducing-alloydb-express-for-rapid-testing-and-prototyping/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amazon S3 Tables can now migrate Hive tables to Iceberg for you</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/11/</link>
+      <guid isPermaLink="false">brief-2026-11-05-11</guid>
+      <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running. Why it matters for tech: Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.</description>
+      <content:encoded><![CDATA[<p>AWS has added managed migration from Apache Hive tables to Apache Iceberg in Amazon S3 Tables. AWS says existing datasets can be converted with no pipelines to build and no compute to provision, while production workloads keep running.</p><p><strong>Why it matters for tech:</strong> Iceberg has become the default table format for lakehouse data, and managed migration removes the main barrier to switching.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/amazon-s3-tables-now-offer-managed-migration-of-apache-hive-tables-to-apache-iceberg/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Azure previews an MCP gateway for its container application gateway</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/06/</link>
+      <guid isPermaLink="false">brief-2026-11-04-06</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls. Why it matters for tech: Gateways are becoming the control point where enterprises govern agent traffic.</description>
+      <content:encoded><![CDATA[<p>Microsoft has put an MCP gateway for Application Gateway for Containers into public preview, adding a Model Context Protocol route type. Platform teams can publish MCP servers behind one hostname while centralising TLS, token validation and firewall controls.</p><p><strong>Why it matters for tech:</strong> Gateways are becoming the control point where enterprises govern agent traffic.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=576388">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/07/</link>
+      <guid isPermaLink="false">brief-2026-11-04-07</guid>
+      <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing. Why it matters for tech: It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.</description>
+      <content:encoded><![CDATA[<p>Fintech firm Nammu21 worked with Google Cloud to structure syndicated loan agreements as smart contracts on the Google Cloud Universal Ledger. The proof of concept automates the loan lifecycle in a market where settlement currently takes weeks of manual processing.</p><p><strong>Why it matters for tech:</strong> It tests ledger technology on a real, high value financial workflow rather than a pilot in isolation.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/topics/financial-services/how-nammu21-automates-syndicated-loans-on-google-cloud-universal-ledger/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS makes Step Functions callable as agent tools</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/04/</link>
+      <guid isPermaLink="false">brief-2026-11-03-04</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten. Why it matters for tech: It shows cloud platforms adapting established automation for agents rather than replacing it.</description>
+      <content:encoded><![CDATA[<p>In its weekly roundup, AWS notes that Step Functions, its workflow service spanning more than 220 AWS services, can now be handed to AI agents as a tool. Workflows that teams already run and trust become callable by agents without being rewritten.</p><p><strong>Why it matters for tech:</strong> It shows cloud platforms adapting established automation for agents rather than replacing it.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-gpt-6-1-terra-on-bedrock-step-functions-as-agent-tools-and-more-november-2-2026/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Developers choose smaller AI models on purpose, and report better results</title>
+      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/05/</link>
+      <guid isPermaLink="false">brief-2026-11-03-05</guid>
+      <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most. Why it matters for tech: Model choice is becoming an engineering decision about fit and cost, not a race to the most powerful model.</description>
+      <content:encoded><![CDATA[<p>The New Stack reports that some development teams are deliberately downgrading the AI models they use for coding work, and finding the results better for their purposes. The smaller setups can be cheaper and easier to control for the tasks these teams run most.</p><p><strong>Why it matters for tech:</strong> Model choice is becoming an engineering decision about fit and cost, not a race to the most powerful model.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/claude-code-developer-refusals/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
