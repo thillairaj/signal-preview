@@ -2,13 +2,58 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · Policy</title>
-    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/policy.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/policy.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Operation TorNado arrests 354 in global dark web crackdown</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/12/</link>
+      <guid isPermaLink="false">brief-2026-11-14-12</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>Police in 14 countries have arrested 354 people and seized more than $234 million in cash and virtual currencies in Operation TorNado, a coordinated action against vendors and buyers on five dark web marketplaces that had already been seized by law enforcement. The operation, which ran from May 2025 to October 2026, also seized about 5.7 metric tons of illicit drugs, 209 firearms and 38 pill presses. The US Justice Department, which announced the results with Europol, said 132 of the arrests were in the United States. Why it matters for tech: Seized marketplaces keep producing leads, so each takedown feeds the next round of arrests rather than ending the trade.</description>
+      <content:encoded><![CDATA[<p>Police in 14 countries have arrested 354 people and seized more than $234 million in cash and virtual currencies in Operation TorNado, a coordinated action against vendors and buyers on five dark web marketplaces that had already been seized by law enforcement. The operation, which ran from May 2025 to October 2026, also seized about 5.7 metric tons of illicit drugs, 209 firearms and 38 pill presses. The US Justice Department, which announced the results with Europol, said 132 of the arrests were in the United States.</p><p><strong>Why it matters for tech:</strong> Seized marketplaces keep producing leads, so each takedown feeds the next round of arrests rather than ending the trade.</p><p>Source: </p><ul><li><a href="https://www.justice.gov/opa/pr/international-law-enforcement-operation-targeting-opioid-and-fentanyl-traffickers-dark-web">US Department of Justice</a></li><li><a href="https://www.bleepingcomputer.com/news/security/police-arrest-354-vendors-buyers-in-global-cybercrime-crackdown/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Blacklisted Chinese university bought Nvidia H200 chips despite US export controls</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/12/</link>
+      <guid isPermaLink="false">brief-2026-11-13-12</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>A Reuters investigation of procurement records found that Northwestern Polytechnical University in China bought two Nvidia H200 AI chips for 874,700 yuan, about $123,000, on October 21, through Chinese supplier Shaanxi Bosuan Network Technology rather than directly from Nvidia. The university has been on the US Entity List since 2001 over missile-proliferation and military research concerns, and Reuters reviewed 26 records showing Chinese institutions buying restricted Nvidia chips or renting computing capacity through domestic suppliers. The US has allowed some H200 exports to China on a case-by-case basis since January, with safeguards against blacklisted and military end users, and Nvidia, the university and the US Commerce Department did not respond to Reuters' requests for comment. Why it matters for tech: The purchase shows how export controls are tested in practice, through intermediaries and rentals, and the gap between the rules and enforcement is now part of the policy debate.</description>
+      <content:encoded><![CDATA[<p>A Reuters investigation of procurement records found that Northwestern Polytechnical University in China bought two Nvidia H200 AI chips for 874,700 yuan, about $123,000, on October 21, through Chinese supplier Shaanxi Bosuan Network Technology rather than directly from Nvidia. The university has been on the US Entity List since 2001 over missile-proliferation and military research concerns, and Reuters reviewed 26 records showing Chinese institutions buying restricted Nvidia chips or renting computing capacity through domestic suppliers. The US has allowed some H200 exports to China on a case-by-case basis since January, with safeguards against blacklisted and military end users, and Nvidia, the university and the US Commerce Department did not respond to Reuters' requests for comment.</p><p><strong>Why it matters for tech:</strong> The purchase shows how export controls are tested in practice, through intermediaries and rentals, and the gap between the rules and enforcement is now part of the policy debate.</p><p>Source: </p><ul><li><a href="https://www.facebook.com/reel/1659756365608990/">Reuters</a></li><li><a href="https://cybernews.com/tech/military-linked-chinese-university-bought-nvidia-h200-chips-despite-us-blacklist/">Cybernews</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>US quantum commission warns industrial gaps threaten the long-term lead</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/12/</link>
+      <guid isPermaLink="false">brief-2026-11-12-12</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>The Commission on U.S. Quantum Primacy, convened by the Special Competitive Studies Project and co-chaired by Senators Todd Young and Ben Ray Luján, has published its preliminary strategy report, Defining the American Quantum Era. The report puts China's public quantum funding at about $3 billion a year against about $1 billion in the United States, and US cleanroom construction at $800 to $1,000 per square foot against about $150 in China. It recommends shared fabrication access, securing cryogenics and helium-3 supply lines, and faster migration to post-quantum cryptography, with a final report planned for spring 2027. Why it matters for tech: The report frames quantum leadership as an industrial problem of factories, supply chains and funding, not only a research race, and its recommendations point at federal action on manufacturing and standards.</description>
+      <content:encoded><![CDATA[<p>The Commission on U.S. Quantum Primacy, convened by the Special Competitive Studies Project and co-chaired by Senators Todd Young and Ben Ray Luján, has published its preliminary strategy report, Defining the American Quantum Era. The report puts China's public quantum funding at about $3 billion a year against about $1 billion in the United States, and US cleanroom construction at $800 to $1,000 per square foot against about $150 in China. It recommends shared fabrication access, securing cryogenics and helium-3 supply lines, and faster migration to post-quantum cryptography, with a final report planned for spring 2027.</p><p><strong>Why it matters for tech:</strong> The report frames quantum leadership as an industrial problem of factories, supply chains and funding, not only a research race, and its recommendations point at federal action on manufacturing and standards.</p><p>Source: </p><ul><li><a href="https://www.scsp.ai/defining-the-american-quantum-era/">Special Competitive Studies Project</a></li><li><a href="https://quantumcomputingreport.com/u-s-quantum-primacy-commission-outlines-industrial-strategy-to-counter-global-supply-chain-risks/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Draft EU Quantum Act would reserve strategic quantum projects for EU-controlled suppliers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/12/</link>
+      <guid isPermaLink="false">brief-2026-11-11-12</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>A draft EU Quantum Act obtained by The Quantum Insider would coordinate European quantum research, manufacturing and commercialisation, and would generally limit participation in strategic quantum projects and public procurement to EU-controlled suppliers, with access for qualifying international partners. The draft targets about 100 error-corrected logical qubits per system by 2030, scaling toward thousands by 2035, and would require quantum-safe purchasing in designated critical sectors. It sets no overall spending figure, with funding to depend on future EU programmes and national and private contributions. Why it matters for tech: Procurement rules and a shared computing target in the draft shape which suppliers can sell into European public quantum projects and how fast the bloc moves to quantum-safe cryptography.</description>
+      <content:encoded><![CDATA[<p>A draft EU Quantum Act obtained by The Quantum Insider would coordinate European quantum research, manufacturing and commercialisation, and would generally limit participation in strategic quantum projects and public procurement to EU-controlled suppliers, with access for qualifying international partners. The draft targets about 100 error-corrected logical qubits per system by 2030, scaling toward thousands by 2035, and would require quantum-safe purchasing in designated critical sectors. It sets no overall spending figure, with funding to depend on future EU programmes and national and private contributions.</p><p><strong>Why it matters for tech:</strong> Procurement rules and a shared computing target in the draft shape which suppliers can sell into European public quantum projects and how fast the bloc moves to quantum-safe cryptography.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/10/draft-eu-quantum-act-would-favor-european-suppliers-set-computing-and-security-targets/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>US bars financial institutions from transmitting funds involving crypto exchange MEXC</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/11/</link>
+      <guid isPermaLink="false">brief-2026-11-10-11</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Policy</category>
+      <description>The US Treasury's Financial Crimes Enforcement Network has barred US financial institutions from transmitting funds involving MEXC, a Seychelles-based crypto exchange founded in 2018 with more than 40 million users in over 170 countries. Treasury said MEXC was still processing transactions as recently as June 2026 with sanctioned Russian entities Garantex and Grinex. Treasury also said MEXC facilitated or processed at least $226 million in transactions connected to the A7 sanctions-evasion network, which the US Office of Foreign Assets Control has sanctioned. Why it matters for tech: Cutting a large exchange off from the US financial system raises the cost of moving funds through it and signals that crypto venues handling sanctioned flows face direct US action.</description>
+      <content:encoded><![CDATA[<p>The US Treasury's Financial Crimes Enforcement Network has barred US financial institutions from transmitting funds involving MEXC, a Seychelles-based crypto exchange founded in 2018 with more than 40 million users in over 170 countries. Treasury said MEXC was still processing transactions as recently as June 2026 with sanctioned Russian entities Garantex and Grinex. Treasury also said MEXC facilitated or processed at least $226 million in transactions connected to the A7 sanctions-evasion network, which the US Office of Foreign Assets Control has sanctioned.</p><p><strong>Why it matters for tech:</strong> Cutting a large exchange off from the US financial system raises the cost of moving funds through it and signals that crypto venues handling sanctioned flows face direct US action.</p><p>Source: </p><ul><li><a href="https://home.treasury.gov/news/press-releases/sb0685/">US Treasury</a></li><li><a href="https://www.bleepingcomputer.com/news/security/us-bans-mexc-crypto-exchange-over-sanctions-evasion-cybercrime-links/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>UK regulator launches quantum group to test machine learning against financial crime</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/12/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/12/</link>
       <guid isPermaLink="false">brief-2026-11-08-12</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Policy</category>
@@ -17,7 +62,7 @@
     </item>
     <item>
       <title>US midterm results put data centre building under pressure</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/12/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/12/</link>
       <guid isPermaLink="false">brief-2026-11-07-12</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Policy</category>
@@ -26,7 +71,7 @@
     </item>
     <item>
       <title>OpenAI drops NDAs with public officials for its data centre projects</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/12/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/12/</link>
       <guid isPermaLink="false">brief-2026-11-06-12</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Policy</category>
@@ -35,7 +80,7 @@
     </item>
     <item>
       <title>US voters decide 41 local data centre measures in the midterm elections</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/12/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/12/</link>
       <guid isPermaLink="false">brief-2026-11-05-12</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Policy</category>
@@ -44,7 +89,7 @@
     </item>
     <item>
       <title>IQM calls for an EU Quantum Act with dedicated qubit foundries</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/10/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/10/</link>
       <guid isPermaLink="false">brief-2026-11-04-10</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Policy</category>
@@ -53,7 +98,7 @@
     </item>
     <item>
       <title>Russia plans underground data centres after Ukrainian drone strikes</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/08/</link>
       <guid isPermaLink="false">brief-2026-11-03-08</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Policy</category>

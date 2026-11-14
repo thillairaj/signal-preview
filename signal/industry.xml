@@ -2,13 +2,103 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · Industry</title>
-    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/industry.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/industry.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Atom Computing finalises $100 million Commerce Department award</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/11/</link>
+      <guid isPermaLink="false">brief-2026-11-14-11</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Atom Computing has signed an agreement for up to $100 million with the US Department of Commerce to accelerate research and development of fault-tolerant, utility-scale quantum computers built on neutral atoms. The award, made under the CHIPS and Science Act, follows a letter of intent announced earlier in 2026 and will fund in-house technology work, expanded engineering and testing infrastructure, and supply chain collaboration. Atom also recently advanced to Stage C of DARPA's Quantum Benchmarking Initiative, with potential funding of up to $300 million. Why it matters for tech: Federal funding at this scale signals that neutral-atom quantum computing is now treated as strategic infrastructure, not just research.</description>
+      <content:encoded><![CDATA[<p>Atom Computing has signed an agreement for up to $100 million with the US Department of Commerce to accelerate research and development of fault-tolerant, utility-scale quantum computers built on neutral atoms. The award, made under the CHIPS and Science Act, follows a letter of intent announced earlier in 2026 and will fund in-house technology work, expanded engineering and testing infrastructure, and supply chain collaboration. Atom also recently advanced to Stage C of DARPA's Quantum Benchmarking Initiative, with potential funding of up to $300 million.</p><p><strong>Why it matters for tech:</strong> Federal funding at this scale signals that neutral-atom quantum computing is now treated as strategic infrastructure, not just research.</p><p>Source: </p><ul><li><a href="https://www.nist.gov/news-events/news/2026/11/department-commerce-announces-finalization-chips-rd-award-atom-computing">NIST</a></li><li><a href="https://thequantuminsider.com/2026/11/13/atom-computing-finalizes-100-million-u-s-department-of-commerce-rd-award/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia chief executive Jensen Huang resigns; finance chief Colette Kress takes over on an interim basis</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/09/</link>
+      <guid isPermaLink="false">brief-2026-11-13-09</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Nvidia has announced that Jensen Huang has resigned as president, chief executive officer and a member of the board, effective immediately, ending 33 years as chief executive of the company he co-founded in 1993. The announcement gave no reason for the departure, which followed days of reports about Huang's personal conduct and a board investigation, while chief financial officer Colette Kress takes over as interim chief executive and the board searches for a permanent successor. The board also named longtime director Harvey C. Jones as its first-ever chair, and Nvidia confirmed its third-quarter fiscal 2027 results will still be reported on November 17 as scheduled. Why it matters for tech: A change at the top of the chipmaker at the centre of the AI buildout will shape chip supply, pricing and US export policy debates.</description>
+      <content:encoded><![CDATA[<p>Nvidia has announced that Jensen Huang has resigned as president, chief executive officer and a member of the board, effective immediately, ending 33 years as chief executive of the company he co-founded in 1993. The announcement gave no reason for the departure, which followed days of reports about Huang's personal conduct and a board investigation, while chief financial officer Colette Kress takes over as interim chief executive and the board searches for a permanent successor. The board also named longtime director Harvey C. Jones as its first-ever chair, and Nvidia confirmed its third-quarter fiscal 2027 results will still be reported on November 17 as scheduled.</p><p><strong>Why it matters for tech:</strong> A change at the top of the chipmaker at the centre of the AI buildout will shape chip supply, pricing and US export policy debates.</p><p>Source: </p><ul><li><a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition">NVIDIA Newsroom</a></li><li><a href="https://www.reuters.com/business/retail-consumer/nvidia-ceo-jensen-huang-step-down-big-blow-ai-boom-2026-11-12/">Reuters</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Q-CTRL raises $290 million and becomes the quantum sector's newest unicorn</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/10/</link>
+      <guid isPermaLink="false">brief-2026-11-13-10</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Q-CTRL has raised US$290 million in a Series C round led by Salesforce Ventures, with participation from Bullhound Capital and Affinity Partners, reaching unicorn status. The oversubscribed round was expanded twice to meet investor demand, and the company says it is the largest fundraise for a software-focused quantum business. Q-CTRL plans to use the money to expand globally, strengthen its AI-powered quantum software, and scale customer programs in finance, energy, autonomy and aerospace, including its Ironstone Opal navigation system that works without GPS. Why it matters for tech: Private money is concentrating on the software layer that makes quantum hardware usable, and a round of this size signals where investors expect value to sit.</description>
+      <content:encoded><![CDATA[<p>Q-CTRL has raised US$290 million in a Series C round led by Salesforce Ventures, with participation from Bullhound Capital and Affinity Partners, reaching unicorn status. The oversubscribed round was expanded twice to meet investor demand, and the company says it is the largest fundraise for a software-focused quantum business. Q-CTRL plans to use the money to expand globally, strengthen its AI-powered quantum software, and scale customer programs in finance, energy, autonomy and aerospace, including its Ironstone Opal navigation system that works without GPS.</p><p><strong>Why it matters for tech:</strong> Private money is concentrating on the software layer that makes quantum hardware usable, and a round of this size signals where investors expect value to sit.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/12/q-ctrl-secures-us290-million-series-c-funding-led-by-salesforce-ventures/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft 365 outage disrupts Outlook, Teams and Copilot worldwide</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/11/</link>
+      <guid isPermaLink="false">brief-2026-11-13-11</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Microsoft is investigating a widespread Microsoft 365 outage that began on Thursday at 1:26 PM ET and left customers unable to connect to Outlook, Teams, SharePoint Online, Copilot and Defender XDR. Microsoft said the disruption was caused by servers unexpectedly becoming unavailable, which strained the remaining infrastructure, and it has paused deployments, redistributed traffic and begun restarting servers. By Thursday evening Microsoft reported limited recovery after returning some servers to service, but had not confirmed when services would be fully restored. Why it matters for tech: A single outage that takes out mail, chat and AI assistance at once shows how much daily work now depends on one provider's infrastructure.</description>
+      <content:encoded><![CDATA[<p>Microsoft is investigating a widespread Microsoft 365 outage that began on Thursday at 1:26 PM ET and left customers unable to connect to Outlook, Teams, SharePoint Online, Copilot and Defender XDR. Microsoft said the disruption was caused by servers unexpectedly becoming unavailable, which strained the remaining infrastructure, and it has paused deployments, redistributed traffic and begun restarting servers. By Thursday evening Microsoft reported limited recovery after returning some servers to service, but had not confirmed when services would be fully restored.</p><p><strong>Why it matters for tech:</strong> A single outage that takes out mail, chat and AI assistance at once shows how much daily work now depends on one provider's infrastructure.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>TSMC plans $1 billion in stakes in OpenAI and Anthropic</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/10/</link>
+      <guid isPermaLink="false">brief-2026-11-12-10</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>TSMC is ready to invest $1 billion in Anthropic and OpenAI, with its board approving the plans. Up to $500 million would go into OpenAI preferred stock reserved for large investors, and $500 million into Anthropic common shares at the price of its expected public listing. TSMC manufactures most of NVIDIA's AI data-centre chips and most of Apple's custom chips, while Anthropic and OpenAI buy large volumes of TSMC-made hardware for their data-centre projects. Why it matters for tech: A chipmaker taking stakes in the AI developers that buy its hardware ties supplier and buyer together, and analysts warn this kind of circular financing makes real demand for AI hardware harder to read.</description>
+      <content:encoded><![CDATA[<p>TSMC is ready to invest $1 billion in Anthropic and OpenAI, with its board approving the plans. Up to $500 million would go into OpenAI preferred stock reserved for large investors, and $500 million into Anthropic common shares at the price of its expected public listing. TSMC manufactures most of NVIDIA's AI data-centre chips and most of Apple's custom chips, while Anthropic and OpenAI buy large volumes of TSMC-made hardware for their data-centre projects.</p><p><strong>Why it matters for tech:</strong> A chipmaker taking stakes in the AI developers that buy its hardware ties supplier and buyer together, and analysts warn this kind of circular financing makes real demand for AI hardware harder to read.</p><p>Source: </p><ul><li><a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/">Ars Technica</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>More than 20,000 veterans have claimed a free year of ChatGPT Plus</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/11/</link>
+      <guid isPermaLink="false">brief-2026-11-12-11</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>OpenAI says more than 20,000 transitioning servicemembers and veterans claimed a year of ChatGPT Plus at no cost in the past year. OpenAI Academy and community partners have hosted more than a dozen training sessions for nearly 1,000 members of the military community, with seven more scheduled before the year ends. The post marks Veterans Day and describes veterans using ChatGPT to organise job searches, rehearse for interviews and turn military experience into civilian resumes. Why it matters for tech: The milestone shows AI training reaching veterans as a career-transition tool, not just a workplace product, and the free access is tied to hands-on teaching rather than a bare giveaway.</description>
+      <content:encoded><![CDATA[<p>OpenAI says more than 20,000 transitioning servicemembers and veterans claimed a year of ChatGPT Plus at no cost in the past year. OpenAI Academy and community partners have hosted more than a dozen training sessions for nearly 1,000 members of the military community, with seven more scheduled before the year ends. The post marks Veterans Day and describes veterans using ChatGPT to organise job searches, rehearse for interviews and turn military experience into civilian resumes.</p><p><strong>Why it matters for tech:</strong> The milestone shows AI training reaching veterans as a career-transition tool, not just a workplace product, and the free access is tied to hands-on teaching rather than a bare giveaway.</p><p>Source: </p><ul><li><a href="https://openai.com/index/chatgpt-plus-for-veterans">OpenAI</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>SoftBank sells its entire Nvidia stake for $5.83 billion to fund its AI push</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/10/</link>
+      <guid isPermaLink="false">brief-2026-11-11-10</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>SoftBank has confirmed it sold all 32.1 million Nvidia shares it held, for $5.83 billion, during October, as it reported second-quarter results on November 10. Chief financial officer Yoshimitsu Goto said the sale was a financing measure to fund SoftBank's AI investments, including the Stargate data-centre project and its investment in OpenAI. SoftBank also reported second-quarter net profit of 2.5 trillion yen, more than double a year earlier and far above analyst forecasts, helped by gains in its Vision Fund. Why it matters for tech: Selling out of Nvidia to pay for data centres and an OpenAI stake shows the scale of cash SoftBank is moving to fund its AI plans, and the sale weighed on Nvidia's share price.</description>
+      <content:encoded><![CDATA[<p>SoftBank has confirmed it sold all 32.1 million Nvidia shares it held, for $5.83 billion, during October, as it reported second-quarter results on November 10. Chief financial officer Yoshimitsu Goto said the sale was a financing measure to fund SoftBank's AI investments, including the Stargate data-centre project and its investment in OpenAI. SoftBank also reported second-quarter net profit of 2.5 trillion yen, more than double a year earlier and far above analyst forecasts, helped by gains in its Vision Fund.</p><p><strong>Why it matters for tech:</strong> Selling out of Nvidia to pay for data centres and an OpenAI stake shows the scale of cash SoftBank is moving to fund its AI plans, and the sale weighed on Nvidia's share price.</p><p>Source: </p><ul><li><a href="https://www.investments.lloydsbank.com/markets-and-commentary/market-news/article/?id=21201982&amp;type=bsm">Sharecast via Lloyds Bank</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>D-Wave revenue rises 21% as bookings and contracted revenue climb</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/11/</link>
+      <guid isPermaLink="false">brief-2026-11-11-11</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>D-Wave reported third-quarter revenue of $4.5 million, up 21% from a year earlier, with nine-month bookings of $37.4 million, up 611%, and contracted revenue still to be recognised of $38.3 million. The company signed a definitive agreement with the US Department of Commerce giving it access to up to $100 million in CHIPS and Science Act funding, in instalments tied to milestones, to develop larger annealing and gate-model machines. NTT DOCOMO deployed a second production application using D-Wave's hybrid quantum technology for mobile network operations. Why it matters for tech: Rising bookings and a large contracted-revenue balance, alongside federal funding for bigger machines, show a quantum vendor converting pilot deployments into paid production work.</description>
+      <content:encoded><![CDATA[<p>D-Wave reported third-quarter revenue of $4.5 million, up 21% from a year earlier, with nine-month bookings of $37.4 million, up 611%, and contracted revenue still to be recognised of $38.3 million. The company signed a definitive agreement with the US Department of Commerce giving it access to up to $100 million in CHIPS and Science Act funding, in instalments tied to milestones, to develop larger annealing and gate-model machines. NTT DOCOMO deployed a second production application using D-Wave's hybrid quantum technology for mobile network operations.</p><p><strong>Why it matters for tech:</strong> Rising bookings and a large contracted-revenue balance, alongside federal funding for bigger machines, show a quantum vendor converting pilot deployments into paid production work.</p><p>Source: </p><ul><li><a href="https://www.businesswire.com/news/home/20261110935432/en/D-Wave-Reports-Third-Quarter-2026-Results">Business Wire</a></li><li><a href="https://thequantuminsider.com/2026/11/10/d-wave-revenue-rises-21-as-customer-deployments-expand-and-chips-agreement-advances/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic spends $3.4 billion on gas turbines to power AI data centres</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/09/</link>
+      <guid isPermaLink="false">brief-2026-11-10-09</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States. Why it matters for tech: Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.</description>
+      <content:encoded><![CDATA[<p>Anthropic has agreed to spend $3.4 billion on 1.7 gigawatts of gas-powered generators, taking over Texas supplier OnePWR Solutions' existing Caterpillar orders placed about two years ago. The deal, reached in late September according to Reuters, also covers engineering and construction work. It lets Anthropic sidestep a waitlist for turbines that averages six years in the United States.</p><p><strong>Why it matters for tech:</strong> Securing power generation directly shows that electricity supply, not just chips, now sets the pace for AI data centre expansion, and it ties a leading AI lab to new gas capacity.</p><p>Source: </p><ul><li><a href="https://www.tomshardware.com/tech-industry/data-centers/anthropic-skips-six-year-waitlist-with-massive-usd3-4-billion-gas-turbine-generator-deal-firm-takes-over-onepwrs-orders-secures-1-7gw-of-capacity-to-power-ai-data-centers">Tom's Hardware</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Disney and Adobe agree a multi-year alliance on generative AI tools</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/10/</link>
+      <guid isPermaLink="false">brief-2026-11-10-10</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Industry</category>
+      <description>Disney and Adobe have announced a multi-year strategic alliance on generative AI tools. Disney gets early access to Adobe's AI tools and will use Firefly, Photoshop, Express, Premiere Pro and Adobe Experience Manager across its businesses, including Walt Disney Imagineering, its resorts and cruise line, and ESPN graphics. The two companies will also develop new generative AI tools together for Disney's franchises. Why it matters for tech: The deal puts Adobe's tools at the centre of Disney's creative pipeline and gives Adobe a flagship entertainment customer to shape its AI products around.</description>
+      <content:encoded><![CDATA[<p>Disney and Adobe have announced a multi-year strategic alliance on generative AI tools. Disney gets early access to Adobe's AI tools and will use Firefly, Photoshop, Express, Premiere Pro and Adobe Experience Manager across its businesses, including Walt Disney Imagineering, its resorts and cruise line, and ESPN graphics. The two companies will also develop new generative AI tools together for Disney's franchises.</p><p><strong>Why it matters for tech:</strong> The deal puts Adobe's tools at the centre of Disney's creative pipeline and gives Adobe a flagship entertainment customer to shape its AI products around.</p><p>Source: </p><ul><li><a href="https://www.theverge.com/tech/1029773/disney-adobe-generative-ai-partnership">The Verge</a></li><li><a href="https://www.businesswire.com/news/home/20261109707511/en/Adobe-and-The-Walt-Disney-Company-Announce-Multi-Year-Strategic-Alliance-to-Support-Disney-Innovation-with-New-AI-Powered-Tools">Adobe press release</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Nvidia board opens independent review of chief executive after spy reports</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/02/</link>
       <guid isPermaLink="false">brief-2026-11-09-02</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -17,7 +107,7 @@
     </item>
     <item>
       <title>Elvis and Eminem rights holders sue Suno over AI music clones</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/03/</link>
       <guid isPermaLink="false">brief-2026-11-09-03</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -26,7 +116,7 @@
     </item>
     <item>
       <title>IonQ posts record $173.8 million quarter and raises full-year guidance</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/10/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/10/</link>
       <guid isPermaLink="false">brief-2026-11-08-10</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -35,7 +125,7 @@
     </item>
     <item>
       <title>Quantinuum revenue up 233% to $9.1 million as it raises its outlook</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/11/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/11/</link>
       <guid isPermaLink="false">brief-2026-11-08-11</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -44,7 +134,7 @@
     </item>
     <item>
       <title>IQM revenue up 51 percent as backlog passes €100 million</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/10/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/10/</link>
       <guid isPermaLink="false">brief-2026-11-07-10</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -53,7 +143,7 @@
     </item>
     <item>
       <title>Protesters enter Microsoft data centre site in Amsterdam</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/11/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/11/</link>
       <guid isPermaLink="false">brief-2026-11-07-11</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -62,7 +152,7 @@
     </item>
     <item>
       <title>Horizon Quantum plans to buy error correction specialist Entropica Labs for $27 million</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/10/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/10/</link>
       <guid isPermaLink="false">brief-2026-11-06-10</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -71,7 +161,7 @@
     </item>
     <item>
       <title>Agility Robotics lists on Nasdaq as humanoid robots face scrutiny over scale</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/11/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/11/</link>
       <guid isPermaLink="false">brief-2026-11-06-11</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -80,7 +170,7 @@
     </item>
     <item>
       <title>CQMTEK raises more than $15 million to expand quantum measurement manufacturing</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/06/</link>
       <guid isPermaLink="false">brief-2026-11-05-06</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -89,7 +179,7 @@
     </item>
     <item>
       <title>IonQ completes $1.15 billion acquisition of security firm Elisity</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/07/</link>
       <guid isPermaLink="false">brief-2026-11-05-07</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -98,7 +188,7 @@
     </item>
     <item>
       <title>Quint Computing raises €9.1 million seed round for hardware level quantum error correction</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/09/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/09/</link>
       <guid isPermaLink="false">brief-2026-11-04-09</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>
@@ -107,7 +197,7 @@
     </item>
     <item>
       <title>Apple home robot reported for 2027 at around $1,000</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/07/</link>
       <guid isPermaLink="false">brief-2026-11-03-07</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Industry</category>

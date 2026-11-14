@@ -2,13 +2,94 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · Cloud &amp; DevOps</title>
-    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cloud-devops.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google Cloud brings agentic HPC to SC26</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/06/</link>
+      <guid isPermaLink="false">brief-2026-11-14-06</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google Cloud has set out its agentic high-performance computing plans for the SC26 supercomputing conference, centred on reusable agent skills that teach AI agents to build and run HPC workloads through Cluster Toolkit blueprints. The skills validate quotas and capacity before deploying a cluster, guide domain work such as fluid dynamics and life-science pipelines, and operate inside IAM and budget guardrails. The company is also showing AlphaEvolve on Cloud Batch for evolving code at scale, and new hardware including A5X instances on NVIDIA Vera Rubin and 8th generation TPUs. Why it matters for tech: Scientific teams are asking agents to run supercomputing workloads, so packaging HPC expertise into skills keeps those agents from misconfiguring expensive infrastructure.</description>
+      <content:encoded><![CDATA[<p>Google Cloud has set out its agentic high-performance computing plans for the SC26 supercomputing conference, centred on reusable agent skills that teach AI agents to build and run HPC workloads through Cluster Toolkit blueprints. The skills validate quotas and capacity before deploying a cluster, guide domain work such as fluid dynamics and life-science pipelines, and operate inside IAM and budget guardrails. The company is also showing AlphaEvolve on Cloud Batch for evolving code at scale, and new hardware including A5X instances on NVIDIA Vera Rubin and 8th generation TPUs.</p><p><strong>Why it matters for tech:</strong> Scientific teams are asking agents to run supercomputing workloads, so packaging HPC expertise into skills keeps those agents from misconfiguring expensive infrastructure.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/topics/hpc/whats-new-in-hpc-and-ai-at-sc26/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS upgrades its AgentCore runtime for faster, cheaper agent sessions</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/05/</link>
+      <guid isPermaLink="false">brief-2026-11-13-05</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Amazon Web Services has released a new version of the Amazon Bedrock AgentCore runtime, the managed layer that runs AI agents in isolated Firecracker micro virtual machines. Sessions now start up to 15 times faster and scale to four times more compute, up to 8 vCPUs and 32 GB of memory, while idle sessions scale to zero and reclaim memory within minutes. Agents can also mount storage such as an S3 bucket inside the session boundary, so data stays under the same controls as the compute. Why it matters for tech: Agents that run for hours need isolation that does not tax every minute of waiting, and this release ties billing and storage to how agents actually work.</description>
+      <content:encoded><![CDATA[<p>Amazon Web Services has released a new version of the Amazon Bedrock AgentCore runtime, the managed layer that runs AI agents in isolated Firecracker micro virtual machines. Sessions now start up to 15 times faster and scale to four times more compute, up to 8 vCPUs and 32 GB of memory, while idle sessions scale to zero and reclaim memory within minutes. Agents can also mount storage such as an S3 bucket inside the session boundary, so data stays under the same controls as the compute.</p><p><strong>Why it matters for tech:</strong> Agents that run for hours need isolation that does not tax every minute of waiting, and this release ties billing and storage to how agents actually work.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Chainguard defends shipping PHP patches six hours before the agreed release time</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/06/</link>
+      <guid isPermaLink="false">brief-2026-11-13-06</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Chainguard has defended its decision to publish patched PHP container images at 07:41 UTC on October 21, six hours and 19 minutes before the agreed 14:00 UTC coordinated release for the critical PHP2Shell flaws, tracked as CVE-2026-109618 and CVE-2026-109619. Chief technology officer Matt Moore told KubeCon that attackers already had a head start, pointing to leaked vulnerability details, a mistakenly published proof-of-concept video, a honeypot exploitation attempt reported by Amazon on October 17, and attack traffic seen by Cloudflare. PHP said it found no working public exploit at release time, and CISA added both flaws to its Known Exploited Vulnerabilities catalog on October 26. Why it matters for tech: Coordinated disclosure only works when everyone holds the line, so an early release by one vendor forces the whole industry to rethink how embargoes are enforced.</description>
+      <content:encoded><![CDATA[<p>Chainguard has defended its decision to publish patched PHP container images at 07:41 UTC on October 21, six hours and 19 minutes before the agreed 14:00 UTC coordinated release for the critical PHP2Shell flaws, tracked as CVE-2026-109618 and CVE-2026-109619. Chief technology officer Matt Moore told KubeCon that attackers already had a head start, pointing to leaked vulnerability details, a mistakenly published proof-of-concept video, a honeypot exploitation attempt reported by Amazon on October 17, and attack traffic seen by Cloudflare. PHP said it found no working public exploit at release time, and CISA added both flaws to its Known Exploited Vulnerabilities catalog on October 26.</p><p><strong>Why it matters for tech:</strong> Coordinated disclosure only works when everyone holds the line, so an early release by one vendor forces the whole industry to rethink how embargoes are enforced.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/chainguard-php-embargo-defense/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS ships a local emulator that runs AWS APIs on your laptop</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/05/</link>
+      <guid isPermaLink="false">brief-2026-11-12-05</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>AWS Emulator is generally available: it runs on the laptop and answers AWS CLI, SDK and coding-agent calls over a local HTTPS endpoint using the same AWS APIs, with no additional service fee. It is built in Rust from the AWS API models, and an embedded mode runs inside test processes for the Rust SDK. AWS publishes per-service fidelity scores showing how closely the emulator matches real AWS, and an unimplemented operation returns an error instead of silently passing. Why it matters for tech: Developers and coding agents can test AWS calls without deploying, which shortens the loop for agent-built cloud code, though the emulator does not evaluate IAM policies the way AWS does.</description>
+      <content:encoded><![CDATA[<p>AWS Emulator is generally available: it runs on the laptop and answers AWS CLI, SDK and coding-agent calls over a local HTTPS endpoint using the same AWS APIs, with no additional service fee. It is built in Rust from the AWS API models, and an embedded mode runs inside test processes for the Rust SDK. AWS publishes per-service fidelity scores showing how closely the emulator matches real AWS, and an unimplemented operation returns an error instead of silently passing.</p><p><strong>Why it matters for tech:</strong> Developers and coding agents can test AWS calls without deploying, which shortens the loop for agent-built cloud code, though the emulator does not evaluate IAM policies the way AWS does.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/">AWS News Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>NVIDIA hands OpenShell, its agent security runtime, to the CNCF</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/06/</link>
+      <guid isPermaLink="false">brief-2026-11-12-06</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>NVIDIA has donated OpenShell, its open-source runtime for securing and governing AI agents, to the Cloud Native Computing Foundation, where it joins as a Sandbox project. OpenShell runs an agent inside a sandbox and enforces policy on the files, networks, credentials and model endpoints the agent can reach, using Cedar as its policy language. The donation was announced at KubeCon North America, the project lists about 380 contributing organisations, and Red Hat, Docker and Canonical are among its core contributors. Why it matters for tech: As agents run longer tasks with real credentials, the controls around them become infrastructure, and neutral governance is meant to speed adoption across clouds and tools.</description>
+      <content:encoded><![CDATA[<p>NVIDIA has donated OpenShell, its open-source runtime for securing and governing AI agents, to the Cloud Native Computing Foundation, where it joins as a Sandbox project. OpenShell runs an agent inside a sandbox and enforces policy on the files, networks, credentials and model endpoints the agent can reach, using Cedar as its policy language. The donation was announced at KubeCon North America, the project lists about 380 contributing organisations, and Red Hat, Docker and Canonical are among its core contributors.</p><p><strong>Why it matters for tech:</strong> As agents run longer tasks with real credentials, the controls around them become infrastructure, and neutral governance is meant to speed adoption across clouds and tools.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/nvidia-donates-openshell-cncf/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ubuntu Core 26 enters public preview on AWS, Azure and Google Cloud</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/05/</link>
+      <guid isPermaLink="false">brief-2026-11-11-05</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Canonical has opened a public preview of Ubuntu Core 26 images for Amazon Web Services, Microsoft Azure and Google Cloud, bringing its immutable Ubuntu variant to public cloud marketplaces. Ubuntu Core builds systems from strictly confined snap packages and delivers updates as complete, auditable revisions with rollback, aiming to stop cloud virtual machines drifting from their original configuration. Canonical says the preview is for testing and feedback, and the images include cloud-specific kernel snaps and cloud guest agents packaged as snaps. Why it matters for tech: An immutable, drift-free operating system model on the three large clouds gives teams building appliances and managed services a smaller writable surface and a uniform image across providers.</description>
+      <content:encoded><![CDATA[<p>Canonical has opened a public preview of Ubuntu Core 26 images for Amazon Web Services, Microsoft Azure and Google Cloud, bringing its immutable Ubuntu variant to public cloud marketplaces. Ubuntu Core builds systems from strictly confined snap packages and delivers updates as complete, auditable revisions with rollback, aiming to stop cloud virtual machines drifting from their original configuration. Canonical says the preview is for testing and feedback, and the images include cloud-specific kernel snaps and cloud guest agents packaged as snaps.</p><p><strong>Why it matters for tech:</strong> An immutable, drift-free operating system model on the three large clouds gives teams building appliances and managed services a smaller writable surface and a uniform image across providers.</p><p>Source: </p><ul><li><a href="https://canonical.com/blog/ubuntu-core-26-public-cloud-preview">Canonical</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Azure Front Door edge actions reach general availability</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/06/</link>
+      <guid isPermaLink="false">brief-2026-11-11-06</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Microsoft has made Azure Front Door edge actions generally available, adding serverless compute at the edge of its content delivery network. Customers can run lightweight JavaScript functions while Front Door processes client requests and responses, for tasks such as modifying headers or routing decisions before traffic reaches an origin. Why it matters for tech: Running small functions at the network edge lets teams handle request shaping and routing close to users without adding a separate compute tier behind the front door.</description>
+      <content:encoded><![CDATA[<p>Microsoft has made Azure Front Door edge actions generally available, adding serverless compute at the edge of its content delivery network. Customers can run lightweight JavaScript functions while Front Door processes client requests and responses, for tasks such as modifying headers or routing decisions before traffic reaches an origin.</p><p><strong>Why it matters for tech:</strong> Running small functions at the network edge lets teams handle request shaping and routing close to users without adding a separate compute tier behind the front door.</p><p>Source: </p><ul><li><a href="https://azure.microsoft.com/updates?id=579310">Azure Updates</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google launches TPU 8tx and TPU 8i Max for AI inference and training</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/03/</link>
+      <guid isPermaLink="false">brief-2026-11-10-03</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>Google has launched two new TPU chips built on its TPU v8 architecture. TPU 8tx is aimed at confidential inference and offers up to two times lower latency than TPU 8t, while TPU 8i Max is aimed at training and fine-tuning and carries twice the compute, SRAM and HBM bandwidth of TPU 8i, with two TPU 8i chips in one package. TPU 8tx supports clusters of up to 2,048 hosts with 24 terabits per second of cross-pod bandwidth. Why it matters for tech: New TPU options change the cost and speed trade-off for teams running large models on Google Cloud, and the confidential inference chip addresses regulated workloads that need hardware isolation.</description>
+      <content:encoded><![CDATA[<p>Google has launched two new TPU chips built on its TPU v8 architecture. TPU 8tx is aimed at confidential inference and offers up to two times lower latency than TPU 8t, while TPU 8i Max is aimed at training and fine-tuning and carries twice the compute, SRAM and HBM bandwidth of TPU 8i, with two TPU 8i chips in one package. TPU 8tx supports clusters of up to 2,048 hosts with 24 terabits per second of cross-pod bandwidth.</p><p><strong>Why it matters for tech:</strong> New TPU options change the cost and speed trade-off for teams running large models on Google Cloud, and the confidential inference chip addresses regulated workloads that need hardware isolation.</p><p>Source: </p><ul><li><a href="https://cloud.google.com/blog/topics/ai-infrastructure/tpu-8tx-and-tpu-8i-max/">Google Cloud Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>AWS makes AgentCore Runtime V2 generally available in 10 regions</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/06/</link>
+      <guid isPermaLink="false">brief-2026-11-10-06</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description>AWS has made AgentCore Runtime V2 generally available in 10 regions. Sessions now start small and page memory in on demand, and environments are snapshotted once and restored for each instance, holding P75 cold starts at about 2 seconds for images from 200 MB to 2 GB, against about 5.4 seconds rising to nearly 30 seconds on the original runtime. Why it matters for tech: Faster and steadier cold starts remove a common delay for agent workloads that spin up on demand, so teams can run agents without keeping idle capacity warm.</description>
+      <content:encoded><![CDATA[<p>AWS has made AgentCore Runtime V2 generally available in 10 regions. Sessions now start small and page memory in on demand, and environments are snapshotted once and restored for each instance, holding P75 cold starts at about 2 seconds for images from 200 MB to 2 GB, against about 5.4 seconds rising to nearly 30 seconds on the original runtime.</p><p><strong>Why it matters for tech:</strong> Faster and steadier cold starts remove a common delay for agent workloads that spin up on demand, so teams can run agents without keeping idle capacity warm.</p><p>Source: </p><ul><li><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-agentcore-runtime-v2-amazon-dynamodb-bulk-put-items-and-more-november-9-2026/">AWS News Blog</a></li><li><a href="https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/">AWS Machine Learning Blog</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Perplexity's Teammates keep AI agents working between sessions</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/04/</link>
       <guid isPermaLink="false">brief-2026-11-09-04</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -17,7 +98,7 @@
     </item>
     <item>
       <title>A decision framework for moving autonomous agents from Lambda to EKS</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/07/</link>
       <guid isPermaLink="false">brief-2026-11-09-07</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -26,7 +107,7 @@
     </item>
     <item>
       <title>Docusign turns AI coding tools into an engineering operating model</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/08/</link>
       <guid isPermaLink="false">brief-2026-11-09-08</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -35,7 +116,7 @@
     </item>
     <item>
       <title>AWS makes Kiro bots generally available in Kiro Crew</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/05/</link>
       <guid isPermaLink="false">brief-2026-11-08-05</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -44,7 +125,7 @@
     </item>
     <item>
       <title>SageMaker Inference now supports NVIDIA multi-instance GPU partitioning</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/06/</link>
       <guid isPermaLink="false">brief-2026-11-08-06</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -53,7 +134,7 @@
     </item>
     <item>
       <title>Google hands gVisor and its agent stack to the CNCF</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/06/</link>
       <guid isPermaLink="false">brief-2026-11-07-06</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -62,7 +143,7 @@
     </item>
     <item>
       <title>Cursor will now publish AI built apps to a live URL</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/07/</link>
       <guid isPermaLink="false">brief-2026-11-07-07</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -71,7 +152,7 @@
     </item>
     <item>
       <title>Azure Front Door gains generally available post quantum TLS key exchange</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/06/</link>
       <guid isPermaLink="false">brief-2026-11-06-06</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -80,7 +161,7 @@
     </item>
     <item>
       <title>Google donates its agent runtime stack to the CNCF as Agent Substrate hits 1.0</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/07/</link>
       <guid isPermaLink="false">brief-2026-11-06-07</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -89,7 +170,7 @@
     </item>
     <item>
       <title>Google previews AlloyDB Express, a scale to zero PostgreSQL for developers and agents</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/10/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/10/</link>
       <guid isPermaLink="false">brief-2026-11-05-10</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -98,7 +179,7 @@
     </item>
     <item>
       <title>Amazon S3 Tables can now migrate Hive tables to Iceberg for you</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/11/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/11/</link>
       <guid isPermaLink="false">brief-2026-11-05-11</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -107,7 +188,7 @@
     </item>
     <item>
       <title>Azure previews an MCP gateway for its container application gateway</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/06/</link>
       <guid isPermaLink="false">brief-2026-11-04-06</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -116,7 +197,7 @@
     </item>
     <item>
       <title>Nammu21 runs syndicated loan automation on Google Cloud's ledger in a proof of concept</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/07/</link>
       <guid isPermaLink="false">brief-2026-11-04-07</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -125,7 +206,7 @@
     </item>
     <item>
       <title>AWS makes Step Functions callable as agent tools</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/04/</link>
       <guid isPermaLink="false">brief-2026-11-03-04</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>
@@ -134,7 +215,7 @@
     </item>
     <item>
       <title>Developers choose smaller AI models on purpose, and report better results</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/05/</link>
       <guid isPermaLink="false">brief-2026-11-03-05</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cloud &amp; DevOps</category>

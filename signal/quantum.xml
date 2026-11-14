@@ -2,13 +2,103 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · Quantum</title>
-    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/quantum.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Cleveland Clinic, RIKEN and IBM simulate drug binding across 12,000 atoms</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/04/</link>
+      <guid isPermaLink="false">brief-2026-11-14-04</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>A collaboration between Cleveland Clinic, RIKEN and IBM has run a hybrid quantum-classical simulation of full protein-ligand complexes exceeding 12,000 atoms, described as the largest such calculation to date. The team paired two 156-qubit IBM Heron r2 processors with three supercomputers, collecting 3.0 billion measurement shots across 21,006 circuits, and reported up to a 210-fold improvement in fragment energy accuracy over earlier quantum-embedding benchmarks. The work, detailed in a preprint, produced a binding energy prediction for a T4-lysozyme complex. Why it matters for tech: Drug binding predictions at this scale move quantum computing closer to real pharmaceutical work, where accurate energies decide which molecules advance.</description>
+      <content:encoded><![CDATA[<p>A collaboration between Cleveland Clinic, RIKEN and IBM has run a hybrid quantum-classical simulation of full protein-ligand complexes exceeding 12,000 atoms, described as the largest such calculation to date. The team paired two 156-qubit IBM Heron r2 processors with three supercomputers, collecting 3.0 billion measurement shots across 21,006 circuits, and reported up to a 210-fold improvement in fragment energy accuracy over earlier quantum-embedding benchmarks. The work, detailed in a preprint, produced a binding energy prediction for a T4-lysozyme complex.</p><p><strong>Why it matters for tech:</strong> Drug binding predictions at this scale move quantum computing closer to real pharmaceutical work, where accurate energies decide which molecules advance.</p><p>Source: </p><ul><li><a href="https://quantumcomputingreport.com/cleveland-clinic-riken-and-ibm-cross-12000-atom-barrier-in-heterogeneous-quantum-classical-drug-binding-simulations/">Quantum Computing Report</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>A cheaper way to hunt for diamond qubits</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/05/</link>
+      <guid isPermaLink="false">brief-2026-11-14-05</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>A researcher at the US Department of Energy's Princeton Plasma Physics Laboratory has developed a method that cuts the cost of modelling quantum defects in diamond, by treating a cluster of just 16 to 30 atoms around a defect as a separate molecule. The approach, published in ACS Central Science, already identified promising new qubit candidates involving boron and oxygen defects, which emit ultraviolet and blue light respectively, unlike the well-known nitrogen-vacancy centre that emits red. Because each defect type responds to different light, several kinds could be combined in one device and addressed independently. Why it matters for tech: Cheaper screening of diamond defects widens the search for qubits that work at room temperature, which would simplify quantum hardware.</description>
+      <content:encoded><![CDATA[<p>A researcher at the US Department of Energy's Princeton Plasma Physics Laboratory has developed a method that cuts the cost of modelling quantum defects in diamond, by treating a cluster of just 16 to 30 atoms around a defect as a separate molecule. The approach, published in ACS Central Science, already identified promising new qubit candidates involving boron and oxygen defects, which emit ultraviolet and blue light respectively, unlike the well-known nitrogen-vacancy centre that emits red. Because each defect type responds to different light, several kinds could be combined in one device and addressed independently.</p><p><strong>Why it matters for tech:</strong> Cheaper screening of diamond defects widens the search for qubits that work at room temperature, which would simplify quantum hardware.</p><p>Source: </p><ul><li><a href="https://www.sciencedaily.com/releases/2026/11/261111005855.htm">ScienceDaily</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>PsiQuantum and AMD widen their partnership to build the classical side of fault-tolerant quantum computers</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/03/</link>
+      <guid isPermaLink="false">brief-2026-11-13-03</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>PsiQuantum and AMD have expanded their partnership to co-design the computing infrastructure for utility-scale, fault-tolerant quantum machines and the hybrid workloads that mix quantum, high-performance and AI computing. The work moves beyond AMD Versal FPGAs to Instinct GPUs, EPYC CPUs and the ROCm software stack, paired with PsiQuantum's silicon photonics platform, and AMD also plans an equity investment in PsiQuantum. The first focus is pharmaceutical research and drug discovery, and the companies will share more at the SC26 conference in Chicago from November 15 to 20. Why it matters for tech: Fault-tolerant machines will need as much classical computing around them as quantum hardware inside, so chipmakers are now part of the quantum build.</description>
+      <content:encoded><![CDATA[<p>PsiQuantum and AMD have expanded their partnership to co-design the computing infrastructure for utility-scale, fault-tolerant quantum machines and the hybrid workloads that mix quantum, high-performance and AI computing. The work moves beyond AMD Versal FPGAs to Instinct GPUs, EPYC CPUs and the ROCm software stack, paired with PsiQuantum's silicon photonics platform, and AMD also plans an equity investment in PsiQuantum. The first focus is pharmaceutical research and drug discovery, and the companies will share more at the SC26 conference in Chicago from November 15 to 20.</p><p><strong>Why it matters for tech:</strong> Fault-tolerant machines will need as much classical computing around them as quantum hardware inside, so chipmakers are now part of the quantum build.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/12/psiquantum-amd-expand-quantum-computing-infrastructure-partnership/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Qunova's hybrid method matches the best classical result on a hard chemistry problem</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/04/</link>
+      <guid isPermaLink="false">brief-2026-11-13-04</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Qunova Computing says its HI-VQE algorithm reached chemical accuracy in an 80-qubit simulation of the 4Fe-4S iron-sulfur cluster, using an IBM Quantum System Two machine at RIKEN alongside the Fugaku supercomputer. Its ground-state energy estimate of minus 327.2482 Hartree agreed within chemical accuracy with the leading classical reference, calculated by the Density Matrix Renormalization Group method at minus 327.2471 Hartree. The workflow also used about 300 times fewer Fugaku node-hours than a previously published sample-based quantum diagonalization approach on the same molecule. Why it matters for tech: A quantum workflow that agrees with the reference classical calculation on a benchmark molecule gives chemists a reason to trust hybrid methods for real design questions.</description>
+      <content:encoded><![CDATA[<p>Qunova Computing says its HI-VQE algorithm reached chemical accuracy in an 80-qubit simulation of the 4Fe-4S iron-sulfur cluster, using an IBM Quantum System Two machine at RIKEN alongside the Fugaku supercomputer. Its ground-state energy estimate of minus 327.2482 Hartree agreed within chemical accuracy with the leading classical reference, calculated by the Density Matrix Renormalization Group method at minus 327.2471 Hartree. The workflow also used about 300 times fewer Fugaku node-hours than a previously published sample-based quantum diagonalization approach on the same molecule.</p><p><strong>Why it matters for tech:</strong> A quantum workflow that agrees with the reference classical calculation on a benchmark molecule gives chemists a reason to trust hybrid methods for real design questions.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/12/qunovas-hybrid-computing-method-matches-classical-benchmark-for-iron-sulfur-cluster/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>IBM details Nighthawk r3 chip and a 1,040-qubit system for 2027</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/03/</link>
+      <guid isPermaLink="false">brief-2026-11-12-03</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>IBM has announced Nighthawk r3, a processor designed to run 10,000 quantum operations across 520 programmable qubits, with 2,034 physical qubits in total. IBM plans to link two r3 processors into a single 1,040-qubit system in 2027, using chip to chip interconnects it has already demonstrated. The current Nighthawk r2 runs up to 100,000 samples a second and more than 7,500 operations on 120 qubits, and partners have run 34 billion circuits on it so far. Why it matters for tech: Linking processors with chip to chip interconnects is IBM's route to larger systems without building one giant chip, and sample speed decides whether heavy workloads finish in practical time.</description>
+      <content:encoded><![CDATA[<p>IBM has announced Nighthawk r3, a processor designed to run 10,000 quantum operations across 520 programmable qubits, with 2,034 physical qubits in total. IBM plans to link two r3 processors into a single 1,040-qubit system in 2027, using chip to chip interconnects it has already demonstrated. The current Nighthawk r2 runs up to 100,000 samples a second and more than 7,500 operations on 120 qubits, and partners have run 34 billion circuits on it so far.</p><p><strong>Why it matters for tech:</strong> Linking processors with chip to chip interconnects is IBM's route to larger systems without building one giant chip, and sample speed decides whether heavy workloads finish in practical time.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/11/ibm-nighthawk-r3-processor-520-programmable-qubits/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Rigetti reports third-quarter revenue of $1.4 million and a 99.5% fidelity milestone</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/04/</link>
+      <guid isPermaLink="false">brief-2026-11-12-04</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Rigetti reported third-quarter revenue of $1.4 million, with nine-month revenue of $10.9 million, up about 110% on a year earlier, and an operating loss of $33.2 million. The company ended the quarter with $497.1 million in cash and investments and no debt. Its Cepheus-1-108Q system reached 99.5% median two-qubit gate fidelity, Rigetti signed a definitive agreement for up to $100 million from the US Department of Commerce under the CHIPS Act, and it targets a 300-plus-qubit system at about 99.7% fidelity by mid-2028. Why it matters for tech: The fidelity figure and the federal award show a small quantum hardware maker funding its roadmap from both sales growth and government research money.</description>
+      <content:encoded><![CDATA[<p>Rigetti reported third-quarter revenue of $1.4 million, with nine-month revenue of $10.9 million, up about 110% on a year earlier, and an operating loss of $33.2 million. The company ended the quarter with $497.1 million in cash and investments and no debt. Its Cepheus-1-108Q system reached 99.5% median two-qubit gate fidelity, Rigetti signed a definitive agreement for up to $100 million from the US Department of Commerce under the CHIPS Act, and it targets a 300-plus-qubit system at about 99.7% fidelity by mid-2028.</p><p><strong>Why it matters for tech:</strong> The fidelity figure and the federal award show a small quantum hardware maker funding its roadmap from both sales growth and government research money.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/11/rigetti-q3-2026-results-quantum-computing-roadmap/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Quantinuum and RIKEN complete the Reimei upgrade to the H2 system</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/03/</link>
+      <guid isPermaLink="false">brief-2026-11-11-03</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan. Why it matters for tech: A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.</description>
+      <content:encoded><![CDATA[<p>Quantinuum and RIKEN have completed the upgrade of the Reimei quantum computer at RIKEN to Quantinuum's System Model H2, and expanded their partnership around quantum-AI hybrid supercomputing in Japan. The upgraded machine sits alongside RIKEN's Fugaku supercomputer and the ROQUO GPU system, and the partners have started two research projects on it, one training an AI model on quantum data for magnetism simulations and one simulating a light-absorbing biomolecule. Under a separate agreement with SoftBank, the partners will study connecting quantum computers directly with AI data centres in Japan.</p><p><strong>Why it matters for tech:</strong> A working three-way hybrid of quantum, supercomputing and AI hardware gives researchers a live platform for testing whether quantum-generated data improves AI models for materials and biology.</p><p>Source: </p><ul><li><a href="https://www.quantinuum.com/press-releases/quantinuum-and-riken-expand-partnership-to-accelerate-the-commercialization-of-quantum-ai-hybrid-supercomputing-in-japan">Quantinuum</a></li><li><a href="https://english.kyodonews.net/articles/-/90965">Kyodo News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Xanadu and HyperLight cut photonic switch loss to 7 millidecibels</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/04/</link>
+      <guid isPermaLink="false">brief-2026-11-11-04</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Xanadu and HyperLight have reported an optical switch insertion loss of 7 millidecibels using thin-film lithium niobate technology, down from 20 millidecibels in their previous result in 2025. Lower switch loss reduces the degradation of quantum signals as they pass through the switches that route light in a photonic quantum computer. The result was demonstrated on HyperLight's thin-film lithium niobate chiplet platform, which the companies describe as a high-volume wafer manufacturing line. Why it matters for tech: Switch loss is one of the physical limits on scaling photonic quantum computers, so a measured drop of nearly two-thirds changes the overhead budget for larger machines built on this platform.</description>
+      <content:encoded><![CDATA[<p>Xanadu and HyperLight have reported an optical switch insertion loss of 7 millidecibels using thin-film lithium niobate technology, down from 20 millidecibels in their previous result in 2025. Lower switch loss reduces the degradation of quantum signals as they pass through the switches that route light in a photonic quantum computer. The result was demonstrated on HyperLight's thin-film lithium niobate chiplet platform, which the companies describe as a high-volume wafer manufacturing line.</p><p><strong>Why it matters for tech:</strong> Switch loss is one of the physical limits on scaling photonic quantum computers, so a measured drop of nearly two-thirds changes the overhead budget for larger machines built on this platform.</p><p>Source: </p><ul><li><a href="https://www.hpcwire.com/off-the-wire/xanadu-reports-lower-optical-switch-loss-for-photonic-quantum-computing/">HPCwire</a></li><li><a href="https://thequantuminsider.com/2026/11/10/xanadu-hyperlight-photonic-switch-loss-7-mdb/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Diraq installs an 8-qubit silicon spin computer in a Sydney data centre</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/04/</link>
+      <guid isPermaLink="false">brief-2026-11-10-04</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>Diraq has installed an 8-qubit silicon spin quantum computer at Equinix's data centre in Sydney, which the company describes as the first such system inside a commercial data centre. The system uses under 20 kilowatts and 170 square feet, and Diraq plans to reach up to 256 qubits in the same system within a year. Diraq also published a Quantum at Work report estimating that a 10 percentage point rise in clinical trial success rates could save about $600 million per medicine. Why it matters for tech: Running a quantum system inside a commercial data centre tests whether the technology can operate as a hosted service alongside ordinary cloud hardware instead of in a laboratory.</description>
+      <content:encoded><![CDATA[<p>Diraq has installed an 8-qubit silicon spin quantum computer at Equinix's data centre in Sydney, which the company describes as the first such system inside a commercial data centre. The system uses under 20 kilowatts and 170 square feet, and Diraq plans to reach up to 256 qubits in the same system within a year. Diraq also published a Quantum at Work report estimating that a 10 percentage point rise in clinical trial success rates could save about $600 million per medicine.</p><p><strong>Why it matters for tech:</strong> Running a quantum system inside a commercial data centre tests whether the technology can operate as a hosted service alongside ordinary cloud hardware instead of in a laboratory.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/09/diraq-deploys-silicon-spin-quantum-computer-inside-a-commercial-data-center/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>IonQ and Carahsoft partner to sell quantum systems to the public sector</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/05/</link>
+      <guid isPermaLink="false">brief-2026-11-10-05</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Quantum</category>
+      <description>IonQ and Carahsoft have announced a strategic partnership in which Carahsoft becomes IonQ's distributor for the public sector, handling procurement, contract vehicles and resale to federal agencies, higher education and state and local government. The agreement covers quantum computing, networking, sensing and security, and cites Executive Order 14413 on quantum innovation. IonQ points to its Stage C progress in DARPA's Quantum Benchmarking Initiative and its quantum network work with the Air Force Research Laboratory in Rome, New York. Why it matters for tech: A dedicated public sector channel puts IonQ's systems in front of government buyers through established procurement routes, which is how most government quantum purchases are made.</description>
+      <content:encoded><![CDATA[<p>IonQ and Carahsoft have announced a strategic partnership in which Carahsoft becomes IonQ's distributor for the public sector, handling procurement, contract vehicles and resale to federal agencies, higher education and state and local government. The agreement covers quantum computing, networking, sensing and security, and cites Executive Order 14413 on quantum innovation. IonQ points to its Stage C progress in DARPA's Quantum Benchmarking Initiative and its quantum network work with the Air Force Research Laboratory in Rome, New York.</p><p><strong>Why it matters for tech:</strong> A dedicated public sector channel puts IonQ's systems in front of government buyers through established procurement routes, which is how most government quantum purchases are made.</p><p>Source: </p><ul><li><a href="https://thequantuminsider.com/2026/11/09/ionq-carahsoft-quantum-technologies-government/">The Quantum Insider</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Riverlane cuts surface-code logical errors with data-driven decoder fix</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/06/</link>
       <guid isPermaLink="false">brief-2026-11-09-06</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -17,7 +107,7 @@
     </item>
     <item>
       <title>IBM unveils Quantum System Two at the University of Chicago</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/03/</link>
       <guid isPermaLink="false">brief-2026-11-08-03</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -26,7 +116,7 @@
     </item>
     <item>
       <title>Oxford team simulates Aharonov-Bohm effect with two trapped ions</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/04/</link>
       <guid isPermaLink="false">brief-2026-11-08-04</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -35,7 +125,7 @@
     </item>
     <item>
       <title>AI assisted proof settles a 2008 question about quantum speedups</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/04/</link>
       <guid isPermaLink="false">brief-2026-11-07-04</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -44,7 +134,7 @@
     </item>
     <item>
       <title>UK announces fresh funding to speed up quantum commercialisation</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/05/</link>
       <guid isPermaLink="false">brief-2026-11-07-05</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -53,7 +143,7 @@
     </item>
     <item>
       <title>Quantinuum maps its Nexus platform toward a fault tolerant computer in 2029</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/04/</link>
       <guid isPermaLink="false">brief-2026-11-06-04</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -62,7 +152,7 @@
     </item>
     <item>
       <title>IBM, Oak Ridge and AMD pair quantum hardware with supercomputing to advance error correction</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/05/</link>
       <guid isPermaLink="false">brief-2026-11-06-05</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -71,7 +161,7 @@
     </item>
     <item>
       <title>IBM Quantum and QuICS use AI agents to find over 500 magic state factory designs</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/04/</link>
       <guid isPermaLink="false">brief-2026-11-05-04</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -80,7 +170,7 @@
     </item>
     <item>
       <title>Superinductor built inside a silicon chip in a commercial CMOS process</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/05/</link>
       <guid isPermaLink="false">brief-2026-11-05-05</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -89,7 +179,7 @@
     </item>
     <item>
       <title>Universal Quantum unveils a foundry made trapped ion processor built for modular scaling</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/04/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/04/</link>
       <guid isPermaLink="false">brief-2026-11-04-04</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -98,7 +188,7 @@
     </item>
     <item>
       <title>One extra measurement cuts qubit errors by more than half in Regensburg experiment</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/05/</link>
       <guid isPermaLink="false">brief-2026-11-04-05</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>
@@ -107,7 +197,7 @@
     </item>
     <item>
       <title>Experiment backs a route to more error resistant quantum information storage</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/03/</link>
       <guid isPermaLink="false">brief-2026-11-03-03</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Quantum</category>

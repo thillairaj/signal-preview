@@ -2,13 +2,112 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · AI</title>
-    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/ai.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>ChatGPT Wallet lets agents pay without seeing your card details</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/01/</link>
+      <guid isPermaLink="false">brief-2026-11-14-01</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has introduced ChatGPT Wallet, a way for its Dots agents to pay for purchases on a user's behalf without seeing the user's actual card details. Users add a card once and approve each purchase with a security check such as Face ID or a fingerprint, after which the payment network issues a token in place of the real card number. The wallet starts with ChatGPT Pro subscribers in the US, built with American Express, Mastercard and Visa, and OpenAI has published a Commerce Partner Playbook to help businesses accept agent payments. Why it matters for tech: Agent-led shopping only works if payments are safe and merchants can accept them, so a wallet built on existing card rails is the missing piece for agentic commerce.</description>
+      <content:encoded><![CDATA[<p>OpenAI has introduced ChatGPT Wallet, a way for its Dots agents to pay for purchases on a user's behalf without seeing the user's actual card details. Users add a card once and approve each purchase with a security check such as Face ID or a fingerprint, after which the payment network issues a token in place of the real card number. The wallet starts with ChatGPT Pro subscribers in the US, built with American Express, Mastercard and Visa, and OpenAI has published a Commerce Partner Playbook to help businesses accept agent payments.</p><p><strong>Why it matters for tech:</strong> Agent-led shopping only works if payments are safe and merchants can accept them, so a wallet built on existing card rails is the missing piece for agentic commerce.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-chatgpt-wallet">OpenAI</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic opens a private beta for self-hosted Claude Managed Agents</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/02/</link>
+      <guid isPermaLink="false">brief-2026-11-14-02</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic has opened a private beta of self-hosted Claude Managed Agents, letting companies run the whole agent service inside their own cloud or data centre. The harness, sandboxes, credentials and session history all run on the customer's infrastructure, while model calls still go to a provider the customer chooses, such as Anthropic, Amazon Bedrock, Google's Agent Platform or Microsoft Foundry. Access is limited to eligible organisations through their Anthropic account team, and the server licence requires customers to roll back a version within eight hours of a safety notice. Why it matters for tech: Teams that want long-running agents working on internal code can now keep the control plane behind their own security perimeter instead of handing it to a vendor.</description>
+      <content:encoded><![CDATA[<p>Anthropic has opened a private beta of self-hosted Claude Managed Agents, letting companies run the whole agent service inside their own cloud or data centre. The harness, sandboxes, credentials and session history all run on the customer's infrastructure, while model calls still go to a provider the customer chooses, such as Anthropic, Amazon Bedrock, Google's Agent Platform or Microsoft Foundry. Access is limited to eligible organisations through their Anthropic account team, and the server licence requires customers to roll back a version within eight hours of a safety notice.</p><p><strong>Why it matters for tech:</strong> Teams that want long-running agents working on internal code can now keep the control plane behind their own security perimeter instead of handing it to a vendor.</p><p>Source: </p><ul><li><a href="https://claude.com/resources/articles/self-hosted-claude-managed-agents">Anthropic</a></li><li><a href="https://thenewstack.io/self-hosted-claude-managed-agents/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>llama.cpp reaches 1.0 with a stability promise for local AI builders</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/03/</link>
+      <guid isPermaLink="false">brief-2026-11-14-03</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>The llama.cpp project has released version 1.0.0 of its libraries, committing to semantic versioning so that breaking changes to the public C API will only arrive with major version bumps. The project, which lets developers run multimodal language models on hardware from consumer laptops to enterprise servers, now supports more than 150 model architecture variants. The release also covers ggml 1.0.0, the tensor library underneath it. Why it matters for tech: Local and private AI products depend on llama.cpp, so a stable API gives their builders a firmer foundation to build on.</description>
+      <content:encoded><![CDATA[<p>The llama.cpp project has released version 1.0.0 of its libraries, committing to semantic versioning so that breaking changes to the public C API will only arrive with major version bumps. The project, which lets developers run multimodal language models on hardware from consumer laptops to enterprise servers, now supports more than 150 model architecture variants. The release also covers ggml 1.0.0, the tensor library underneath it.</p><p><strong>Why it matters for tech:</strong> Local and private AI products depend on llama.cpp, so a stable API gives their builders a firmer foundation to build on.</p><p>Source: </p><ul><li><a href="https://huggingface.co/blog/ggml-org/llama-cpp-v1">Hugging Face</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google launches Gemini 4 Hydrogen, a faster model built for agentic coding work</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/01/</link>
+      <guid isPermaLink="false">brief-2026-11-13-01</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind has introduced Gemini 4 Hydrogen, a model aimed at everyday coding and multi-step agent workflows rather than long-horizon reasoning, which stays with the Carbon and Argon models. Hydrogen runs across the Gemini API, AI Studio, the Gemini app and Google Search, with a 1 million token context window priced at $1.50 per million input tokens and $7.50 per million output tokens. On Terminal-Bench 4.1 it scored 57%, against 18.2% for Gemini 3.8 Flash, and Google says it completes tasks about 2.5 times faster at its default setting. Why it matters for tech: A cheaper, quicker execution model changes the economics of running agents all day, since most agent work is routine execution rather than deep reasoning.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind has introduced Gemini 4 Hydrogen, a model aimed at everyday coding and multi-step agent workflows rather than long-horizon reasoning, which stays with the Carbon and Argon models. Hydrogen runs across the Gemini API, AI Studio, the Gemini app and Google Search, with a 1 million token context window priced at $1.50 per million input tokens and $7.50 per million output tokens. On Terminal-Bench 4.1 it scored 57%, against 18.2% for Gemini 3.8 Flash, and Google says it completes tasks about 2.5 times faster at its default setting.</p><p><strong>Why it matters for tech:</strong> A cheaper, quicker execution model changes the economics of running agents all day, since most agent work is routine execution rather than deep reasoning.</p><p>Source: </p><ul><li><a href="https://deepmind.google/blog/introducing-gemini-4-hydrogen/">Google DeepMind</a></li><li><a href="https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/">Ars Technica</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google opens preorders for Gemini smartglasses starting at $395</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/02/</link>
+      <guid isPermaLink="false">brief-2026-11-13-02</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has opened preorders for its first Gemini-powered smartglasses, built with Samsung, Gentle Monster and Warby Parker, with shipping and store availability from December 10. The glasses have no in-lens display; wearers talk to Gemini by voice, use touch controls, or use a 12 megapixel camera. Warby Parker frames start at $395 in the US and Gentle Monster styles at $449, and Google says the camera has an always-on recording light, a physical off switch, no livestreaming and no real-time face recognition. Why it matters for tech: Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.</description>
+      <content:encoded><![CDATA[<p>Google has opened preorders for its first Gemini-powered smartglasses, built with Samsung, Gentle Monster and Warby Parker, with shipping and store availability from December 10. The glasses have no in-lens display; wearers talk to Gemini by voice, use touch controls, or use a 12 megapixel camera. Warby Parker frames start at $395 in the US and Gentle Monster styles at $449, and Google says the camera has an always-on recording light, a physical off switch, no livestreaming and no real-time face recognition.</p><p><strong>Why it matters for tech:</strong> Glasses put an AI assistant on the face rather than in the hand, so the privacy controls Google ships with them set the pattern other makers will be judged against.</p><p>Source: </p><ul><li><a href="https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/">Ars Technica</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google DeepMind launches AlphaGenome 2 to predict DNA effects in single cell types</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/01/</link>
+      <guid isPermaLink="false">brief-2026-11-12-01</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google DeepMind has announced AlphaGenome 2, a DNA sequence model that predicts how genetic variants affect specific human cell types rather than broad tissue averages. Trained on more than 100 million individual cell profiles across 68 tissues, it identified nearly twice as many causal variants on a single-cell immune dataset, 30% against 16% for the original model. The model is available now for non-commercial research through the AlphaGenome API, and in private preview for commercial research. Why it matters for tech: Cell-level variant prediction helps researchers connect disease-linked DNA changes to the exact cells where they act, which broad tissue models miss.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind has announced AlphaGenome 2, a DNA sequence model that predicts how genetic variants affect specific human cell types rather than broad tissue averages. Trained on more than 100 million individual cell profiles across 68 tissues, it identified nearly twice as many causal variants on a single-cell immune dataset, 30% against 16% for the original model. The model is available now for non-commercial research through the AlphaGenome API, and in private preview for commercial research.</p><p><strong>Why it matters for tech:</strong> Cell-level variant prediction helps researchers connect disease-linked DNA changes to the exact cells where they act, which broad tissue models miss.</p><p>Source: </p><ul><li><a href="https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/">Google DeepMind</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google launches Gemini Decisions API for fast yes or no and scoring calls</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/02/</link>
+      <guid isPermaLink="false">brief-2026-11-12-02</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has introduced the Gemini Decisions API, powered by its new Gemini Decision 1 model, which scores up to 1,000 yes or no, multiple choice and rubric questions against one multimodal input in a single pass. It returns probabilities and confidence scores with 150 to 250 milliseconds of end-to-end latency, priced at $0.10 per million input tokens with no output tokens billed. The API is available through the Gemini API in Google AI Studio, and Google already uses it for model routing, design iteration and safety checks on tools. Why it matters for tech: Scoring options instead of generating text makes routine agent decisions such as routing, policy checks and grading faster and cheaper, and the confidence scores let code send uncertain cases to a human.</description>
+      <content:encoded><![CDATA[<p>Google has introduced the Gemini Decisions API, powered by its new Gemini Decision 1 model, which scores up to 1,000 yes or no, multiple choice and rubric questions against one multimodal input in a single pass. It returns probabilities and confidence scores with 150 to 250 milliseconds of end-to-end latency, priced at $0.10 per million input tokens with no output tokens billed. The API is available through the Gemini API in Google AI Studio, and Google already uses it for model routing, design iteration and safety checks on tools.</p><p><strong>Why it matters for tech:</strong> Scoring options instead of generating text makes routine agent decisions such as routing, policy checks and grading faster and cheaper, and the confidence scores let code send uncertain cases to a human.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/">Google AI Blog</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google rolls out Gemini 4 Carbon with an agent swarm for coding</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/01/</link>
+      <guid isPermaLink="false">brief-2026-11-11-01</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Google has made Gemini 4 Carbon publicly available to Gemini app users and to developers through the Gemini API, AI Studio and Vertex AI, after an earlier limited release for cybersecurity work. The model is aimed at agentic coding, including building apps and prototypes and debugging code. Google cites 87.9% on SWE-Bench Verified, against 81% for the previous Gemini 4 Argon, and says one master agent can coordinate up to 10,000 agents that plan, work in parallel and check each other's work. Pricing is $2 per million input tokens and $12 per million output tokens. Why it matters for tech: A coding model that coordinates large agent teams changes how much of a build can be handed to agents at once, and the published benchmark figures give teams a concrete basis for comparing it with the previous release.</description>
+      <content:encoded><![CDATA[<p>Google has made Gemini 4 Carbon publicly available to Gemini app users and to developers through the Gemini API, AI Studio and Vertex AI, after an earlier limited release for cybersecurity work. The model is aimed at agentic coding, including building apps and prototypes and debugging code. Google cites 87.9% on SWE-Bench Verified, against 81% for the previous Gemini 4 Argon, and says one master agent can coordinate up to 10,000 agents that plan, work in parallel and check each other's work. Pricing is $2 per million input tokens and $12 per million output tokens.</p><p><strong>Why it matters for tech:</strong> A coding model that coordinates large agent teams changes how much of a build can be handed to agents at once, and the published benchmark figures give teams a concrete basis for comparing it with the previous release.</p><p>Source: </p><ul><li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/">Google</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>ChatGPT gains verified Business Agents with in-chat checkout</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/02/</link>
+      <guid isPermaLink="false">brief-2026-11-11-02</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>OpenAI has launched Businesses in ChatGPT in beta, adding verified AI Business Agents that represent companies inside ChatGPT and carry a verified blue checkmark. Users can browse a business directory, ask questions, compare products and complete purchases with instant checkout without leaving the chat. Launch partners named by OpenAI include Etsy, Target, Walmart, Shopify, Zillow, Expedia, Booking.com, Canva and Figma. The feature is available from November 10 to ChatGPT users in the US, free and paid, at no additional charge. Why it matters for tech: Putting storefronts and checkout inside a chatbot turns ChatGPT into a shopping channel, which matters for retailers deciding whether to build an agent and for rivals watching how conversational commerce takes shape.</description>
+      <content:encoded><![CDATA[<p>OpenAI has launched Businesses in ChatGPT in beta, adding verified AI Business Agents that represent companies inside ChatGPT and carry a verified blue checkmark. Users can browse a business directory, ask questions, compare products and complete purchases with instant checkout without leaving the chat. Launch partners named by OpenAI include Etsy, Target, Walmart, Shopify, Zillow, Expedia, Booking.com, Canva and Figma. The feature is available from November 10 to ChatGPT users in the US, free and paid, at no additional charge.</p><p><strong>Why it matters for tech:</strong> Putting storefronts and checkout inside a chatbot turns ChatGPT into a shopping channel, which matters for retailers deciding whether to build an agent and for rivals watching how conversational commerce takes shape.</p><p>Source: </p><ul><li><a href="https://openai.com/index/introducing-businesses-chatgpt/">OpenAI</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic launches Claude Fable 5.2 and Mythos 5.2 for coding, finance and science</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/01/</link>
+      <guid isPermaLink="false">brief-2026-11-10-01</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, which it describes as its most capable models for coding, finance and science. Fable 5.2 is available now, while Mythos 5.2 is limited to vetted organizations. In pre-release testing cited by Anthropic, Fable 5.2 migrated three complex devices in a day where Claude Sonnet 4.5 managed one, and completed a 30-hour proof of Fermat's Last Theorem. Why it matters for tech: A new top-tier coding model with a published test record gives developers a concrete alternative to compare against current coding models on speed and long-task stamina.</description>
+      <content:encoded><![CDATA[<p>Anthropic has released Claude Fable 5.2 and Claude Mythos 5.2, which it describes as its most capable models for coding, finance and science. Fable 5.2 is available now, while Mythos 5.2 is limited to vetted organizations. In pre-release testing cited by Anthropic, Fable 5.2 migrated three complex devices in a day where Claude Sonnet 4.5 managed one, and completed a 30-hour proof of Fermat's Last Theorem.</p><p><strong>Why it matters for tech:</strong> A new top-tier coding model with a published test record gives developers a concrete alternative to compare against current coding models on speed and long-task stamina.</p><p>Source: </p><ul><li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Anthropic</a></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2">The Verge</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta launches Muse Ember, a small model for agentic coding</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/02/</link>
+      <guid isPermaLink="false">brief-2026-11-10-02</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>AI</category>
+      <description>Meta has launched Muse Ember (muse-ember-1.0), a small model built for agentic coding, available through Meta's Models API and Amazon Bedrock, with Azure and Google Cloud to follow. It carries a 1 million token context window and up to 512,000 output tokens, priced at $0.10 per million input tokens and $0.50 per million output tokens. On Meta's Intelligence Index benchmark it scored 36 at $0.14 per task, the same score as Claude Haiku at $0.41 per task. Why it matters for tech: A cheaper model that matches a larger rival on Meta's own benchmark puts price pressure on coding agents and widens the choice of small models for everyday coding work.</description>
+      <content:encoded><![CDATA[<p>Meta has launched Muse Ember (muse-ember-1.0), a small model built for agentic coding, available through Meta's Models API and Amazon Bedrock, with Azure and Google Cloud to follow. It carries a 1 million token context window and up to 512,000 output tokens, priced at $0.10 per million input tokens and $0.50 per million output tokens. On Meta's Intelligence Index benchmark it scored 36 at $0.14 per task, the same score as Claude Haiku at $0.41 per task.</p><p><strong>Why it matters for tech:</strong> A cheaper model that matches a larger rival on Meta's own benchmark puts price pressure on coding agents and widens the choice of small models for everyday coding work.</p><p>Source: </p><ul><li><a href="https://thenewstack.io/meta-muse-ember-launch/">The New Stack</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Apple pushes Siri toward agentic tasks, report says</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/01/</link>
       <guid isPermaLink="false">brief-2026-11-09-01</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -17,7 +116,7 @@
     </item>
     <item>
       <title>DeepMind AI agents find two weaknesses in retired 1024-bit RSA</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/01/</link>
       <guid isPermaLink="false">brief-2026-11-08-01</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -26,7 +125,7 @@
     </item>
     <item>
       <title>Thinking Machines Lab ships Inkling 2 Small, with open weights promised next week</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/02/</link>
       <guid isPermaLink="false">brief-2026-11-08-02</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -35,7 +134,7 @@
     </item>
     <item>
       <title>Perplexity launches always on work agents called Teammates</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/01/</link>
       <guid isPermaLink="false">brief-2026-11-07-01</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -44,7 +143,7 @@
     </item>
     <item>
       <title>Meta Muse can now build custom spaces from a description</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/02/</link>
       <guid isPermaLink="false">brief-2026-11-07-02</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -53,7 +152,7 @@
     </item>
     <item>
       <title>Cognition ships a cheaper coding model but keeps its weights private</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/03/</link>
       <guid isPermaLink="false">brief-2026-11-07-03</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -62,7 +161,7 @@
     </item>
     <item>
       <title>OpenAI launches GPT-6 Cyber, a security model built to stay inside its authorised scope</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/01/</link>
       <guid isPermaLink="false">brief-2026-11-06-01</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -71,7 +170,7 @@
     </item>
     <item>
       <title>Google ships Gemini Omni 1.2 Flash with 15 second video and a 30% price cut</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/02/</link>
       <guid isPermaLink="false">brief-2026-11-06-02</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -80,7 +179,7 @@
     </item>
     <item>
       <title>Claude can now read your bank account, with read only access through Plaid</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/03/</link>
       <guid isPermaLink="false">brief-2026-11-06-03</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -89,7 +188,7 @@
     </item>
     <item>
       <title>OpenAI launches Images 2.6 with faster generation and GIF creation</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/01/</link>
       <guid isPermaLink="false">brief-2026-11-05-01</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -98,7 +197,7 @@
     </item>
     <item>
       <title>OpenAI pipeline finds and patches 948 Linux kernel privilege flaws</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/02/</link>
       <guid isPermaLink="false">brief-2026-11-05-02</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -107,7 +206,7 @@
     </item>
     <item>
       <title>AWS shows decision models plugged into Bedrock AgentCore agent evaluations</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/03/</link>
       <guid isPermaLink="false">brief-2026-11-05-03</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -116,7 +215,7 @@
     </item>
     <item>
       <title>DeepMind applies AI agents to chemistry and drug discovery workflows</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/01/</link>
       <guid isPermaLink="false">brief-2026-11-04-01</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -125,7 +224,7 @@
     </item>
     <item>
       <title>New benchmark finds frontier models lose track of changing facts in long documents</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/02/</link>
       <guid isPermaLink="false">brief-2026-11-04-02</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -134,7 +233,7 @@
     </item>
     <item>
       <title>OpenAI shows ChatGPT and Codex in engineering work for the physical world</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/03/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/03/</link>
       <guid isPermaLink="false">brief-2026-11-04-03</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -143,7 +242,7 @@
     </item>
     <item>
       <title>OpenAI raises bug bounty rewards for security researchers</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/01/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/01/</link>
       <guid isPermaLink="false">brief-2026-11-03-01</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>
@@ -152,7 +251,7 @@
     </item>
     <item>
       <title>Anthropic adds Claude Code limits aimed at game cloning</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/02/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/02/</link>
       <guid isPermaLink="false">brief-2026-11-03-02</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>AI</category>

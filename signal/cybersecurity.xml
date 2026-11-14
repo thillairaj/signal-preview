@@ -2,13 +2,139 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Signal Brief · Cybersecurity</title>
-    <link>https://thillairaj.github.io/signal-preview/brief/</link>
+    <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/</link>
     <description>Signal Brief: the day in technology, in The Signal's own words. Every item is written from linked official sources and fact checked before publication.</description>
-    <lastBuildDate>Mon, 09 Nov 2026 03:03:48 +0000</lastBuildDate>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/signal-preview/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sat, 14 Nov 2026 01:31:40 +0000</lastBuildDate>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://thillairaj.github.io/The-Signal-AI-Quantum/signal/cybersecurity.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Check Point zero-day chained with PHP2Shell to wipe VMware hosts</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/07/</link>
+      <guid isPermaLink="false">brief-2026-11-14-07</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Check Point has released emergency hotfixes for a zero-day privilege escalation flaw, CVE-2026-123039, that attackers have exploited against a couple of dozen customers since late October. Attackers first entered through Mobile Access portals using the PHP2Shell flaws, then used the flaw to run commands as root, installed the TSGA backdoor, and in an early wave wiped VMware ESXi hosts. The company advises customers who cannot patch immediately to stop the DynamicCLI daemon as a temporary mitigation. Why it matters for tech: A chained portal flaw plus a root escalation shows how one unpatched gateway can become a route to destructive attacks on virtualisation hosts.</description>
+      <content:encoded><![CDATA[<p>Check Point has released emergency hotfixes for a zero-day privilege escalation flaw, CVE-2026-123039, that attackers have exploited against a couple of dozen customers since late October. Attackers first entered through Mobile Access portals using the PHP2Shell flaws, then used the flaw to run commands as root, installed the TSGA backdoor, and in an early wave wiped VMware ESXi hosts. The company advises customers who cannot patch immediately to stop the DynamicCLI daemon as a temporary mitigation.</p><p><strong>Why it matters for tech:</strong> A chained portal flaw plus a root escalation shows how one unpatched gateway can become a route to destructive attacks on virtualisation hosts.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/">BleepingComputer</a></li><li><a href="https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>FBI says North Korean hackers stole over $400 million in deepfake video call scheme</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/08/</link>
+      <guid isPermaLink="false">brief-2026-11-14-08</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>The FBI says North Korean hackers stole more than $400 million in cryptocurrency over 18 months through a scheme it calls FaceStealer, which lures targets into fake video meetings that play recorded webcam footage of people they trust. Once on the call, victims are told of a fake audio fault and sent a link that installs malware to steal wallets and credentials. US authorities seized the cloud infrastructure behind the scheme and more than 900 recorded victim videos, and the Justice Department separately won court approval to seize or restrain over $1.2 billion stolen from Binance by a different North Korean group. Why it matters for tech: The scheme turns a victim's own face into the lure for the next target, so verifying meeting invitations through a second channel matters more than ever.</description>
+      <content:encoded><![CDATA[<p>The FBI says North Korean hackers stole more than $400 million in cryptocurrency over 18 months through a scheme it calls FaceStealer, which lures targets into fake video meetings that play recorded webcam footage of people they trust. Once on the call, victims are told of a fake audio fault and sent a link that installs malware to steal wallets and credentials. US authorities seized the cloud infrastructure behind the scheme and more than 900 recorded victim videos, and the Justice Department separately won court approval to seize or restrain over $1.2 billion stolen from Binance by a different North Korean group.</p><p><strong>Why it matters for tech:</strong> The scheme turns a victim's own face into the lure for the next target, so verifying meeting invitations through a second channel matters more than ever.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html">The Hacker News</a></li><li><a href="https://ktwb.com/2026/11/12/north-korean-hackers-steal-more-than-400-million-using-video-images-fbi-says/">Reuters</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Operation Endgame seizes servers behind Gootloader, CastleRAT and StealC</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/09/</link>
+      <guid isPermaLink="false">brief-2026-11-14-09</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>An international police operation has taken down servers behind the Gootloader, CastleRAT and StealC malware tools, seizing 235 servers and 257 domains and about 6.4 million stolen logins belonging to more than 40,000 victims. Gootloader spread through fake legal documents on hacked websites and was used in ransomware attacks, while CastleRAT gave attackers remote control of infected machines and StealC stole passwords. Dutch police have loaded data stolen by CastleRAT into their Check your hack service so people can see if their email address was affected. Why it matters for tech: Taking down the loaders and stealers that feed ransomware cuts off the access brokers' supply chain, even when no arrests are announced.</description>
+      <content:encoded><![CDATA[<p>An international police operation has taken down servers behind the Gootloader, CastleRAT and StealC malware tools, seizing 235 servers and 257 domains and about 6.4 million stolen logins belonging to more than 40,000 victims. Gootloader spread through fake legal documents on hacked websites and was used in ransomware attacks, while CastleRAT gave attackers remote control of infected machines and StealC stole passwords. Dutch police have loaded data stolen by CastleRAT into their Check your hack service so people can see if their email address was affected.</p><p><strong>Why it matters for tech:</strong> Taking down the loaders and stealers that feed ransomware cuts off the access brokers' supply chain, even when no arrests are announced.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Trezor confirms hardware implants in three wallets and cuts reseller network</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-14/10/</link>
+      <guid isPermaLink="false">brief-2026-11-14-10</guid>
+      <pubDate>Sat, 14 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Trezor has confirmed that three Safe 5 hardware wallets sold by Southeast Asian reseller CryptoBilis contained hidden circuit boards designed to steal recovery phrases and send them to attackers over a mobile network. The company released firmware 2.13.1 on November 11, which stops the implants from capturing anything on screen, and says no affected customer has reported losing funds. Trezor has also cut its global reseller network by about 80 percent and is offering replacement devices to anyone who bought a wallet from CryptoBilis since March 2026. Why it matters for tech: A hardware wallet is only as trustworthy as its supply chain, so a tampered device shows why buying from authorised sellers matters.</description>
+      <content:encoded><![CDATA[<p>Trezor has confirmed that three Safe 5 hardware wallets sold by Southeast Asian reseller CryptoBilis contained hidden circuit boards designed to steal recovery phrases and send them to attackers over a mobile network. The company released firmware 2.13.1 on November 11, which stops the implants from capturing anything on screen, and says no affected customer has reported losing funds. Trezor has also cut its global reseller network by about 80 percent and is offering replacement devices to anyone who bought a wallet from CryptoBilis since March 2026.</p><p><strong>Why it matters for tech:</strong> A hardware wallet is only as trustworthy as its supply chain, so a tampered device shows why buying from authorised sellers matters.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apache patches a critical HTTP/2 flaw that allows remote code execution</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/07/</link>
+      <guid isPermaLink="false">brief-2026-11-13-07</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>The Apache Software Foundation has fixed a critical race condition in the mod_http2 module of Apache HTTP Server, tracked as CVE-2026-119618, which an unauthenticated attacker could exploit to gain remote code execution. The flaw affects HTTP Server versions 2.4.55 through 2.4.70 and was found by Anthropic's OSS Scanner and Google Cloud's Vulnerability Research teams. Cloud security company Wiz reports that 64% of cloud environments hold vulnerable resources, though the flaw needs HTTP/2 enabled, which is off by default, and no public exploit is known. Why it matters for tech: Apache still serves about one in five websites, so a remotely exploitable flaw in its HTTP/2 code is a patch-now item for anyone running it.</description>
+      <content:encoded><![CDATA[<p>The Apache Software Foundation has fixed a critical race condition in the mod_http2 module of Apache HTTP Server, tracked as CVE-2026-119618, which an unauthenticated attacker could exploit to gain remote code execution. The flaw affects HTTP Server versions 2.4.55 through 2.4.70 and was found by Anthropic's OSS Scanner and Google Cloud's Vulnerability Research teams. Cloud security company Wiz reports that 64% of cloud environments hold vulnerable resources, though the flaw needs HTTP/2 enabled, which is off by default, and no public exploit is known.</p><p><strong>Why it matters for tech:</strong> Apache still serves about one in five websites, so a remotely exploitable flaw in its HTTP/2 code is a patch-now item for anyone running it.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>New SignDrop zero-day turns a Windows security mitigation into a privilege escalation</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-13/08/</link>
+      <guid isPermaLink="false">brief-2026-11-13-08</guid>
+      <pubDate>Fri, 13 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Security researcher Abdelhamid Naceri has disclosed SignDrop, a Windows zero-day that abuses the Common Log File System mitigations Microsoft added in October 2025. The flaw lets an attacker trick a privileged process, such as an antivirus engine, into creating an authentication file with SYSTEM privileges, which can then be used to turn off antivirus and endpoint protection. Naceri tested the exploit on Windows 11 26H2 and Windows Server 2025 Experimental, estimates 80% of Windows installations are vulnerable, and says there is no fix yet except waiting for a Microsoft patch. Why it matters for tech: A defence that can be turned against itself is a reminder that mitigations need their own review, and defenders cannot patch this one yet.</description>
+      <content:encoded><![CDATA[<p>Security researcher Abdelhamid Naceri has disclosed SignDrop, a Windows zero-day that abuses the Common Log File System mitigations Microsoft added in October 2025. The flaw lets an attacker trick a privileged process, such as an antivirus engine, into creating an authentication file with SYSTEM privileges, which can then be used to turn off antivirus and endpoint protection. Naceri tested the exploit on Windows 11 26H2 and Windows Server 2025 Experimental, estimates 80% of Windows installations are vulnerable, and says there is no fix yet except waiting for a Microsoft patch.</p><p><strong>Why it matters for tech:</strong> A defence that can be turned against itself is a reminder that mitigations need their own review, and defenders cannot patch this one yet.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/">BleepingComputer</a></li><li><a href="https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Maersk confirms a breach of a legacy logistics system as a ransomware gang demands $5 million</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/07/</link>
+      <guid isPermaLink="false">brief-2026-11-12-07</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Maersk has confirmed that a threat actor breached a local legacy system from its acquired LF Logistics arm and stole data. The WhiteArmor ransomware gang claims about 100GB of data and demands $5 million in bitcoin within 30 days. Maersk says the incident is isolated to that system, current evidence shows no sensitive data has been disclosed, and operations are unaffected. Why it matters for tech: The breach hit a system inherited through acquisition, which is a reminder that acquired infrastructure carries its own exposure long after the deal closes.</description>
+      <content:encoded><![CDATA[<p>Maersk has confirmed that a threat actor breached a local legacy system from its acquired LF Logistics arm and stole data. The WhiteArmor ransomware gang claims about 100GB of data and demands $5 million in bitcoin within 30 days. Maersk says the incident is isolated to that system, current evidence shows no sensitive data has been disclosed, and operations are unaffected.</p><p><strong>Why it matters for tech:</strong> The breach hit a system inherited through acquisition, which is a reminder that acquired infrastructure carries its own exposure long after the deal closes.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>More than 35,000 Grok-built apps found open online, some leaking confidential data</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/08/</link>
+      <guid isPermaLink="false">brief-2026-11-12-08</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Security researchers at Claroc found 37,571 Grok-built apps online, of which 35,578 were open to anyone without signing in. About one in ten contained internal business or personal data, and roughly 2% of the open apps held material rated high or critical. Twenty-four of the apps were built by staff at X and SpaceX, including a confidential sales onboarding plan, and the company has since taken those staff apps down. Why it matters for tech: Apps built by typing a description inherit the builder's sharing default, so a tool meant for quick prototypes can quietly publish internal data.</description>
+      <content:encoded><![CDATA[<p>Security researchers at Claroc found 37,571 Grok-built apps online, of which 35,578 were open to anyone without signing in. About one in ten contained internal business or personal data, and roughly 2% of the open apps held material rated high or critical. Twenty-four of the apps were built by staff at X and SpaceX, including a confidential sales onboarding plan, and the company has since taken those staff apps down.</p><p><strong>Why it matters for tech:</strong> Apps built by typing a description inherit the builder's sharing default, so a tool meant for quick prototypes can quietly publish internal data.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/over-35000-grok-built-apps-exposed.html">The Hacker News</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA adds an exploited Cisco BroadWorks flaw to its must-patch list</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-12/09/</link>
+      <guid isPermaLink="false">brief-2026-11-12-09</guid>
+      <pubDate>Thu, 12 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>CISA has added CVE-2026-20320, an unauthenticated XML external entity flaw in Cisco BroadWorks that lets remote attackers read sensitive configuration, to its Known Exploited Vulnerabilities catalog. Federal civilian agencies must patch by November 24, and CISA urges private organisations to prioritise it too. Cisco patched the flaw in August, and threat researchers report it was exploited with help from a jailbroken AI model in attacks on a European telecom provider. Why it matters for tech: A patched flaw becomes urgent once exploitation is confirmed, and the reported AI-assisted attack shows how quickly a known bug can be turned into a live intrusion.</description>
+      <content:encoded><![CDATA[<p>CISA has added CVE-2026-20320, an unauthenticated XML external entity flaw in Cisco BroadWorks that lets remote attackers read sensitive configuration, to its Known Exploited Vulnerabilities catalog. Federal civilian agencies must patch by November 24, and CISA urges private organisations to prioritise it too. Cisco patched the flaw in August, and threat researchers report it was exploited with help from a jailbroken AI model in attacks on a European telecom provider.</p><p><strong>Why it matters for tech:</strong> A patched flaw becomes urgent once exploitation is confirmed, and the reported AI-assisted attack shows how quickly a known bug can be turned into a live intrusion.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/cisa-flags-cisco-broadworks-flaw-as-actively-exploited-in-attacks/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft's November Patch Tuesday fixes 1,235 flaws, including an exploited Outlook zero-day</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/07/</link>
+      <guid isPermaLink="false">brief-2026-11-11-07</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Microsoft's November Patch Tuesday addresses 1,235 vulnerabilities, including 66 rated Critical, with one actively exploited zero-day in Outlook. The zero-day, CVE-2026-124194, is a spoofing flaw in which opening a specially crafted message file can make Outlook connect to an attacker-controlled location without the usual external-content warning, disclosing the user's NTLMv2 hash. Microsoft rates the flaw Moderate with a CVSS score of 6.5, and CISA added it to its exploited-vulnerabilities catalog on November 10 with a November 24 patching deadline for federal agencies. Why it matters for tech: A single crafted message file can expose credentials used to impersonate a user, so the fix matters for any organisation running Outlook, and the federal deadline sets the pace for patching.</description>
+      <content:encoded><![CDATA[<p>Microsoft's November Patch Tuesday addresses 1,235 vulnerabilities, including 66 rated Critical, with one actively exploited zero-day in Outlook. The zero-day, CVE-2026-124194, is a spoofing flaw in which opening a specially crafted message file can make Outlook connect to an attacker-controlled location without the usual external-content warning, disclosing the user's NTLMv2 hash. Microsoft rates the flaw Moderate with a CVSS score of 6.5, and CISA added it to its exploited-vulnerabilities catalog on November 10 with a November 24 patching deadline for federal agencies.</p><p><strong>Why it matters for tech:</strong> A single crafted message file can expose credentials used to impersonate a user, so the fix matters for any organisation running Outlook, and the federal deadline sets the pace for patching.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/">BleepingComputer</a></li><li><a href="https://ifynx.com/blog/outlook-zero-day-cve-2026-124194-november-2026-patch-tuesday-gulf-egypt/">iFynx</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers exploit a Xen Orchestra authentication bypass to seize virtualisation hosts</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/08/</link>
+      <guid isPermaLink="false">brief-2026-11-11-08</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>Vates has warned that a critical authentication bypass in Xen Orchestra, tracked as VSA-2026-062, is being actively exploited in the wild. A specially crafted cookie can bypass login and give an attacker administrative actions, leading to arbitrary code execution on managed pools and a full takeover of an XCP-ng node as root. Vates linked the activity to an IP address previously flagged as a RedLine Stealer command-and-control server. Fixed versions are Xen Orchestra 6.9.1 and 6.10.0, and xo-server 5.211.2 and 5.213.1. Why it matters for tech: Xen Orchestra manages virtual machines and server pools, so a login bypass on an internet-facing instance hands an attacker the control plane for the hosts behind it.</description>
+      <content:encoded><![CDATA[<p>Vates has warned that a critical authentication bypass in Xen Orchestra, tracked as VSA-2026-062, is being actively exploited in the wild. A specially crafted cookie can bypass login and give an attacker administrative actions, leading to arbitrary code execution on managed pools and a full takeover of an XCP-ng node as root. Vates linked the activity to an IP address previously flagged as a RedLine Stealer command-and-control server. Fixed versions are Xen Orchestra 6.9.1 and 6.10.0, and xo-server 5.211.2 and 5.213.1.</p><p><strong>Why it matters for tech:</strong> Xen Orchestra manages virtual machines and server pools, so a login bypass on an internet-facing instance hands an attacker the control plane for the hosts behind it.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html">The Hacker News</a></li><li><a href="https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>SAP patches four maximum-severity flaws, including two that allow remote code execution</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-11/09/</link>
+      <guid isPermaLink="false">brief-2026-11-11-09</guid>
+      <pubDate>Wed, 11 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>SAP's November Security Patch Day addresses 38 new vulnerabilities, nine of them rated Critical, with four carrying the maximum CVSS score of 10.0. The four cover a SAML assertion verification bypass in NetWeaver AS ABAP, memory corruption in the Internet Communication Manager, a default access-control setting in SAP Gateway, and a heap overflow in SAP Web Dispatcher. SAP has not reported active exploitation of the four, and none of them appears in CISA's exploited-vulnerabilities catalog. Why it matters for tech: Four maximum-severity flaws in core SAP systems, two of them leading to remote code execution, make patching a priority this week for teams running SAP, even with no exploitation reported yet.</description>
+      <content:encoded><![CDATA[<p>SAP's November Security Patch Day addresses 38 new vulnerabilities, nine of them rated Critical, with four carrying the maximum CVSS score of 10.0. The four cover a SAML assertion verification bypass in NetWeaver AS ABAP, memory corruption in the Internet Communication Manager, a default access-control setting in SAP Gateway, and a heap overflow in SAP Web Dispatcher. SAP has not reported active exploitation of the four, and none of them appears in CISA's exploited-vulnerabilities catalog.</p><p><strong>Why it matters for tech:</strong> Four maximum-severity flaws in core SAP systems, two of them leading to remote code execution, make patching a priority this week for teams running SAP, even with no exploitation reported yet.</p><p>Source: </p><ul><li><a href="https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html">The Hacker News</a></li><li><a href="https://www.bleepingcomputer.com/news/security/sap-patches-four-maximum-severity-security-vulnerabilities/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>N-able takes its N-central platform offline after 30 alleged zero-days surface</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/07/</link>
+      <guid isPermaLink="false">brief-2026-11-10-07</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>N-able has taken its hosted N-central environments offline across the Americas, Europe and Asia-Pacific and told customers running the software on site to shut down their servers, after researcher Sean Bales disclosed more than 30 alleged zero-day flaws in a GitHub repository named Able2Shell. The flaws include authentication bypass, credential disclosure and remote code execution, and the most critical chain used unauthenticated XXE to steal a session, reset a password and run commands as the nable user. N-able said it had not observed active exploitation and is developing a hotfix, with updates every four hours and no return-to-service estimate given. Why it matters for tech: N-central manages IT systems for many small and mid-sized businesses, so taking the platform offline shows how a single disclosure can halt remote management for a large customer base at once.</description>
+      <content:encoded><![CDATA[<p>N-able has taken its hosted N-central environments offline across the Americas, Europe and Asia-Pacific and told customers running the software on site to shut down their servers, after researcher Sean Bales disclosed more than 30 alleged zero-day flaws in a GitHub repository named Able2Shell. The flaws include authentication bypass, credential disclosure and remote code execution, and the most critical chain used unauthenticated XXE to steal a session, reset a password and run commands as the nable user. N-able said it had not observed active exploitation and is developing a hotfix, with updates every four hours and no return-to-service estimate given.</p><p><strong>Why it matters for tech:</strong> N-central manages IT systems for many small and mid-sized businesses, so taking the platform offline shows how a single disclosure can halt remote management for a large customer base at once.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
+    <item>
+      <title>SSHole flaw lets attackers bypass login on some Linux systems</title>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-10/08/</link>
+      <guid isPermaLink="false">brief-2026-11-10-08</guid>
+      <pubDate>Tue, 10 Nov 2026 01:30:00 +0000</pubDate>
+      <category>Cybersecurity</category>
+      <description>A flaw named SSHole allows authentication bypass in OpenSSH on certain Linux systems built on musl, including Alpine, for accounts whose password hash is the single character "*". An oversized password makes musl return "*", which OpenSSH then treats as a match. Exploitation began on November 5, the day a proof of concept appeared, and OpenSSH 10.6p2 was released the same day as the fix. GreyNoise recorded the first successful exploitation on November 7, with 16 successful chains from 6 source IP addresses. Why it matters for tech: The flaw turns a password length check into a login bypass on affected systems, so administrators running musl-based Linux need the patched OpenSSH version rather than relying on password strength.</description>
+      <content:encoded><![CDATA[<p>A flaw named SSHole allows authentication bypass in OpenSSH on certain Linux systems built on musl, including Alpine, for accounts whose password hash is the single character "*". An oversized password makes musl return "*", which OpenSSH then treats as a match. Exploitation began on November 5, the day a proof of concept appeared, and OpenSSH 10.6p2 was released the same day as the fix. GreyNoise recorded the first successful exploitation on November 7, with 16 successful chains from 6 source IP addresses.</p><p><strong>Why it matters for tech:</strong> The flaw turns a password length check into a login bypass on affected systems, so administrators running musl-based Linux need the patched OpenSSH version rather than relying on password strength.</p><p>Source: </p><ul><li><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-sshole-openssh-flaw-to-breach-linux-systems/">BleepingComputer</a></li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>Iris Ohyama breach may have exposed data of 7.7 million people</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-09/05/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-09/05/</link>
       <guid isPermaLink="false">brief-2026-11-09-05</guid>
       <pubDate>Mon, 09 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -17,7 +143,7 @@
     </item>
     <item>
       <title>Claude Code settings files leak passwords and keys in public GitHub repos</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/07/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/07/</link>
       <guid isPermaLink="false">brief-2026-11-08-07</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -26,7 +152,7 @@
     </item>
     <item>
       <title>French bank Arkéa hit by heist of up to $133 million through a service provider</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/08/</link>
       <guid isPermaLink="false">brief-2026-11-08-08</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -35,7 +161,7 @@
     </item>
     <item>
       <title>Microsoft warns agentic AI framework ARTEX is being used against banks</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-08/09/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-08/09/</link>
       <guid isPermaLink="false">brief-2026-11-08-09</guid>
       <pubDate>Sun, 08 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -44,7 +170,7 @@
     </item>
     <item>
       <title>Chainalysis breach exposed credentials for all customers</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/08/</link>
       <guid isPermaLink="false">brief-2026-11-07-08</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -53,7 +179,7 @@
     </item>
     <item>
       <title>QNAP warns hackers are breaching NAS devices through Plex</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-07/09/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-07/09/</link>
       <guid isPermaLink="false">brief-2026-11-07-09</guid>
       <pubDate>Sat, 07 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -62,7 +188,7 @@
     </item>
     <item>
       <title>OpenSSH ships emergency fix for a flaw that let long passwords bypass login on Alpine Linux</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/08/</link>
       <guid isPermaLink="false">brief-2026-11-06-08</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -71,7 +197,7 @@
     </item>
     <item>
       <title>FBI and CISA warn hackers are targeting refrigeration systems</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-06/09/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-06/09/</link>
       <guid isPermaLink="false">brief-2026-11-06-09</guid>
       <pubDate>Fri, 06 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -80,7 +206,7 @@
     </item>
     <item>
       <title>Zyxel patches zero day used to compromise nearly 1,000 network switches</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/08/</link>
       <guid isPermaLink="false">brief-2026-11-05-08</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -89,7 +215,7 @@
     </item>
     <item>
       <title>Google patches critical Android flaw that needs no user interaction</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-05/09/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-05/09/</link>
       <guid isPermaLink="false">brief-2026-11-05-09</guid>
       <pubDate>Thu, 05 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -98,7 +224,7 @@
     </item>
     <item>
       <title>Microsoft tracks fake download campaign spreading trojanised installers</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-04/08/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-04/08/</link>
       <guid isPermaLink="false">brief-2026-11-04-08</guid>
       <pubDate>Wed, 04 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
@@ -107,7 +233,7 @@
     </item>
     <item>
       <title>Microsoft: real world exploitation concentrates in a small set of vulnerabilities</title>
-      <link>https://thillairaj.github.io/signal-preview/brief/2026-11-03/06/</link>
+      <link>https://thillairaj.github.io/The-Signal-AI-Quantum/brief/2026-11-03/06/</link>
       <guid isPermaLink="false">brief-2026-11-03-06</guid>
       <pubDate>Tue, 03 Nov 2026 01:30:00 +0000</pubDate>
       <category>Cybersecurity</category>
