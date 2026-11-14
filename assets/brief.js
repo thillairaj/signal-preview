@@ -17,6 +17,9 @@ window.SignalBriefUI = (function () {
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
     "Sep", "Oct", "Nov", "Dec"];
+  var MONTHS_FULL = ["January", "February", "March", "April", "May",
+    "June", "July", "August", "September", "October", "November",
+    "December"];
   var REDUCED = false;
   try {
     REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -59,6 +62,107 @@ window.SignalBriefUI = (function () {
   function firstSentence(s) {
     var m = String(s || "").match(/^[\s\S]*?[.!?](?=\s|$)/);
     return (m ? m[0] : String(s || "")).trim();
+  }
+  /* ---------- edition calendar (Nov 14, 2026) ----------
+     One component replaces the edition switcher row and the Past
+     editions list on both surfaces: a month grid of day numbers.
+     A date with an edition is a button (gold dot, full readable date
+     plus story count as its aria-label); other dates are muted text.
+     state.cal is the shown month; full renders sync it to the open
+     edition's month, while the month arrows re-render only the
+     calendar so browsing months never changes the open edition. */
+  function dateParts(iso) {
+    var p = String(iso || "").split("-").map(Number);
+    return { y: p[0], m: p[1] - 1, d: p[2] };
+  }
+  /* First index per ISO date: editions sort newest first, so for a
+     date with a standing and a breaking edition the breaking one
+     (later published) is the date's edition. */
+  function editionsByDate(state) {
+    var map = {};
+    state.data.editions.forEach(function (ed, i) {
+      if (!(ed.date in map)) map[ed.date] = i;
+    });
+    return map;
+  }
+  function calendarInner(state) {
+    var eds = state.data.editions;
+    var first = dateParts(eds[eds.length - 1].date);
+    var now = new Date();
+    var curY = now.getFullYear(), curM = now.getMonth();
+    var y = state.cal.y, m = state.cal.m;
+    var byDate = editionsByDate(state);
+    var prevOff = y < first.y || (y === first.y && m <= first.m);
+    var nextOff = y > curY || (y === curY && m >= curM);
+    var out =
+      '<div class="bu-cal-head">' +
+      '<button type="button" class="bu-cal-arrow" data-cal-prev ' +
+      'aria-label="Previous month"' + (prevOff ? " disabled" : "") +
+      ">‹</button>" +
+      '<div class="bu-cal-month">' + MONTHS_FULL[m] + " " + y + "</div>" +
+      '<button type="button" class="bu-cal-arrow" data-cal-next ' +
+      'aria-label="Next month"' + (nextOff ? " disabled" : "") +
+      ">›</button></div>" +
+      '<div class="bu-cal-dow" aria-hidden="true">' +
+      "<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span>" +
+      "<span>Fri</span><span>Sat</span><span>Sun</span></div>";
+    var lead = (new Date(Date.UTC(y, m, 1)).getUTCDay() + 6) % 7;
+    var days = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+    var cells = "";
+    for (var i = 0; i < lead; i++) {
+      cells += '<span class="bu-cal-blank"></span>';
+    }
+    for (var dnum = 1; dnum <= days; dnum++) {
+      var iso = y + "-" + String(m + 1).padStart(2, "0") + "-" +
+        String(dnum).padStart(2, "0");
+      var isToday = y === curY && m === curM && dnum === now.getDate();
+      if (iso in byDate) {
+        var ei = byDate[iso], ed = eds[ei];
+        var sel = ei === state.edIdx;
+        cells += '<button type="button" class="bu-cal-day' +
+          (sel ? " bu-cal-sel" : "") +
+          (isToday && !sel ? " bu-cal-today" : "") +
+          '" data-cal-ed="' + ei + '"' +
+          (sel ? ' aria-current="true"' : "") +
+          ' aria-label="' + esc(fmtDate(iso)) + ", " + ed.items.length +
+          (ed.items.length === 1 ? " story" : " stories") + '">' + dnum +
+          '<span class="bu-cal-dot" aria-hidden="true"></span></button>';
+      } else {
+        cells += '<span class="bu-cal-day bu-cal-off' +
+          (isToday ? " bu-cal-today" : "") + '">' + dnum + "</span>";
+      }
+    }
+    return out + '<div class="bu-cal-grid">' + cells + "</div>";
+  }
+  function renderCalendar(state) {
+    var cal = state.root.querySelector(".bu-cal");
+    if (!cal) return;
+    cal.innerHTML = calendarInner(state);
+    wireCalendar(state);
+  }
+  function wireCalendar(state) {
+    var prev = state.root.querySelector("[data-cal-prev]");
+    var next = state.root.querySelector("[data-cal-next]");
+    if (prev) prev.addEventListener("click", function () {
+      state.cal = state.cal.m === 0
+        ? { y: state.cal.y - 1, m: 11 }
+        : { y: state.cal.y, m: state.cal.m - 1 };
+      renderCalendar(state);
+    });
+    if (next) next.addEventListener("click", function () {
+      state.cal = state.cal.m === 11
+        ? { y: state.cal.y + 1, m: 0 }
+        : { y: state.cal.y, m: state.cal.m + 1 };
+      renderCalendar(state);
+    });
+    state.root.querySelectorAll("[data-cal-ed]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        state.edIdx = Number(b.getAttribute("data-cal-ed"));
+        state.cat = "";
+        render(state);
+        state.root.scrollIntoView({ block: "start" });
+      });
+    });
   }
   function storyNN(item) {
     var m = String(item.id || "").match(/-(\d+)$/);
@@ -441,7 +545,7 @@ window.SignalBriefUI = (function () {
     var state = {
       root: root,
       siteRoot: new URL(prefix, window.location.href).href,
-      data: null, edIdx: 0, cat: "", view: []
+      data: null, edIdx: 0, cat: "", view: [], cal: null
     };
     states.push(state);
     root.innerHTML =
@@ -475,6 +579,8 @@ window.SignalBriefUI = (function () {
       ? ed.items.filter(function (i) { return i.category === state.cat; })
       : ed.items.slice();
     var time = editionTime(ed);
+    var edp = dateParts(ed.date);
+    state.cal = { y: edp.y, m: edp.m };
     var chips = ['<button type="button" class="bu-chip" data-cat="" ' +
       'aria-pressed="' + (!state.cat) + '">All' +
       '<span class="bu-count">' + ed.items.length + "</span></button>"]
@@ -511,14 +617,6 @@ window.SignalBriefUI = (function () {
         '<span class="bu-share-slot" data-share="' + esc(item.id) +
         '"></span></div></div></article>';
     }).join("");
-    var past = state.data.editions.map(function (e, i) {
-      return '<button type="button" class="bu-past-item" data-ed="' + i +
-        '" aria-current="' + (i === state.edIdx) + '">' +
-        '<span class="bu-past-date">' + esc(fmtDate(e.date)) + "</span>" +
-        '<span class="bu-past-meta">' + e.items.length + " stories · " +
-        esc(editionTime(e)) + ' IST</span>' +
-        '<span class="bu-past-arrow">›</span></button>';
-    }).join("");
     state.root.innerHTML =
       '<div class="brief-ui">' +
       '<header class="bu-head">' +
@@ -528,19 +626,13 @@ window.SignalBriefUI = (function () {
       "Every story is checked and linked to its source.</p>" +
       '<button type="button" class="bu-follow">Follow</button>' +
       "</header>" +
-      '<div class="bu-switch">' +
-      '<button type="button" class="bu-arrow" data-bu-older ' +
-      'aria-label="Older edition"' +
-      (state.edIdx >= state.data.editions.length - 1 ? " disabled" : "") +
-      ">‹</button>" +
-      '<div class="bu-eddate">' +
+      '<div class="bu-cal" role="group" ' +
+      'aria-label="Choose an edition by date">' +
+      calendarInner(state) + "</div>" +
+      '<p class="bu-edmeta">' +
       (ed.breaking ? '<span class="bu-breaking">Breaking update</span>' : "") +
-      esc(fmtDate(ed.date)) + "</div>" +
-      '<button type="button" class="bu-arrow" data-bu-newer ' +
-      'aria-label="Newer edition"' +
-      (state.edIdx <= 0 ? " disabled" : "") + ">›</button></div>" +
-      '<p class="bu-edmeta">' + ed.items.length + " stories · published " +
-      esc(time) + " IST</p>" +
+      esc(fmtDate(ed.date)) + " · " + ed.items.length +
+      " stories · published " + esc(time) + " IST</p>" +
       '<div class="bu-chips">' + chips + "</div>" +
       '<div class="bu-rail">' + cards + "</div>" +
       '<div class="bu-railbar">' +
@@ -550,8 +642,6 @@ window.SignalBriefUI = (function () {
       '<span class="bu-railcount"></span>' +
       '<button type="button" class="bu-rbtn" data-bu-next ' +
       'aria-label="Next story">›</button></div>' +
-      '<div class="bu-past"><h3>Past editions</h3>' +
-      '<div class="bu-past-list">' + past + "</div></div>" +
       "</div>";
     wire(state);
   }
@@ -560,28 +650,11 @@ window.SignalBriefUI = (function () {
     root.querySelector(".bu-follow").addEventListener("click", function () {
       openFollow(state, this);
     });
-    var older = root.querySelector("[data-bu-older]");
-    var newer = root.querySelector("[data-bu-newer]");
-    if (older) older.addEventListener("click", function () {
-      if (state.edIdx < state.data.editions.length - 1) {
-        state.edIdx++; state.cat = ""; render(state);
-      }
-    });
-    if (newer) newer.addEventListener("click", function () {
-      if (state.edIdx > 0) { state.edIdx--; state.cat = ""; render(state); }
-    });
+    wireCalendar(state);
     root.querySelectorAll(".bu-chip").forEach(function (chip) {
       chip.addEventListener("click", function () {
         state.cat = chip.getAttribute("data-cat") || "";
         render(state);
-      });
-    });
-    root.querySelectorAll(".bu-past-item").forEach(function (b) {
-      b.addEventListener("click", function () {
-        state.edIdx = Number(b.getAttribute("data-ed"));
-        state.cat = "";
-        render(state);
-        state.root.scrollIntoView({ block: "start" });
       });
     });
     var byId = {};
