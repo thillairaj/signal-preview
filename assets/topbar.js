@@ -4,7 +4,9 @@
    and styled by assets/design-system.css; this script carries only
    the behaviour: the Learn mega menu (click, outside click, Esc,
    aria-expanded), the mobile full screen menu (button, close, Esc,
-   aria-expanded), and the Breaking dot in the bar, which lights while
+   aria-expanded), the theme toggle for the spaces and games
+   (data-tb-theme; the other families wire their own by id), and
+   the Breaking dot in the bar, which lights while
    any breaking item is inside its 24 hour active window (read from
    data/breaking.json, resolved relative to this script so every page
    depth works). Defensive throughout: a missing element or a failed
@@ -57,6 +59,40 @@
     });
     $$("a, button", menu).forEach(function (el) {
       el.addEventListener("click", function () { if (el !== closeBtn) menu.hidden = true; });
+    });
+  }
+
+  /* Theme toggle wiring (round 5, Nov 15, 2026) for the families
+     whose pages carry no inline theme script of their own: the
+     learning spaces and the games. Their bar button carries
+     data-tb-theme; decks, tables, the hub and the Brief wire their
+     own buttons by id and are not touched here. The mechanism is
+     the site standard: the aisignal_theme localStorage key plus
+     the data-theme attribute on the root element (the pre paint
+     init script and the data-theme palette overrides are emitted
+     per page by patch-global-topbar.py). The glyph follows the
+     deck convention: a sun while dark is active, a moon while
+     light is active. */
+  function initThemeToggle() {
+    var btn = $("[data-tb-theme]");
+    if (!btn) return;
+    var root = document.documentElement;
+    function current() {
+      var t = root.getAttribute("data-theme");
+      if (t === "dark" || t === "light") return t;
+      var dark = false;
+      if (typeof window.matchMedia === "function") {
+        try { dark = window.matchMedia("(prefers-color-scheme: dark)").matches; } catch (e) { /* light */ }
+      }
+      return dark ? "dark" : "light";
+    }
+    function sync() { btn.textContent = current() === "dark" ? "☀" : "☾"; }
+    sync();
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("aisignal_theme", next); } catch (e) { /* private mode */ }
+      sync();
     });
   }
 
@@ -124,6 +160,7 @@
     try { initMega(); } catch (e) { /* menu is progressive enhancement */ }
     try { initMobileMenu(); } catch (e) { /* as above */ }
     try { initBreakingDot(); } catch (e) { /* dot stays hidden */ }
+    try { initThemeToggle(); } catch (e) { /* toggle is progressive enhancement */ }
     try { initHeaderSync(); } catch (e) { /* CSS fallback height still applies */ }
   }
   if (document.readyState === "loading") {
