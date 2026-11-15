@@ -17,8 +17,11 @@ week's site data to exactly this shape.
    plain language.
 2. **This week in Quantum & AI.** 3 to 5 top stories drawn from
    Signal Brief and Breaking. Each story: a short heading, 2 to 3
-   sentences on what happened and why it matters, then ONE link
-   phrased as an invitation to the matching learning page.
+   sentences on what happened and why it matters, a plain text
+   source line directly under the story in the form
+   "Source: <organisation>" naming the primary source organisation
+   from the story's Brief or Breaking item (never a link), then
+   ONE link phrased as an invitation to the matching learning page.
 3. **New on The Signal this week.** Everything new or changed on
    the site in the last 7 days: deck topics, explainers, periodic
    table terms, podcast episodes, research articles, games. Each
@@ -35,7 +38,8 @@ week's site data to exactly this shape.
 - Brand voice is "we". Warm, clear English.
 - Facts only, no hype. Every story is traceable to a Signal Brief
   edition, a Breaking item, or a page change on the site.
-- Maximum ONE link per item.
+- Maximum ONE link per item. The source line is plain text and
+  does not count as the item's link.
 - HTML and plain text versions. No PDF, no attachments.
 - Mobile friendly, the site's light colours, Instrument Serif
   headings, Inter body text.
