@@ -82,10 +82,49 @@
       .catch(function () { /* dot stays hidden */ });
   }
 
+  /* Header height tracking (round 4, Nov 15, 2026). The bar is
+     sticky; design-system.css reserves scroll-padding-top from the
+     --ds-header-h custom property so anchor jumps land below the
+     bar. This keeps the property equal to the bar's measured
+     height: bar alone normally, bar plus ticker while the Breaking
+     ticker inside the bar is visible (the ticker is toggled
+     asynchronously by assets/breaking.js, so the bar is observed
+     for attribute and subtree changes as well as resizes). */
+  function syncHeaderHeight() {
+    var bar = $(".ds-topbar");
+    if (!bar) return;
+    var h = 0;
+    if (bar.getBoundingClientRect) h = bar.getBoundingClientRect().height || 0;
+    if (!h) h = bar.offsetHeight || 0;
+    if (h > 0) {
+      document.documentElement.style.setProperty("--ds-header-h", h + "px");
+    }
+  }
+
+  function initHeaderSync() {
+    var bar = $(".ds-topbar");
+    if (!bar) return;
+    syncHeaderHeight();
+    window.addEventListener("resize", syncHeaderHeight);
+    if (typeof ResizeObserver !== "undefined") {
+      try { new ResizeObserver(syncHeaderHeight).observe(bar); } catch (e) { /* fall through */ }
+    }
+    if (typeof MutationObserver !== "undefined") {
+      try {
+        new MutationObserver(syncHeaderHeight).observe(bar, {
+          attributes: true, childList: true, subtree: true,
+          attributeFilter: ["hidden", "class", "style"]
+        });
+      } catch (e) { /* resize listener still covers viewport changes */ }
+    }
+  }
+  window.DSHeader = { sync: syncHeaderHeight };
+
   function init() {
     try { initMega(); } catch (e) { /* menu is progressive enhancement */ }
     try { initMobileMenu(); } catch (e) { /* as above */ }
     try { initBreakingDot(); } catch (e) { /* dot stays hidden */ }
+    try { initHeaderSync(); } catch (e) { /* CSS fallback height still applies */ }
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
