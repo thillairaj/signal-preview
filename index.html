@@ -780,7 +780,7 @@ window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-u
 </script>
 <!-- ss-page-share:start -->
 <script>
-(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), function(){var t=document.querySelector(".top-tab.active");var v=t?t.getAttribute("data-view"):"home";return window.__ssHomeShareConfigs[v]||window.__ssHomeShareConfigs.home;});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
+(function(){function go(){if(window.SignalShare&&SignalShare.mountPageShare){SignalShare.mountPageShare(document.getElementById("ssPageMount"), function(){var v=(document.body&&document.body.dataset&&document.body.dataset.view)||"home";return window.__ssHomeShareConfigs[v]||window.__ssHomeShareConfigs.home;});}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go);}else{go();}})();
 </script>
 <!-- ss-page-share:end -->
 <div class="ds-topics-band ds-root">
@@ -818,7 +818,7 @@ window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-u
         <li><a href="breaking/">Breaking</a></li>
         <li><a href="brief/">Signal Brief</a></li>
         <li><a href="#brief">Brief view</a></li>
-        <li><a href="https://www.linkedin.com/in/thillairaj" data-ds-subscribe target="_blank" rel="noopener">Newsletter on LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" data-ds-subscribe target="_blank" rel="noopener">Subscribe on LinkedIn</a></li>
       </ul>
     </div>
   </div>
