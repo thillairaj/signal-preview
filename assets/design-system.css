@@ -108,9 +108,21 @@ body { background: var(--ds-bg); }
    sticky bar; scroll-padding-top reserves the measured bar height.
    assets/topbar.js keeps --ds-header-h equal to the bar's measured
    height (bar alone, or bar plus ticker while the ticker is
-   visible), so the reserved space tracks the ticker state. */
+   visible), so the reserved space tracks the ticker state.
+   Round 5 (Nov 15, 2026): on phones the eyebrow was still cut off
+   after the round 4 fix. Two gaps combined: the overflow-anchor
+   rule sat on body alone, while the root scroller whose anchoring
+   must be disabled is the html element, so the mobile browser
+   still applied the compensation shift; and the mobile hero top
+   padding (36px) is smaller than the ticker height (40px), so
+   even a single full shift parked the eyebrow under the grown
+   bar, where the desktop padding (76px) had absorbed it. The
+   rule now sits on html as well, and the under 900px hero
+   padding (64px, in the responsive block below) exceeds the
+   ticker height plus clearance, so the eyebrow clears the bar
+   in both ticker states even if a browser anchors anyway. */
 html { scroll-padding-top: calc(var(--ds-header-h, 57px) + 10px); }
-body { overflow-anchor: none; }
+html, body { overflow-anchor: none; }
 
 /* ---------- global top bar ---------- */
 .ds-topbar {
@@ -661,7 +673,10 @@ body { overflow-anchor: none; }
 @media (max-width: 899px) {
   .ds-nav { display: none; }
   .ds-menu-btn { display: inline-flex; align-items: center; justify-content: center; }
-  .ds-hero-in { grid-template-columns: 1fr; padding-top: 36px; gap: 26px; }
+  /* Round 5: 64px top padding = the 40px ticker height plus 24px
+     of air, so the hero eyebrow stays below the header even under
+     a full scroll anchoring shift when the ticker appears. */
+  .ds-hero-in { grid-template-columns: 1fr; padding-top: 64px; gap: 26px; }
   .ds-news { grid-template-columns: 1fr; }
   .ds-hub-layout { grid-template-columns: 1fr; }
   .ds-start { grid-template-columns: 1fr; }
