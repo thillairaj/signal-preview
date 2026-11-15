@@ -63,14 +63,20 @@ window.SignalBriefUI = (function () {
     var m = String(s || "").match(/^[\s\S]*?[.!?](?=\s|$)/);
     return (m ? m[0] : String(s || "")).trim();
   }
-  /* ---------- edition calendar (Nov 14, 2026) ----------
+  /* ---------- edition calendar (Nov 14, 2026; week strip Nov 15) ----------
      One component replaces the edition switcher row and the Past
-     editions list on both surfaces: a month grid of day numbers.
+     editions list on both surfaces. At 900px and above it is a month
+     grid of day numbers. Below 900px it collapses to a one week strip
+     (the shown week, stepped by its own arrows) whose expander,
+     labelled with the month and year, opens the same month grid.
      A date with an edition is a button (gold dot, full readable date
      plus story count as its aria-label); other dates are muted text.
-     state.cal is the shown month; full renders sync it to the open
-     edition's month, while the month arrows re-render only the
-     calendar so browsing months never changes the open edition. */
+     The today ring shows only on a date that has an edition.
+     state.cal is the shown month and state.weekMs the Monday of the
+     shown week; full renders sync both to the open edition, while the
+     arrows re-render only the calendar so browsing months or weeks
+     never changes the open edition. Opening an edition collapses the
+     grid again (state.calOpen reset on every full render). */
   function dateParts(iso) {
     var p = String(iso || "").split("-").map(Number);
     return { y: p[0], m: p[1] - 1, d: p[2] };
@@ -85,16 +91,42 @@ window.SignalBriefUI = (function () {
     });
     return map;
   }
-  function calendarInner(state) {
-    var eds = state.data.editions;
-    var first = dateParts(eds[eds.length - 1].date);
-    var now = new Date();
-    var curY = now.getFullYear(), curM = now.getMonth();
+  /* Monday (00:00 UTC) of the week containing the calendar date. */
+  function mondayMs(y, m, d) {
+    var t = Date.UTC(y, m, d);
+    return t - ((new Date(t).getUTCDay() + 6) % 7) * 86400000;
+  }
+  function isoOf(t) {
+    var d = new Date(t);
+    return d.getUTCFullYear() + "-" +
+      String(d.getUTCMonth() + 1).padStart(2, "0") + "-" +
+      String(d.getUTCDate()).padStart(2, "0");
+  }
+  /* One day cell, shared by the month grid and the week strip so the
+     two views can never drift: edition dates are buttons with the
+     gold dot, the open edition is the filled pill, today rings only
+     when the date has an edition, and other dates are muted text. */
+  function dayCell(state, byDate, iso, dnum, isToday) {
+    if (iso in byDate) {
+      var ei = byDate[iso], ed = state.data.editions[ei];
+      var sel = ei === state.edIdx;
+      return '<button type="button" class="bu-cal-day' +
+        (sel ? " bu-cal-sel" : "") +
+        (isToday && !sel ? " bu-cal-today" : "") +
+        '" data-cal-ed="' + ei + '"' +
+        (sel ? ' aria-current="true"' : "") +
+        ' aria-label="' + esc(fmtDate(iso)) + ", " + ed.items.length +
+        (ed.items.length === 1 ? " story" : " stories") + '">' + dnum +
+        '<span class="bu-cal-dot" aria-hidden="true"></span></button>';
+    }
+    return '<span class="bu-cal-day bu-cal-off">' + dnum + "</span>";
+  }
+  function monthGrid(state, byDate, first, curY, curM, curD) {
     var y = state.cal.y, m = state.cal.m;
-    var byDate = editionsByDate(state);
     var prevOff = y < first.y || (y === first.y && m <= first.m);
     var nextOff = y > curY || (y === curY && m >= curM);
     var out =
+      '<div class="bu-cal-full">' +
       '<div class="bu-cal-head">' +
       '<button type="button" class="bu-cal-arrow" data-cal-prev ' +
       'aria-label="Previous month"' + (prevOff ? " disabled" : "") +
@@ -115,29 +147,64 @@ window.SignalBriefUI = (function () {
     for (var dnum = 1; dnum <= days; dnum++) {
       var iso = y + "-" + String(m + 1).padStart(2, "0") + "-" +
         String(dnum).padStart(2, "0");
-      var isToday = y === curY && m === curM && dnum === now.getDate();
-      if (iso in byDate) {
-        var ei = byDate[iso], ed = eds[ei];
-        var sel = ei === state.edIdx;
-        cells += '<button type="button" class="bu-cal-day' +
-          (sel ? " bu-cal-sel" : "") +
-          (isToday && !sel ? " bu-cal-today" : "") +
-          '" data-cal-ed="' + ei + '"' +
-          (sel ? ' aria-current="true"' : "") +
-          ' aria-label="' + esc(fmtDate(iso)) + ", " + ed.items.length +
-          (ed.items.length === 1 ? " story" : " stories") + '">' + dnum +
-          '<span class="bu-cal-dot" aria-hidden="true"></span></button>';
-      } else {
-        cells += '<span class="bu-cal-day bu-cal-off' +
-          (isToday ? " bu-cal-today" : "") + '">' + dnum + "</span>";
-      }
+      var isToday = y === curY && m === curM && dnum === curD;
+      cells += dayCell(state, byDate, iso, dnum, isToday);
     }
-    return out + '<div class="bu-cal-grid">' + cells + "</div>";
+    return out + '<div class="bu-cal-grid">' + cells + "</div></div>";
+  }
+  /* The compact week strip shown below 900px: the shown week's seven
+     day cells between two week arrows, plus the expander that opens
+     the month grid. The expander label takes the month of the shown
+     week's Thursday, the standard week to month convention. The strip
+     cannot step to a week entirely before the first edition's week,
+     nor past the week containing today. */
+  function weekStrip(state, byDate, first, curY, curM, curD) {
+    if (state.weekMs == null) {
+      var ep = dateParts(state.data.editions[state.edIdx].date);
+      state.weekMs = mondayMs(ep.y, ep.m, ep.d);
+    }
+    var prevOff = state.weekMs <= mondayMs(first.y, first.m, first.d);
+    var nextOff = state.weekMs >= mondayMs(curY, curM, curD);
+    var cells = "";
+    for (var i = 0; i < 7; i++) {
+      var t = state.weekMs + i * 86400000;
+      var dt = new Date(t);
+      var isToday = dt.getUTCFullYear() === curY &&
+        dt.getUTCMonth() === curM && dt.getUTCDate() === curD;
+      cells += dayCell(state, byDate, isoOf(t), dt.getUTCDate(), isToday);
+    }
+    var thu = new Date(state.weekMs + 3 * 86400000);
+    var label = MONTHS_FULL[thu.getUTCMonth()] + " " + thu.getUTCFullYear();
+    return '<div class="bu-cal-strip">' +
+      '<div class="bu-strip-row">' +
+      '<button type="button" class="bu-cal-arrow" data-strip-prev ' +
+      'aria-label="Previous week"' + (prevOff ? " disabled" : "") +
+      ">‹</button>" +
+      '<div class="bu-strip-days">' + cells + "</div>" +
+      '<button type="button" class="bu-cal-arrow" data-strip-next ' +
+      'aria-label="Next week"' + (nextOff ? " disabled" : "") +
+      ">›</button></div>" +
+      '<button type="button" class="bu-strip-exp" data-cal-expand ' +
+      'aria-expanded="' + (state.calOpen ? "true" : "false") + '">' +
+      '<span class="bu-strip-month">' + label + "</span>" +
+      '<span class="bu-strip-chev" aria-hidden="true">' +
+      (state.calOpen ? "▴" : "▾") + "</span></button></div>";
+  }
+  function calendarInner(state) {
+    var eds = state.data.editions;
+    var first = dateParts(eds[eds.length - 1].date);
+    var now = new Date();
+    var curY = now.getFullYear(), curM = now.getMonth(),
+      curD = now.getDate();
+    var byDate = editionsByDate(state);
+    return weekStrip(state, byDate, first, curY, curM, curD) +
+      monthGrid(state, byDate, first, curY, curM, curD);
   }
   function renderCalendar(state) {
     var cal = state.root.querySelector(".bu-cal");
     if (!cal) return;
     cal.innerHTML = calendarInner(state);
+    cal.classList.toggle("is-open", !!state.calOpen);
     wireCalendar(state);
   }
   function wireCalendar(state) {
@@ -153,6 +220,21 @@ window.SignalBriefUI = (function () {
       state.cal = state.cal.m === 11
         ? { y: state.cal.y + 1, m: 0 }
         : { y: state.cal.y, m: state.cal.m + 1 };
+      renderCalendar(state);
+    });
+    var sprev = state.root.querySelector("[data-strip-prev]");
+    var snext = state.root.querySelector("[data-strip-next]");
+    if (sprev) sprev.addEventListener("click", function () {
+      state.weekMs -= 7 * 86400000;
+      renderCalendar(state);
+    });
+    if (snext) snext.addEventListener("click", function () {
+      state.weekMs += 7 * 86400000;
+      renderCalendar(state);
+    });
+    var exp = state.root.querySelector("[data-cal-expand]");
+    if (exp) exp.addEventListener("click", function () {
+      state.calOpen = !state.calOpen;
       renderCalendar(state);
     });
     state.root.querySelectorAll("[data-cal-ed]").forEach(function (b) {
@@ -545,7 +627,8 @@ window.SignalBriefUI = (function () {
     var state = {
       root: root,
       siteRoot: new URL(prefix, window.location.href).href,
-      data: null, edIdx: 0, cat: "", view: [], cal: null
+      data: null, edIdx: 0, cat: "", view: [], cal: null,
+      weekMs: null, calOpen: false
     };
     states.push(state);
     root.innerHTML =
@@ -581,6 +664,8 @@ window.SignalBriefUI = (function () {
     var time = editionTime(ed);
     var edp = dateParts(ed.date);
     state.cal = { y: edp.y, m: edp.m };
+    state.weekMs = mondayMs(edp.y, edp.m, edp.d);
+    state.calOpen = false;
     var chips = ['<button type="button" class="bu-chip" data-cat="" ' +
       'aria-pressed="' + (!state.cat) + '">All' +
       '<span class="bu-count">' + ed.items.length + "</span></button>"]

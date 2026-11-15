@@ -98,6 +98,32 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 .bu-cal-sel { background: var(--b-ink); color: var(--b-card); }
 .bu-cal-today { box-shadow: inset 0 0 0 2px var(--b-gold); }
 .bu-cal-off { color: var(--b-muted); opacity: .45; }
+
+/* Week strip (Nov 15, 2026): below 900px the calendar collapses to
+   the shown week plus a month expander, and the month grid above
+   shows only while the calendar is expanded. At 900px and above the
+   strip is not shown and the month grid always shows. */
+.bu-cal-strip { display: none; }
+.bu-strip-row { display: flex; align-items: center; gap: 6px; }
+.bu-strip-days {
+  flex: 1 1 auto; display: grid;
+  grid-template-columns: repeat(7, 1fr); gap: 4px;
+}
+.bu-strip-exp {
+  width: 100%; margin-top: 10px; padding: 9px 12px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--b-line); border-radius: 999px;
+  background: transparent; color: var(--b-ink); cursor: pointer;
+  font: inherit; font-size: .9rem; font-weight: 600;
+}
+.bu-strip-exp:hover, .bu-strip-exp:focus-visible { border-color: var(--b-gold); outline: none; }
+.bu-strip-month { font-family: Fraunces, Georgia, serif; font-size: 1.02rem; }
+.bu-strip-chev { color: var(--b-gold); font-size: .8rem; }
+@media (max-width: 899px) {
+  .bu-cal-strip { display: block; }
+  .bu-cal-full { display: none; }
+  .bu-cal.is-open .bu-cal-full { display: block; margin-top: 12px; }
+}
 .bu-breaking {
   color: #b00020; font-weight: 700; letter-spacing: .08em; font-size: .72rem;
   text-transform: uppercase; display: block; font-family: Inter, sans-serif;
