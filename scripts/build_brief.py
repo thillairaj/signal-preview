@@ -88,6 +88,60 @@ def fmt_date_short(iso):
     return d.strftime("%-d %b %Y")
 
 
+# ---------- global top bar (fix round, Nov 15, 2026) ----------
+# The same bar patch-global-topbar.py injects into generated pages;
+# emitted here so rebuilt Brief pages keep it. Styles live in
+# assets/design-system.css (.gtb-* classes). Navigation links are
+# relative so the pages link inside whichever deployment serves them.
+_GTB_NEWSLETTER = ("https://www.linkedin.com/newsletters/"
+                   "qubitzsi-weekly-newsletter-7516680446613680128")
+
+
+def global_topbar(p, crumb_html=""):
+    topic = (f'<a href="{p}topics/quantum/">Quantum</a>'
+             f'<a href="{p}ai-learning-space/">AI and Agentic AI</a>'
+             f'<a href="{p}cloud-devops-learning-space/">Cloud and DevOps</a>'
+             f'<a href="{p}cybersecurity-learning-space/">Cybersecurity</a>')
+    fmt = (f'<a href="{p}index.html#learn-decks">Decks</a>'
+           f'<a href="{p}explainers/">Explainers</a>'
+           f'<a href="{p}index.html#learn-tables">Periodic tables</a>'
+           f'<a href="{p}index.html#learn-videos">Video rooms</a>'
+           f'<a href="{p}index.html#learn-games">Games</a>'
+           f'<a href="{p}index.html#podcast">Podcasts</a>'
+           f'<a href="{p}index.html#research">Articles</a>'
+           f'<a href="{p}index.html#feed">Live wire and news</a>'
+           f'<a href="{p}index.html#brief">Signal Brief</a>')
+    out = ('<div class="gtb" data-global-topbar><div class="gtb-in">'
+           f'<a class="gtb-logo" href="{p}index.html">The <em>Signal</em></a>'
+           '<nav class="gtb-nav" aria-label="Main navigation">'
+           '<details class="gtb-learn"><summary>Learn</summary>'
+           '<div class="gtb-menu">'
+           f'<div class="gtb-col"><span class="gtb-h">By topic</span>{topic}</div>'
+           f'<div class="gtb-col"><span class="gtb-h">By format</span>{fmt}</div>'
+           '</div></details>'
+           f'<a href="{p}index.html#news-two-ways">The Signal</a>'
+           f'<a href="{p}breaking/">Breaking</a>'
+           f'<a href="{p}index.html#podcast">Podcasts</a>'
+           f'<a class="gtb-sub" href="{_GTB_NEWSLETTER}" target="_blank" '
+           'rel="noopener">Subscribe</a>'
+           '</nav></div>')
+    if crumb_html:
+        out += ('<nav class="gtb-crumb" aria-label="Breadcrumb">'
+                + crumb_html + '</nav>')
+    return out + '</div>'
+
+
+def with_global_bar(page_html, p, crumb_html=""):
+    if "data-global-topbar" in page_html:
+        return page_html
+    page_html = page_html.replace(
+        "<head>",
+        '<head>\n<link rel="stylesheet" href="' + p
+        + 'assets/design-system.css?v=20261115">', 1)
+    return page_html.replace(
+        "<body>", "<body>\n  " + global_topbar(p, crumb_html), 1)
+
+
 def edition_time(edition):
     if edition.get("published"):
         dt = datetime.fromisoformat(edition["published"])
@@ -237,7 +291,7 @@ def build_page(data, base):
         "document.addEventListener(\"DOMContentLoaded\",go);}"
         "else{go();}})();\n</script>\n<!-- ss-page-share:end -->"
     )
-    return f"""<!DOCTYPE html>
+    page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -260,7 +314,7 @@ def build_page(data, base):
 {THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}#brief"><small>← Back to</small>The Signal</a>{page_share_block}<button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="../#brief"><small>← Back to</small>The Signal</a>{page_share_block}<button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
     <div data-brief-root data-root-prefix="../"></div>
     {RULES_BOX}
@@ -272,6 +326,7 @@ def build_page(data, base):
 </body>
 </html>
 """
+    return with_global_bar(page, "../")
 
 
 # ---------- story pages and their og images ----------
@@ -507,7 +562,7 @@ def build_story_page(item, ed, base):
                   "filename": f"signal-brief-{ed['date']}-{story_nn(item)}.png"},
     }
     spec_js = json.dumps(spec).replace("</", "<\\/")
-    return f"""<!DOCTYPE html>
+    page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -535,7 +590,7 @@ def build_story_page(item, ed, base):
 {THEME_SCRIPT}
 </head>
 <body>
-  <div class="brief-topbar"><a class="brief-back" href="{base}brief/"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
+  <div class="brief-topbar"><a class="brief-back" href="../../"><small>← Back to</small>Signal Brief</a><button class="brief-theme" id="briefTheme" type="button" aria-label="Toggle dark mode">☾</button></div>
   <main>
     <span class="story-pill" style="background:{colour}">{escape(item['category'])}</span>
     <p class="story-dates">{escape(fmt_date(ed['date']))} · {escape(edition_time(ed))} IST · Source dated {escape(fmt_date_short(item['source_date']))}</p>
@@ -545,7 +600,7 @@ def build_story_page(item, ed, base):
     <p class="bu-srcs-label" style="font-size:.7rem;font-weight:800;letter-spacing:.16em;color:var(--muted);text-transform:uppercase">Sources</p>
     <ul class="story-srcs">{sources}</ul>
     <div class="story-actions"><span id="storyShare"></span></div>
-    <a class="story-edition" href="{base}#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
+    <a class="story-edition" href="../../../#brief">Read the whole {escape(fmt_date(ed['date']))} edition in the Signal Brief tab →</a>
   </main>
   {FOOTER}
   <script src="{base}assets/signal-share.js"></script>
@@ -560,6 +615,13 @@ def build_story_page(item, ed, base):
 </body>
 </html>
 """
+    crumb_html = ('<a href="../../../index.html">Home</a>'
+                  '<span aria-hidden="true">/</span>'
+                  '<a href="../../../brief/">Signal Brief</a>'
+                  '<span aria-hidden="true">/</span>'
+                  '<span aria-current="page">'
+                  + escape(fmt_date_short(ed["date"])) + '</span>')
+    return with_global_bar(page, "../../../", crumb_html)
 
 
 def build_story_pages(data, base):
