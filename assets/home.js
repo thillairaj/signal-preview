@@ -157,6 +157,10 @@
       set('[data-ds-hero="quiz"]', hero.quiz.topic);
       set('[data-ds-hero="quizmeta"]', hero.quiz.count + " questions \u00B7 " + hero.quiz.deck + " deck");
     }
+    if (data.deckCard) {
+      set('[data-ds-tile="deckq"]', data.deckCard.q);
+      set('[data-ds-tile="decka"]', data.deckCard.a);
+    }
     var track = $("[data-ds-wire]");
     if (track && (data.wireHeadlines || []).length) {
       var html = "";
@@ -209,7 +213,7 @@
     box.innerHTML =
       '<p class="ds-panel-line">' + esc(it.category) + (it.company ? " \u00B7 " + esc(it.company) : "") +
       (when ? " \u00B7 " + esc(when) : "") + "</p>" +
-      "<h4>" + esc(it.headline) + "</h4><p>" + esc(it.what) + "</p>" +
+      "<h4>" + esc(it.headline) + '</h4><p class="ds-bk-what">' + esc(it.what) + "</p>" +
       '<div class="ds-impact"><b>Tech impact</b>' + esc(it.impact) + "</div>" +
       (src.url ? '<p class="ds-src">Source: <a href="' + esc(src.url) +
         '" target="_blank" rel="noopener">' + esc(src.label || "Primary source") + "</a></p>" : "") +
@@ -236,9 +240,27 @@
     }).join("");
   }
 
+  /* ---------- Signal Brief banner (replaces the old first visit
+     popup; dismissal persists in localStorage) ---------- */
+  function initBriefBanner() {
+    var KEY = "signalBriefBannerV1";
+    var banner = $("#briefBanner");
+    if (!banner) return;
+    var seen = false;
+    try { seen = !!window.localStorage.getItem(KEY); } catch (e) {}
+    if (seen) return;
+    banner.hidden = false;
+    var close = $("#briefBannerClose");
+    if (close) close.addEventListener("click", function () {
+      banner.hidden = true;
+      try { window.localStorage.setItem(KEY, "1"); } catch (e) {}
+    });
+  }
+
   function init() {
     try { initNav(); } catch (e) { /* nav is progressive enhancement */ }
     try { initSubscribe(); } catch (e) { /* static href already set */ }
+    try { initBriefBanner(); } catch (e) { /* banner stays hidden */ }
     getJSON("data/home-counts.json").then(renderCounts).catch(function () {});
     getJSON("data/breaking.json").then(renderBreaking).catch(function () {});
     getJSON("data/brief.json").then(renderBrief).catch(function () {});

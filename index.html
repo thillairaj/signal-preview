@@ -31,7 +31,6 @@
 </head>
 <body data-view="home">
 
-<div class="bk-strip" id="breakingStrip" hidden></div>
 <div class="ds-topbar ds-root">
   <div class="ds-topbar-in">
     <a class="ds-logo" href="#home" aria-label="The Signal home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
@@ -60,6 +59,7 @@
                 <li><a href="#podcast">Podcasts<small>Three series, new episodes weekly</small></a></li>
                 <li><a href="#research">Articles<small>Research notes and explainers</small></a></li>
                 <li><a href="#feed">Live wire and news<small>The self updating feed</small></a></li>
+                <li><a href="#brief">Signal Brief<small>The daily digest, out at 07:00 IST</small><span class="tab-new" id="briefNewBadge" hidden>NEW</span></a></li>
               </ul>
             </div>
           </div>
@@ -68,11 +68,14 @@
       <button class="ds-nav-btn" type="button" data-ds-scroll="news-two-ways">The Signal</button>
       <a class="ds-nav-link" href="breaking/"><span class="ds-bk-dot" data-ds-bk-dot hidden aria-hidden="true"></span>Breaking</a>
       <a class="ds-nav-link" href="#podcast">Podcasts</a>
-      <button class="ds-btn ds-subscribe-btn" type="button" data-ds-scroll="subscribe-block">Subscribe</button>
+      <a class="ds-btn ds-subscribe-btn" data-ds-subscribe href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" target="_blank" rel="noopener">Subscribe</a>
     </nav>
+    <span id="ssPageMount" class="ss-page-mount"></span>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
     <button class="ds-menu-btn" type="button" id="dsMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="dsMobileMenu">☰</button>
   </div>
 </div>
+<div class="bk-strip" id="breakingStrip" hidden></div>
 <div class="ds-mobile-menu ds-root" id="dsMobileMenu" hidden>
   <div class="ds-mm-head">
     <a class="ds-logo" href="#home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
@@ -92,39 +95,14 @@
   <a href="#podcast">Podcasts</a>
   <a href="#research">Articles</a>
   <a href="#feed">Live wire and news</a>
+  <a href="#brief">Signal Brief</a>
   <h3>The Signal</h3>
   <button class="ds-mm-link" type="button" data-ds-scroll="news-two-ways">News, two ways</button>
   <a href="breaking/">Breaking</a>
-  <button class="ds-mm-link" type="button" data-ds-scroll="subscribe-block">Subscribe</button>
+  <a data-ds-subscribe href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
 </div>
 
-<header class="masthead">
-  <div class="masthead-left">
-    <h1 class="brand-h" title="Back to the front page">The <em>Signal</em></h1>
-  </div>
-  <div class="tabs-bar">
-    <button class="rail-btn tab-arrow prev" id="tabsPrev" type="button" aria-label="Scroll sections left">‹</button>
-    <nav class="top-tabs" id="topTabs" aria-label="Sections">
-    <button class="top-tab active" data-view="home">Home</button>
-    <button class="top-tab" data-view="learn"><span class="tab-num">01</span>Learning Space</button>
-    <button class="top-tab" data-view="podcast"><span class="tab-num">02</span>Podcast</button>
-    <button class="top-tab" data-view="research"><span class="tab-num">03</span>Articles</button>
-    <button class="top-tab" data-view="feed"><span class="tab-num">04</span>RSS Feed</button>
-    <button class="top-tab" data-view="brief"><span class="tab-num">05</span>Signal Brief<span class="tab-new" id="briefNewBadge" hidden>NEW</span></button>
-    </nav>
-    <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
-    <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
-  </div>
-  <div class="masthead-right">
-    <span id="ssPageMount" class="ss-page-mount"></span>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☾</button>
-    <div class="status">
-      <span class="dot" id="statusDot"></span>
-      <span id="statusText">connecting…</span>
-    </div>
-    <div class="views" id="viewsText"></div>
-  </div>
-</header>
+<div class="ds-legacy-meta" hidden aria-hidden="true"><span class="dot" id="statusDot"></span><span id="statusText">connecting…</span><span id="viewsText"></span></div>
 
 <div class="layout">
 
@@ -170,6 +148,12 @@
       </div>
     </div>
 
+    <div class="ds-brief-banner" id="briefBanner" hidden>
+      <p><strong>Signal Brief:</strong> a fresh edition every day at 07:00 IST. Read the morning's top stories, and share any story as a card.</p>
+      <a class="ds-btn-ghost" href="#brief">Read today's Brief</a>
+      <button class="ds-banner-close" type="button" id="briefBannerClose" aria-label="Dismiss this announcement">✕</button>
+    </div>
+
     <div class="ds-section">
       <h2 class="ds-h2">Choose a topic</h2>
       <p class="ds-sub">Four fields, one way in: start in the learning room, then go deeper with the deck, the periodic tables and the games.</p>
@@ -203,9 +187,9 @@
       <p class="ds-sub">Pick the format that fits the moment. Every count below comes from the same data that powers the pages themselves.</p>
       <div class="ds-formats">
         <a class="ds-format" href="#learn-decks">
-          <span class="ds-fanim"><span class="ds-flip ds-mini-flip" aria-hidden="true"><span class="ds-flip-in">
-            <span class="ds-flip-face ds-flip-front">What is a qubit?</span>
-            <span class="ds-flip-face ds-flip-back">The basic unit of quantum information.</span>
+          <span class="ds-fanim ds-fanim-flip"><span class="ds-flip ds-mini-flip" aria-hidden="true"><span class="ds-flip-in">
+            <span class="ds-flip-face ds-flip-front" data-ds-tile="deckq">Why won't a quantum computer just make every calculation faster?</span>
+            <span class="ds-flip-face ds-flip-back" data-ds-tile="decka">Speedup isn't the aim: quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods.</span>
           </span></span></span>
           <h3>Decks</h3>
           <p class="ds-fcount" data-ds-count="decks">22 of 32 deck topics live</p>
@@ -306,11 +290,11 @@
       </div>
     </div>
 
-    <div class="ds-subscribe" id="subscribe-block" data-subscribe-url="https://www.linkedin.com/in/thillairaj">
+    <div class="ds-subscribe" id="subscribe-block" data-subscribe-url="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128">
       <div class="ds-subscribe-in">
         <h2>Don't miss what's new.</h2>
         <p>One weekly update with the new decks, explainers, episodes and the stories that mattered. The email service is being set up, so for now the weekly update runs through the LinkedIn newsletter.</p>
-        <a class="ds-btn" data-ds-subscribe href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow the newsletter on LinkedIn</a>
+        <a class="ds-btn" data-ds-subscribe href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
       </div>
     </div>
   </section>
@@ -367,21 +351,21 @@
       </div>
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-                              <a class="learn-card video-quantum" href="https://thillairaj.github.io/The-Signal-AI-Quantum/quantum-learning-space/">
+                              <a class="learn-card video-quantum" href="quantum-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · Quantum</span>
         <span class="learn-title">Quantum Learning Space</span>
         <span class="learn-desc">Twenty-eight lessons from IBM, Google Quantum AI, Microsoft and Qiskit: first circuits to fault tolerance roadmaps, straight from the labs.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
-            <a class="learn-card video-ai" href="https://thillairaj.github.io/The-Signal-AI-Quantum/ai-learning-space/">
+            <a class="learn-card video-ai" href="ai-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · AI</span>
         <span class="learn-title">AI Learning Space</span>
         <span class="learn-desc">Bots, assistants and frontier lessons in one room: 198 videos across thirteen tracks, from Grok and Claude Duet to ChatGPT and Perplexity.</span>
         <span class="learn-open">Open space ↗</span>
       </a>
-      <a class="learn-card video-cloud" href="https://thillairaj.github.io/The-Signal-AI-Quantum/cloud-devops-learning-space/">
+      <a class="learn-card video-cloud" href="cloud-devops-learning-space/">
         <span class="learn-play" aria-hidden="true">▶</span>
         <span class="learn-kicker">Video Learning · New</span>
         <span class="learn-title">Cloud &amp; DevOps Learning Space</span>
@@ -785,23 +769,10 @@
   <span class="li-txt"><span class="li-dir">Follow on</span><span class="li-name">LinkedIn</span></span></a></span>
 </footer>
 
-  <div class="games-popup-backdrop" id="gamesPopup" hidden>
-    <div class="games-popup" role="dialog" aria-modal="true" aria-labelledby="gamesPopupTitle">
-      <button class="games-popup-close" type="button" id="gamesPopupClose" aria-label="Close announcement">×</button>
-      <span class="games-popup-kicker">Interactive Explainers · New</span>
-      <h3 id="gamesPopupTitle">Introducing Interactive Explainers</h3>
-      <p>A new way to learn at The Signal. Open up a superconducting quantum computer, a large language model and a web request, part by part, with a simple and a deeper explanation for every part.</p>
-      <div class="games-popup-actions">
-        <button class="games-popup-go" type="button" id="gamesPopupGo">Take me to the explainers</button>
-        <button class="games-popup-later" type="button" id="gamesPopupLater">Close</button>
-      </div>
-    </div>
-  </div>
-
 <script src="assets/signal-share.js"></script>
 <script src="assets/brief.js?v=20261115"></script>
 <script src="assets/breaking.js?v=20261115"></script>
-<script src="app.js?v=20261106b"></script>
+<script src="app.js?v=20261115"></script>
 <script src="assets/home.js?v=20261115"></script>
 <!-- ss-page-share:start -->
 <script>

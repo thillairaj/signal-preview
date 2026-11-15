@@ -369,8 +369,10 @@ body { background: var(--ds-bg); }
 }
 .ds-format h3 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.22rem; margin: 12px 0 4px; }
 .ds-fcount { color: var(--ds-muted); font-size: .88rem; margin: 0; line-height: 1.5; }
-.ds-mini-flip { width: 104px; height: 62px; }
-.ds-mini-flip .ds-flip-face { font-size: .68rem; padding: 8px; text-align: center; justify-content: center; }
+.ds-mini-flip { width: 248px; max-width: 100%; height: 168px; }
+.ds-mini-flip .ds-flip-face { font-size: .95rem; padding: 14px 16px; text-align: center; justify-content: center; line-height: 1.45; }
+.ds-mini-flip .ds-flip-back { font-size: .9rem; }
+.ds-fanim-flip { height: 196px; }
 .ds-steps { display: flex; gap: 10px; align-items: center; }
 .ds-steps i {
   width: 17px; height: 17px; border-radius: 50%; background: var(--ds-card);
@@ -571,7 +573,9 @@ body { background: var(--ds-bg); }
 }
 .ds-start h2 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.5rem; margin: 0 0 6px; }
 .ds-start p { color: var(--ds-muted); margin: 0; line-height: 1.55; font-size: .94rem; }
-.ds-start .ds-flip { width: 300px; max-width: 100%; }
+.ds-start .ds-flip { width: 440px; max-width: 100%; height: 200px; }
+.ds-start .ds-flip-face { font-size: 1.15rem; padding: 20px 22px; line-height: 1.5; }
+.ds-start .ds-flip-back { font-size: 1rem; }
 .ds-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
 .ds-filter {
   min-height: 44px; padding: 8px 17px; border-radius: 999px; cursor: pointer;
@@ -656,4 +660,142 @@ body { background: var(--ds-bg); }
   .ds-flip-in { transform: none; }
   .ds-progress i, .ds-playbar i, .ds-readbar i { width: 72%; }
   .ds-wire-track { transform: none; }
+}
+
+/* ==== Fix round additions (Nov 15, 2026) ==== */
+
+/* Signal Brief banner below the hero (replaces the first visit popup) */
+.ds-brief-banner {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  max-width: 1240px; margin: 20px auto 0; padding: 14px 18px;
+  background: var(--ds-paper); border: 1px solid var(--ds-paper-line);
+  border-radius: 16px; color: var(--ds-ink);
+}
+.ds-brief-banner[hidden] { display: none !important; }
+.ds-brief-banner p { margin: 0; flex: 1 1 320px; line-height: 1.55; font-size: .95rem; }
+.ds-banner-close {
+  margin-left: auto; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--ds-line); background: var(--ds-card);
+  color: var(--ds-ink); font-size: 1rem; cursor: pointer; flex: 0 0 auto;
+}
+.ds-banner-close:hover, .ds-banner-close:focus-visible { border-color: var(--ds-gold); }
+
+/* Top bar: page share mount and theme toggle alignment */
+.ds-topbar .ss-page-mount { display: inline-flex; align-items: center; }
+.ds-topbar .theme-toggle {
+  width: 44px; height: 44px; border-radius: 50%; flex: 0 0 auto;
+  border: 1px solid var(--ds-line); background: var(--ds-card);
+  color: var(--ds-ink); font-size: 1.05rem; cursor: pointer;
+}
+.ds-topbar .theme-toggle:hover, .ds-topbar .theme-toggle:focus-visible { border-color: var(--ds-gold); }
+
+/* Homepage Breaking panel on phones: headline, a two line summary and
+   the Tech impact box only; the full text lives on the Breaking page. */
+@media (max-width: 899px) {
+  .ds-panel-bk .ds-bk-what {
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* In content links in the new components follow the design system:
+   no default blue, no resting underline; underline on hover and focus. */
+.ds-side-box a:not([class]), .ds-panel a:not([class]) {
+  color: var(--ds-green); font-weight: 600; text-decoration: none;
+}
+.ds-side-box a:not([class]):hover, .ds-side-box a:not([class]):focus-visible,
+.ds-panel a:not([class]):hover, .ds-panel a:not([class]):focus-visible {
+  text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* Quantum hub: compact news block shown above the filter tabs on
+   phones only; the desktop sidebar is unchanged. */
+.ds-hub-mobile-news { display: none; }
+@media (max-width: 899px) {
+  .ds-hub-mobile-news {
+    display: block; background: var(--ds-card); border: 1px solid var(--ds-line);
+    border-radius: 16px; padding: 14px 16px; margin-bottom: 16px;
+    box-shadow: var(--ds-shadow);
+  }
+  .ds-hub-mobile-news p { margin: 0 0 8px; line-height: 1.55; font-size: .93rem; }
+  .ds-hub-mobile-news p:last-child { margin-bottom: 0; }
+  .ds-hub-mobile-news a { color: var(--ds-green); font-weight: 600; text-decoration: none; }
+  .ds-hub-mobile-news a:hover, .ds-hub-mobile-news a:focus-visible {
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+}
+
+/* ==== Global top bar for deep pages (fix round, Nov 15, 2026) ====
+   One dependency free bar injected on every page family by
+   patch-global-topbar.py and emitted by the family builders. Styles
+   live here so every page renders the same bar from one file. */
+.gtb {
+  position: relative; z-index: 60;
+  background: var(--ds-card); border-bottom: 1px solid var(--ds-line);
+  color: var(--ds-ink); font-family: var(--ds-sans);
+}
+.gtb * { box-sizing: border-box; }
+.gtb-in {
+  max-width: 1240px; margin: 0 auto; padding: 8px 16px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.gtb-logo {
+  margin-right: auto; font-family: var(--ds-serif); font-size: 1.3rem;
+  color: var(--ds-ink); text-decoration: none; white-space: nowrap;
+  display: inline-flex; align-items: center; min-height: 44px;
+}
+.gtb-logo em { font-style: italic; color: var(--ds-gold-text); }
+.gtb-nav { display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; }
+.gtb-nav > a, .gtb-learn > summary {
+  color: var(--ds-ink); text-decoration: none; font-weight: 600;
+  font-size: .95rem; display: inline-flex; align-items: center;
+  min-height: 44px; padding: 4px 2px;
+}
+.gtb-nav > a:hover, .gtb-nav > a:focus-visible,
+.gtb-learn > summary:hover, .gtb-learn > summary:focus-visible {
+  color: var(--ds-green); text-decoration: underline; text-underline-offset: 4px;
+}
+.gtb-learn { position: relative; }
+.gtb-learn > summary { cursor: pointer; list-style: none; }
+.gtb-learn > summary::-webkit-details-marker { display: none; }
+.gtb-learn > summary::after { content: "▾"; margin-left: 5px; font-size: .8em; }
+.gtb-menu {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 70;
+  display: flex; gap: 26px; padding: 16px 18px;
+  background: var(--ds-card); border: 1px solid var(--ds-line);
+  border-radius: 16px; box-shadow: var(--ds-shadow);
+  min-width: min(470px, 88vw);
+}
+.gtb-col { min-width: 180px; }
+.gtb-h {
+  display: block; font-size: .7rem; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--ds-muted); margin-bottom: 6px;
+}
+.gtb-col a {
+  display: block; padding: 7px 4px; min-height: 36px;
+  color: var(--ds-ink); text-decoration: none; font-weight: 500; font-size: .94rem;
+}
+.gtb-col a:hover, .gtb-col a:focus-visible {
+  color: var(--ds-green); text-decoration: underline; text-underline-offset: 3px;
+}
+.gtb-sub {
+  background: var(--ds-green); color: #fff !important; border-radius: 999px;
+  padding: 8px 18px !important;
+}
+.gtb-sub:hover, .gtb-sub:focus-visible { background: var(--ds-accent); text-decoration: none !important; }
+.gtb-crumb {
+  max-width: 1240px; margin: 0 auto; padding: 9px 16px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: .86rem; color: var(--ds-muted);
+  border-top: 1px solid var(--ds-line);
+}
+.gtb-crumb a { color: var(--ds-green); font-weight: 600; text-decoration: none; }
+.gtb-crumb a:hover, .gtb-crumb a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.gtb-crumb [aria-current] {
+  color: var(--ds-ink); font-weight: 600;
+  max-width: 46ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+@media (max-width: 899px) {
+  .gtb-in { gap: 8px 12px; padding: 6px 12px; }
+  .gtb-menu { left: auto; right: 0; flex-direction: column; gap: 14px; }
 }

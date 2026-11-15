@@ -6,7 +6,7 @@
    throughout; a failed fetch leaves the fallback text in place. */
 (function () {
   "use strict";
-  var SUBSCRIBE_URL = "https://www.linkedin.com/in/thillairaj";
+  var SUBSCRIBE_URL = "https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128";
   var SLOT_TIMES = ["02:00", "06:00", "10:00", "14:00", "18:00", "22:00"];
   var DATA_URL = "../../data/topic-quantum.json";
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -80,7 +80,8 @@
 
   function renderBreaking(data) {
     var box = $("[data-hub-breaking]");
-    if (!box) return;
+    var compact = $("[data-hub-bk-status]");
+    if (!box && !compact) return;
     var now = window.__BREAKING_NOW__ ? new Date(window.__BREAKING_NOW__) : new Date();
     var active = (data.items || []).filter(function (it) {
       return it.category === "Quantum" &&
@@ -88,15 +89,20 @@
         now - new Date(it.published) < 24 * 3600 * 1000;
     });
     if (!active.length) {
-      box.innerHTML = "<p>No quantum alerts today. Next check at " +
-        esc(nextCheckIST(now)) + " IST.</p>" +
+      var quiet = "No quantum alerts today. Next check at " +
+        esc(nextCheckIST(now)) + " IST.";
+      if (box) box.innerHTML = "<p>" + quiet + "</p>" +
         '<p><a href="../../breaking/">Open the Breaking page</a></p>';
+      if (compact) compact.innerHTML = "<p><strong>Quantum breaking:</strong> " + quiet +
+        ' <a href="../../breaking/">Breaking page</a></p>';
       return;
     }
-    box.innerHTML = active.map(function (it) {
+    if (box) box.innerHTML = active.map(function (it) {
       return '<div class="ds-side-item"><a href="../../breaking/">' + esc(it.headline) +
         "</a><span>" + esc(it.category) + " \u00B7 active now</span></div>";
     }).join("");
+    if (compact) compact.innerHTML = "<p><strong>Quantum breaking:</strong> " +
+      '<a href="../../breaking/">' + esc(active[0].headline) + "</a></p>";
   }
 
   function renderBrief(data) {
@@ -122,6 +128,9 @@
       return '<div class="ds-side-item"><a href="' + esc(s.href) + '">' + esc(s.headline) +
         "</a><span>Signal Brief \u00B7 " + esc(shortDate(s.date)) + "</span></div>";
     }).join("");
+    var first = $("[data-hub-brief-first]");
+    if (first) first.innerHTML = "<p><strong>Top Quantum story in the Brief:</strong> " +
+      '<a href="' + esc(out[0].href) + '">' + esc(out[0].headline) + "</a></p>";
   }
 
   function init() {
