@@ -40,8 +40,9 @@ Any significant event, worldwide, that directly or indirectly affects
 technology, the tech industry or people who work in it:
 
 - Tech incidents: major cloud or SaaS outages (AWS, Azure, Google Cloud,
-  Cloudflare, GitHub and similar), large data breaches, critical security
-  flaws, big ransomware attacks.
+  Cloudflare, GitHub and similar), large data breaches, big ransomware
+  attacks. Security flaws qualify only under the security threshold
+  below.
 - Leadership: CEO or top level changes at major tech companies.
 - Deals: mergers or acquisitions worth USD 1 billion or more, or that
   change a major tech market.
@@ -65,6 +66,25 @@ technology, the tech industry or people who work in it:
 
 Every item must carry a clear technology impact line. If a clear impact
 line cannot be written, the item is not breaking.
+
+## Security threshold for Cybersecurity items
+
+A Cybersecurity item qualifies as breaking ONLY if at least one of
+these holds:
+
+- a flaw with a CVSS score of 9.0 or higher;
+- active exploitation confirmed (a CISA KEV listing, or the vendor
+  confirming exploitation in the wild);
+- a mass impact outage caused by a security incident.
+
+Routine High rated patch releases do not qualify; they belong in
+normal news. In `data/breaking.json`, every published Cybersecurity
+item must carry a `qualifier` object recording the basis:
+`{"basis": "cvss", "cvss": 9.8}`, `{"basis": "kev"}` or
+`{"basis": "mass_outage"}`. check-breaking.js fails a published
+Cybersecurity item without a valid basis. The future
+`signal-breaking-4h` job draft inherits its thresholds from this
+file, so this section is the single source for the rule.
 
 ## Verification and tone
 

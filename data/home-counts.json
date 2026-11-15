@@ -54,6 +54,7 @@
   "flashcard": {
    "q": "Why won't a quantum computer just make every calculation faster?",
    "a": "Speedup isn't the aim — quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods. Everything else stays classical.",
+   "deck": "Quantum",
    "topic": "Quantum Computing Fundamentals",
    "url": "quantum-deck/#fundamentals"
   },
@@ -63,9 +64,14 @@
   },
   "quiz": {
    "topic": "Quantum Computing Fundamentals",
-   "questions": 10,
+   "count": 10,
+   "deck": "Quantum",
    "url": "quantum-deck/#fundamentals"
   }
+ },
+ "deckCard": {
+  "q": "Why won't a quantum computer just make every calculation faster?",
+  "a": "Speedup isn't the aim — quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods. Everything else stays classical."
  },
  "wireHeadlines": [
   {
