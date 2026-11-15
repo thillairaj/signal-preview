@@ -153,9 +153,11 @@ window.SignalBriefUI = (function () {
     return out + '<div class="bu-cal-grid">' + cells + "</div></div>";
   }
   /* The compact week strip shown below 900px: the shown week's seven
-     day cells between two week arrows, plus the expander that opens
-     the month grid. The expander label takes the month of the shown
-     week's Thursday, the standard week to month convention. The strip
+     day cells on their own row, using the full card width so each
+     cell stays comfortably tappable, and below them a control row
+     where two week chevrons flank the expander that opens the month
+     grid. The expander label takes the month of the shown week's
+     Thursday, the standard week to month convention. The strip
      cannot step to a week entirely before the first edition's week,
      nor past the week containing today. */
   function weekStrip(state, byDate, first, curY, curM, curD) {
@@ -176,19 +178,19 @@ window.SignalBriefUI = (function () {
     var thu = new Date(state.weekMs + 3 * 86400000);
     var label = MONTHS_FULL[thu.getUTCMonth()] + " " + thu.getUTCFullYear();
     return '<div class="bu-cal-strip">' +
-      '<div class="bu-strip-row">' +
-      '<button type="button" class="bu-cal-arrow" data-strip-prev ' +
+      '<div class="bu-strip-days">' + cells + "</div>" +
+      '<div class="bu-strip-ctl">' +
+      '<button type="button" class="bu-strip-step" data-strip-prev ' +
       'aria-label="Previous week"' + (prevOff ? " disabled" : "") +
       ">‹</button>" +
-      '<div class="bu-strip-days">' + cells + "</div>" +
-      '<button type="button" class="bu-cal-arrow" data-strip-next ' +
-      'aria-label="Next week"' + (nextOff ? " disabled" : "") +
-      ">›</button></div>" +
       '<button type="button" class="bu-strip-exp" data-cal-expand ' +
       'aria-expanded="' + (state.calOpen ? "true" : "false") + '">' +
       '<span class="bu-strip-month">' + label + "</span>" +
       '<span class="bu-strip-chev" aria-hidden="true">' +
-      (state.calOpen ? "▴" : "▾") + "</span></button></div>";
+      (state.calOpen ? "▴" : "▾") + "</span></button>" +
+      '<button type="button" class="bu-strip-step" data-strip-next ' +
+      'aria-label="Next week"' + (nextOff ? " disabled" : "") +
+      ">›</button></div></div>";
   }
   function calendarInner(state) {
     var eds = state.data.editions;

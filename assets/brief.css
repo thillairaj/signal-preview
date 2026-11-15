@@ -102,15 +102,28 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 /* Week strip (Nov 15, 2026): below 900px the calendar collapses to
    the shown week plus a month expander, and the month grid above
    shows only while the calendar is expanded. At 900px and above the
-   strip is not shown and the month grid always shows. */
+   strip is not shown and the month grid always shows. The seven day
+   cells sit on their own row at the full card width (the week arrows
+   moved to the control row below, flanking the expander) so each
+   cell stays at least 44px wide on a 390px phone. */
 .bu-cal-strip { display: none; }
-.bu-strip-row { display: flex; align-items: center; gap: 6px; }
 .bu-strip-days {
-  flex: 1 1 auto; display: grid;
+  display: grid;
   grid-template-columns: repeat(7, 1fr); gap: 4px;
 }
+.bu-strip-ctl {
+  display: flex; align-items: stretch; gap: 6px; margin-top: 10px;
+}
+.bu-strip-step {
+  width: 44px; flex: 0 0 auto; display: grid; place-items: center;
+  border: 1px solid var(--b-line); border-radius: 999px;
+  background: transparent; color: var(--b-ink); cursor: pointer;
+  font-size: 1.25rem; line-height: 1;
+}
+.bu-strip-step:hover:not([disabled]), .bu-strip-step:focus-visible { border-color: var(--b-gold); outline: none; }
+.bu-strip-step[disabled] { opacity: .35; cursor: default; }
 .bu-strip-exp {
-  width: 100%; margin-top: 10px; padding: 9px 12px;
+  flex: 1 1 auto; padding: 9px 12px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
   border: 1px solid var(--b-line); border-radius: 999px;
   background: transparent; color: var(--b-ink); cursor: pointer;
@@ -132,8 +145,15 @@ button.bu-cal-day:hover, button.bu-cal-day:focus-visible { border-color: var(--b
 
 /* Category chips */
 .bu-chips {
-  display: flex; gap: 8px; overflow-x: auto; padding: 16px 2px 6px;
+  display: flex; gap: 8px; overflow-x: auto; padding: 16px 26px 6px 2px;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  /* Soft fade at the right edge while the row can scroll sideways,
+     so the cut off chips read as "more this way". The fade covers
+     only the last 24px and the 26px right padding keeps the final
+     chip clear of it once the row is scrolled fully right. The mask
+     fades to transparent, so it works on both themes unchanged. */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
 }
 .bu-chips::-webkit-scrollbar { display: none; }
 .bu-chip {
