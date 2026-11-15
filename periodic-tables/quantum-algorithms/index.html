@@ -214,8 +214,9 @@ html[data-theme="light"] #detail .d-cat[data-cat="sim"]{color:#0b7f75}
       <a class="ds-nav-link" href="../../weekly/">Weekly</a>
       <a class="ds-btn ds-subscribe-btn" href="../../index.html#subscribe-block">Subscribe</a>
     </nav>
-        <button class="ds-menu-btn" type="button" data-tb-menu-btn aria-label="Open menu" aria-expanded="false">☰</button>
+    <span id="ssPageMount" class="ss-page-mount"></span><button class="ds-theme-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>    <button class="ds-menu-btn" type="button" data-tb-menu-btn aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
+  <nav class="ds-bar-crumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../../index.html#learn-tables">Periodic tables</a><span aria-hidden="true">/</span><span aria-current="page">Quantum Algorithms — The Periodic Table</span></nav>
 </div>
 <div class="ds-mobile-menu ds-root" data-tb-mobile hidden>
   <div class="ds-mm-head">
@@ -234,9 +235,12 @@ html[data-theme="light"] #detail .d-cat[data-cat="sim"]{color:#0b7f75}
 
 
 
+
+
+
 <header>
   
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  
   <div class="kicker">The Quantum Algorithms Periodic Table</div>
   <h1>Quantum <span>Algorithms</span></h1>
   <p class="sub">The quantum algorithm landscape as a periodic table — 60 algorithm families and building blocks, from the Deutsch algorithm to fault-tolerant phase estimation, in technically honest language.</p>
@@ -244,11 +248,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="sim"]{color:#0b7f75}
 </header>
 
 <div class="toolbar">
-  <div class="navrow"><a class="navcard back" href="../../#learn-tables-quantum"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../quantum-keywords/"><span class="nc-dir">← Previous</span><span class="nc-title">Quantum Keywords for Leaders</span></a><a class="navcard next" href="../quantum-hardware/"><span class="nc-dir">Next →</span><span class="nc-title">Quantum Hardware</span></a></span></div>
+  <div class="navrow"><span class="navside"><a class="navcard prev" href="../quantum-keywords/"><span class="nc-dir">← Previous</span><span class="nc-title">Quantum Keywords for Leaders</span></a><a class="navcard next" href="../quantum-hardware/"><span class="nc-dir">Next →</span><span class="nc-title">Quantum Hardware</span></a></span></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try Shor, Grover, QFT, VQE, QAOA…" aria-label="Search terms">
     <span class="count" id="count"></span>
-    <button class="btn" id="resetBtn" type="button">Show all</button><span id="ssPageMount" class="ss-page-mount" style="margin-left:auto"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
   </div>
   <div class="legend-wrap"><button class="rail-btn prev" type="button" aria-label="Scroll categories back">‹</button><div id="legend" aria-label="Category filter"></div><button class="rail-btn next" type="button" aria-label="Scroll categories forward">›</button></div>
 </div>

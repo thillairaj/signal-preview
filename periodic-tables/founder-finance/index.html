@@ -228,8 +228,9 @@ html[data-theme="light"] #detail .d-cat[data-cat="valuation"]{color:#4f46e5}
       <a class="ds-nav-link" href="../../weekly/">Weekly</a>
       <a class="ds-btn ds-subscribe-btn" href="../../index.html#subscribe-block">Subscribe</a>
     </nav>
-        <button class="ds-menu-btn" type="button" data-tb-menu-btn aria-label="Open menu" aria-expanded="false">☰</button>
+    <span id="ssPageMount" class="ss-page-mount"></span><button class="ds-theme-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>    <button class="ds-menu-btn" type="button" data-tb-menu-btn aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
+  <nav class="ds-bar-crumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../../index.html#learn-tables">Periodic tables</a><span aria-hidden="true">/</span><span aria-current="page">The Founder Finance Periodic Table — Financial Terms Every Startup Founder Should Know</span></nav>
 </div>
 <div class="ds-mobile-menu ds-root" data-tb-mobile hidden>
   <div class="ds-mm-head">
@@ -248,9 +249,12 @@ html[data-theme="light"] #detail .d-cat[data-cat="valuation"]{color:#4f46e5}
 
 
 
+
+
+
 <header>
   
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
+  
   <div class="kicker">The Founder Finance Periodic Table</div>
   <h1>Financial Terms Every <span>Startup Founder</span> Should Know</h1>
   <p class="sub">154 essential terms from the founder's guide, arranged like the periodic table. Each colour is a financial world. Hover to explore, click any element to learn what it means, why it matters, and how it is calculated, where a calculation exists.</p>
@@ -258,11 +262,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="valuation"]{color:#4f46e5}
 </header>
 
 <div class="toolbar">
-  <div class="navrow"><a class="navcard back" href="../../#learn-tables-founders"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard next" href="../startup-growth/"><span class="nc-dir">Next →</span><span class="nc-title">Startup Growth for Founders</span></a></span></div>
+  <div class="navrow"><span class="navside"><a class="navcard next" href="../startup-growth/"><span class="nc-dir">Next →</span><span class="nc-title">Startup Growth for Founders</span></a></span></div>
   <div class="toolbar-in">
     <input id="search" type="search" placeholder="Search a term — try burn, SAFE, churn, valuation…" aria-label="Search terms">
     <span class="count" id="count"></span>
-    <button class="btn" id="resetBtn" type="button">Show all</button><span id="ssPageMount" class="ss-page-mount" style="margin-left:auto"></span>
+    <button class="btn" id="resetBtn" type="button">Show all</button>
   </div>
   <div class="legend-wrap"><button class="rail-btn prev" type="button" aria-label="Scroll categories back">‹</button><div id="legend" aria-label="Category filter"></div><button class="rail-btn next" type="button" aria-label="Scroll categories forward">›</button></div>
 </div>
