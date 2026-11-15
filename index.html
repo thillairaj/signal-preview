@@ -68,14 +68,15 @@
       <button class="ds-nav-btn" type="button" data-ds-scroll="news-two-ways">The Signal</button>
       <a class="ds-nav-link" href="breaking/"><span class="ds-bk-dot" data-ds-bk-dot hidden aria-hidden="true"></span>Breaking</a>
       <a class="ds-nav-link" href="#podcast">Podcasts</a>
-      <a class="ds-btn ds-subscribe-btn" data-ds-subscribe href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" target="_blank" rel="noopener">Subscribe</a>
+      <a class="ds-nav-link" href="weekly/">Weekly</a>
+      <a class="ds-btn ds-subscribe-btn" data-ds-subscribe href="#subscribe-block">Subscribe</a>
     </nav>
     <span id="ssPageMount" class="ss-page-mount"></span>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
     <button class="ds-menu-btn" type="button" id="dsMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="dsMobileMenu">☰</button>
   </div>
+  <div class="bk-strip" id="breakingStrip" hidden></div>
 </div>
-<div class="bk-strip" id="breakingStrip" hidden></div>
 <div class="ds-mobile-menu ds-root" id="dsMobileMenu" hidden>
   <div class="ds-mm-head">
     <a class="ds-logo" href="#home"><i aria-hidden="true"></i>The&nbsp;<em>Signal</em></a>
@@ -99,7 +100,8 @@
   <h3>The Signal</h3>
   <button class="ds-mm-link" type="button" data-ds-scroll="news-two-ways">News, two ways</button>
   <a href="breaking/">Breaking</a>
-  <a data-ds-subscribe href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+  <a href="weekly/">Weekly update</a>
+  <a data-ds-subscribe href="#subscribe-block">Subscribe</a>
 </div>
 
 <div class="ds-legacy-meta" hidden aria-hidden="true"><span class="dot" id="statusDot"></span><span id="statusText">connecting…</span><span id="viewsText"></span></div>
@@ -290,11 +292,23 @@
       </div>
     </div>
 
-    <div class="ds-subscribe" id="subscribe-block" data-subscribe-url="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128">
+    <div class="ds-subscribe" id="subscribe-block">
       <div class="ds-subscribe-in">
         <h2>Don't miss what's new.</h2>
-        <p>One weekly update with the new decks, explainers, episodes and the stories that mattered. The email service is being set up, so for now the weekly update runs through the LinkedIn newsletter.</p>
-        <a class="ds-btn" data-ds-subscribe href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+        <p>One weekly update with the new decks, explainers, episodes and the stories that mattered, in your inbox every Friday.</p>
+        <form class="ds-signup" data-kit-signup method="post" novalidate>
+          <div class="ds-signup-row">
+            <div class="ds-field">
+              <label for="kitEmailHome">Email address</label>
+              <input id="kitEmailHome" name="email_address" type="email" autocomplete="email" required placeholder="you@example.com">
+            </div>
+            <button class="ds-btn" type="submit" data-kit-submit>Subscribe</button>
+          </div>
+          <label class="ds-consent"><input type="checkbox" name="consent" required data-kit-consent> Send me the weekly update from The Signal. I can unsubscribe anytime.</label>
+          <p class="ds-signup-note" data-kit-note hidden>Weekly update starting soon</p>
+          <p class="ds-signup-msg ds-signup-ok" data-kit-success role="status" hidden></p>
+          <p class="ds-signup-msg ds-signup-err" data-kit-error role="alert" hidden></p>
+        </form>
       </div>
     </div>
   </section>
@@ -774,6 +788,7 @@
 <script src="assets/breaking.js?v=20261115"></script>
 <script src="app.js?v=20261115"></script>
 <script src="assets/home.js?v=20261115"></script>
+<script src="assets/signup.js?v=20261115"></script>
 <!-- ss-page-share:start -->
 <script>
 window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "33 learning pages · 22 of 32 deck topics live · 1,316 terms", "link": "https://thillairaj.github.io/signal-preview/", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/signal-preview/assets/og/home.png", "filename": "the-signal.png"}}, "learn": {"title": "Learning Space · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "4 learning spaces, 340 video lessons", "link": "https://thillairaj.github.io/signal-preview/#learn", "tag": "#Learning", "image": {"url": "https://thillairaj.github.io/signal-preview/assets/og/home.png", "filename": "the-signal.png"}}, "podcast": {"title": "Podcast · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "104 episodes across 3 series", "link": "https://thillairaj.github.io/signal-preview/#podcast", "tag": "#Podcasts", "image": {"url": "https://thillairaj.github.io/signal-preview/assets/og/home.png", "filename": "the-signal.png"}}, "research": {"title": "Articles · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "10 research articles", "link": "https://thillairaj.github.io/signal-preview/#research", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/signal-preview/assets/og/home.png", "filename": "the-signal.png"}}, "feed": {"title": "RSS Feed · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "220 stories on the live wire", "link": "https://thillairaj.github.io/signal-preview/#feed", "tag": "#TechNews", "image": {"url": "https://thillairaj.github.io/signal-preview/assets/og/home.png", "filename": "the-signal.png"}}, "brief": {"title": "Signal Brief · The Signal", "desc": "A self-updating feed of AI, quantum computing, cybersecurity, cloud and DevOps, and podcast updates.", "inside": "A fresh brief every morning at 07:00, 8 stories today", "link": "https://thillairaj.github.io/signal-preview/#brief", "tag": "#SignalBrief", "image": {"url": "https://thillairaj.github.io/signal-preview/assets/og/home.png", "filename": "the-signal.png"}}};
@@ -818,7 +833,7 @@ window.__ssHomeShareConfigs = {"home": {"title": "The Signal", "desc": "A self-u
         <li><a href="breaking/">Breaking</a></li>
         <li><a href="brief/">Signal Brief</a></li>
         <li><a href="#brief">Brief view</a></li>
-        <li><a href="https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128" data-ds-subscribe target="_blank" rel="noopener">Subscribe on LinkedIn</a></li>
+        <li><a href="#subscribe-block" data-ds-subscribe>Subscribe</a></li>
       </ul>
     </div>
   </div>

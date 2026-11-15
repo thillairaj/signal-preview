@@ -1,9 +1,10 @@
 /* Homepage behaviour for the design system build (Nov 15, 2026):
    top bar and mega menu, mobile menu, data rendering from
    data/home-counts.json, the News two ways panels from
-   data/breaking.json and data/brief.json, and the subscribe link
-   swap point. Defensive throughout: a failed fetch leaves the
-   static fallback content in place and never throws. */
+   data/breaking.json and data/brief.json, and the Subscribe
+   controls, which scroll to the Kit signup block. Defensive
+   throughout: a failed fetch leaves the static fallback content in
+   place and never throws. */
 (function () {
   "use strict";
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -105,13 +106,15 @@
     });
   }
 
-  /* ---------- subscribe swap point ---------- */
+  /* ---------- subscribe: every Subscribe control scrolls to the
+     Kit signup block (wired by assets/signup.js) ---------- */
   function initSubscribe() {
-    var block = $("#subscribe-block");
-    if (!block) return;
-    var url = block.getAttribute("data-subscribe-url");
-    if (!url) return;
-    $$("[data-ds-subscribe]").forEach(function (a) { a.setAttribute("href", url); });
+    $$("[data-ds-subscribe]").forEach(function (a) {
+      a.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        goHomeThenScroll("subscribe-block");
+      });
+    });
   }
 
   /* ---------- counts, hero, wire, latest ---------- */

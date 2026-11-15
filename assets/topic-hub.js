@@ -6,7 +6,6 @@
    throughout; a failed fetch leaves the fallback text in place. */
 (function () {
   "use strict";
-  var SUBSCRIBE_URL = "https://www.linkedin.com/newsletters/qubitzsi-weekly-newsletter-7516680446613680128";
   var SLOT_TIMES = ["02:00", "06:00", "10:00", "14:00", "18:00", "22:00"];
   var DATA_URL = "../../data/topic-quantum.json";
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -134,7 +133,6 @@
   }
 
   function init() {
-    $$("[data-ds-subscribe]").forEach(function (a) { a.setAttribute("href", SUBSCRIBE_URL); });
     getJSON(DATA_URL).then(function (data) { renderGrid(data); initFilters(); }).catch(function () {});
     getJSON("../../data/breaking.json").then(renderBreaking).catch(function () {});
     getJSON("../../data/brief.json").then(renderBrief).catch(function () {});

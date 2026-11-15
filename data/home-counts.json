@@ -85,24 +85,24 @@
    "link": "https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/"
   },
   {
-   "title": "Frontier Reasoning Reaches the Edge: How to Deploy and Optimize Models on NVIDIA Jetson",
-   "source": "NVIDIA Technical Blog",
-   "link": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/"
+   "title": "Seam Cutter",
+   "source": "Simon Willison",
+   "link": "https://simonwillison.net/2026/Oct/25/seam-cutter/"
   },
   {
-   "title": "Building a Memory-Driven Agent with NVIDIA NemoClaw",
-   "source": "NVIDIA Technical Blog",
-   "link": "https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/"
+   "title": "webframe: evaluated as a scraper and a sandbox",
+   "source": "Simon Willison",
+   "link": "https://simonwillison.net/2026/Oct/26/webframe-evaluation/"
   },
   {
-   "title": "Introducing CUDA Rust: Two Tracks for Writing GPU Kernels",
-   "source": "NVIDIA Technical Blog",
-   "link": "https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/"
+   "title": "AI broke the cybersecurity world. What’s next?",
+   "source": "The Verge — AI",
+   "link": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos"
   },
   {
-   "title": "CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs",
-   "source": "NVIDIA Technical Blog",
-   "link": "https://developer.nvidia.com/blog/cuda-toolkit-13-4-adds-windows-on-arm-support-and-greater-control-over-shared-gpus/"
+   "title": "The US let Nvidia sell chips to an empty office in China",
+   "source": "The Verge — AI",
+   "link": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government"
   }
  ],
  "latest": [
