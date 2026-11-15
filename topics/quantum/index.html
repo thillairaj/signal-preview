@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum · The Signal</title>
+<meta name="description" content="Every way The Signal teaches quantum: the deck, the explainer, the tables, the video room, the games and the podcast, gathered in one hub.">
+<meta property="og:title" content="Quantum · The Signal">
+<meta property="og:description" content="Every way The Signal teaches quantum: the deck, the explainer, the tables, the video room, the games and the podcast, gathered in one hub.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thillairaj.github.io/signal-preview/topics/quantum/">
+<meta property="og:image" content="https://thillairaj.github.io/signal-preview/assets/og/topics/quantum.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<link rel="canonical" href="https://thillairaj.github.io/signal-preview/topics/quantum/">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/design-system.css?v=20261115">
+<script>
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem("aisignal_theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") {
+    document.documentElement.setAttribute("data-theme", saved);
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("hubTheme");
+    if (!btn) return;
+    var sync = function () {
+      var cur = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      btn.textContent = cur === "dark" ? "☀" : "☾";
+    };
+    sync();
+    btn.addEventListener("click", function () {
+      var cur = document.documentElement.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = cur === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("aisignal_theme", next); } catch (e) {}
+      sync();
+    });
+  });
+})();
+</script>
+
+<meta name="signal-build" content="2026-11-07.footer1">
+<link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
+</head>
+<body class="ds-root">
+  <div class="ds-hub-topbar">
+    <div class="ds-hub-topbar-in">
+      <a class="ds-back" href="../../"><small>← Back to</small>The Signal</a>
+      <span class="ss-page-mount" id="ssPageMount"></span>
+      <button class="ds-theme-btn" id="hubTheme" type="button" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </div>
+
+  <header class="ds-hub-hero">
+    <div class="ds-hub-hero-in">
+      <span class="ds-orbit" aria-hidden="true"><span class="ds-ring"></span><span class="ds-nucleus"></span></span>
+      <p class="ds-crumb"><a href="../../">Home</a> / Quantum</p>
+      <h1>Quantum</h1>
+      <p class="ds-sub">Qubits, algorithms, hardware and cryptography, taught eight ways. Start with the deck, then explore the video room, the periodic tables and the podcast.</p>
+      <div class="ds-path">
+        <a href="../../quantum-learning-space/">Beginner</a>
+        <span class="ds-path-arrow" aria-hidden="true">→</span>
+        <a href="../../quantum-learning-space/">Intermediate</a>
+        <span class="ds-path-arrow" aria-hidden="true">→</span>
+        <a href="../../quantum-learning-space/">Advanced</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-hub-layout">
+    <main>
+      <div class="ds-start">
+        <div>
+          <h2>Start here</h2>
+          <p>New to quantum? Begin with the first flashcard from the Quantum Computing Fundamentals deck, then work through the deck topic by topic.</p>
+          <p style="margin-top:14px"><a class="ds-btn" href="../../quantum-deck/#fundamentals">Open the Quantum deck</a></p>
+        </div>
+        <div class="ds-flip" aria-hidden="true"><div class="ds-flip-in">
+          <div class="ds-flip-face ds-flip-front"><span data-hub-flash="q">Why won't a quantum computer just make every calculation faster?</span></div>
+          <div class="ds-flip-face ds-flip-back"><span data-hub-flash="a">Speedup isn't the aim — quantum algorithms exploit superposition, interference, and entanglement for particular problems where those effects beat classical methods. Everything else stays classical.</span></div>
+        </div></div>
+      </div>
+
+      <div class="ds-filters" role="group" aria-label="Filter the quantum collection by format">
+        <button class="ds-filter" type="button" data-filter="All" aria-pressed="true">All</button>
+        <button class="ds-filter" type="button" data-filter="Decks" aria-pressed="false">Decks</button>
+        <button class="ds-filter" type="button" data-filter="Explainers" aria-pressed="false">Explainers</button>
+        <button class="ds-filter" type="button" data-filter="Tables" aria-pressed="false">Tables</button>
+        <button class="ds-filter" type="button" data-filter="Videos" aria-pressed="false">Videos</button>
+        <button class="ds-filter" type="button" data-filter="Games" aria-pressed="false">Games</button>
+        <button class="ds-filter" type="button" data-filter="Podcasts" aria-pressed="false">Podcasts</button>
+        <button class="ds-filter" type="button" data-filter="Articles" aria-pressed="false">Articles</button>
+      </div>
+      <div class="ds-hub-grid" data-hub-grid>
+        <p class="ds-quiet">Loading the quantum collection.</p>
+      </div>
+    </main>
+
+    <aside class="ds-side">
+      <div class="ds-side-box">
+        <h3>Quantum breaking</h3>
+        <div data-hub-breaking><p>Checking the breaking lane.</p></div>
+      </div>
+      <div class="ds-side-box">
+        <h3>Quantum in the Brief</h3>
+        <div data-hub-brief><p>Loading the latest editions.</p></div>
+      </div>
+      <div class="ds-side-box">
+        <h3>The weekly update</h3>
+        <p>New quantum lessons, deck topics and episodes, once a week. The update runs through the LinkedIn newsletter for now.</p>
+        <a class="ds-btn" data-ds-subscribe href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener">Follow on LinkedIn</a>
+      </div>
+      <div class="ds-side-box">
+        <h3>Other topics</h3>
+        <ul>
+          <li><a href="../../ai-learning-space/">AI and Agentic AI</a></li>
+          <li><a href="../../cloud-devops-learning-space/">Cloud and DevOps</a></li>
+          <li><a href="../../cybersecurity-learning-space/">Cybersecurity</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script src="../../assets/signal-share.js"></script>
+  <script src="../../assets/topic-hub.js?v=20261115"></script>
+<footer class="signal-footer">
+  <div class="sf-follow"><span class="sf-label">Follow along</span><span class="sf-links"><a class="sf-link" href="https://www.linkedin.com/in/thillairaj" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Thillai Raj</a><a class="sf-link" href="https://www.linkedin.com/showcase/qu-bits/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>QuBits · Quantum &amp; AI</a><a class="sf-link" href="https://www.linkedin.com/showcase/agentic-ai-architect/" target="_blank" rel="noopener"><span class="sf-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></span>Agentic AI Architect</a></span></div>
+  <p class="sf-copy">© 2026 The Signal</p>
+  <p class="sf-tag">Learn it. Then share it.</p>
+</footer>
+<script src="../../assets/version-check.js?v=2026-11-07.footer1"></script>
+</body>
+</html>
