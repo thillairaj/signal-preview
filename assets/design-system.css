@@ -201,7 +201,7 @@ body { background: var(--ds-bg); }
 }
 .ds-hero-in {
   position: relative; z-index: 1; max-width: 1240px; margin: 0 auto;
-  padding: 52px 20px 30px; display: grid;
+  padding: 76px 20px 30px; display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 44px; align-items: center;
 }
 .ds-kicker {
@@ -369,10 +369,10 @@ body { background: var(--ds-bg); }
 }
 .ds-format h3 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.22rem; margin: 12px 0 4px; }
 .ds-fcount { color: var(--ds-muted); font-size: .88rem; margin: 0; line-height: 1.5; }
-.ds-mini-flip { width: 248px; max-width: 100%; height: 168px; }
+.ds-mini-flip { width: 100%; max-width: 248px; height: auto; aspect-ratio: 248 / 168; }
 .ds-mini-flip .ds-flip-face { font-size: .95rem; padding: 14px 16px; text-align: center; justify-content: center; line-height: 1.45; }
 .ds-mini-flip .ds-flip-back { font-size: .9rem; }
-.ds-fanim-flip { height: 196px; }
+.ds-fanim-flip { height: auto; }
 .ds-steps { display: flex; gap: 10px; align-items: center; }
 .ds-steps i {
   width: 17px; height: 17px; border-radius: 50%; background: var(--ds-card);
@@ -573,7 +573,8 @@ body { background: var(--ds-bg); }
 }
 .ds-start h2 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.5rem; margin: 0 0 6px; }
 .ds-start p { color: var(--ds-muted); margin: 0; line-height: 1.55; font-size: .94rem; }
-.ds-start .ds-flip { width: 440px; max-width: 100%; height: 200px; }
+.ds-start .ds-flip { width: 100%; max-width: 440px; height: 200px; }
+.ds-start > * { min-width: 0; }
 .ds-start .ds-flip-face { font-size: 1.15rem; padding: 20px 22px; line-height: 1.5; }
 .ds-start .ds-flip-back { font-size: 1rem; }
 .ds-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
@@ -725,77 +726,92 @@ body { background: var(--ds-bg); }
   }
 }
 
-/* ==== Global top bar for deep pages (fix round, Nov 15, 2026) ====
-   One dependency free bar injected on every page family by
-   patch-global-topbar.py and emitted by the family builders. Styles
-   live here so every page renders the same bar from one file. */
-.gtb {
-  position: relative; z-index: 60;
-  background: var(--ds-card); border-bottom: 1px solid var(--ds-line);
-  color: var(--ds-ink); font-family: var(--ds-sans);
-}
-.gtb * { box-sizing: border-box; }
-.gtb-in {
-  max-width: 1240px; margin: 0 auto; padding: 8px 16px;
-  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-}
-.gtb-logo {
-  margin-right: auto; font-family: var(--ds-serif); font-size: 1.3rem;
-  color: var(--ds-ink); text-decoration: none; white-space: nowrap;
-  display: inline-flex; align-items: center; min-height: 44px;
-}
-.gtb-logo em { font-style: italic; color: var(--ds-gold-text); }
-.gtb-nav { display: flex; align-items: center; gap: 4px 16px; flex-wrap: wrap; }
-.gtb-nav > a, .gtb-learn > summary {
-  color: var(--ds-ink); text-decoration: none; font-weight: 600;
-  font-size: .95rem; display: inline-flex; align-items: center;
-  min-height: 44px; padding: 4px 2px;
-}
-.gtb-nav > a:hover, .gtb-nav > a:focus-visible,
-.gtb-learn > summary:hover, .gtb-learn > summary:focus-visible {
-  color: var(--ds-green); text-decoration: underline; text-underline-offset: 4px;
-}
-.gtb-learn { position: relative; }
-.gtb-learn > summary { cursor: pointer; list-style: none; }
-.gtb-learn > summary::-webkit-details-marker { display: none; }
-.gtb-learn > summary::after { content: "▾"; margin-left: 5px; font-size: .8em; }
-.gtb-menu {
-  position: absolute; top: calc(100% + 6px); left: 0; z-index: 70;
-  display: flex; gap: 26px; padding: 16px 18px;
-  background: var(--ds-card); border: 1px solid var(--ds-line);
-  border-radius: 16px; box-shadow: var(--ds-shadow);
-  min-width: min(470px, 88vw);
-}
-.gtb-col { min-width: 180px; }
-.gtb-h {
-  display: block; font-size: .7rem; font-weight: 700; letter-spacing: .13em;
-  text-transform: uppercase; color: var(--ds-muted); margin-bottom: 6px;
-}
-.gtb-col a {
-  display: block; padding: 7px 4px; min-height: 36px;
-  color: var(--ds-ink); text-decoration: none; font-weight: 500; font-size: .94rem;
-}
-.gtb-col a:hover, .gtb-col a:focus-visible {
-  color: var(--ds-green); text-decoration: underline; text-underline-offset: 3px;
-}
-.gtb-sub {
-  background: var(--ds-green); color: #fff !important; border-radius: 999px;
-  padding: 8px 18px !important;
-}
-.gtb-sub:hover, .gtb-sub:focus-visible { background: var(--ds-accent); text-decoration: none !important; }
-.gtb-crumb {
-  max-width: 1240px; margin: 0 auto; padding: 9px 16px;
+
+/* ==== Round 3 additions (Nov 15, 2026) ==== */
+
+/* Breadcrumb band inside the shared top bar (deep pages). Sits under
+   the bar row, inside the sticky bar, so it travels with the bar. */
+.ds-bar-crumb {
+  max-width: 1240px; margin: 0 auto; padding: 8px 20px;
   display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   font-size: .86rem; color: var(--ds-muted);
   border-top: 1px solid var(--ds-line);
 }
-.gtb-crumb a { color: var(--ds-green); font-weight: 600; text-decoration: none; }
-.gtb-crumb a:hover, .gtb-crumb a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-.gtb-crumb [aria-current] {
+.ds-bar-crumb a { color: var(--ds-green); font-weight: 600; text-decoration: none; }
+:root[data-theme="dark"] .ds-bar-crumb a { color: var(--ds-accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ds-bar-crumb a { color: var(--ds-accent); } }
+.ds-bar-crumb a:hover, .ds-bar-crumb a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.ds-bar-crumb [aria-current] {
   color: var(--ds-ink); font-weight: 600;
   max-width: 46ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-@media (max-width: 899px) {
-  .gtb-in { gap: 8px 12px; padding: 6px 12px; }
-  .gtb-menu { left: auto; right: 0; flex-direction: column; gap: 14px; }
+
+/* ---------- Kit signup form (homepage block and hub compact) ----------
+   Wired by assets/signup.js. While the Kit form ID is unset the form
+   is inert: the starting soon note shows and the button is disabled. */
+.ds-signup { max-width: 560px; margin: 0 auto; text-align: left; }
+.ds-signup-row { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+.ds-field { flex: 1 1 240px; display: grid; gap: 6px; }
+.ds-field label { font: 600 .86rem var(--ds-sans); color: var(--ds-ink); }
+.ds-field input {
+  min-height: 44px; padding: 10px 14px; border-radius: 12px;
+  border: 1px solid var(--ds-line); background: var(--ds-card);
+  color: var(--ds-ink); font: 400 1rem var(--ds-sans); width: 100%;
 }
+.ds-field input:focus-visible { outline: 3px solid var(--ds-gold); outline-offset: 1px; }
+.ds-consent {
+  display: flex; gap: 9px; align-items: flex-start; margin-top: 12px;
+  font-size: .9rem; line-height: 1.5; color: var(--ds-muted); cursor: pointer;
+}
+.ds-consent input { width: 19px; height: 19px; margin-top: 2px; flex: 0 0 auto; accent-color: var(--ds-green); }
+.ds-signup-note { margin: 12px 0 0; font-size: .92rem; font-weight: 600; color: var(--ds-gold-text); }
+.ds-signup-note[hidden] { display: none; }
+.ds-signup-msg { margin: 12px 0 0; font-size: .92rem; line-height: 1.5; border-radius: 10px; padding: 10px 13px; }
+.ds-signup-msg[hidden] { display: none; }
+.ds-signup-ok { background: var(--ds-tint); color: var(--ds-green); }
+:root[data-theme="dark"] .ds-signup-ok { color: var(--ds-accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ds-signup-ok { color: var(--ds-accent); } }
+.ds-signup-err { background: var(--ds-red-tint); color: var(--ds-red-deep); }
+.ds-signup .ds-btn[disabled] { opacity: .55; cursor: not-allowed; }
+.ds-signup-compact { max-width: none; margin: 0; }
+.ds-signup-compact .ds-signup-row { flex-direction: column; align-items: stretch; }
+.ds-signup-compact .ds-btn { width: 100%; }
+
+/* One line weekly signup links at the end of Brief stories and
+   research articles (the lines themselves are emitted by the
+   builders and by patch-global-topbar.py). */
+.story-weekly { max-width: 760px; margin: 18px auto 4px; padding: 0 18px; font-size: .95rem; }
+.story-weekly a, .ap-weekly a { color: var(--ds-green); font-weight: 600; text-decoration: none; }
+:root[data-theme="dark"] .story-weekly a, :root[data-theme="dark"] .ap-weekly a { color: var(--ds-accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .story-weekly a, :root:not([data-theme="light"]) .ap-weekly a { color: var(--ds-accent); } }
+.story-weekly a:hover, .story-weekly a:focus-visible,
+.ap-weekly a:hover, .ap-weekly a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.ap-weekly { max-width: 1060px; margin: 26px auto 0; padding: 0 20px; font-size: 15px; }
+
+/* ---------- weekly update pages ---------- */
+.wk-wrap { max-width: 760px; margin: 0 auto; padding: 34px 20px 10px; }
+.wk-kicker {
+  margin: 0 0 10px; font: 700 .74rem var(--ds-sans);
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ds-gold-text);
+}
+.wk-wrap h1 { font-family: var(--ds-serif); font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 12px; }
+.wk-date { color: var(--ds-muted); margin: 0 0 20px; font-size: .95rem; }
+.wk-open { font-size: 1.02rem; line-height: 1.65; margin: 0 0 8px; }
+.wk-wrap h2 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.55rem; margin: 30px 0 6px; }
+.wk-item { border-top: 1px solid var(--ds-line); padding: 16px 0 4px; }
+.wk-item h3 { font-size: 1.08rem; line-height: 1.4; margin: 0 0 6px; font-weight: 700; }
+.wk-item p { margin: 0 0 8px; line-height: 1.6; font-size: .97rem; }
+.wk-item a { color: var(--ds-green); font-weight: 600; text-decoration: none; }
+:root[data-theme="dark"] .wk-item a { color: var(--ds-accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wk-item a { color: var(--ds-accent); } }
+.wk-item a:hover, .wk-item a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.wk-close { margin: 26px 0 4px; line-height: 1.65; font-size: 1rem; }
+.wk-foot { border-top: 1px solid var(--ds-line); margin-top: 26px; padding-top: 14px; color: var(--ds-muted); font-size: .86rem; line-height: 1.6; }
+.wk-issue-link {
+  display: block; text-decoration: none; color: var(--ds-ink);
+  background: var(--ds-card); border: 1px solid var(--ds-line);
+  border-radius: 18px; padding: 18px; box-shadow: var(--ds-shadow); margin-bottom: 14px;
+}
+.wk-issue-link:hover { border-color: var(--ds-gold); }
+.wk-issue-link h3 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.3rem; margin: 0 0 6px; line-height: 1.3; }
+.wk-issue-link p { margin: 0; color: var(--ds-muted); font-size: .92rem; line-height: 1.55; }
