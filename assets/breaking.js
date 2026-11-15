@@ -48,6 +48,12 @@
     return date + " · " + time + " IST";
   }
 
+  function fmtTimeIST(iso) {
+    return new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", hour12: false
+    }).format(new Date(iso)) + " IST";
+  }
+
   function isActive(item, at) {
     var t = Date.parse(item.published || "");
     if (isNaN(t)) return false;
@@ -71,31 +77,34 @@
   }
 
   /* States for today's six slots, in order. Past slots read the slot log;
-     the first future slot is the next check; the rest are later. */
+     the first future slot is the next check; the rest are later. Each
+     state also carries its display label (home.js renders it directly). */
   function slotStates(data, at) {
     var today = istDateKey(at);
     var log = {};
     (data.slots || []).forEach(function (s) {
       if (s.date === today) log[s.time] = s;
     });
+    function mk(time, state, count) {
+      var st = { time: time, state: state, count: count };
+      st.label = slotLabel(st);
+      return st;
+    }
     var nextAssigned = false;
     return SLOT_TIMES.map(function (t) {
       if (log[t]) {
-        return {
-          time: t,
-          state: log[t].result === "published" ? "published" : "none",
-          count: log[t].count || 0
-        };
+        return mk(t, log[t].result === "published" ? "published" : "none",
+          log[t].count || 0);
       }
       var slotDate = new Date(today + "T" + t + ":00+05:30");
       if (slotDate.getTime() > at.getTime()) {
         if (!nextAssigned) {
           nextAssigned = true;
-          return { time: t, state: "next", count: 0 };
+          return mk(t, "next", 0);
         }
-        return { time: t, state: "later", count: 0 };
+        return mk(t, "later", 0);
       }
-      return { time: t, state: "nolog", count: 0 };
+      return mk(t, "nolog", 0);
     });
   }
 
@@ -104,6 +113,7 @@
     CAT_COLOURS: CAT_COLOURS,
     istDateKey: istDateKey,
     fmtIST: fmtIST,
+    fmtTimeIST: fmtTimeIST,
     isActive: isActive,
     computeActive: computeActive,
     computeArchive: computeArchive,
@@ -140,6 +150,11 @@
     return "No log recorded";
   }
 
+  /* Homepage ticker: every active item scrolls in one continuous loop.
+     The sequence is duplicated once for the loop; the duplicate is
+     aria-hidden and its links are unfocusable, so each item is read and
+     tabbed to exactly once. Under prefers-reduced-motion the CSS turns
+     the track into a static list and hides the duplicate. */
   function renderStrip(data, at, base) {
     var strip = document.getElementById("breakingStrip");
     if (!strip) return;
@@ -149,11 +164,23 @@
       strip.innerHTML = "";
       return;
     }
+    function tick(it, dup) {
+      return '<span class="bk-tick"><time class="bk-tick-time">' +
+        esc(fmtTimeIST(it.published)) + '</time> ' +
+        '<span class="bk-tick-head">' + esc(it.headline) + "</span> " +
+        '<a class="bk-tick-link" href="' + esc(base) + 'breaking/"' +
+        (dup ? ' tabindex="-1"' : "") + ">Read more</a></span>";
+    }
+    function seq(dup) {
+      return '<div class="bk-ticker-seq"' + (dup ? ' aria-hidden="true"' : "") +
+        ">" + active.map(function (it) { return tick(it, dup); }).join("") + "</div>";
+    }
+    var seconds = Math.max(18, active.length * 12);
     strip.innerHTML =
       '<span class="bk-dot" aria-hidden="true"></span>' +
       '<span class="bk-strip-label">Breaking</span>' +
-      '<span class="bk-strip-head">' + esc(active[0].headline) + "</span>" +
-      '<a class="bk-strip-link" href="' + esc(base) + 'breaking/">Read more</a>';
+      '<div class="bk-ticker"><div class="bk-ticker-track" style="--bk-dur:' +
+      seconds + 's">' + seq(false) + seq(true) + "</div></div>";
     strip.hidden = false;
   }
 

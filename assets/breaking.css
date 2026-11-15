@@ -14,6 +14,13 @@
   --bk-gold: #b8860b;
   --bk-red: #c02727;
   --bk-red-soft: #fbeeee;
+  /* Ticker tokens (fix round, Nov 15, 2026): light red family in BOTH
+     themes so the strip reads as an alert band everywhere; the text
+     colour keeps AA contrast on the tint. */
+  --bk-tick-bg: #FDECEA;
+  --bk-tick-line: #F5C2BC;
+  --bk-tick-ink: #8A1F14;
+  --bk-tick-dot: #D93A2B;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   color: var(--bk-ink);
 }
@@ -24,6 +31,10 @@
   --bk-gold: #d4af6a;
   --bk-red: #ff7a72;
   --bk-red-soft: #3a2321;
+  --bk-tick-bg: #F3D2CC;
+  --bk-tick-line: #DFA198;
+  --bk-tick-ink: #7A1A10;
+  --bk-tick-dot: #D93A2B;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .bk-strip, :root:not([data-theme="light"]) .breaking-ui {
@@ -33,43 +44,72 @@
     --bk-gold: #d4af6a;
     --bk-red: #ff7a72;
     --bk-red-soft: #3a2321;
+    --bk-tick-bg: #F3D2CC;
+    --bk-tick-line: #DFA198;
+    --bk-tick-ink: #7A1A10;
+    --bk-tick-dot: #D93A2B;
   }
 }
 .bk-strip *, .breaking-ui * { box-sizing: border-box; }
 .bk-strip[hidden], .breaking-ui [hidden] { display: none !important; }
 
-/* Homepage strip: slim bar above the masthead, only while an item is active */
+/* Homepage ticker: one compact line (about 40px) directly below the
+   global top bar, only while an item is active. All active items
+   scroll in a continuous loop; the loop pauses on hover and whenever
+   focus is inside the strip. */
 .bk-strip {
   display: flex; align-items: center; gap: 10px;
-  padding: 8px 16px;
-  background: var(--bk-red-soft);
-  border-bottom: 2px solid var(--bk-red);
+  height: 40px; padding: 0 16px; overflow: hidden;
+  background: var(--bk-tick-bg);
+  border-bottom: 1px solid var(--bk-tick-line);
+  color: var(--bk-tick-ink);
   font-size: .9rem; line-height: 1.35;
 }
 .bk-dot {
   flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%;
-  background: var(--bk-red);
+  background: var(--bk-tick-dot);
   animation: bk-pulse 1.6s ease-out infinite;
 }
 @keyframes bk-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(192, 39, 39, .55); }
-  70% { box-shadow: 0 0 0 9px rgba(192, 39, 39, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(192, 39, 39, 0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .bk-dot { animation: none; }
+  0% { box-shadow: 0 0 0 0 rgba(217, 58, 43, .55); }
+  70% { box-shadow: 0 0 0 9px rgba(217, 58, 43, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 58, 43, 0); }
 }
 .bk-strip-label {
   flex: 0 0 auto; font-weight: 800; letter-spacing: .14em;
-  font-size: .72rem; text-transform: uppercase; color: var(--bk-red);
+  font-size: .72rem; text-transform: uppercase; color: var(--bk-tick-ink);
 }
-.bk-strip-head { flex: 1 1 auto; font-weight: 600; min-width: 0; }
-.bk-strip-link {
-  flex: 0 0 auto; font-weight: 700; color: var(--bk-red);
-  text-decoration: none; border: 1px solid var(--bk-red);
-  padding: 4px 12px; border-radius: 999px; white-space: nowrap;
+.bk-ticker { flex: 1 1 auto; min-width: 0; overflow: hidden; }
+.bk-ticker-track {
+  display: flex; width: max-content;
+  animation: bk-scroll var(--bk-dur, 30s) linear infinite;
 }
-.bk-strip-link:hover, .bk-strip-link:focus-visible { text-decoration: underline; }
+@keyframes bk-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.bk-strip:hover .bk-ticker-track,
+.bk-strip:focus-within .bk-ticker-track { animation-play-state: paused; }
+.bk-ticker-seq { display: flex; align-items: center; }
+.bk-tick { white-space: nowrap; padding-right: 3rem; }
+.bk-tick-time { font-weight: 800; }
+.bk-tick-head { font-weight: 600; }
+.bk-tick-link {
+  font-weight: 700; color: var(--bk-tick-ink);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.bk-tick-link:hover, .bk-tick-link:focus-visible { color: #5F130B; }
+@media (prefers-reduced-motion: reduce) {
+  .bk-dot { animation: none; }
+  /* No scrolling: the active items become a static list and the
+     aria-hidden loop duplicate disappears entirely. */
+  .bk-strip { height: auto; padding: 8px 16px; align-items: flex-start; }
+  .bk-ticker { overflow: visible; }
+  .bk-ticker-track { animation: none; width: auto; display: block; }
+  .bk-ticker-seq { display: block; }
+  .bk-ticker-seq[aria-hidden="true"] { display: none; }
+  .bk-tick { display: block; white-space: normal; padding: 2px 0; }
+}
 
 /* Breaking page body */
 .breaking-ui { max-width: 860px; margin: 0 auto; padding: 10px 18px 34px; }
@@ -133,13 +173,17 @@
 }
 .bk-impact p { margin: 0; font-size: .9rem; line-height: 1.55; }
 .bk-srcs { margin: 0; font-size: .85rem; color: var(--bk-muted); line-height: 1.6; }
-.bk-srcs a { color: var(--bk-ink); font-weight: 600; }
+.bk-srcs a {
+  color: var(--bk-ink); font-weight: 600; text-decoration: none;
+  border-bottom: 1px solid var(--bk-gold);
+}
+.bk-srcs a:hover, .bk-srcs a:focus-visible {
+  color: var(--bk-red); border-bottom-color: var(--bk-red);
+}
 .bk-empty { color: var(--bk-muted); font-size: .94rem; padding: 10px 0 4px; }
 
 @media (max-width: 899px) {
-  .bk-strip { flex-wrap: wrap; padding: 8px 12px; gap: 7px; font-size: .86rem; }
-  .bk-strip-head { flex: 1 1 100%; order: 3; }
-  .bk-strip-link { margin-left: auto; }
+  .bk-strip { padding: 0 12px; font-size: .86rem; }
   .breaking-ui { padding: 8px 14px 28px; }
   .bk-timeline { grid-template-columns: repeat(2, 1fr); }
   .bk-item-h { font-size: 1.24rem; }
