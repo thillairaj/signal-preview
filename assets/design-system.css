@@ -855,3 +855,66 @@ html, body { overflow-anchor: none; }
 .wk-issue-link:hover { border-color: var(--ds-gold); }
 .wk-issue-link h3 { font-family: var(--ds-serif); font-weight: 400; font-size: 1.3rem; margin: 0 0 6px; line-height: 1.3; }
 .wk-issue-link p { margin: 0; color: var(--ds-muted); font-size: .92rem; line-height: 1.55; }
+
+/* ---------- topic hub rails (Nov 16, 2026) ----------
+   One horizontal rail per format replaces the filter tabs and the
+   full grid, so the hub page length stays fixed as content grows.
+   The track is the only horizontal scroller on the page: the layout
+   column and each rail are min-width 0, and cards are fluid, so
+   nothing can widen the page at 390px. Card width: 272px on
+   desktop (about three cards and a peek in the hub column), 82% of
+   the track under 900px (about 1.2 cards, the next one peeking). */
+.ds-hub-layout > main { min-width: 0; }
+.ds-rails { display: grid; gap: 28px; }
+.ds-rail { min-width: 0; }
+.ds-rail-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.ds-rail-head h2 {
+  font-family: var(--ds-serif); font-weight: 400; font-size: 1.35rem; margin: 0;
+}
+.ds-rail-nav { display: inline-flex; gap: 6px; }
+.ds-rail-btn {
+  width: 44px; height: 44px; border-radius: 50%; cursor: pointer; flex: 0 0 auto;
+  border: 1px solid var(--ds-line); background: var(--ds-card);
+  color: var(--ds-ink); font-size: .8rem; line-height: 1;
+}
+.ds-rail-btn:hover, .ds-rail-btn:focus-visible { border-color: var(--ds-gold); }
+.ds-rail-btn[disabled] { opacity: .35; cursor: default; }
+.ds-rail-btn[hidden] { display: none; }
+.ds-rail-seeall {
+  margin-left: auto; display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--ds-green); font-weight: 600; font-size: .92rem; text-decoration: none;
+  white-space: nowrap;
+}
+.ds-rail-seeall:hover, .ds-rail-seeall:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+:root[data-theme="dark"] .ds-rail-seeall { color: var(--ds-accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ds-rail-seeall { color: var(--ds-accent); } }
+.ds-rail-track {
+  display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 12px;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+}
+.ds-rail-track:focus-visible { outline: 2px solid var(--ds-gold); outline-offset: 2px; }
+.ds-rail-card { flex: 0 0 272px; scroll-snap-align: start; }
+@media (max-width: 899px) {
+  .ds-rail-card { flex-basis: 82%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-rail-track { scroll-behavior: auto; }
+}
+
+/* ---------- topic format (See all) pages (Nov 16, 2026) ---------- */
+.ds-fmt-wrap { max-width: 1240px; margin: 0 auto; padding: 28px 20px 30px; }
+.ds-fmt-head h1 { font-family: var(--ds-serif); font-weight: 400; font-size: clamp(2rem, 4.5vw, 2.8rem); margin: 0 0 8px; }
+.ds-fmt-head .ds-sub { margin: 0 0 6px; }
+.ds-fmt-count { color: var(--ds-gold-text); font-weight: 600; font-size: .88rem; margin: 0 0 20px; }
+.ds-fmt-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 560px) {
+  .ds-fmt-list { grid-template-columns: 1fr; }
+}
+.ds-fmt-back { margin: 22px 0 0; }
+.ds-fmt-back a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--ds-green); font-weight: 600; text-decoration: none;
+}
+.ds-fmt-back a:hover, .ds-fmt-back a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+:root[data-theme="dark"] .ds-fmt-back a { color: var(--ds-accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ds-fmt-back a { color: var(--ds-accent); } }
