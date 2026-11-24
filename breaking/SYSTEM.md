@@ -1,8 +1,8 @@
-# Breaking: system notes (PREVIEW build, Nov 15, 2026)
+# Breaking: system notes (built Nov 15, 2026; live Nov 17, 2026)
 
-Status: built on the preview site only (thillairaj.github.io/signal-preview),
-awaiting Thillai's approval. Nothing here is live. The four hour job
-(signal-breaking-4h) is drafted in the build report and is NOT created yet.
+Status: LIVE on thillairaj.github.io/The-Signal-AI-Quantum since Nov 17,
+2026, approved by Thillai. Built and reviewed on the preview site first.
+The four hour job (signal-breaking-4h) runs the lane.
 
 ## Two separate products
 
@@ -184,9 +184,10 @@ at fetch time), Google Cloud Status Atom (newest item 9 days old).
   Visually separate from Signal Brief: no calendar, no Brief cards, a
   news wire look with a red accent.
 - The standard footer step runs on the page as in the daily job. The
-  preview stays noindex and its URLs are never sent to IndexNow.
+  the page is indexed normally and its URL is sent to IndexNow when an
+  item publishes (preview URLs are never sent).
 
-## Go live notes (for the approval step, not done in the preview build)
+## Go live notes (done Nov 17, 2026, as specified here)
 
 - Port feeds.json, data/breaking.json, assets/breaking.js,
   assets/breaking.css, breaking/ and the homepage strip wiring to the
