@@ -1,0 +1,18 @@
+{
+  "updated": "2026-11-24T21:23:12+05:30",
+  "items": [
+    {
+      "id": "review-2026-11-24-01",
+      "category": "Cybersecurity",
+      "company": "Kenya eCitizen",
+      "headline": "Hackers claim to have stolen 740GB of data from Kenya's eCitizen platform",
+      "reason": "Held for human review. The claim concerns a national government platform, and the threat actor's claim had not been officially confirmed by the Government of Kenya at the time of the cycle.",
+      "sources": [
+        {
+          "label": "People Daily",
+          "url": "https://peopledaily.digital/news/hackers-claim-to-have-stolen-740gb-of-data-from-kenyas-ecitizen-platform"
+        }
+      ]
+    }
+  ]
+}
