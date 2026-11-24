@@ -13,6 +13,6 @@
     var el=document.createElement('div');el.className='live-strip';el.setAttribute('role','region');el.setAttribute('aria-label','Live news');
     el.innerHTML='<a class="ls-label" href="'+root+'live/"><span class="ls-ring" aria-hidden="true"></span>Live news</a><span class="ls-meta">'+stamp+'</span><div class="ls-trk"><div class="ls-mv">'+half+half+'</div></div>';
     var m=document.getElementById('liveStripMount');
-    if(m)m.appendChild(el);
+    if(m){m.appendChild(el);var mv=el.querySelector('.ls-mv');if(mv){var w=mv.scrollWidth/2;mv.style.animationDuration=Math.max(30,Math.round(w/45))+'s'}}
   }).catch(function(){});
 })();

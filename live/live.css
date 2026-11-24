@@ -14,7 +14,7 @@
 .lv-filters{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 20px}
 .lv-filters button{font:600 13px var(--font-body);border:1px solid var(--border);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 15px;cursor:pointer;white-space:nowrap}
 .lv-filters button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.lv-list{display:grid;gap:16px;grid-template-columns:1fr}
+.lv-list{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
 @media(min-width:900px){.lv-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .lv-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;scroll-margin-top:90px}
 .lv-card:target{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
@@ -56,3 +56,6 @@
 .lv-slot[disabled]{cursor:default}
 @media(min-width:1000px){.lv-slots{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));overflow:visible;padding:0;margin:0}.lv-slot{flex:none}}
 .lv-filters button em{font-style:normal;opacity:.65;margin-left:4px}
+.lv-card{min-width:0}
+.lv-card h2,.lv-card p,.lv-why,.lv-src{overflow-wrap:anywhere}
+.lv-chip{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
