@@ -750,9 +750,10 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
   });
 
   /* Rail items are links: each rotating card navigates to what it shows. */
-  document.querySelectorAll(".hm-ritem[data-goto], .hm-ritem[data-ext]").forEach(function (item) {
+  document.querySelectorAll(".hm-ritem[data-goto], .hm-ritem[data-ext], .hm-ritem[data-href]").forEach(function (item) {
     item.setAttribute("tabindex", "0");
     function nav() {
+      if (item.dataset.href) { window.location.href = item.dataset.href; return; }
       if (item.dataset.ext) { window.open(item.dataset.ext, "_blank", "noopener"); return; }
       var view = item.dataset.goto;
       if (view === "podcast") { activeSeries = item.dataset.series || ""; podcastPage = 0; }

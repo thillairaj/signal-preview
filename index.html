@@ -26,6 +26,8 @@
 
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="assets/signal-footer.css?v=2026-11-07.footer1">
+<link rel="stylesheet" href="assets/live-strip.css?v=20261117">
+<style>a.top-tab{text-decoration:none;display:inline-flex;align-items:center}</style>
 </head>
 <body data-view="home">
 
@@ -42,6 +44,8 @@
     <button class="top-tab" data-view="research"><span class="tab-num">03</span>Articles</button>
     <button class="top-tab" data-view="feed"><span class="tab-num">04</span>RSS Feed</button>
     <button class="top-tab" data-view="brief"><span class="tab-num">05</span>Signal Brief<span class="tab-new" id="briefNewBadge" hidden>NEW</span></button>
+    <a class="top-tab" href="games/"><span class="tab-num">06</span>Games</a>
+    <a class="top-tab" href="live/">Live news</a>
     </nav>
     <span class="tabs-fade" id="tabsFade" aria-hidden="true"></span>
     <button class="rail-btn tab-arrow next" id="tabsNext" type="button" aria-label="Scroll sections right">›</button>
@@ -56,6 +60,7 @@
     <div class="views" id="viewsText"></div>
   </div>
 </header>
+<div id="liveStripMount"></div>
 
 <div class="layout">
 
@@ -65,7 +70,7 @@
         <p class="hm-kicker">AI &amp; Quantum · On a schedule, not by chance</p>
         <h2 class="hm-h1">One front door to everything <em>The Signal</em> publishes.</h2>
         <p class="hm-auto-note">Updated automatically, every few hours.</p>
-            <p class="hm-lede">Five rooms — a learning space, a podcast studio, a research desk, a live wire and a daily brief. Everything moves on its own; hover or tap a box to hold it still and read.</p>
+            <p class="hm-lede">Six rooms — a learning space, a podcast studio, a research desk, a live wire, a daily brief and a games room, with live news running above them all. Everything moves on its own; hover or tap a box to hold it still and read.</p>
       </div>
       <div class="hm-ticker" aria-label="Key numbers">
         <div class="hm-ticker-track" id="hmTickerTrack">
@@ -175,6 +180,25 @@
           <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">&#8249;</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">&#8250;</button></div>
         </div>
       </article>
+      <article class="hm-room">
+        <div class="hm-room-head">
+          <div class="hm-room-no">06</div>
+          <div><h3>Games</h3><p class="hm-what">New puzzles every day, and games that make the learning stick.</p></div>
+          <a class="hm-go" href="games/" style="text-decoration:none">Play →</a>
+        </div>
+        <div class="hm-rail" data-hm-rail>
+          <div class="hm-rview"><div class="hm-rtrack">
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">1</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Kings</h4><p>Place one king in every row, column and colour region, with none touching. <b>One play a day</b>, a fresh board tomorrow.</p><div class="hm-chips"><span class="hm-chip">4 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">2</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Mini Sudoku</h4><p>Fill the 6 by 6 grid so every row, column and box holds 1 to 6. <b>Hints are always there</b>, and your score is time plus hints.</p><div class="hm-chips"><span class="hm-chip">4 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">3</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Trail</h4><p>Draw one path through every square, in number order, around the walls.</p><div class="hm-chips"><span class="hm-chip">3 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">4</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Leaf and Gem</h4><p>Three of each in every row and column, never three the same in a row.</p><div class="hm-chips"><span class="hm-chip">3 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">5</span><p class="hm-meta">Daily puzzle · New at 00:00 IST</p><h4>Double Up</h4><p>Merge equal numbers, use the wildcards, and finish with a single tile.</p><div class="hm-chips"><span class="hm-chip">3 min</span><span class="hm-chip navy">Once a day</span></div></section>
+            <section class="hm-ritem" data-href="games/"><span class="hm-ghost">6</span><p class="hm-meta">Learn and play · Unlimited</p><h4>Four games from the decks</h4><p><b>Guess the Group, Term Ladder, Path Words and Answer Duel.</b> Pick AI, Quantum, Cloud &amp; DevOps or Cybersecurity and play as long as you like.</p><div class="hm-chips"><span class="hm-chip navy">Unlimited</span><span class="hm-chip">2 players</span></div></section>
+          </div></div>
+          <div class="hm-railbar"><button class="hm-rbtn" type="button" data-hm-prev aria-label="Previous">&#8249;</button><div class="hm-dots"></div><span class="hm-count"></span><button class="hm-rbtn" type="button" data-hm-next aria-label="Next">&#8250;</button></div>
+        </div>
+      </article>
+
     </div>
 
     <div class="hm-week">
@@ -590,7 +614,7 @@
       <button class="learn-door-head" type="button" data-door-btn aria-expanded="false">
         <span class="learn-door-no">05</span>
         <span class="learn-door-name">Interactive Games</span>
-        <span class="learn-door-count">2 games · more coming</span>
+        <span class="learn-door-count">9 games · new puzzles daily</span>
         <span class="learn-door-enter">Click to enter</span>
         <span class="learn-door-chev" aria-hidden="true">▾</span>
       </button>
@@ -602,27 +626,64 @@
       </div>
 
     <div class="rail-wrap"><button class="rail-btn prev" type="button" aria-label="Previous cards">‹</button><div class="table-rail">
-            <a class="learn-card game-duel" href="games/answer-duel/">
-        <span class="learn-play" aria-hidden="true">♠</span>
-        <span class="learn-kicker">Interactive Game · Throwing</span>
+                        <a class="learn-card game-daily" href="games/#queens">
+        <span class="learn-play" aria-hidden="true">♛</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Kings</span>
+        <span class="learn-desc">One king in every row, column and colour region, none touching.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#sudoku">
+        <span class="learn-play" aria-hidden="true">▦</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Mini Sudoku</span>
+        <span class="learn-desc">Fill the 6 by 6 grid with 1 to 6. Hints are always there.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#trail">
+        <span class="learn-play" aria-hidden="true">⌁</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Trail</span>
+        <span class="learn-desc">Draw one path through every square, in number order.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#gems">
+        <span class="learn-play" aria-hidden="true">❦</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Leaf and Gem</span>
+        <span class="learn-desc">Three of each in every row and column, never three in a row.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-daily" href="games/#double">
+        <span class="learn-play" aria-hidden="true">⧉</span>
+        <span class="learn-kicker">Daily puzzle · Once a day</span>
+        <span class="learn-title">Double Up</span>
+        <span class="learn-desc">Merge equal numbers and finish with a single tile.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-duel" href="games/#guess">
+        <span class="learn-kicker">Learn and play · Unlimited</span>
+        <span class="learn-title">Guess the Group</span>
+        <span class="learn-desc">Name what the clues share. Choose AI, Quantum, Cloud or Security.</span>
+      <a class="learn-card game-duel" href="games/#ladder">
+        <span class="learn-play" aria-hidden="true">☰</span>
+        <span class="learn-kicker">Learn and play · Unlimited</span>
+        <span class="learn-title">Term Ladder</span>
+        <span class="learn-desc">Match the terms, then put the steps in order.</span>
+      <a class="learn-card game-duel" href="games/#path">
+        <span class="learn-play" aria-hidden="true">⌗</span>
+        <span class="learn-kicker">Learn and play · Unlimited</span>
+        <span class="learn-title">Path Words</span>
+        <span class="learn-desc">Trace the hidden terms letter by letter.</span>
+        <span class="learn-open">Play game ↗</span>
+      </a>
+      <a class="learn-card game-duel" href="games/#duel">
+        <span class="learn-play" aria-hidden="true">♦</span>
+        <span class="learn-kicker">Learn and play · Unlimited, 2 players</span>
         <span class="learn-title">Answer Duel</span>
-        <span class="learn-desc">One question, four answer cards: throw the right card to score, with points falling on every wrong throw.</span>
+        <span class="learn-desc">Drag the right card to the question. Play solo or duel a friend.</span>
         <span class="learn-open">Play game ↗</span>
       </a>
-      <a class="learn-card game-run" href="games/target-run/">
-        <span class="learn-play" aria-hidden="true">◎</span>
-        <span class="learn-kicker">Interactive Game · Bursting</span>
-        <span class="learn-title">Target Run</span>
-        <span class="learn-desc">Burst the right answers as they glide by: stages of questions rising in complexity, starting with the AI family.</span>
-        <span class="learn-open">Play game ↗</span>
-      </a>
-      <div class="learn-card game-soon">
-        <span class="learn-play" aria-hidden="true">✦</span>
-        <span class="learn-kicker">Interactive Games · Coming</span>
-        <span class="learn-title">Two More Games</span>
-        <span class="learn-desc">Two more games are being decided and will join this door in a later part.</span>
-        <span class="learn-open">Coming soon</span>
-      </div>
     </div><button class="rail-btn next" type="button" aria-label="Next cards">›</button></div>
 
       </div>
@@ -676,6 +737,7 @@
   </div>
 
 <script src="assets/signal-share.js?v=20261117"></script>
+<script src="assets/live-strip.js?v=20261117"></script>
 <script src="assets/brief.js?v=20261117"></script>
 <script src="app.js?v=20261117"></script>
 <!-- ss-page-share:start -->
