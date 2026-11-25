@@ -93,8 +93,11 @@ for dp,_,fs in os.walk(ROOT):
             bm=re.search(r'<p>\s*<em>(Signal Research Notes is[\s\S]*?)</em>\s*</p>\s*',s)
             if bm:
                 note=bm.group(1);s=s[:bm.start()]+s[bm.end():]
-                lm=s.rfind('<div class="research-sources') if '<div class="research-sources' in s else -1
                 tail='<p class="sgp-note">%s</p>'%note
+                lm=-1
+                for anchor in ('<div class="research-sources','<h3 class="research-sources-h">','<ul class="research-sources"'):
+                    lm=s.rfind(anchor) if anchor in s else -1
+                    if lm>0: break
                 s=(s[:lm]+tail+s[lm:]) if lm>0 else s.replace('</article>',tail+'</article>',1) if '</article>' in s else s
             s=re.sub(r'<a href="[^"]*#research">\s*All articles\s*</a>','',s)
             s=re.sub(r'(<h1 class="research-title">)([\s\S]*?)(</h1>)',lambda x:x.group(1)+rule(strip_tags(x.group(2)))+x.group(3),s,count=1)
