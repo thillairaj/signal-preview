@@ -46,6 +46,12 @@ body{background:var(--sg-paper);color:var(--sg-ink);font-family:var(--sg-body)}
    gold/navy accents from style.css and brief.css, mapped to the standard.
    The bundle file above is unchanged; these rules sit after it and win. */
 .masthead h1.brand-h em{color:var(--sg-ink)}
+/* fixes round 2 (25 Nov 2026): the masthead wordmark's "The" takes the standard ink
+   (--sg-ink: #201B14 light, #F1EBDD dark), not style.css's deep navy #14253F.
+   Scoped to .masthead h1.brand-h, which exists only on the front page. */
+.masthead h1.brand-h{color:var(--sg-ink)}
+:root[data-theme="dark"] .masthead h1.brand-h{color:var(--sg-ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .masthead h1.brand-h{color:var(--sg-ink)}}
 .hm-go{border-bottom-color:var(--sg-ink)}
 .hm-chip.gold{background:var(--sg-wash);border-color:var(--sg-line);color:var(--sg-ink)}
 .tab-new{background:var(--sg-ink);color:var(--sg-paper)}
