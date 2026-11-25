@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "0be8fa5b75c70f98", title: "Daily AI Intelligence \u2014 Episode 44 (Sat Nov 14, 2026): ChatGPT Wallet lets agents pay, Claude goes down, and the Nvidia fallout grows", line: "Daily AI Intelligence \u00b7 14 Nov 2026 \u00b7 4:21" };
+  var E = { id: "0be8fa5b75c70f98", title: "Daily AI Intelligence \u2014 Episode 44 (Sat Nov 14, 2026): ChatGPT Wallet lets agents pay, Claude goes down, and the Nvidia fallout grows", line: "Daily AI Intelligence \u00b7 14 Nov 2026 \u00b7 4:21", series: "Daily AI Intelligence", summary: "AI Generated" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/daily-ai-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

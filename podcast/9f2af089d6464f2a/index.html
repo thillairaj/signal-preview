@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "9f2af089d6464f2a", title: "Quantum Intelligence \u2014 Episode 2 (Mon Oct 26, 2026): Quantinuum's five errors per million, the post-quantum deadline, Xanadu's DARPA extension", line: "Quantum Intelligence \u00b7 26 Oct 2026 \u00b7 5:27" };
+  var E = { id: "9f2af089d6464f2a", title: "Quantum Intelligence \u2014 Episode 2 (Mon Oct 26, 2026): Quantinuum's five errors per million, the post-quantum deadline, Xanadu's DARPA extension", line: "Quantum Intelligence \u00b7 26 Oct 2026 \u00b7 5:27", series: "Quantum Intelligence", summary: "Quantinuum's Helios sets a logical fidelity record, US federal agencies hit the post-quantum migration planning deadline, Xanadu gains more DARPA funding, and the logical qubit explained in plain language. AI Generated" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/quantum-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

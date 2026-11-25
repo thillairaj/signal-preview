@@ -38,6 +38,18 @@ window.SignalShare = (function () {
       "Technology Learnings": "signal" };
     return map[series] || "signal";
   }
+  /* The body text for an episode's share card: the episode's published
+     summary, with the feed's trailing "AI Generated" label removed (it is
+     an attribution tag, not description prose, and must never print on a
+     card). Where the summary is only that label, no description was ever
+     published for the episode; fall back to the topic segment of the
+     episode's own published title (the part after "Episode N:"). */
+  function episodeBody(summary, title) {
+    var s = String(summary || "").replace(/\s+AI Generated\s*$/, "").trim();
+    if (s && s !== "AI Generated") return s;
+    var m = String(title || "").match(/Ep(?:isode)?\s+\d+(?:\s*\([^)]*\))?\s*:\s*(.+)$/);
+    return m ? m[1].trim() : String(title || "");
+  }
   /* ---------- the one share image renderer ----------
      Implements the shared layout (share-image-template.html) on canvas for
      every item type. card = { type, tech, pill (optional, defaults to the
@@ -745,7 +757,7 @@ window.SignalShare = (function () {
   return {
     BASE: BASE, NOTICE: NOTICE, SIZES: SIZES, THEME_OPTIONS: THEME_OPTIONS,
     TECH: TECH, themeVars: themeVars, techForCategory: techForCategory,
-    techForSeries: techForSeries, renderCard: renderCard, cardImage: cardImage,
+    techForSeries: techForSeries, episodeBody: episodeBody, renderCard: renderCard, cardImage: cardImage,
     isMobile: isMobile, copy: copy, download: download,
     buildCaption: buildCaption, shareImage: shareImage,
     shareTextFlow: shareTextFlow, fillOptions: fillOptions,

@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "6eae204c84de8cc8", title: "Quantum Intelligence \u2014 Episode 6 (Mon Nov 23, 2026): NVIDIA, IBM and Fermilab join forces, Google tests contextuality at scale, QuEra maps quantum dynamics on 180 qubits", line: "Quantum Intelligence \u00b7 23 Nov 2026 \u00b7 6:25" };
+  var E = { id: "6eae204c84de8cc8", title: "Quantum Intelligence \u2014 Episode 6 (Mon Nov 23, 2026): NVIDIA, IBM and Fermilab join forces, Google tests contextuality at scale, QuEra maps quantum dynamics on 180 qubits", line: "Quantum Intelligence \u00b7 23 Nov 2026 \u00b7 6:25", series: "Quantum Intelligence", summary: "NVIDIA, IBM and Fermilab launch a modular quantum-classical co-design platform with a decoder NVIDIA says runs up to 13,000 times faster. Google Quantum AI shows quantum contextuality surviving at scale on Willow in a cover paper in Science. QuEra and Berkeley Lab map quantum dyn" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/quantum-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

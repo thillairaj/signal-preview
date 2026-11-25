@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "afd8a1cfa0be0c7d", title: "Daily AI Intelligence \u2014 Episode 17 (Sun Oct 18, 2026): DeepSeek's V4.1-Flash-1017, Microsoft's agent accounts, Google's Gemini Plus downgrade", line: "Daily AI Intelligence \u00b7 18 Oct 2026 \u00b7 4:45" };
+  var E = { id: "afd8a1cfa0be0c7d", title: "Daily AI Intelligence \u2014 Episode 17 (Sun Oct 18, 2026): DeepSeek's V4.1-Flash-1017, Microsoft's agent accounts, Google's Gemini Plus downgrade", line: "Daily AI Intelligence \u00b7 18 Oct 2026 \u00b7 4:45", series: "Daily AI Intelligence", summary: "DeepSeek ships V4.1-Flash-1017 with MIT open weights and first-party Search & Fetch APIs; Anthropic and OpenAI jointly fund 5M for math proof evaluation; Microsoft previews dedicated agent accounts for Copilot Studio; Google AI Plus users start losing Pro model access; Tencent op" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/daily-ai-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

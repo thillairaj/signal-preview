@@ -272,7 +272,7 @@ function episodeSpec(a) {
   return { title: a.title, line, link,
     caption: SignalShare.podcastCaption(a.title, line, link),
     tags: "#TheSignal #Podcast",
-    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + a.source, tech: SignalShare.techForSeries(a.source), pill: a.source, heading: a.title, body: line, source: a.source }, a.id + ".png") };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + a.source, tech: SignalShare.techForSeries(a.source), pill: a.source, heading: a.title, body: SignalShare.episodeBody(a.summary, a.title), source: a.source }, a.id + ".png") };
 }
 
 function mountPodShares(eps) {

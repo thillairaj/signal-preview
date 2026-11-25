@@ -80,8 +80,7 @@
   window.__articleUrl = url;
   var spec = { title: A.title, line: A.subtitle, link: url, caption: caption,
     tags: "#TheSignal " + SignalShare.topicHashtag(A.title + " " + A.subtitle),
-    image: { kind: "static", url: SignalShare.BASE + "/" + "research/cards/edition-15.png",
-             filename: A.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Article \u00b7 Research Notes", tech: "signal", heading: A.title, body: A.subtitle, source: "Research Notes" }, A.id + ".png") };
   window.__articleSpec = spec;
   document.getElementById("artShare").appendChild(SignalShare.shareButton(spec));
 })();

@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "5eeeac46e99be16d", title: "Tech Learning: Cybersecurity & SOC \u2014 Ep 3: Firewalls, IDS/IPS and Segmentation", line: "Technology Learnings \u00b7 5 Oct 2026 \u00b7 7:34" };
+  var E = { id: "5eeeac46e99be16d", title: "Tech Learning: Cybersecurity & SOC \u2014 Ep 3: Firewalls, IDS/IPS and Segmentation", line: "Technology Learnings \u00b7 5 Oct 2026 \u00b7 7:34", series: "Technology Learnings", summary: "Cybersecurity & SOC track: The network defenses that stop attacks before they reach you. AI Generated" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/technology-learnings.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

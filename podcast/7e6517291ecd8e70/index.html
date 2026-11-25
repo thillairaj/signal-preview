@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "7e6517291ecd8e70", title: "Daily AI Intelligence \u2014 Episode 42 (Thu Nov 12, 2026): Anthropic's usage policy takes effect, Cursor's proposed cutoff day, and Washington tightens chip exports", line: "Daily AI Intelligence \u00b7 12 Nov 2026 \u00b7 4:25" };
+  var E = { id: "7e6517291ecd8e70", title: "Daily AI Intelligence \u2014 Episode 42 (Thu Nov 12, 2026): Anthropic's usage policy takes effect, Cursor's proposed cutoff day, and Washington tightens chip exports", line: "Daily AI Intelligence \u00b7 12 Nov 2026 \u00b7 4:25", series: "Daily AI Intelligence", summary: "Episode 42: Anthropic's new usage policy takes effect, OpenAI's proposed Cursor cutoff arrives unconfirmed, Gemini Intelligence reaches Pixel 10, Grok Bot 1.0 joins Slack and Teams, Muse gets email, and Washington moves to tighten Nvidia chip exports. AI Generated" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/daily-ai-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

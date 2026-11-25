@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "c3818f6bb92d6663", title: "Quantum Intelligence \u2014 Episode 3 (Mon Nov 2, 2026): IBM links two quantum chips, NIST finalises the post-quantum timeline, IonQ's open-air network", line: "Quantum Intelligence \u00b7 2 Nov 2026 \u00b7 5:56" };
+  var E = { id: "c3818f6bb92d6663", title: "Quantum Intelligence \u2014 Episode 3 (Mon Nov 2, 2026): IBM links two quantum chips, NIST finalises the post-quantum timeline, IonQ's open-air network", line: "Quantum Intelligence \u00b7 2 Nov 2026 \u00b7 5:56", series: "Quantum Intelligence", summary: "IBM links two 120-qubit Nighthawk chips with superconducting cables; NIST publishes the final post-quantum cryptography transition report with stricter deadlines; IonQ takes its Air Force quantum network into open air. Plus the concept of the week: the modular quantum computer. A" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/quantum-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

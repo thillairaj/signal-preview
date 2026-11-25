@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "d88bc590570017de", title: "Tech Learning: Data Engineering & Analytics \u2014 Ep 13: Tests, Lineage and Trust in Data", line: "Technology Learnings \u00b7 23 Oct 2026 \u00b7 9:00" };
+  var E = { id: "d88bc590570017de", title: "Tech Learning: Data Engineering & Analytics \u2014 Ep 13: Tests, Lineage and Trust in Data", line: "Technology Learnings \u00b7 23 Oct 2026 \u00b7 9:00", series: "Technology Learnings", summary: "Data Engineering & Analytics track: why data quality is an engineering discipline — tests, lineage, and governance AI Generated" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/technology-learnings.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

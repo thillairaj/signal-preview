@@ -42,14 +42,14 @@ function playSound(kind){
   try{if(navigator.vibrate)navigator.vibrate(kind==='super'?[80,60,80,60,200]:[60,40,100])}catch(e){}
 }
 function confetti(n,gold){
-  const box=document.createElement('div');box.className='confetti';const cols=gold?['#E9C77E','#F2B632','#FFF3CF','#12A06A','#FFFFFF']:['#12A06A','#E9C77E','#6B4FD8','#2B7FD9','#D9822B'];
+  const box=document.createElement('div');box.className='confetti';const cols=gold?['#A9D18A','#3F7D20','#EAF3E3','#12A06A','#FFFFFF']:['#12A06A','#8CC56A','#6B4FD8','#2B7FD9','#D9822B'];
   for(let i=0;i<n;i++){const p=document.createElement('i');p.style.left=Math.random()*100+'%';p.style.background=cols[i%cols.length];p.style.animationDelay=(Math.random()*.6)+'s';p.style.animationDuration=(1.8+Math.random()*1.6)+'s';p.style.transform='rotate('+Math.random()*360+'deg)';p.style.width=(6+Math.random()*7)+'px';p.style.height=(10+Math.random()*10)+'px';if(gold&&i%4===0)p.style.borderRadius='50%';box.appendChild(p)}
   document.body.appendChild(box);setTimeout(()=>box.remove(),4200);cleanups.push(()=>box.remove());
 }
 const SUBS={double:'One number left.',guess:'You found the group.',ladder:'The ladder is solved.',path:'Every word found.',duel:'All five questions answered.',queens:'One king in every row, column and colour.',sudoku:'Every row, column and box is complete.',trail:'One path through every square.',gems:'Perfectly balanced.'};
 const nextDrop=()=>{const now=Date.now()+5.5*3600e3;const next=(Math.floor(now/864e5)+1)*864e5;const ms=next-now;return Math.floor(ms/36e5)+'h '+Math.floor(ms%36e5/6e4)+'m'};
 const BADGES=[[3,'3-day streak'],[10,'10-day streak'],[30,'30-day streak'],[100,'100-day streak']];
-function badgeSvg(n,on){const c=on?['#F6DFA1','#C9922F','#13241B']:['#E4E8E2','#BFC7BE','#8A968F'];return '<svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bg'+n+(on?'1':'0')+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient></defs><path d="M32 4l7 5 8.5-.5 3 8 7.5 4-2 8.5 2 8.5-7.5 4-3 8-8.5-.5-7 5-7-5-8.5.5-3-8-7.5-4 2-8.5-2-8.5 7.5-4 3-8 8.5.5z" fill="url(#bg'+n+(on?'1':'0')+')"/><circle cx="32" cy="32" r="17" fill="none" stroke="'+c[2]+'" stroke-opacity=".25" stroke-width="2"/><text x="32" y="39" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="'+(n>=100?15:19)+'" fill="'+c[2]+'">'+n+'</text></svg>'}
+function badgeSvg(n,on){const c=on?['#EAF3E3','#8CC56A','#13241B']:['#E4E8E2','#BFC7BE','#8A968F'];return '<svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bg'+n+(on?'1':'0')+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c[0]+'"/><stop offset="1" stop-color="'+c[1]+'"/></linearGradient></defs><path d="M32 4l7 5 8.5-.5 3 8 7.5 4-2 8.5 2 8.5-7.5 4-3 8-8.5-.5-7 5-7-5-8.5.5-3-8-7.5-4 2-8.5-2-8.5 7.5-4 3-8 8.5.5z" fill="url(#bg'+n+(on?'1':'0')+')"/><circle cx="32" cy="32" r="17" fill="none" stroke="'+c[2]+'" stroke-opacity=".25" stroke-width="2"/><text x="32" y="39" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="'+(n>=100?15:19)+'" fill="'+c[2]+'">'+n+'</text></svg>'}
 function celebrate(opts){
   const old=$('#cele');if(old)old.remove();
   const st=opts.stars,sup=st===3&&!opts.noSuper;
@@ -75,7 +75,7 @@ function newRun(game,fam,mode){
 const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
 function refreshHint(run){const b=$('#hint');if(!b)return;if(run.done){b.disabled=true;b.textContent='Hint';return}b.disabled=run.cd>0;b.textContent=run.cd>0?'Next hint in '+run.cd+'s':'Hint'+(run.hints?' · '+run.hints+' used':'')}
 function bindHint(run,fn){const b=$('#hint');if(!b)return;b.onclick=()=>{if(run.cd>0||run.done)return;if(fn()===false)return;run.hints++;run.cd=10;refreshHint(run)};refreshHint(run)}
-const STAR=on=>'<svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.7 7.4L12 18l-6.6 4 1.7-7.4-5.6-5 7.5-.7z" fill="'+(on?'#C9922F':'none')+'" stroke="#C9922F" stroke-width="1.6"/></svg>';
+const STAR=on=>'<svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.7 7.4L12 18l-6.6 4 1.7-7.4-5.6-5 7.5-.7z" fill="'+(on?'#3F7D20':'none')+'" stroke="#3F7D20" stroke-width="1.6"/></svg>';
 /* ---------- result sharing (new standard) ---------- */
 const SHARE_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
 const SHARE_BTN='<button type="button" class="sg-share-btn" data-gshare aria-label="Share" title="Share">'+SHARE_ICON+'</button>';
@@ -93,7 +93,7 @@ document.addEventListener('click',function(e){
     body=[...stats.querySelectorAll('div')].map(function(d){
       const bb=d.querySelector('b'),sm=d.querySelector('small');
       let v=bb?bb.textContent.trim():'';
-      if(!v&&bb){const on=bb.querySelectorAll('path[fill="#C9922F"]').length;const all=bb.querySelectorAll('path').length;if(all)v=on+' of '+all+' stars'}
+      if(!v&&bb){const on=bb.querySelectorAll('path[fill="#3F7D20"]').length;const all=bb.querySelectorAll('path').length;if(all)v=on+' of '+all+' stars'}
       const lab=sm?sm.textContent.trim().toLowerCase():'';
       return (v+(lab?' '+lab:'')).trim();
     }).filter(Boolean).join(' \u00b7 ');
@@ -616,7 +616,7 @@ function mountTrail(mode){
 /* ---------- Leaf and Gem (balance two symbols) ---------- */
 const SUNMOON=GAMES_DATA.gems;
 const SUNSVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c5.5 1 8.5 5 8.5 9.2 0 4.3-3.6 7.8-8.5 8.8C7.1 20 3.5 16.5 3.5 12.2 3.5 8 6.5 4 12 3z" fill="#12A06A"/><path d="M12 5.5V20M12 11l3.4-3M12 14.5l-3.4-3" stroke="#0A5E3E" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>';
-const MOONSVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11L22 9.5 12 21 2 9.5z" fill="#F2B632"/><path d="M2 9.5h20M9 3.5L7.5 9.5 12 21M15 3.5l1.5 6L12 21" stroke="#B9801A" stroke-width="1.3" stroke-linejoin="round" fill="none"/></svg>';
+const MOONSVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11L22 9.5 12 21 2 9.5z" fill="#A9D18A"/><path d="M2 9.5h20M9 3.5L7.5 9.5 12 21M15 3.5l1.5 6L12 21" stroke="#3F7D20" stroke-width="1.3" stroke-linejoin="round" fill="none"/></svg>';
 function mountSunMoon(mode){
   mode=mode||'daily';const rr=()=>mountSunMoon(mode);
   shell('gems','Leaf and Gem',false,rr,mode);
@@ -809,7 +809,7 @@ function mountProfile(){
   '<div class="stats big"><div><b>'+cur+'</b><small>CURRENT STREAK</small></div><div><b>'+best+'</b><small>LONGEST STREAK</small></div><div><b>'+total+'</b><small>PUZZLES SOLVED</small></div><div><b>'+sup+'</b><small>SUPERSTARS</small></div></div>'+
   '<div class="sec2"><h2 class="serif">Badges</h2><span class="sm">For days in a row with at least one daily puzzle</span></div><div class="bdgrow">'+BADGES.map(([n,t])=>{const on=best>=n;return '<div class="bdg'+(on?' on':'')+'">'+badgeSvg(n,on)+'<b>'+t+'</b><span>'+(on?'Earned':(n-best)+' to go')+'</span></div>'}).join('')+'</div>'+
   '<div class="sec2"><h2 class="serif">Best times</h2></div><div class="bt">'+PUZ.map(([id,t])=>{const b=store.get('sg|bt|'+id);return '<div><span>'+t+'</span><b>'+(b?fmt(b.t)+' · '+b.s+' of 3 stars':'not played yet')+'</b></div>'}).join('')+'</div>'+
-  '<div class="plus"><div class="eyebrow" style="color:#E9C77E">LUZOVI PLUS · AN IDEA FOR LATER</div><div class="serif" style="font-size:30px;line-height:1.1;margin-top:6px">A small fee for a little extra</div><ul><li>New decks and tables one to two months early</li><li>Extra decks and extra cards</li><li>Unlimited quiz attempts, with your history</li></ul><p>Everything you see today stays free. This is only a sketch of what a membership could add.</p></div></div>';
+  '<div class="plus"><div class="eyebrow" style="color:#8CC56A">LUZOVI PLUS · AN IDEA FOR LATER</div><div class="serif" style="font-size:30px;line-height:1.1;margin-top:6px">A small fee for a little extra</div><ul><li>New decks and tables one to two months early</li><li>Extra decks and extra cards</li><li>Unlimited quiz attempts, with your history</li></ul><p>Everything you see today stays free. This is only a sketch of what a membership could add.</p></div></div>';
   window.scrollTo(0,0);
 }
 const PV={

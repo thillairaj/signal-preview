@@ -56,16 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "5e455999c2bc7c39", title: "Quantum Intelligence \u2014 Episode 4 (Mon Nov 9, 2026): IBM's Chicago quantum computer, IonQ's record quarter, error correction goes industrial", line: "Quantum Intelligence \u00b7 9 Nov 2026 \u00b7 7:06" };
+  var E = { id: "5e455999c2bc7c39", title: "Quantum Intelligence \u2014 Episode 4 (Mon Nov 9, 2026): IBM's Chicago quantum computer, IonQ's record quarter, error correction goes industrial", line: "Quantum Intelligence \u00b7 9 Nov 2026 \u00b7 7:06", series: "Quantum Intelligence", summary: "IBM switches on its most advanced quantum computer in Chicago and an independent benchmark shows its hardware beating an exascale supercomputer; IonQ reports a record quarter with caveats; and error correction becomes an engineering discipline. Plus: what quantum advantage benchm" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: { kind: "static",
-             url: SignalShare.BASE + "/assets/podcast-covers/quantum-intelligence.png",
-             filename: E.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();
