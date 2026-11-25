@@ -422,15 +422,15 @@ function mountPath(mode){
         p.cells.push(next);p.t=Date.now();const t=textOf(p.word,p.dir);
         if(p.cells.length>=t.length){lockWord(p.word,p.cells);$('#msg').textContent='Hint: the last letter was placed. Word found.';hintCell=null;paint();return true}
         const r2=completion(p.cells,p.word,p.dir);hintCell=r2&&r2[0]?r2[0]:null;
-        $('#msg').textContent='Hint: that letter was placed for you. The next letter is shown in gold.';paint();return true}
+        $('#msg').textContent='Hint: that letter was placed for you. The next letter is shown in green.';paint();return true}
       hintCell=next;hintWord=p.word;
-      $('#msg').textContent='Hint: the next letter is “'+letter(next)+'”, shown in gold. Tap Hint again to place it for you.';paint();return true;
+      $('#msg').textContent='Hint: the next letter is “'+letter(next)+'”, shown in green. Tap Hint again to place it for you.';paint();return true;
     }
     const wi=words.findIndex((w,j)=>!found[j]);if(wi<0)return false;
     const start=key(...D.paths[words[wi]][0]);
     if(hintCell===start&&hintWord===wi){
       partials.push({word:wi,dir:0,cells:[start],t:Date.now()});const r2=completion([start],wi,0);hintCell=r2&&r2[0]?r2[0]:null;
-      $('#msg').textContent='Hint: the first letter was placed for you. The next letter is shown in gold.';paint();return true}
+      $('#msg').textContent='Hint: the first letter was placed for you. The next letter is shown in green.';paint();return true}
     hintCell=start;hintWord=wi;
     $('#msg').textContent='Hint: the gold square holds the first letter, “'+words[wi][0]+'”. Tap Hint again to place it for you.';paint();return true;
   });
@@ -551,7 +551,7 @@ function mountQueens(mode){
     let best=-1,bs=99;for(let r=0;r<N;r++){if(mark[r][sol[r]]!==2&&sizes[reg[r][sol[r]]]<bs){bs=sizes[reg[r][sol[r]]];best=r}}
     if(best<0)return false;
     if(kingsN()>=N){msg='Hint: remove a king first, then use Hint again.';render();return false}
-    snap();mark[best][sol[best]]=2;revealed.add(best+','+sol[best]);msg='Hint: a king was placed for you (shown in gold).';render();return true;
+    snap();mark[best][sol[best]]=2;revealed.add(best+','+sol[best]);msg='Hint: a king was placed for you (shown in green).';render();return true;
   }
   render();
 }
@@ -609,7 +609,7 @@ function mountTrail(mode){
     let m=-1;for(let i=0;i<path.length;i++){if(path[i]!==sol[i]){m=i;break}}
     if(m>=0){for(let i=m;i<path.length;i++)red.add(path[i]);path=path.slice(0,m);msg='Hint: the red part went off track, so it was removed. Carry on from the end.';render();setTimeout(()=>{red.clear();const t=$$('.tc.red');t.forEach(x=>x.classList.remove('red'))},1800);return true}
     const start=path.length,add=sol.slice(start,start+3);if(!add.length)return false;
-    add.forEach(k=>{path.push(k);gold.add(k)});msg='Hint: the next squares were drawn for you (shown in gold).';render();return true;
+    add.forEach(k=>{path.push(k);gold.add(k)});msg='Hint: the next squares were drawn for you (shown in green).';render();return true;
   }
   render();
 }
@@ -657,7 +657,7 @@ function mountSunMoon(mode){
     const wrongs=[];for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(!given[r+','+c]&&grid[r][c]>0&&grid[r][c]!==sol[r][c])wrongs.push(r+','+c);
     if(wrongs.length){wrongs.forEach(k=>wrongMark.add(k));msg='Hint: the red squares are wrong. Drag the eraser or the other icon onto them.';run.wrong++;render();return true}
     let best=null,bs=-1;for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(grid[r][c]===0){let s=0;if(grid[r].filter(x=>x>0).length>=4)s+=2;if(grid.map(rw=>rw[c]).filter(x=>x>0).length>=4)s+=2;P.edges.forEach(e=>{if((e[0]===r&&e[1]===c)||(e[2]===r&&e[3]===c))s++});if(s>bs){bs=s;best=[r,c]}}
-    if(!best)return false;snap();const [r,c]=best;grid[r][c]=sol[r][c];revealed.add(r+','+c);msg='Hint: a square was filled for you (shown in gold).';render();return true;
+    if(!best)return false;snap();const [r,c]=best;grid[r][c]=sol[r][c];revealed.add(r+','+c);msg='Hint: a square was filled for you (shown in green).';render();return true;
   }
   render();
 }
@@ -751,7 +751,7 @@ function mountSudoku(mode){
     if(wrongs.length){wrongs.forEach(k=>wrongMark.add(k));msg='Hint: the red numbers are wrong. Drag the eraser or a new number onto them.';run.wrong++;render();return true}
     let best=null,bn=9;for(let r=0;r<6;r++)for(let c=0;c<6;c++)if(grid[r][c]===0){const n=cands(r,c).length;if(n<bn){bn=n;best=[r,c]}}
     if(!best)return false;
-    const [r,c]=best;grid[r][c]=sol[r][c];revealed.add(r+','+c);msg='Hint: a square was filled for you (shown in gold).';render();return true;
+    const [r,c]=best;grid[r][c]=sol[r][c];revealed.add(r+','+c);msg='Hint: a square was filled for you (shown in green).';render();return true;
   }
   render();
 }

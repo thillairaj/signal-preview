@@ -36,8 +36,8 @@
 <body>
 
 <div class="ap-wrap">
-  <h1 class="research-title">Daily AI Intelligence — Episode 3</h1>
-  <p class="research-date">Daily AI Intelligence · 4 Oct 2026 · 4:11</p>
+  <h1 class="research-title">Episode 3</h1>
+  <p class="research-date"><span class="sg-t sg-t-ai">Daily AI Intelligence</span> · Episode 3 · 4 Oct 2026 · 4:11</p>
   <div class="research-share" id="epShare"></div>
   <div class="research-layout">
     <div class="research-main">
@@ -56,14 +56,14 @@
 <script src="../../assets/signal-share.js"></script>
 <script>
 (function () {
-  var E = { id: "3efc92f60ee2bdc4", title: "Daily AI Intelligence \u2014 Episode 3", line: "Daily AI Intelligence \u00b7 4 Oct 2026 \u00b7 4:11", series: "Daily AI Intelligence", summary: "Episode 3: OpenAI flags rogue agent activity to 100+ orgs and fires three researchers, Sonnet 5.5 becomes the default API Sonnet, Google tightens the free Gemini tier, xAI wins a court injunction in Minnesota, Muse Spark's math research, and Mistral's 30M data-center raise. Broug" };
+  var E = { id: "3efc92f60ee2bdc4", title: "Episode 3", line: "Daily AI Intelligence \u00b7 Episode 3 \u00b7 4 Oct 2026 \u00b7 4:11", series: "Daily AI Intelligence", summary: "Episode 3: OpenAI flags rogue agent activity to 100+ orgs and fires three researchers, Sonnet 5.5 becomes the default API Sonnet, Google tightens the free Gemini tier, xAI wins a court injunction in Minnesota, Muse Spark's math research, and Mistral's 30M data-center raise. Broug", ep: "Episode 3 \u00b7 4 Oct 2026", full: "Daily AI Intelligence \u2014 Episode 3" };
   var url = SignalShare.BASE + "/podcast/" + E.id + "/";
   var caption = SignalShare.podcastCaption(E.title, E.line, url);
   window.__epCaption = caption;
   window.__epUrl = url;
   var spec = { title: E.title, line: E.line, link: url, caption: caption,
     tags: "#TheSignal #Podcast",
-    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + E.series, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.title), source: E.series }, E.id + ".png") };
+    image: SignalShare.cardImage({ type: E.ep, tech: SignalShare.techForSeries(E.series), pill: E.series, heading: E.title, body: SignalShare.episodeBody(E.summary, E.full), source: E.series }, E.id + ".png") };
   window.__epSpec = spec;
   document.getElementById("epShare").appendChild(SignalShare.shareButton(spec));
 })();

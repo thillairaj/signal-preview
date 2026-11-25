@@ -158,6 +158,25 @@ function episodeTrack(a) {
   if (/^Tech Learning Series\s*—\s*Ep\s*\d+/.test(t)) return "IT Infrastructure & Cloud";
   return "";
 }
+/* Episode title format (Nov 25, 2026): heading = the episode title only;
+   facts = "Series · [Track ·] Episode N · D Mon YYYY · M:SS". Episodes with
+   no separate title get heading "Episode N". Mirrors
+   signal-qa/fix-episode-format.py and the episode page builder. */
+function episodeParts(a) {
+  const t = String(a.title || "");
+  let heading = t, num = "", track = "";
+  let m = t.match(/^(.+?)\s+—\s+Episode\s+(\d+)\s*(?:\([^)]*\))?\s*:\s*(.+)$/);
+  if (m) { num = m[2]; heading = m[3].trim(); }
+  else if ((m = t.match(/^Tech Learning:\s*(.+?)\s+—\s*Ep\s*(\d+)\s*:\s*(.+)$/))) { track = m[1].trim(); num = m[2]; heading = m[3].trim(); }
+  else if ((m = t.match(/^Tech Learning Series\s+—\s+Ep\s*(\d+)\s*:\s*(.+)$/))) { num = m[1]; heading = m[2].trim(); }
+  else if ((m = t.match(/^(.+?)\s+—\s+Episode\s+(\d+)$/))) { num = m[2]; heading = "Episode " + num; }
+  else if (a.source && t.startsWith(a.source + " — ")) { heading = t.slice(a.source.length + 3); }
+  const date = fmtResearchDate(a.published);
+  const facts = [a.source, (a.source === "Technology Learnings" && track) ? track : "", num ? "Episode " + num : "", date, a.duration ? fmtDur(a.duration) : ""].filter(Boolean).join(" · ");
+  const cardType = num ? "Episode " + num + " · " + date : (heading.includes("5-Minute Edition") ? "5-Minute Edition · " + date : date);
+  return { heading, num, track, date, facts, cardType };
+}
+
 function refreshTrackRail() {
   if (!podcastTracksEl || !trackRailEl) return;
   const wrap = podcastTracksEl.querySelector(".track-wrap");
@@ -233,8 +252,8 @@ function renderPodcast() {
     heroHtml = `
     <div class="pod-featured" data-epid="${latest.id}">
       <p class="pod-kicker">${q ? "Top result" : "Latest episode"} · ${latest.source}</p>
-      <h3>${latest.title}</h3>
-      <p class="pod-meta">${timeAgo(latest.published)}${latest.duration ? " · " + fmtDur(latest.duration) : ""}</p>
+      <h3>${escapeHtml(episodeParts(latest).heading)}</h3>
+      <p class="pod-meta">${escapeHtml(episodeParts(latest).facts)}</p>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(latest.audio_url)}"></audio>
       <div class="pod-share-slot" data-share-for="${latest.id}"></div>
     </div>`;
@@ -245,8 +264,8 @@ function renderPodcast() {
   podcastListEl.innerHTML = rows.map(a => `
     <div class="pod-row" data-epid="${a.id}">
       <div class="pod-row-text">
-        <p class="pod-row-title">${a.title}</p>
-        <p class="pod-row-meta">${a.source} · ${timeAgo(a.published)}${a.duration ? " · " + fmtDur(a.duration) : ""}</p>
+        <p class="pod-row-title">${escapeHtml(episodeParts(a).heading)}</p>
+        <p class="pod-row-meta">${escapeHtml(episodeParts(a).facts)}</p>
       </div>
       <audio controls preload="none" src="${AUDIO_PROXY + encodeURIComponent(a.audio_url)}"></audio>
       <div class="pod-share-slot" data-share-for="${a.id}"></div>
@@ -267,12 +286,12 @@ function renderPodcast() {
 
 
 function episodeSpec(a) {
-  const line = [a.source, fmtResearchDate(a.published), a.duration ? fmtDur(a.duration) : ""].filter(Boolean).join(" \u00b7 ");
+  const parts = episodeParts(a);
   const link = SignalShare.BASE + "/podcast/" + a.id + "/";
-  return { title: a.title, line, link,
-    caption: SignalShare.podcastCaption(a.title, line, link),
+  return { title: parts.heading, line: parts.facts, link,
+    caption: SignalShare.podcastCaption(parts.heading, parts.facts, link),
     tags: "#TheSignal #Podcast",
-    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + a.source, tech: SignalShare.techForSeries(a.source), pill: a.source, heading: a.title, body: SignalShare.episodeBody(a.summary, a.title), source: a.source }, a.id + ".png") };
+    image: SignalShare.cardImage({ type: parts.cardType, tech: SignalShare.techForSeries(a.source), pill: a.source, heading: parts.heading, body: SignalShare.episodeBody(a.summary, a.title), source: a.source }, a.id + ".png") };
 }
 
 function mountPodShares(eps) {
