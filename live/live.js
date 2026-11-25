@@ -10,6 +10,16 @@
   function pad(n){return (n<10?'0':'')+n+':00'}
   function rank(c){var i=ORDER.indexOf(c);return i<0?99:i}
   var state={cat:'all',slot:'all',d:null};
+  function liveSpec(it){
+    var SS=window.SignalShare;
+    var link=SS.BASE+'/live/#'+it.id;
+    var tech=SS.techForCategory(it.category);
+    var tags='#TheSignal '+SS.categoryHashtag(it.category);
+    return {title:it.headline,line:it.what,link:link,
+      caption:SS.buildCaption([it.headline,it.what,it.why,'Live news on The Signal, free:\n'+link,tags]),
+      tags:tags,tech:tech,
+      image:SS.cardImage({type:'Live news \u00b7 '+ist(it.published,{day:'numeric',month:'short'})+' \u00b7 '+hm(it.published)+' IST',tech:tech,heading:it.headline,body:it.what,boxLabel:'Why it matters',box:it.why,source:(it.sources||[]).map(function(s){return s.label}).join(' \u00b7 ')},it.id+'.png')};
+  }
   function render(){
     var d=state.d,up=parts(d.updated),delay=d.delay_hours||2;
     var items=d.items.map(function(it){var p=parts(it.published);return Object.assign({_today:p.d===up.d,_slot:Math.floor(p.h/delay)*delay},it)});
@@ -37,6 +47,7 @@
       var srcs=(it.sources||[]).map(function(x){return '<a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.label)+'</a>'}).join(' · ');
       return '<article class="lv-card" id="'+esc(it.id)+'"><div class="lv-meta"><span class="lv-chip t">Added '+hm(it.published)+' IST · '+ist(it.published,{day:'numeric',month:'short'})+'</span><span class="lv-chip">'+esc(it.category)+' · '+esc(it.company)+'</span></div><h2>'+esc(it.headline)+'</h2><p><b>What happened.</b> '+esc(it.what)+'</p><div class="lv-why"><b>Why it matters.</b> '+esc(it.why)+'</div><div class="lv-src"><b>Sources</b> '+srcs+'</div></article>';
     }).join(''):'<div class="lv-empty" style="grid-column:1/-1"><b>Nothing new in the last 24 hours.</b>The next update is at '+hm(d.next_update)+' IST. Stories that qualify appear here and in the strip at the top of the front page.</div>';
+    if(window.SignalShare){shown.forEach(function(it){var card=document.getElementById(it.id);if(card)card.appendChild(SignalShare.shareButton(liveSpec(it)))})}
     if(location.hash&&!state.touched){var t=document.getElementById(location.hash.slice(1));if(t)t.scrollIntoView({block:'start'})}
   }
   document.getElementById('lvSlots').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;state.slot=b.dataset.s;state.touched=1;render()});

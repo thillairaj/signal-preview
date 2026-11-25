@@ -76,6 +76,35 @@ const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
 function refreshHint(run){const b=$('#hint');if(!b)return;if(run.done){b.disabled=true;b.textContent='Hint';return}b.disabled=run.cd>0;b.textContent=run.cd>0?'Next hint in '+run.cd+'s':'Hint'+(run.hints?' · '+run.hints+' used':'')}
 function bindHint(run,fn){const b=$('#hint');if(!b)return;b.onclick=()=>{if(run.cd>0||run.done)return;if(fn()===false)return;run.hints++;run.cd=10;refreshHint(run)};refreshHint(run)}
 const STAR=on=>'<svg viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.7-5.6 5 1.7 7.4L12 18l-6.6 4 1.7-7.4-5.6-5 7.5-.7z" fill="'+(on?'#C9922F':'none')+'" stroke="#C9922F" stroke-width="1.6"/></svg>';
+/* ---------- result sharing (new standard) ---------- */
+const SHARE_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+const SHARE_BTN='<button type="button" class="sg-share-btn" data-gshare aria-label="Share" title="Share">'+SHARE_ICON+'</button>';
+document.addEventListener('click',function(e){
+  const b=e.target&&e.target.closest?e.target.closest('[data-gshare]'):null;
+  if(!b||!window.SignalShare)return;
+  const res=b.closest('.res');if(!res)return;
+  const gt=document.querySelector('.gt');const game=gt?gt.textContent.trim():'Games';
+  const a=res.querySelector('.a'),k=res.querySelector('.k');
+  const headline=a?a.textContent.trim():(k?k.textContent.trim():'Result');
+  const heading=game+' \u2014 '+headline;
+  let body='';
+  const stats=res.querySelector('.stats');
+  if(stats){
+    body=[...stats.querySelectorAll('div')].map(function(d){
+      const bb=d.querySelector('b'),sm=d.querySelector('small');
+      let v=bb?bb.textContent.trim():'';
+      if(!v&&bb){const on=bb.querySelectorAll('path[fill="#C9922F"]').length;const all=bb.querySelectorAll('path').length;if(all)v=on+' of '+all+' stars'}
+      const lab=sm?sm.textContent.trim().toLowerCase():'';
+      return (v+(lab?' '+lab:'')).trim();
+    }).filter(Boolean).join(' \u00b7 ');
+  }
+  if(!body){const pp=res.querySelector('p');body=pp?pp.textContent.trim():headline}
+  const type='Games \u00b7 '+game;
+  const link=SignalShare.BASE+'/games/';
+  const caption=SignalShare.buildCaption([heading,body,'Play the games free:\n'+link,'#TheSignal']);
+  SignalShare.openPanel({title:heading,line:body,link:link,caption:caption,tags:'#TheSignal',tech:'signal',
+    image:SignalShare.cardImage({type:type,tech:'signal',heading:heading,body:body,source:'The Signal Games'},'game-result.png')},b);
+});
 function finish(run){
   run.done=true;run.time=Math.floor((Date.now()-run.t0)/1000);
   const par=PAR[run.game];const st=run.hints===0&&run.wrong<=1&&run.time<=par?3:run.hints<=2?2:1;
@@ -182,7 +211,7 @@ function mountGuess(mode){
   function render(){
     g.innerHTML=metaHead(run,LABEL[pf],' · CLUE '+Math.min(shown,5)+' OF 5')+
     '<div class="bands">'+P.clues.map((c,i)=>{const o=i<shown||solved;return '<div class="band'+(o?' open':'')+'" style="'+(o?'background:'+bands[i]+';color:'+(i>2?'#fff':'#13241B'):'')+'">'+(o?esc(c):'Clue '+(i+1)+' locked')+'</div>'}).join('')+'</div>'+
-    (solved?'<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">'+esc(P.answer)+'</div><p>'+esc(P.explain)+'</p>'+summary+'<div class="acts"><a class="p" href="#hub">Learn this group ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="again">Play another</button>')+'<button>Share result</button></div></div>':
+    (solved?'<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">'+esc(P.answer)+'</div><p>'+esc(P.explain)+'</p>'+summary+'<div class="acts"><a class="p" href="#hub">Learn this group ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="again">Play another</button>')+''+SHARE_BTN+'</div></div>':
     '<div class="zone" id="zone">Drag your answer here</div><div class="tray" id="tray">'+P.options.map(o=>'<div class="tile'+(wrong.has(o)?' dead':'')+'" data-v="'+esc(o)+'">'+esc(o)+'</div>').join('')+'</div><div class="msg" id="msg"></div>');
     bindHint(run,hint);
     if(solved){const a=$('#again');if(a)a.onclick=rr;return}
@@ -247,7 +276,7 @@ function mountLadder(mode){
     '<div class="ladder" id="ladder">'+row(0)+order.map(row).join('')+row(LAST)+'</div>'+
     (bank.length?'<div class="tray dock" id="tray">'+bank.map(s=>'<div class="tile" data-v="'+s+'">'+esc(S[s][0])+'</div>').join('')+'</div>':'')+
     '<div class="msg" id="msg">'+msg+'</div>'+
-    (stage===4?'<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">'+esc(S[0][0])+' to '+esc(S[LAST][0])+'</div><p>You matched every term, put the steps in order and unlocked both ends.</p>'+summary+'<div class="acts"><a class="p" href="#hub">See it in the explainer ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="again">Play another</button>')+'<button>Share result</button></div></div>':'');
+    (stage===4?'<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">'+esc(S[0][0])+' to '+esc(S[LAST][0])+'</div><p>You matched every term, put the steps in order and unlocked both ends.</p>'+summary+'<div class="acts"><a class="p" href="#hub">See it in the explainer ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="again">Play another</button>')+''+SHARE_BTN+'</div></div>':'');
     if(glowStep>=0){const t=$('#tray .tile[data-v="'+glowStep+'"]'),sl=$('[data-slot="'+glowStep+'"]');t&&t.classList.add('glow');sl&&sl.classList.add('glow')}
     bindHint(run,hint);
     if(stage===4){const a=$('#again');if(a)a.onclick=rr;return}
@@ -350,7 +379,7 @@ function mountPath(mode){
       const tiles=w.split('').map((ch,idx)=>{const pos=p&&p.dir?w.length-1-idx:idx;const isPart=!f&&p&&(p.dir?idx>=w.length-k:idx<k);const isHint=!f&&hn>=0&&(p&&p.dir?idx===w.length-1-hn:idx===hn);
         return '<b class="'+(isPart?'pr':isHint?'hn':'')+'" style="background:'+(f?PCOL[i%5]:'')+'">'+(f||isPart||isHint?ch:'')+'</b>'}).join('');
       return '<div class="wi" style="border-color:'+(f?PCOL[i%5]:'')+'"><span class="tl">'+tiles+'</span><span class="c">'+esc(D.clues[i])+'</span></div>'}).join('');
-    $('#pres').innerHTML=n===words.length?'<div class="res"><div class="k" style="color:var(--good)">EVERY WORD FOUND</div><p>'+D.names.map(esc).join(', ')+'. Open each term to learn it.</p>'+summary+'<div class="acts"><a class="p" href="#hub">Learn these terms ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="pa">Play another</button>')+'<button>Share result</button></div></div>':'';
+    $('#pres').innerHTML=n===words.length?'<div class="res"><div class="k" style="color:var(--good)">EVERY WORD FOUND</div><p>'+D.names.map(esc).join(', ')+'. Open each term to learn it.</p>'+summary+'<div class="acts"><a class="p" href="#hub">Learn these terms ›</a>'+(mode==='daily'?'<a href="#hub">More games</a>':'<button id="pa">Play another</button>')+''+SHARE_BTN+'</div></div>':'';
     const pa=$('#pa');if(pa)pa.onclick=rr;
     refreshHint(run);
   }
@@ -493,7 +522,7 @@ function mountQueens(mode){
     h+='<div class="qtray" id="qt"><div class="tile" data-k="king" style="'+(n>=N?'opacity:.45':'')+'"><span class="cr" style="width:24px;height:24px;display:inline-block;vertical-align:middle">'+KING+'</span> King · '+(N-n)+' left</div><div class="tile" data-k="x" style="font-size:20px">×</div><div class="tile" data-k="erase" style="font-size:14px">Erase</div></div>';
     h+='<div class="qact"><button class="ghost" id="undo"'+(hist.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+msg+'</div>';
     if(solved){
-      h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">Every row, column and colour has one king.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="qa">New puzzle</button>')+'<button>Share result</button></div></div>';
+      h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">Every row, column and colour has one king.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="qa">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     }
     h+='<details class="fold" open><summary>How to play</summary><ol><li>Your goal is to have exactly one king in each row, column and colour region.</li><li>Drag a king onto the board. Drag × to mark squares where a king cannot go.</li><li>Two kings cannot touch each other, not even diagonally.</li></ol></details><details class="fold" open><summary>Examples</summary><div class="exs"><div>'+exBoard('row')+'<p>Each row can only have one king.</p></div><div>'+exBoard('col')+'<p>Each column can also only have one king.</p></div><div>'+exBoard('region')+'<p>Each colour region can also only have one king.</p></div><div>'+exBoard('touch')+'<p>Two kings cannot touch each other, not even diagonally.</p></div></div></details>';
     g.innerHTML=h;bindHint(run,hint);
@@ -546,7 +575,7 @@ function mountTrail(mode){
     for(let r=0;r<N;r++)for(let c=0;c<N;c++){const k=r+','+c;const t=(dr,dc)=>{const rr_=r+dr,cc=c+dc;if(rr_<0||cc<0||rr_>=N||cc>=N)return '3px solid var(--ink)';return wall(k,rr_+','+cc)?'4px solid var(--ink)':'1px solid var(--line)'};
       h+='<div class="tc'+(path.indexOf(k)>=0?' on':'')+(gold.has(k)?' gold':'')+(red.has(k)?' red':'')+'" data-r="'+r+'" data-c="'+c+'" style="border-top:'+t(-1,0)+';border-left:'+t(0,-1)+';border-right:'+t(0,1)+';border-bottom:'+t(1,0)+'">'+(nums[k]?'<span class="nm">'+nums[k]+'</span>':'')+'</div>';}
     h+='<svg id="tov" class="tov"></svg></div><div class="qact"><button class="ghost" id="undo"'+(path.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+msg+'</div>';
-    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">One path through every square.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="ta">New puzzle</button>')+'<button>Share result</button></div></div>';
+    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">One path through every square.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="ta">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     h+='<details class="fold" open><summary>How to play</summary><ol><li>Draw one continuous path that starts at 1 and passes through the numbers in order.</li><li>The path must fill every square. It cannot cross itself or go through the thick walls.</li><li>Press and drag from the end of your path. Drag back to undo a step.</li></ol></details>';
     g.innerHTML=h;bindHint(run,hint);paint();
     const u=$('#undo');if(u)u.onclick=()=>{if(solved||!path.length)return;path.pop();gold.clear();red.clear();msg='Step removed.';render()};
@@ -614,7 +643,7 @@ function mountSunMoon(mode){
     P.edges.forEach(([r1,c1,r2,c2,t])=>{const horiz=r1===r2;const left=horiz?((c1+1)/N*100):((c1+.5)/N*100),top=horiz?((r1+.5)/N*100):((r1+1)/N*100);h+='<span class="eg" style="left:'+left+'%;top:'+top+'%">'+(t==='='?'=':'×')+'</span>'});
     h+='</div><div class="dtray" id="dt" style="grid-template-columns:1fr 1fr 1fr"><div class="tile" data-n="1" aria-label="Leaf"><span style="width:30px;height:30px;display:inline-block">'+SUNSVG+'</span></div><div class="tile" data-n="2" aria-label="Gem"><span style="width:30px;height:30px;display:inline-block">'+MOONSVG+'</span></div><div class="tile" data-n="0" style="font-size:14px">Erase</div></div>';
     h+='<div class="qact"><button class="ghost" id="undo"'+(hist.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+(reason.triple?'<b style="color:var(--bad)">Rule broken: never three of the same icon in a row.</b>':reason.count?'<b style="color:var(--bad)">Rule broken: only three of each icon per row and column.</b>':reason.edge?'<b style="color:var(--bad)">Rule broken: check the = and × marks.</b>':msg)+'</div>';
-    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">Perfectly balanced.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="sa">New puzzle</button>')+'<button>Share result</button></div></div>';
+    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">Perfectly balanced.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="sa">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     h+='<details class="fold" open><summary>How to play</summary><ol><li>Fill every square with a leaf or a gem.</li><li>Each row and each column has exactly three of each.</li><li>Never three of the same icon in a row: no three side by side and no three stacked.</li><li>Between two squares, = means the same icon and × means different icons.</li></ol></details>';
     g.innerHTML=h;bindHint(run,hint);
     const u=$('#undo');if(u)u.onclick=()=>{if(!hist.length)return;const s0=JSON.parse(hist.pop());s0.g.forEach((row,r)=>row.forEach((v,c)=>grid[r][c]=v));wrongMark.clear();s0.w.forEach(x=>wrongMark.add(x));revealed.clear();s0.v.forEach(x=>revealed.add(x));msg='Undone.';render()};
@@ -667,7 +696,7 @@ function mountDouble(mode){
     for(let i=0;i<N*N;i++){const t=grid[i];const isP=pending&&pending.from===i,isT=pending&&pending.to===i;
       h+='<div class="dc'+(isT?' tgt':'')+'" data-i="'+i+'">'+(t===''?'':'<div class="dt'+(isNum(t)?'':' wild')+(isP?' glow':'')+(i===lastTo?' pop':'')+'" data-i="'+i+'" style="'+(isNum(t)?'background:'+DCOL(t):'')+'">'+(isNum(t)?t:(t==='+3'?'+3':'×2'))+'</div>')+'</div>'}
     h+='</div><div class="qact"><button class="ghost" id="undo"'+(hist.length?'':' disabled')+'>Undo</button><button class="ghost" id="reset">Reset</button></div><div class="msg" id="msg" style="text-align:center">'+(stuck?'<b style="color:var(--bad)">No more merges are possible. Tap Undo or Reset.</b>':msg)+'</div>';
-    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">One number left: '+grid.find(x=>x!=='')+'.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="da">New puzzle</button>')+'<button>Share result</button></div></div>';
+    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><div class="a">One number left: '+grid.find(x=>x!=='')+'.</div>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More puzzles</a>':'<button class="p" id="da">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     h+='<details class="fold" open><summary>How to play</summary><ol><li>Drag a number onto a neighbour that holds the same number. They merge into their sum.</li><li>Only side by side, above or below. Never diagonally, and never two different numbers.</li><li>A +3 or ×2 token merges with any number and changes it.</li><li>Keep merging until only one number is left.</li></ol></details>';
     g.innerHTML=h;bindHint(run,hint);
     const u=$('#undo');if(u)u.onclick=()=>{if(!hist.length||solved)return;grid=hist.pop();pending=null;lastTo=-1;msg='Undone.';render()};
@@ -710,7 +739,7 @@ function mountSudoku(mode){
     let h=metaHead(run,'PUZZLE',' · #'+(idx+1))+'<div class="sg" id="sg">';
     for(let r=0;r<6;r++)for(let c=0;c<6;c++){const k=r+','+c;const v=grid[r][c];h+='<div class="sc '+(given[r][c]?'g':'u')+((bad.has(k)||wrongMark.has(k))?' err':'')+(revealed.has(k)?' rev':'')+((c===2)?' br':'')+((r===1||r===3)?' bb':'')+'" data-r="'+r+'" data-c="'+c+'">'+(v||'')+'</div>'}
     h+='</div><div class="dtray" id="dt">'+[1,2,3,4,5,6].map(n=>'<div class="tile" data-n="'+n+'">'+n+'</div>').join('')+'<div class="tile" data-n="0" aria-label="Eraser" style="font-size:15px">Erase</div></div><div class="msg" id="msg" style="text-align:center">'+msg+'</div>';
-    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><p>Every row, column and box has 1 to 6 once.</p>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More games</a>':'<button class="p" id="nw">New puzzle</button>')+'<button>Share result</button></div></div>';
+    if(solved)h+='<div class="res"><div class="k" style="color:var(--good)">SOLVED</div><p>Every row, column and box has 1 to 6 once.</p>'+summary+'<div class="acts">'+(mode==='daily'?'<a class="p" href="#hub">More games</a>':'<button class="p" id="nw">New puzzle</button>')+''+SHARE_BTN+'</div></div>';
     g.innerHTML=h;
     bindHint(run,hint);
     if(solved){const nw=$('#nw');if(nw)nw.onclick=rr;return}

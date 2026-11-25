@@ -269,11 +269,10 @@ function renderPodcast() {
 function episodeSpec(a) {
   const line = [a.source, fmtResearchDate(a.published), a.duration ? fmtDur(a.duration) : ""].filter(Boolean).join(" \u00b7 ");
   const link = SignalShare.BASE + "/podcast/" + a.id + "/";
-  const slug = String(a.source || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
   return { title: a.title, line, link,
     caption: SignalShare.podcastCaption(a.title, line, link),
     tags: "#TheSignal #Podcast",
-    image: { kind: "static", url: SignalShare.BASE + "/assets/podcast-covers/" + slug + ".png", filename: a.id + ".png" } };
+    image: SignalShare.cardImage({ type: "Podcast \u00b7 " + a.source, tech: SignalShare.techForSeries(a.source), pill: a.source, heading: a.title, body: line, source: a.source }, a.id + ".png") };
 }
 
 function mountPodShares(eps) {
@@ -424,7 +423,7 @@ function feedSpec(a) {
     tags: "#TheSignal " + tag,
     xText: SS.feedShort(a.title, a.source, a.link, tag),
     waText: SS.feedWa(a.title, a.source, a.link),
-    image: null
+    image: SS.cardImage({ type: "RSS Feed", tech: SS.techForCategory(a.category), heading: a.title, body: a.summary, source: a.source }, a.id + ".png")
   };
 }
 function mountFeedShares(shown) {
