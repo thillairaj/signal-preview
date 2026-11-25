@@ -6,8 +6,8 @@
    the news card image is rendered here in the deck card pattern. */
 window.SignalBriefUI = (function () {
   var CAT_COLOURS = {
-    "AI": "#4F46E5", "Quantum": "#7C3AED", "Cloud & DevOps": "#0E7490",
-    "Cybersecurity": "#DC2626", "Industry": "#B45309", "Policy": "#0F766E"
+    "AI": "#3B82C4", "Quantum": "#7C5CBF", "Cloud & DevOps": "#1B7A6E",
+    "Cybersecurity": "#A62B25", "Industry": "#201B14", "Policy": "#201B14"
   };
   var CAT_TAGS = {
     "AI": "#AI", "Quantum": "#QuantumComputing",
@@ -627,6 +627,7 @@ window.SignalBriefUI = (function () {
   function mount(root) {
     var prefix = root.getAttribute("data-root-prefix") || "./";
     var state = {
+      tab: prefix === "./",
       root: root,
       siteRoot: new URL(prefix, window.location.href).href,
       data: null, edIdx: 0, cat: "", view: [], cal: null,
@@ -707,10 +708,14 @@ window.SignalBriefUI = (function () {
     state.root.innerHTML =
       '<div class="brief-ui">' +
       '<header class="bu-head">' +
-      '<p class="bu-kicker">Signal Brief · Daily at 07:00 IST</p>' +
-      '<h2 class="bu-title">Today in tech, in one swipe.</h2>' +
-      '<p class="bu-desc">The day in technology, in our own words. ' +
-      "Every story is checked and linked to its source.</p>" +
+      (state.tab
+        ? '<h2 class="bu-title">Signal Brief</h2>' +
+          '<p class="bu-desc">The day in technology, in our own words. ' +
+          "New every day at 07:00 IST.</p>"
+        : '<p class="bu-kicker">Signal Brief · Daily at 07:00 IST</p>' +
+          '<h2 class="bu-title">Today in tech, in one swipe.</h2>' +
+          '<p class="bu-desc">The day in technology, in our own words. ' +
+          "Every story is checked and linked to its source.</p>") +
       '<button type="button" class="bu-follow">Follow</button>' +
       "</header>" +
       '<div class="bu-cal" role="group" ' +

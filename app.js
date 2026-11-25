@@ -193,7 +193,7 @@ function renderPodcast() {
     .sort((a, b) => new Date(b.published) - new Date(a.published));
   /* Series selector with episode counts — filters in place, no outbound links. */
   const seriesEl = document.getElementById("podcastSeries");
-  const seriesOrder = ["Daily AI Intelligence", "Technology Learnings", "Quantum Intelligence"];
+  const seriesOrder = ["Daily AI Intelligence", "Quantum Intelligence", "Technology Learnings"];
   const present = seriesOrder.filter(s => eps.some(e => e.source === s));
   const countOf = s => eps.filter(e => e.source === s).length;
   seriesEl.innerHTML =
@@ -203,6 +203,9 @@ function renderPodcast() {
     ).join("");
   seriesEl.querySelectorAll(".series-btn").forEach(b =>
     b.addEventListener("click", () => { activeSeries = b.dataset.series; activeTrack = ""; podcastPage = 0; renderPodcast(); }));
+  /* Listen box (stage 1): fill the per-series episode counts and the tab total. */
+  document.querySelectorAll("[data-episodes]").forEach(el => { el.textContent = countOf(el.dataset.episodes); });
+  document.querySelectorAll("[data-pod-total]").forEach(el => { el.textContent = eps.length; });
   renderTracks(eps);
   let list = activeSeries ? eps.filter(e => e.source === activeSeries) : eps;
   if (activeTrack) list = list.filter(e => episodeTrack(e) === activeTrack);
@@ -505,6 +508,8 @@ async function loadData() {
     const data = await res.json();
 
     allArticles = data.articles || [];
+    const wc = document.getElementById("wireCount");
+    if (wc) wc.textContent = allArticles.filter(a => a.category !== "Podcast").length;
     renderSources();
     renderFeed();
     fillHomeWire();
@@ -699,13 +704,13 @@ function scrollToLearnId(id) {
     if (el) el.scrollIntoView({ block: "start" });
   }));
 }
+/* Stage 1: the Learning Space tab is the menu and the hub pages now.
+   Old deep links into the doors land on the matching hub page instead. */
+const LEARN_HUB = { "learn": "videos/", "learn-videos": "videos/", "learn-decks": "decks/", "learn-explainers": "explainers/", "learn-games": "games/", "learn-tables": "periodic-tables/", "learn-tables-ai": "periodic-tables/#ai", "learn-tables-quantum": "periodic-tables/#quantum", "learn-tables-cloud": "periodic-tables/#cloud", "learn-tables-cyber": "periodic-tables/#cyber", "learn-tables-founders": "periodic-tables/#founders" };
 function openLearnTarget() {
-  const h = location.hash;
-  if (h === "#learn") { showView("learn"); return; }
-  const id = h.startsWith("#") ? h.slice(1) : "";
-  if (LEARN_TARGETS.includes(id)) {
-    showView("learn");
-    scrollToLearnId(id);
+  const id = location.hash.startsWith("#") ? location.hash.slice(1) : "";
+  if (Object.prototype.hasOwnProperty.call(LEARN_HUB, id)) {
+    window.location.replace(LEARN_HUB[id]);
   }
 }
 openLearnTarget();
