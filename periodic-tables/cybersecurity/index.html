@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="cyber">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
@@ -197,16 +197,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="threats"]{color:#dc2626}
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<meta name="sg-stage" content="2">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The Cybersecurity Periodic Table</div>
-  <h1>Cybersecurity for <span>Leaders</span></h1>
-  <p class="sub">69 essential cybersecurity terms in plain business language, arranged like the periodic table — click any element to zoom in and learn what it means and what it asks of leadership.</p>
-  <div class="principle"><strong>Core principle:</strong> Security is a business risk discipline, not an IT purchase: you are protecting revenue, trust and the licence to operate, not collecting tools. Assume a breach will happen, protect identity and data first, and rehearse your response before you need it — the organisations that recover well are the ones that practised.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1"><span class="sg-t sg-t-cyber">Cybersecurity</span> for Leaders</h1><p class="sgp-sub">69 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-cyber"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard next" href="../cyber-threats/"><span class="nc-dir">Next →</span><span class="nc-title">Cyber Threats &amp; Attack Techniques</span></a></span></div>
@@ -222,7 +217,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="threats"]{color:#dc2626}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>Phishing, Zero Trust, MFA, SOC</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -418,7 +413,7 @@ function applyTheme(th){
   try{localStorage.setItem('cybersecurity_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('cybersecurity_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('cybersecurity_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';

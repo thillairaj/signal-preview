@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="ai">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
@@ -195,16 +195,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="tools"]{color:#c3490a}
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<meta name="sg-stage" content="2">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The Agentic AI Periodic Table</div>
-  <h1>Agentic AI <span>Keywords</span></h1>
-  <p class="sub">The essential agentic AI terms in plain language, for leaders who need to judge what agents can safely do, what they cost, and where the control points are.</p>
-  <div class="principle"><strong>Core principle:</strong> Core principle: an agent is not a chatbot with a new label. It is a system that perceives, decides and acts in the world, which means the vocabulary of control (permissions, guardrails, supervision, evaluation) matters as much as the vocabulary of capability. Leaders who only learn the capability words will buy demos; leaders who learn both sets will ship systems that survive contact with real work.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1">Agentic <span class="sg-t sg-t-ai">AI Keywords</span></h1><p class="sgp-sub">64 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-ai"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../ai-keywords/"><span class="nc-dir">← Previous</span><span class="nc-title">AI Keywords for Leaders</span></a><a class="navcard next" href="../agentic-ai-tools/"><span class="nc-dir">Next →</span><span class="nc-title">Agentic AI Tools</span></a></span></div>
@@ -220,7 +215,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="tools"]{color:#c3490a}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>Agent, MCP, ReAct, Evals</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -411,7 +406,7 @@ function applyTheme(th){
   try{localStorage.setItem('agentic_ai_keywords_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('agentic_ai_keywords_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('agentic_ai_keywords_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';

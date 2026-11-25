@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="cloud">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
@@ -197,16 +197,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="sre"]{color:#c3490a}
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<meta name="sg-stage" content="2">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The Cloud & DevOps Periodic Table</div>
-  <h1>Cloud & DevOps for <span>Leaders</span></h1>
-  <p class="sub">72 essential cloud and DevOps terms in plain business language, arranged like the periodic table — click any element for a fuller explanation, a key formula or fact where one applies, and what a leader should take from it.</p>
-  <div class="principle"><strong>Core principle:</strong> Cloud is an operating model, not a data centre rented by the month: it changes how you provision, pay for, secure and run technology, from capital spending to pay-as-you-go operations. DevOps is likewise culture plus automation, not a tool purchase — shared ownership of delivery and reliability, made repeatable by pipelines. Leaders who treat either one as a procurement exercise get the costs of both and the benefits of neither.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1"><span class="sg-t sg-t-cloud">Cloud &amp; DevOps</span> for Leaders</h1><p class="sgp-sub">72 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-cloud"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard next" href="../aws-leaders/"><span class="nc-dir">Next →</span><span class="nc-title">AWS for Leaders</span></a></span></div>
@@ -222,7 +217,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="sre"]{color:#c3490a}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>Kubernetes, SLO, IaC, FinOps</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -390,7 +385,7 @@ function applyTheme(th){
   try{localStorage.setItem('cloud_devops_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('cloud_devops_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('cloud_devops_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';

@@ -712,10 +712,9 @@ window.SignalBriefUI = (function () {
         ? '<h2 class="bu-title">Signal Brief</h2>' +
           '<p class="bu-desc">The day in technology, in our own words. ' +
           "New every day at 07:00 IST.</p>"
-        : '<p class="bu-kicker">Signal Brief · Daily at 07:00 IST</p>' +
-          '<h2 class="bu-title">Today in tech, in one swipe.</h2>' +
+        : '<h2 class="bu-title">Signal Brief</h2>' +
           '<p class="bu-desc">The day in technology, in our own words. ' +
-          "Every story is checked and linked to its source.</p>") +
+          "New every day at 07:00 IST.</p>") +
       '<button type="button" class="bu-follow">Follow</button>' +
       "</header>" +
       '<div class="bu-cal" role="group" ' +

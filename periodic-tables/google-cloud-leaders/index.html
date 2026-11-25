@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="cloud">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
@@ -191,16 +191,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="security"]{color:#dc2626}
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<meta name="sg-stage" content="2">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The Google Cloud Periodic Table</div>
-  <h1>Google Cloud for <span>Leaders</span></h1>
-  <p class="sub">The Google Cloud service map for leaders: 58 services and concepts, strongest where data, containers and AI meet, organised as clickable elements.</p>
-  <div class="principle"><strong>Core principle:</strong> Google Cloud wins where data analytics, Kubernetes heritage and AI converge; it rarely wins as a thoughtless default estate. Judge it workload by workload, anchor on two or three differentiators such as BigQuery, GKE or Spanner, and let those strengths, not habit, decide what runs here.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1">Google <span class="sg-t sg-t-cloud">Cloud</span> for Leaders</h1><p class="sgp-sub">58 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-cloud"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../azure-leaders/"><span class="nc-dir">← Previous</span><span class="nc-title">Microsoft Azure for Leaders</span></a></span></div>
@@ -216,7 +211,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="security"]{color:#dc2626}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>BigQuery, GKE, Vertex, Spanner</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -370,7 +365,7 @@ function applyTheme(th){
   try{localStorage.setItem('google_cloud_leaders_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('google_cloud_leaders_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('google_cloud_leaders_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';

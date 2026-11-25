@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="cyber">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
@@ -193,16 +193,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="social"]{color:#c3490a}
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<meta name="sg-stage" content="2">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The Cyber Threats Table</div>
-  <h1>Cyber Threats & <span>Attack Techniques</span></h1>
-  <p class="sub">How attacks actually unfold, stage by stage, in language a leader can act on.</p>
-  <div class="principle"><strong>Core principle:</strong> Attacks are chains, not single events: an intruder must get in, stay in, reach something valuable and get value out. Breaking any one link early collapses the whole chain, which is why detection speed and rehearsed response matter more than any single tool.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1"><span class="sg-t sg-t-cyber">Cyber Threats &amp; Attack Techniques</span></h1><p class="sgp-sub">60 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-cyber"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../cybersecurity/"><span class="nc-dir">← Previous</span><span class="nc-title">Cybersecurity for Leaders</span></a><a class="navcard next" href="../security-frameworks/"><span class="nc-dir">Next →</span><span class="nc-title">Security Frameworks &amp; Compliance</span></a></span></div>
@@ -218,7 +213,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="social"]{color:#c3490a}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>ATT&CK, RaaS, BEC, C2</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -374,7 +369,7 @@ function applyTheme(th){
   try{localStorage.setItem('cyber_threats_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('cyber_threats_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('cyber_threats_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';

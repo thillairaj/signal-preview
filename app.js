@@ -722,7 +722,10 @@ function openResearchTarget() {
   }
 }
 openResearchTarget();
-const SECTION_HASH = { "#home": "home", "#learn": "learn", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
+/* Stage 2: "#learn" is deliberately absent here — openLearnTarget
+   above redirects it to the videos hub; the in-page learn view is
+   retired and must not be reachable from anywhere. */
+const SECTION_HASH = { "#home": "home", "#podcast": "podcast", "#research": "research", "#feed": "feed", "#brief": "brief" };
 function openSectionTarget() {
   const v = SECTION_HASH[location.hash];
   if (v) { showView(v); scrollToViewTop(v); return; }
@@ -746,8 +749,22 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
   if (brand) brand.addEventListener("click", function () { showView("home"); window.scrollTo({ top: 0 }); });
 
   document.querySelectorAll(".hm-go[data-goto]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (ev) {
       var view = btn.getAttribute("data-goto");
+      if (view === "learn") {
+        /* Stage 2: room 01 Enter opens the Learning Space menu, like
+           the 01 tab (signal-shell.js intercepts that tab's click in
+           the capture phase and opens the menu). The old in-page
+           learn view is retired and no longer reachable.
+           stopPropagation matters: the shell closes the menu on any
+           document click that lands outside it, so this button's own
+           click must not bubble on to document after the tab click
+           has opened the menu. */
+        ev.stopPropagation();
+        var tab = document.querySelector('.top-tab[data-view="learn"]');
+        if (tab) tab.click();
+        return;
+      }
       if (view === "podcast") { activeSeries = ""; podcastPage = 0; }
       showView(view);
       window.scrollTo({ top: 0 });
@@ -766,13 +783,18 @@ window.addEventListener("hashchange", function () { openLearnTarget(); openResea
         window.location.href = "research/" + item.dataset.artId + "/";
         return;
       }
+      if (view === "learn") {
+        /* Stage 2: learn rail cards go to the matching hub page (the
+           LEARN_HUB map above); the in-page learn view is retired. */
+        window.location.href = LEARN_HUB[item.dataset.scroll] || "videos/";
+        return;
+      }
       showView(view);
       if (view === "brief" && item.dataset.briefItem && window.SignalBriefUI) {
         SignalBriefUI.openStory(item.dataset.briefItem);
         return;
       }
-      if (view === "learn" && item.dataset.scroll) scrollToLearnId(item.dataset.scroll);
-      else window.scrollTo({ top: 0 });
+      window.scrollTo({ top: 0 });
     }
     item.addEventListener("click", nav);
     item.addEventListener("keydown", function (e) {
@@ -875,12 +897,9 @@ function fillHomeArticles() {
   popup.addEventListener("click", function (ev) { if (ev.target === popup) { mark(); hide(); } });
   document.getElementById("gamesPopupGo").addEventListener("click", function () {
     mark(); hide();
-    showView("learn");
-    openDoor("explainers");
-    requestAnimationFrame(function () {
-      var el = document.getElementById("learn-explainers");
-      if (el) el.scrollIntoView({ block: "start" });
-    });
+    /* Stage 2: the explainers door lives on the hub page now; the
+       in-page learn view is retired. */
+    window.location.href = "explainers/";
   });
   setTimeout(function () { popup.hidden = false; }, 900);
 })();

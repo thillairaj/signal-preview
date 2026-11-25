@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sgp sgp-table" data-tech="cyber">
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta charset="UTF-8">
@@ -191,16 +191,11 @@ html[data-theme="light"] #detail .d-cat[data-cat="surface"]{color:#dc2626}
 <meta name="signal-build" content="2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-footer.css?v=2026-11-07.footer1">
 <link rel="stylesheet" href="../../assets/signal-shell.css?v=20261125">
+<link rel="stylesheet" href="../../assets/signal-pages.css">
+<meta name="sg-stage" content="2">
 </head>
 <body>
-<header>
-  
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button>
-  <div class="kicker">The AI Security Table</div>
-  <h1>AI & <span>Cybersecurity</span></h1>
-  <p class="sub">Where artificial intelligence changes both attack and defence — the new attack surface, AI-powered attacks, and the controls and frameworks leaders need.</p>
-  <div class="principle"><strong>Core principle:</strong> AI lowers the attacker's cost and raises the defender's speed at the same time, so the contest rewards whoever adopts it with discipline. The organisations most at risk are not those attacked by AI, but those adopting AI without securing it. Treat every AI system you deploy as both a tool and a target.</div>
-</header>
+<div class="sgp-head"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme" title="Switch light / dark theme">☀</button><h1 class="sgp-h1">AI &amp; <span class="sg-t sg-t-cyber">Cybersecurity</span></h1><p class="sgp-sub">56 terms in plain business language.</p></div>
 
 <div class="toolbar">
   <div class="navrow"><a class="navcard back" href="../../#learn-tables-cyber"><span class="nc-dir">← Back to</span><span class="nc-title">Learning Spaces</span></a><span class="navside"><a class="navcard prev" href="../security-frameworks/"><span class="nc-dir">← Previous</span><span class="nc-title">Security Frameworks &amp; Compliance</span></a></span></div>
@@ -216,7 +211,7 @@ html[data-theme="light"] #detail .d-cat[data-cat="surface"]{color:#dc2626}
   <div id="grid" role="list"></div>
   <aside id="detail" aria-live="polite">
     <div class="d-no">Element detail</div>
-    <p class="hint" style="margin-top:12px">Click any element in the table to zoom into its full explanation.<br><br>Start with: <strong>Prompt Injection, ATLAS, Shadow AI</strong>.</p>
+    <p class="hint" style="margin-top:12px">Click any term to read it.</p>
   </aside>
 </main>
 <div id="overlay"></div>
@@ -368,7 +363,7 @@ function applyTheme(th){
   try{localStorage.setItem('ai_cybersecurity_theme',th);}catch(e){}
 }
 let savedTheme='dark';
-try{savedTheme=localStorage.getItem('ai_cybersecurity_theme')||'dark';}catch(e){}
+try{savedTheme=localStorage.getItem('ai_cybersecurity_theme')||'light';}catch(e){}
 applyTheme(savedTheme==='light'?'light':'dark');
 themeBtn.addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
